@@ -1,10 +1,28 @@
 {
   "name": "archive",
   "type": "module",
+  "scripts": {
+    "clean": "rm -rf node_modules .next out bun.lockb",
+    "check": "taze major",
+    "bump": "taze major -w -i"
+  },
   "dependencies": {
-    "@noble/hashes": "^1.5.0"
+    "@noble/hashes": "^1.5.0",
+    "@playwright/test": "^1.48.1",
+    "cids": "^1.1.9",
+    "dotenv": "^16.4.5",
+    "filesize": "^10.1.6",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "undio": "^0.2.0",
+    "zx": "^8.1.9"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.11"
-  }
+    "@biomejs/biome": "^1.9.3",
+    "@types/bun": "^1.1.11",
+    "taze": "^0.17.2"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }
