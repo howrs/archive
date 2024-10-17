@@ -98,4 +98,6 @@ test("archive", async () => {
     writeFile(`${path}/data`, cid1),
     writeFile(`${path}/snapshot`, cid2),
   ]);
+
+  expect(cid1).toBeTruthy();
 });
