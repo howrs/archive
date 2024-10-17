@@ -1,0 +1,25 @@
+name: Archive
+
+on:
+  repository_dispatch:
+    types: [archive]
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: archive
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - uses: oven-sh/setup-bun@main
+        with:
+          bun-version: latest
+          bun-download-url: "https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip"
+
+      - name: Archive
+        run: bun archive.ts --url ${{ github.event.client_payload.url }}
