@@ -25,6 +25,10 @@ jobs:
       - run: bun i
       - run: cargo install monolith
 
+      - name: Create .env file
+        run: |
+          echo "CLIENT_IDS=${{ secrets.CLIENT_IDS }}" >> .env
+
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
       - run: bun run test
 
