@@ -28,7 +28,7 @@ jobs:
       - uses: actions-rust-lang/setup-rust-toolchain@main
       - run: bun i
       - run: cargo install monolith
-      - run: bun run playwright install --with-deps
+      - run: bun run playwright install chromium
 
       - name: Create .env file
         run: |

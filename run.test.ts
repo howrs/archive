@@ -86,4 +86,12 @@ test("archive", async () => {
 
   console.log(getIPFSURL(cid1));
   console.log(getIPFSURL(cid2));
+
+  await Promise.all([
+    writeFile(`${path}/data`, cid1),
+    writeFile(`${path}/snapshot`, cid2),
+    $`rm ${path}/screenshot.png`,
+    $`rm ${path}/index.html`,
+    $`rm ./url`
+  ]);
 });
