@@ -24,7 +24,7 @@ test("archive", async () => {
   chromium.use(StealthPlugin());
 
   const browser = await chromium.launch({
-    headless: false,
+    headless: !!process.env.GITHUB_ACTIONS,
     devtools: false,
     timeout: 100_000_000,
   });
