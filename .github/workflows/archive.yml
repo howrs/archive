@@ -55,11 +55,6 @@ jobs:
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
       - run: bun run test
 
-      - name: stash & pull & pop
-        run: git stash
-      - run: git pull
-      - run: git stash pop
-
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@master
         with:
