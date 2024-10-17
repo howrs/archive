@@ -1,4 +1,4 @@
-import { parseArgs } from "node:util";
+import { parseArgs } from "node:util"
 
 async function main() {
   const { values, positionals } = parseArgs({
@@ -10,16 +10,16 @@ async function main() {
     },
     strict: true,
     allowPositionals: true,
-  });
+  })
 
-  const { url } = values;
+  const { url } = values
 
   if (!url) {
-    console.log("url is required");
-    return;
+    console.log("url is required")
+    return
   }
 
-  await Bun.write("./url", url);
+  await Bun.write("./url", url)
 }
 
-main();
+main()

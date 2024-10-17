@@ -1,103 +1,103 @@
-import { test, expect } from "@playwright/test";
-import { readFile, writeFile, mkdir, rename } from "fs/promises";
-import StealthPlugin from "puppeteer-extra-plugin-stealth";
-import { chromium } from "playwright-extra";
-import { bytesToHex } from "@noble/hashes/utils";
-import { sha256 } from "@noble/hashes/sha256";
-import { saveToIPFS } from "./src/saveToIPFS";
-import { getIPFSURL } from "./src/getIPFSURL";
-import { toBlob, textToBlob } from "undio";
-import { filesize } from "filesize";
-import { $ } from "zx";
-import ms from "ms";
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
+import { sha256 } from "@noble/hashes/sha256"
+import { bytesToHex } from "@noble/hashes/utils"
+import { expect, test } from "@playwright/test"
+import { filesize } from "filesize"
+import ms from "ms"
+import { chromium } from "playwright-extra"
+import StealthPlugin from "puppeteer-extra-plugin-stealth"
+import { textToBlob, toBlob } from "undio"
+import { $ } from "zx"
+import { getIPFSURL } from "./src/getIPFSURL"
+import { saveToIPFS } from "./src/saveToIPFS"
 
 const viewport = {
   width: 1920,
   height: 1080,
-};
+}
 
 test.use({
   colorScheme: "dark",
   viewport,
-});
+})
 
 test("archive", async () => {
-  chromium.use(StealthPlugin());
+  chromium.use(StealthPlugin())
 
   const browser = await chromium.launch({
     headless: !!process.env.GITHUB_ACTIONS,
     devtools: false,
     timeout: ms("10m"),
-  });
+  })
 
-  const page = await browser.newPage();
+  const page = await browser.newPage()
 
-  const url = await readFile("./url", "utf8");
+  const url = await readFile("./url", "utf8")
 
-  console.log({ url });
+  console.log({ url })
 
-  const timestamp = Date.now();
-  await page.goto(`https://${url}`);
+  const timestamp = Date.now()
+  await page.goto(`https://${url}`)
 
   // save entire page
   await Promise.all([
     page.waitForLoadState("load", { timeout: ms("20s") }),
     // page.waitForLoadState("domcontentloaded", { timeout: 20000 }),
-  ]);
+  ])
 
   // wait few secs
-  await page.waitForTimeout(ms("3s"));
+  await page.waitForTimeout(ms("3s"))
 
   // dump dome
-  const dom = await page.content();
-  await writeFile(`./temp/index-1.html`, dom);
+  const dom = await page.content()
+  await writeFile(`./temp/index-1.html`, dom)
 
-  await $`cat temp/index-1.html | monolith - -MIjva -b https://${url} -o temp/index.html`;
+  await $`cat temp/index-1.html | monolith - -MIjva -b https://${url} -o temp/index.html`
 
-  await $`rm temp/index-1.html`;
+  await $`rm temp/index-1.html`
 
   // wait for the page to load
-  const hash = bytesToHex(sha256(url));
-  const path = `./archive/${hash}/${timestamp}`;
+  const hash = bytesToHex(sha256(url))
+  const path = `./archive/${hash}/${timestamp}`
 
   // create directory
-  await mkdir(path, { recursive: true });
+  await mkdir(path, { recursive: true })
 
-  console.log("read file...");
+  console.log("read file...")
 
   const [html, buffer] = await Promise.all([
     readFile(`./temp/index.html`, "utf8"),
     page.screenshot({ path: `${path}/screenshot.png`, fullPage: true }),
-  ]);
+  ])
 
-  await browser.close();
+  await browser.close()
 
-  const htmlBlob = textToBlob(html);
+  const htmlBlob = textToBlob(html)
 
-  const fileSize = filesize(htmlBlob.size);
+  const fileSize = filesize(htmlBlob.size)
 
-  console.log(`Done! File size: ${fileSize} bytes`);
+  console.log(`Done! File size: ${fileSize} bytes`)
 
-  await rename(`./temp/index.html`, `${path}/index.html`);
+  await rename(`./temp/index.html`, `${path}/index.html`)
 
   const [cid1, cid2] = await Promise.all([
     saveToIPFS({ body: htmlBlob }),
     saveToIPFS({ body: toBlob(buffer) }),
-  ]);
+  ])
 
-  console.log(getIPFSURL(cid1));
-  console.log(getIPFSURL(cid2));
+  console.log(getIPFSURL(cid1))
+  console.log(getIPFSURL(cid2))
 
   await Promise.all([
     $`rm ${path}/screenshot.png`,
     $`rm ${path}/index.html`,
     $`rm ./url`,
-  ]);
+  ])
 
   await Promise.all([
-    writeFile(`${path}/data`, cid1),
-    writeFile(`${path}/snapshot`, cid2),
-  ]);
+    writeFile(`${path}/d-${cid1}`, ""),
+    writeFile(`${path}/s-${cid2}`, ""),
+  ])
 
-  expect(cid1).toBeTruthy();
-});
+  expect(cid1).toBeTruthy()
+})

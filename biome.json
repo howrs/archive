@@ -6,20 +6,11 @@
       "recommended": true,
       "style": {
         "noUnusedTemplateLiteral": "off",
-        "useImportType": {
-          "level": "error",
-          "fix": "unsafe"
-        },
-        "noUselessElse": "off",
-        "noNonNullAssertion": "warn",
-        "useConst": "off",
-        "useNumberNamespace": "off",
-        "useSelfClosingElements": "off",
-        "noArguments": "warn"
+        "useImportType": "error",
+        "noUselessElse": "off"
       },
       "correctness": {
-        "noUnusedVariables": "warn",
-        "useExhaustiveDependencies": "warn"
+        "noUnusedVariables": "warn"
       },
       "nursery": {
         "useSortedClasses": {
@@ -33,9 +24,6 @@
       },
       "suspicious": {
         "noExplicitAny": "warn"
-      },
-      "complexity": {
-        "noBannedTypes": "warn"
       }
     }
   },
