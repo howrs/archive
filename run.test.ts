@@ -9,6 +9,7 @@ import { getIPFSURL } from "./src/getIPFSURL";
 import { toBlob, textToBlob } from "undio";
 import { filesize } from "filesize";
 import { $ } from "zx";
+import ms from "ms";
 
 const viewport = {
   width: 1920,
@@ -26,7 +27,7 @@ test("archive", async () => {
   const browser = await chromium.launch({
     headless: !!process.env.GITHUB_ACTIONS,
     devtools: false,
-    timeout: 100_000_000,
+    timeout: ms("10m"),
   });
 
   const page = await browser.newPage();
@@ -92,6 +93,6 @@ test("archive", async () => {
     writeFile(`${path}/snapshot`, cid2),
     $`rm ${path}/screenshot.png`,
     $`rm ${path}/index.html`,
-    $`rm ./url`
+    $`rm ./url`,
   ]);
 });

@@ -13,6 +13,7 @@
     "cids": "^1.1.9",
     "dotenv": "^16.4.5",
     "filesize": "^10.1.6",
+    "ms": "^3.0.0-canary.1",
     "playwright-extra": "^4.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "undio": "^0.2.0",
