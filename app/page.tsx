@@ -15,6 +15,8 @@ export default function Page() {
   const { url, timestamp } = useSearchParam()
   const { replace } = useRouter()
 
+  console.log({ url, timestamp })
+
   const { data, isPending } = useQuery({
     queryKey: ["cid", timestamp, url],
     queryFn: async () => {
