@@ -8,10 +8,6 @@ jobs:
   archive:
     runs-on: ubuntu-latest
 
-    concurrency:
-      group: archive
-      cancel-in-progress: false
-
     steps:
       - name: Checkout
         uses: actions/checkout@main
