@@ -3,8 +3,10 @@
 import { sha256 } from "@noble/hashes/sha256"
 import { bytesToHex } from "@noble/hashes/utils"
 import { useQuery } from "@tanstack/react-query"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs"
 import { useSearchParam } from "hooks/useSearchParam"
 import { storage } from "lib/storage"
+import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { getIPFSURL } from "src/getIPFSURL"
 
@@ -30,7 +32,7 @@ export default function Page() {
       const time = data.split(":").at(-2)
 
       if (time !== timestamp) {
-        replace(`?${url}/${time}`)
+        replace(`?${url}:${time}`)
       }
 
       return { cid1, cid2 }
@@ -47,13 +49,34 @@ export default function Page() {
 
   return (
     <div className="flex h-dvh text-2xl">
-      {data?.cid1 && (
-        <iframe
-          className="mt-16 w-full flex-1"
-          title={`Archive of ${url} at ${timestamp}`}
-          src={getIPFSURL(data.cid1)}
-        />
-      )}
+      <Tabs defaultValue="website" className="mt-16 flex w-full flex-col">
+        <TabsList className="w-fit self-center">
+          <TabsTrigger value="website">Website</TabsTrigger>
+          <TabsTrigger value="snapshot">Snapshot</TabsTrigger>
+        </TabsList>
+        <TabsContent value="website" className="flex w-full flex-1">
+          {data?.cid1 && (
+            <iframe
+              className="w-full flex-1"
+              title={`Archive of ${url} at ${timestamp}`}
+              src={getIPFSURL(data.cid1)}
+            />
+          )}
+        </TabsContent>
+        <TabsContent value="snapshot">
+          {data?.cid2 && (
+            <Image
+              priority
+              unoptimized
+              width={1920}
+              height={1080}
+              className="w-full flex-1"
+              src={getIPFSURL(data.cid2)}
+              alt={`Snapshot of ${url} at ${timestamp}`}
+            />
+          )}
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }

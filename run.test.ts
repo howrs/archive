@@ -85,8 +85,12 @@ test("archive", async () => {
     saveToIPFS({ body: toBlob(buffer) }),
   ])
 
-  console.log(getIPFSURL(cid1))
-  console.log(getIPFSURL(cid2))
+  const url1 = getIPFSURL(cid1)
+  const url2 = getIPFSURL(cid2)
+
+  console.log({ url1, url2 })
+
+  Promise.all([fetch(url1), fetch(url2)])
 
   await Promise.all([
     $`rm ${path}/screenshot.png`,
