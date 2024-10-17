@@ -10,6 +10,9 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: Archive ${{ github.event.client_payload.url }}
+        run: echo "Archiving ${{ github.event.client_payload.url }}"
+
       - name: Checkout
         uses: actions/checkout@main
 
@@ -52,7 +55,8 @@ jobs:
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
       - run: bun run test
 
-      - run: git stash
+      - name: stash & pull & pop
+        run: git stash
       - run: git pull
       - run: git stash pop
 
