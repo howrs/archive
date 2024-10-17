@@ -24,6 +24,7 @@ jobs:
       - uses: actions-rust-lang/setup-rust-toolchain@main
       - run: bun i
       - run: cargo install monolith
+      - run: bun run playwright install --with-deps
 
       - name: Create .env file
         run: |
