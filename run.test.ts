@@ -41,12 +41,12 @@ test("archive", async () => {
 
   // save entire page
   await Promise.all([
-    page.waitForLoadState("load", { timeout: 20000 }),
+    page.waitForLoadState("load", { timeout: ms("20s") }),
     // page.waitForLoadState("domcontentloaded", { timeout: 20000 }),
   ]);
 
   // wait few secs
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(ms("3s"));
 
   // dump dome
   const dom = await page.content();
