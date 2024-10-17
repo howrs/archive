@@ -2,6 +2,7 @@
   "name": "archive",
   "type": "module",
   "scripts": {
+    "test": "playwright test",
     "clean": "rm -rf node_modules .next out bun.lockb",
     "check": "taze major",
     "bump": "taze major -w -i"

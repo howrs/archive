@@ -26,6 +26,7 @@ jobs:
       - run: cargo install monolith
 
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
+      - run: bun run test
 
       - uses: stefanzweifel/git-auto-commit-action@master
         with:
