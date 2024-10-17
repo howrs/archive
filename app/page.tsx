@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs"
 import { useSearchParam } from "hooks/useSearchParam"
 import { storage } from "lib/storage"
+import { cn } from "lib/utils"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { getIPFSURL } from "src/getIPFSURL"
@@ -49,12 +50,19 @@ export default function Page() {
 
   return (
     <div className="flex h-dvh text-2xl">
-      <Tabs defaultValue="website" className="mt-16 flex w-full flex-col">
+      <Tabs
+        defaultValue="website"
+        className="relative flex w-full flex-1 flex-col pt-8"
+      >
         <TabsList className="w-fit self-center">
           <TabsTrigger value="website">Website</TabsTrigger>
           <TabsTrigger value="snapshot">Snapshot</TabsTrigger>
         </TabsList>
-        <TabsContent value="website" className="flex w-full flex-1">
+        <TabsContent
+          value="website"
+          className="flex w-full flex-1 overflow-auto data-[state=inactive]:hidden"
+          forceMount
+        >
           {data?.cid1 && (
             <iframe
               className="w-full flex-1"
@@ -63,17 +71,24 @@ export default function Page() {
             />
           )}
         </TabsContent>
-        <TabsContent value="snapshot">
+        <TabsContent
+          value="snapshot"
+          className="flex w-full flex-1 overflow-y-auto data-[state=inactive]:hidden"
+          forceMount
+        >
           {data?.cid2 && (
-            <Image
-              priority
-              unoptimized
-              width={1920}
-              height={1080}
-              className="w-full flex-1"
-              src={getIPFSURL(data.cid2)}
-              alt={`Snapshot of ${url} at ${timestamp}`}
-            />
+            <div className="w-full">
+              <Image
+                priority
+                unoptimized
+                width={1920}
+                height={1080}
+                className=""
+                objectFit="cover"
+                src={getIPFSURL(data.cid2)}
+                alt={`Snapshot of ${url} at ${timestamp}`}
+              />
+            </div>
           )}
         </TabsContent>
       </Tabs>

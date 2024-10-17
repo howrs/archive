@@ -1,7 +1,7 @@
-import "dotenv/config";
+import "dotenv/config"
 
 if (!process.env.CLIENT_IDS) {
-  throw new Error("CLIENT_IDS is not set");
+  throw new Error("CLIENT_IDS is not set")
 }
 
-export const CLIENT_IDS = process.env.CLIENT_IDS.split(",");
+export const CLIENT_IDS = process.env.CLIENT_IDS.split(",")
