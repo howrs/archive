@@ -20,7 +20,12 @@ test.use({
   colorScheme: "dark",
   viewport,
   locale: "en-US",
+  ignoreHTTPSErrors: true,
   bypassCSP: true,
+  contextOptions: {
+    reducedMotion: "reduce",
+  },
+  // javaScriptEnabled: false,
   userAgent:
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
 })
@@ -51,6 +56,7 @@ test("archive", async () => {
 
   // dump dom
   const dom = await page.content()
+
   await writeFile(`./temp/index-1.html`, dom)
 
   await $`cat temp/index-1.html | monolith - -MIjva -b https://${url} -o temp/index.html`
