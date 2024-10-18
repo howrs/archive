@@ -62,7 +62,7 @@ export default function Page() {
         </TabsList>
         <TabsContent
           value="website"
-          className="flex w-full flex-1 overflow-auto data-[state=inactive]:hidden"
+          className="flex w-full flex-1 overflow-y-auto data-[state=inactive]:hidden"
           forceMount
         >
           {data?.cid1 && (

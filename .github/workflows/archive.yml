@@ -6,6 +6,10 @@ on:
 
 jobs:
   archive:
+    concurrency:
+      group: ci-${{ github.ref }}
+      cancel-in-progress: false
+
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
