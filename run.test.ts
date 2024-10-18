@@ -41,18 +41,15 @@ test("archive", async () => {
   console.log({ url })
 
   const timestamp = Date.now()
-  await page.goto(`https://${url}`)
-
-  // save entire page
-  await Promise.all([
-    page.waitForLoadState("load", { timeout: ms("20s") }),
-    // page.waitForLoadState("domcontentloaded", { timeout: 20000 }),
-  ])
+  await page.goto(`https://${url}`, {
+    waitUntil: "load",
+    timeout: ms("20s"),
+  })
 
   // wait few secs
   await page.waitForTimeout(ms("3s"))
 
-  // dump dome
+  // dump dom
   const dom = await page.content()
   await writeFile(`./temp/index-1.html`, dom)
 
