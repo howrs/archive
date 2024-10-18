@@ -54,10 +54,12 @@ jobs:
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
       - run: bun run test
 
-      - run: git pull
+      - name: Wait
+        uses: ahmadnassri/action-workflow-queue@master
 
-      - name: Commit
-        uses: stefanzweifel/git-auto-commit-action@master
-      - uses: ahmadnassri/action-workflow-queue@master
+      - name: commit
+        uses: EndBug/add-and-commit@main
         with:
-          commit_author: Actions <actions@github.com>
+          author_name: Actions
+          author_email: actions@github.com
+          pull: "--rebase --autostash"
