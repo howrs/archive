@@ -2,6 +2,7 @@ import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
 import { sha256 } from "@noble/hashes/sha256"
 import { bytesToHex } from "@noble/hashes/utils"
 import { expect, test } from "@playwright/test"
+import { STATIC_URLS } from "constants/static"
 import { filesize } from "filesize"
 import ms from "ms"
 import { chromium } from "playwright-extra"
@@ -46,16 +47,23 @@ test("archive", async () => {
   console.log({ url })
 
   const timestamp = Date.now()
-  await page.goto(`https://${url}`, {
-    waitUntil: "load",
-    timeout: ms("20s"),
-  })
 
-  // wait few secs
-  await page.waitForTimeout(ms("3s"))
+  let dom: string
 
-  // dump dom
-  const dom = await page.content()
+  if (STATIC_URLS[url]) {
+    dom = await fetch(url).then((r) => r.text())
+  } else {
+    await page.goto(`https://${url}`, {
+      waitUntil: "load",
+      timeout: ms("20s"),
+    })
+
+    // wait few secs
+    await page.waitForTimeout(ms("3s"))
+
+    // dump dom
+    dom = await page.content()
+  }
 
   await writeFile(`./temp/index-1.html`, dom)
 
