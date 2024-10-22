@@ -54,14 +54,12 @@ jobs:
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
       - run: bun run test
 
-      - name: Wait
+      - name: commit
         uses: ahmadnassri/action-workflow-queue@master
         with:
           timeout: 3600000
           delay: 1000
-
-      - name: commit
-        uses: EndBug/add-and-commit@main
+      - uses: EndBug/add-and-commit@main
         with:
           author_name: Actions
           author_email: actions@github.com
