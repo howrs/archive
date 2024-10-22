@@ -51,7 +51,7 @@ test("archive", async () => {
   let dom: string
 
   if (STATIC_URLS[new URL(`https://${url}`).hostname]) {
-    dom = await fetch(url).then((r) => r.text())
+    dom = await fetch(`https://${url}`).then((r) => r.text())
   } else {
     try {
       await page.goto(`https://${url}`, {
@@ -65,7 +65,7 @@ test("archive", async () => {
       // dump dom
       dom = await page.content()
     } catch (e) {
-      dom = await fetch(url).then((r) => r.text())
+      dom = await fetch(`https://${url}`).then((r) => r.text())
     }
   }
 
