@@ -53,16 +53,20 @@ test("archive", async () => {
   if (STATIC_URLS[url]) {
     dom = await fetch(url).then((r) => r.text())
   } else {
-    await page.goto(`https://${url}`, {
-      waitUntil: "load",
-      timeout: ms("20s"),
-    })
+    try {
+      await page.goto(`https://${url}`, {
+        waitUntil: "load",
+        timeout: ms("20s"),
+      })
 
-    // wait few secs
-    await page.waitForTimeout(ms("3s"))
+      // wait few secs
+      await page.waitForTimeout(ms("3s"))
 
-    // dump dom
-    dom = await page.content()
+      // dump dom
+      dom = await page.content()
+    } catch (e) {
+      dom = await fetch(url).then((r) => r.text())
+    }
   }
 
   await writeFile(`./temp/index-1.html`, dom)
