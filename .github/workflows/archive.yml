@@ -15,9 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - uses: actions/setup-node@main
-        with:
-          node-version: latest
+      # - uses: actions/setup-node@main
+      #   with:
+      #     node-version: latest
 
       - uses: oven-sh/setup-bun@main
         with:
