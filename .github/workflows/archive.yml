@@ -64,3 +64,10 @@ jobs:
           author_name: Actions
           author_email: actions@github.com
           pull: "--rebase --autostash"
+
+      - name: Retry
+        uses: EndBug/add-and-commit@main
+        with:
+          author_name: Actions
+          author_email: actions@github.com
+          pull: "--rebase --autostash"
