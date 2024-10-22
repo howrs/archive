@@ -50,7 +50,7 @@ test("archive", async () => {
 
   let dom: string
 
-  if (STATIC_URLS[new URL(url).hostname]) {
+  if (STATIC_URLS[new URL(`https://${url}`).hostname]) {
     dom = await fetch(url).then((r) => r.text())
   } else {
     try {
