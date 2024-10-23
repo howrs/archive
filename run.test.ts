@@ -7,6 +7,7 @@ import { filesize } from "filesize"
 import ms from "ms"
 import { chromium } from "playwright-extra"
 import StealthPlugin from "puppeteer-extra-plugin-stealth"
+import { saveToIPFS2 } from "src/saveToIPFS2"
 import { textToBlob, toBlob } from "undio"
 import { $ } from "zx"
 import { getIPFSURL } from "./src/getIPFSURL"
@@ -102,7 +103,12 @@ test("archive", async () => {
   const [cid1, cid2] = await Promise.all([
     saveToIPFS({ body: htmlBlob }),
     saveToIPFS({ body: toBlob(buffer) }),
-  ])
+  ]).catch(async (e) => {
+    return Promise.all([
+      saveToIPFS2({ body: htmlBlob }),
+      saveToIPFS2({ body: toBlob(buffer) }),
+    ])
+  })
 
   const url1 = getIPFSURL(cid1)
   const url2 = getIPFSURL(cid2)

@@ -5,7 +5,7 @@ type Params = {
   body: any
 }
 
-export const saveToIPFS = async ({ body }: Params) => {
+export const saveToIPFS2 = async ({ body }: Params) => {
   const form = new FormData()
 
   form.append(

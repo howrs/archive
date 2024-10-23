@@ -1,5 +1,4 @@
 import CID from "cids"
-import { CLIENT_IDS } from "./env"
 
 type Params = {
   body: any
@@ -17,12 +16,6 @@ export const saveToIPFS = async ({ body }: Params) => {
 
   const result = await fetch("https://ipfs-relay.crossbell.io/upload", {
     method: "PUT",
-    headers: {
-      // origin: "https://hey.xyz",
-      // "x-client-id": getRandom(CLIENT_IDS),
-      // "x-client-id": `fb3a8f0afcdd06b8a366d9781dadbac2`,
-      // "x-client-id": "22f2a1f2653b1f091455a59951c2ecca",
-    },
     body: form,
   })
     .then((r) => r.json())
