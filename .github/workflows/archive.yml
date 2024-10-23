@@ -54,17 +54,17 @@ jobs:
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
       - run: bun run test
 
-      - name: Wait
-        uses: ahmadnassri/action-workflow-queue@master
-        with:
-          timeout: 3600000
-          delay: 1000
+      # - name: Wait
+      #   uses: ahmadnassri/action-workflow-queue@master
+      #   with:
+      #     timeout: 3600000
+      #     delay: 1000
 
       - name: Commit
         uses: nick-fields/retry@master
         with:
-          timeout_minutes: 10
-          max_attempts: 5
+          timeout_minutes: 120
+          max_attempts: 10000
           command: |
             git config user.email "actions@github.com"
             git config user.name "Actions"
