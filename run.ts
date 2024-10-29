@@ -4,7 +4,7 @@ import { bytesToHex } from "@noble/hashes/utils"
 import { STATIC_URLS } from "constants/static"
 import { filesize } from "filesize"
 import ms from "ms"
-import { chromium } from "playwright-extra"
+import { chromium as chrome } from "playwright-extra"
 import type { BrowserContextOptions } from "playwright/test"
 import StealthPlugin from "puppeteer-extra-plugin-stealth"
 import { saveToIPFS2 } from "src/saveToIPFS2"
@@ -31,7 +31,7 @@ const browserContext: BrowserContextOptions = {
 }
 
 const archive = async () => {
-  chromium.use(StealthPlugin())
+  const chromium = chrome.use(StealthPlugin())
 
   const browser = await chromium.launch({
     headless: !!process.env.GITHUB_ACTIONS,
