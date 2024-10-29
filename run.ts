@@ -101,12 +101,13 @@ const archive = async () => {
   await rename(`./temp/index.html`, `${path}/index.html`)
 
   const [cid1, cid2] = await Promise.all([
-    saveToIPFS({ body: htmlBlob }),
-    saveToIPFS({ body: toBlob(buffer) }),
+    saveToIPFS({ file: htmlBlob }),
+    saveToIPFS({ file: toBlob(buffer) }),
   ]).catch(async (e) => {
+    console.log(e)
     return Promise.all([
-      saveToIPFS2({ body: htmlBlob }),
-      saveToIPFS2({ body: toBlob(buffer) }),
+      saveToIPFS2({ file: htmlBlob }),
+      saveToIPFS2({ file: toBlob(buffer) }),
     ])
   })
 
@@ -114,8 +115,6 @@ const archive = async () => {
   const url2 = getIPFSURL(cid2)
 
   console.log({ url1, url2 })
-
-  Promise.all([fetch(url1), fetch(url2)])
 
   await Promise.all([
     $`rm ${path}/screenshot.png`,
@@ -126,6 +125,7 @@ const archive = async () => {
   await Promise.all([
     writeFile(`${path}/d-${cid1}`, ""),
     writeFile(`${path}/s-${cid2}`, ""),
+    ...[fetch(url1), fetch(url2)],
   ])
 }
 

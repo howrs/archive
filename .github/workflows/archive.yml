@@ -15,36 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - name: Get Latest Node.js Release URL
-        id: get_latest_node
-        run: |
-          LATEST_TAG=$(curl -s https://api.github.com/repos/nodejs/node/releases/latest | jq -r '.tag_name')
-          LATEST_URL=$(curl -s https://api.github.com/repos/nodejs/node/releases/latest | jq -r '.tarball_url')
-          echo "Latest Node.js version: $LATEST_TAG"
-          echo "LATEST_URL=$LATEST_URL" >> $GITHUB_ENV
-          echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
-
-      - name: Cache Node.js Binary
-        uses: actions/cache@main
-        with:
-          path: ~/node
-          key: node-${{ env.LATEST_TAG }}
-
-      - name: Download and Extract Node.js (if not cached)
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          curl -L ${{ env.LATEST_URL }} -o node-latest.tar.gz
-          mkdir -p ~/node
-          tar -xzf node-latest.tar.gz -C ~/node --strip-components=1
-
-      - name: Add Node.js to PATH
-        run: echo "${{ runner.os == 'Windows' && 'set PATH=%PATH%;' || 'export PATH=$PATH:' }}$HOME/node/bin" >> $GITHUB_ENV
-
-      - name: Verify Node.js version
-        run: |
-          node -v
-          npm -v
-
       - uses: oven-sh/setup-bun@main
         with:
           bun-version: latest
@@ -78,7 +48,7 @@ jobs:
       - run: echo "CLIENT_IDS=${{ secrets.CLIENT_IDS }}" >> .env
 
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
-      - run: bun run tsx run.ts
+      - run: bun run.ts
 
       - name: Commit
         uses: nick-fields/retry@master

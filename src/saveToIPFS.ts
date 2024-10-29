@@ -1,18 +1,13 @@
 import CID from "cids"
 
 type Params = {
-  body: any
+  file: any
 }
 
-export const saveToIPFS = async ({ body }: Params) => {
+export const saveToIPFS = async ({ file }: Params) => {
   const form = new FormData()
 
-  form.append(
-    "file",
-    new File([body], "file", {
-      type: "text/html",
-    }),
-  )
+  form.append("file", file, "file")
 
   const result = await fetch("https://ipfs-relay.crossbell.io/upload", {
     method: "PUT",

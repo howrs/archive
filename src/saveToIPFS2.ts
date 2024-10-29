@@ -2,18 +2,13 @@ import CID from "cids"
 import { CLIENT_IDS } from "./env"
 
 type Params = {
-  body: any
+  file: Blob
 }
 
-export const saveToIPFS2 = async ({ body }: Params) => {
+export const saveToIPFS2 = async ({ file }: Params) => {
   const form = new FormData()
 
-  form.append(
-    "file",
-    new File([body], "file", {
-      type: "text/html",
-    }),
-  )
+  form.append("file", file, "file")
 
   const result = await fetch("https://storage.thirdweb.com/ipfs/upload", {
     method: "POST",
