@@ -1,11 +1,11 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
 import { sha256 } from "@noble/hashes/sha256"
 import { bytesToHex } from "@noble/hashes/utils"
-import { expect, test } from "@playwright/test"
 import { STATIC_URLS } from "constants/static"
 import { filesize } from "filesize"
 import ms from "ms"
 import { chromium } from "playwright-extra"
+import type { BrowserContextOptions } from "playwright/test"
 import StealthPlugin from "puppeteer-extra-plugin-stealth"
 import { saveToIPFS2 } from "src/saveToIPFS2"
 import { textToBlob, toBlob } from "undio"
@@ -18,21 +18,19 @@ const viewport = {
   height: 1080,
 }
 
-test.use({
+const browserContext: BrowserContextOptions = {
   colorScheme: "dark",
   viewport,
   locale: "en-US",
   ignoreHTTPSErrors: true,
   bypassCSP: true,
-  contextOptions: {
-    reducedMotion: "reduce",
-  },
+  reducedMotion: "reduce",
   // javaScriptEnabled: false,
   userAgent:
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
-})
+}
 
-test("archive", async () => {
+const archive = async () => {
   chromium.use(StealthPlugin())
 
   const browser = await chromium.launch({
@@ -41,7 +39,9 @@ test("archive", async () => {
     timeout: ms("10m"),
   })
 
-  const page = await browser.newPage()
+  const context = await browser.newContext(browserContext)
+
+  const page = await context.newPage()
 
   const url = await readFile("./url", "utf8")
 
@@ -127,6 +127,6 @@ test("archive", async () => {
     writeFile(`${path}/d-${cid1}`, ""),
     writeFile(`${path}/s-${cid2}`, ""),
   ])
+}
 
-  expect(cid1).toBeTruthy()
-})
+archive()
