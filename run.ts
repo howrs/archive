@@ -125,7 +125,8 @@ const archive = async () => {
   await Promise.all([
     writeFile(`${path}/d-${cid1}`, ""),
     writeFile(`${path}/s-${cid2}`, ""),
-    ...[fetch(url1), fetch(url2)],
+    $`curl ${url1} > /dev/null 2>&1`,
+    $`curl ${url2} > /dev/null 2>&1`,
   ])
 }
 
