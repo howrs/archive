@@ -4,6 +4,7 @@ import { bytesToHex } from "@noble/hashes/utils"
 import { STATIC_URLS } from "constants/static"
 import { filesize } from "filesize"
 import ms from "ms"
+import { ofetch } from "ofetch"
 import { chromium as chrome } from "playwright-extra"
 import type { BrowserContextOptions } from "playwright/test"
 import StealthPlugin from "puppeteer-extra-plugin-stealth"
@@ -125,8 +126,12 @@ const archive = async () => {
   await Promise.all([
     writeFile(`${path}/d-${cid1}`, ""),
     writeFile(`${path}/s-${cid2}`, ""),
-    $`curl ${url1} > /dev/null 2>&1`,
-    $`curl ${url2} > /dev/null 2>&1`,
+    ofetch(url1, {
+      timeout: ms("10s"),
+    }),
+    ofetch(url2, {
+      timeout: ms("10s"),
+    }),
   ])
 }
 
