@@ -127,11 +127,11 @@ const archive = async () => {
     writeFile(`${path}/d-${cid1}`, ""),
     writeFile(`${path}/s-${cid2}`, ""),
     ofetch(url1, {
-      timeout: ms("10s"),
-    }),
+      timeout: ms("1s"),
+    }).catch((e) => null),
     ofetch(url2, {
-      timeout: ms("10s"),
-    }),
+      timeout: ms("1s"),
+    }).catch((e) => null),
   ])
 }
 
