@@ -126,11 +126,14 @@ const archive = async () => {
   await Promise.all([
     writeFile(`${path}/d-${cid1}`, ""),
     writeFile(`${path}/s-${cid2}`, ""),
+  ])
+
+  await Promise.all([
     ofetch(url1, {
-      timeout: ms("1s"),
+      timeout: ms("10s"),
     }).catch((e) => null),
     ofetch(url2, {
-      timeout: ms("1s"),
+      timeout: ms("10s"),
     }).catch((e) => null),
   ])
 }
