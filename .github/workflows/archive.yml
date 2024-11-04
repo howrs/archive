@@ -49,7 +49,7 @@ jobs:
       - run: echo "CLIENT_IDS=${{ secrets.CLIENT_IDS }}" >> .env
 
       - run: bun archive.ts --url ${{ github.event.client_payload.url }}
-      - run: bun run.ts
+      - run: bun tsx run.ts
 
       - name: Commit
         uses: nick-fields/retry@master
