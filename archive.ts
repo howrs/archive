@@ -19,7 +19,7 @@ async function main() {
     return
   }
 
-  await Bun.write("./url", url)
+  await Bun.write("./url", encodeURIComponent(url))
 }
 
 main()
