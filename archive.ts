@@ -19,10 +19,7 @@ async function main() {
     return
   }
 
-  // encode url
-  const { origin, pathname } = new URL(`https://${url}`)
-
-  const data = `${origin}${encodeURIComponent(pathname)}`.replace('https://', '')
+  const data = url.replaceAll(' ', '%20')
 
   await Bun.write("./url", data)
 }
