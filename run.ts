@@ -13,6 +13,7 @@ import { textToBlob, toBlob } from "undio"
 import { $ } from "zx"
 import { getIPFSURL } from "./src/getIPFSURL"
 import { saveToIPFS } from "./src/saveToIPFS"
+import { wm } from "utils/wm"
 
 const viewport = {
   width: 1920,
@@ -47,6 +48,8 @@ const archive = async () => {
   const url = await readFile("./url", "utf8")
 
   console.log({ url })
+
+  const wayback = wm(`https://${url}`)
 
   const timestamp = Date.now()
 
@@ -135,6 +138,7 @@ const archive = async () => {
     ofetch(url2, {
       timeout: ms("10s"),
     }).catch((e) => null),
+    wayback
   ])
 }
 
