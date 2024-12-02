@@ -1,0 +1,65 @@
+name: Archive
+
+on:
+  repository_dispatch:
+    types: [archive]
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Archive ${{ github.event.client_payload.url }}
+        run: echo "Archiving ${{ github.event.client_payload.url }}"
+
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - uses: oven-sh/setup-bun@main
+        with:
+          bun-version: latest
+          bun-download-url: "https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip"
+
+      - name: Install CJK fonts
+        run: sudo apt-get install fonts-noto-cjk
+
+      - uses: actions-rust-lang/setup-rust-toolchain@main
+      - run: bun i -f
+      - run: cargo install monolith
+
+      - name: Get Playwright version
+        run: echo "PLAYWRIGHT_VERSION=$(jq '.dependencies["playwright"]' package.json -r)" >> $GITHUB_ENV
+
+      - name: Cache Playwright Browsers
+        id: cache-playwright-browsers
+        uses: actions/cache@main
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-browsers-${{ runner.os }}-${{ env.PLAYWRIGHT_VERSION }}
+
+      - name: Install Playwright with dependencies
+        if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
+        run: bun playwright install chromium
+
+      # - name: Install Playwright dependencies
+      #   if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
+      #   run: bun playwright install-deps
+
+      - run: echo "CLIENT_IDS=${{ secrets.CLIENT_IDS }}" >> .env
+
+      - run: echo "${{ github.event.client_payload.url }}" > url
+      - run: bun tsx run.ts
+
+      - name: Commit
+        uses: nick-fields/retry@master
+        with:
+          timeout_minutes: 120
+          max_attempts: 10000
+          command: |
+            git config user.email "actions@github.com"
+            git config user.name "Actions"
+            git pull --rebase --autostash
+            git add .
+            git commit -m "Archive"
+            git push
