@@ -53,6 +53,9 @@ const main = async () => {
 
   if (isDenyList(hostname)) {
     console.log("Deny list: ", hostname)
+
+    await browser.close()
+
     return
   }
 
