@@ -9,11 +9,11 @@ import { chromium as chrome } from "playwright-extra"
 import type { BrowserContextOptions } from "playwright/test"
 import StealthPlugin from "puppeteer-extra-plugin-stealth"
 import { saveToIPFS2 } from "src/saveToIPFS2"
-import { arrayBufferToBlob, textToBlob, toBlob, uint8ArrayToBlob } from "undio"
+import { textToBlob, uint8ArrayToBlob } from "undio"
 import { archive } from "utils/archive"
+import { isDenyList } from "utils/isDenyList"
 import { $ } from "zx"
 import { getIPFSURL } from "./src/getIPFSURL"
-import { saveToIPFS } from "./src/saveToIPFS"
 
 const viewport = {
   width: 1920,
@@ -48,6 +48,13 @@ const main = async () => {
   const url = await readFile("./url", "utf8").then((r) =>
     r.replaceAll("\n", "").trim(),
   )
+
+  const { hostname } = new URL(`https://${url}`)
+
+  if (isDenyList(hostname)) {
+    console.log("Deny list: ", hostname)
+    return
+  }
 
   console.log({ url })
 
