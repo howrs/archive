@@ -46,7 +46,11 @@ const main = async () => {
   const page = await context.newPage()
 
   const url = await readFile("./url", "utf8").then((r) =>
-    r.replaceAll("\n", "").trim(),
+    r
+      .replaceAll("\n", "")
+      .trim()
+      // remove trailing slash
+      .replace(/\/$/, ""),
   )
 
   const { hostname } = new URL(`https://${url}`)
