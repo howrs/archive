@@ -26,7 +26,7 @@ jobs:
 
       - uses: actions-rust-lang/setup-rust-toolchain@main
       - run: bun i -f
-      - run: cargo install monolith
+      # - run: cargo install monolith
 
       - name: Get Playwright version
         run: echo "PLAYWRIGHT_VERSION=$(jq '.dependencies["playwright"]' package.json -r)" >> $GITHUB_ENV
