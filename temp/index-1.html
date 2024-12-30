@@ -1,67 +1,1220 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="“ko“" lang="ko"><head>
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="-1">
-<meta name="robots" content="noindex,follow">
-<meta name="referrer" content="always">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?3">
-<link rel="alternate" type="application/rss+xml" href="https://rss.blog.naver.com/solder1819.xml" title="RSS feed for solder1819 Blog">
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.naver.com/NBlogWlwLayout.naver?blogId=solder1819">
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixbox - Natural Color Mixing Based on Real Pigments</title>
 
+    <meta property="og:title" content="Mixbox - Natural Color Mixing Based on Real Pigments">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scrtwpns.com/mixbox">
+    <meta property="og:image" content="https://scrtwpns.com/mixbox/og_image.jpg">
+    <meta property="og:description" content="Mixbox is a new blending method for natural color mixing. It produces saturated gradients with hue shifts and natural secondary colors during blending. Yellow and blue make green.">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="icon" href="img/mixbox_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
 
-
-<title>매일 아침 자기 제품을 찾아오는 손님 : 네이버 블로그</title>
-<script type="text/javascript" src="https://ssl.pstatic.net/t.static.blog/mylog/versioning/Frameset-341345692_https.js" charset="UTF-8"></script><script type="text/javascript" charset="UTF-8">
-var photoContent="";
-var postContent="";
-
-var videoId 	  = "";
-var thumbnail 	  = "";
-var inKey 		  = "";
-var movieFileSize = "";
-var playTime 	  = "";
-var screenSize 	  = "";
-
-var blogId = 'solder1819';
-var blogURL = 'https://blog.naver.com';
-var eventCnt = '';
-
-var g_ShareObject = {};
-g_ShareObject.referer = "";
-
-
-jsMVC.setController("framesetTitleController", FramesetTitleController);
-jsMVC.setController("framesetUrlController", FramesetUrlController);
-jsMVC.setController("framesetMusicController", FramesetMusicController);
-var oFramesetTitleController = jsMVC.getController("framesetTitleController");
-var oFramesetUrlController = jsMVC.getController("framesetUrlController");
-var oFramesetMusicController = jsMVC.getController("framesetMusicController");
-var sTitle = document.title;
-
-var topFrameAlert = function(message){
-	alert(message);
-};
-
-var topFrameConfirm = function(message){
-	if(confirm(message)){
-		return true;
-	} else {
-		return false;
-	}
-};
-</script><style type="text/css">
-    html{width:100%;height:100%;}
-    body{width:100%;height:100%;margin:0;padding:0;font-size:0;}
-    #mainFrame{width:100%;height:100%;margin:0;padding:0;border:0;}
-    #hiddenFrame{width:0;height:0;margin:0;padding:0;border:0;}
-</style></head>
-
-
-
+</head>
 
 <body>
-<iframe id="mainFrame" name="mainFrame" allowfullscreen="true" src="/PostView.naver?blogId=solder1819&amp;logNo=223709117264&amp;redirect=Dlog&amp;widgetTypeCall=true&amp;noTrackingCode=true&amp;directAccess=false" scrolling="auto" onload="oFramesetTitleController.start(self.frames['mainFrame'], self, sTitle);oFramesetTitleController.onLoadFrame();oFramesetUrlController.start(self.frames['mainFrame']);oFramesetUrlController.onLoadFrame();document.querySelector('#mainFrame').focus();"></iframe>
+    
+    <!-- Navbar --> 
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container">
+            <a href="https://scrtwpns.com" class="navbar-brand"><img srcset="./img/scrtwpns-logo.png, ./img/scrtwpns-logo@1.5x.png 1.5x, ./img/scrtwpns-logo@2x.png 2x" src="./img/scrtwpns-logo.png" alt="Secret Weapons logo" width="40px"></a>    
+            <a href="https://scrtwpns.com" class="navbar-brand fs-6">Secret Weapons</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto text-center ">
+                    <li class="nav-item px-3 py-3 py-lg-0">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item px-3 py-3 py-lg-0">
+                        <a href="https://scrtwpns.com" class="nav-link">Other Tools</a>
+                    </li>
+                    <li class="nav-item px-3 py-3 py-lg-0">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contact">Need Help?</a>
+                    </li>
+                    <li class="nav-item ms-lg-4 my-3 my-lg-0">
+                    <a class="my-button button-green button-small" href="https://scrtwpns.com/mixbox/painter" role="button">Try Demo</a>
+                </li>
+                </ul>
+            </div>   
+        </div>
+    </nav> 
+
+    <!-- Modal -->
+    <div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contactLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content p-md-4 p-2 txt-mygray">
+            <div class="modal-header">
+            <h5 class="modal-title" id="contactLabel"> <i class="bi bi-envelope-fill me-2"></i> Contact</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body green-link">
+            If there's anything we can help you with, mail us at <a href="mailto:mixbox@scrtwpns.com">mixbox@scrtwpns.com</a> and we'll get back to you as soon as possible.
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <section id="header">
+        <div class="container py-xxl-4 my-xxl-4 py-md-3 my-md-3 py-1 my-1">
+            <div class="row justify-content-center align-items-center text-center py-md-2">
+                <div class="col-lg-10 col-11">
+                    <img srcset="./img/mixbox-teaser-small.jpg, ./img/mixbox-teaser-small@1.5x.jpg 1.5x, ./img/mixbox-teaser-small@2x.jpg 2x" src="./img/mixbox-teaser-small.jpg" class="img-fluid d-block d-lg-none mx-auto" alt="Mixbox Poster">
+                    <img srcset="./img/mixbox-teaser.jpg, ./img/mixbox-teaser@1.5x.jpg 1.5x, ./img/mixbox-teaser@2x.jpg 2x" src="./img/mixbox-teaser.jpg" class="img-fluid d-none d-lg-block mx-auto" alt="Mixbox Poster">
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center text-md-center py-lg-5 py-md-4 py-3">
+                <div class="col-xl-9 col-lg-8 col-md-9 col-10">
+                    <!-- other -->
+                    <h2 class="d-lg-block d-md-none d-block fw-bold">Colors in painting software do not act like real&nbsp;pigments.</h2>
+                    <!-- tablet -->
+                    <h2 class="d-none d-md-block d-lg-none fw-bold h1">Colors in painting software do not act like real&nbsp;pigments.</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center text-md-center pb-xxl-3 pb-lg-0 pb-md-5 pb-3">
+                <div class="col-xxl-7 col-lg-9 col-md-8 col-10">
+                    <!-- tablet XL XXL -->
+                    <h4 class="d-xl-block d-lg-none d-md-block d-none fw-normal txt-mygray lh-base">Why? Because there was no practical way to implement true pigment mixing into digital painting. Until&nbsp;now.</h4>
+                    <!-- LG -->
+                    <h4 class="d-xl-none d-lg-block d-none fw-normal txt-mygray lh-base h5">Why? Because there was no practical way to implement true pigment mixing into digital painting. Until&nbsp;now.</h4>
+                    <!-- mobile -->
+                    <h4 class="d-md-none d-block fw-normal txt-mygray h6">Why? Because there was no practical way to implement true pigment mixing into digital painting. Until&nbsp;now.</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center text-center">
+                <div class="col-5"><hr class="green" style="width:89%; float: right;"></div>
+                <div class="col-md-1 col-2"><img src="./img/green-arrow.svg"></div>
+                <div class="col-5"><hr class="green" style="width:89%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mixbox Scheme -->
+    <section id="scheme">
+        <div class="container py-md-5 my-5">
+            <div class="row justify-content-xxl-around justify-content-evenly align-items-center py-lg-5">
+                <div class="col-xl-5 col-lg-5 col-md-8 col-10 pb-lg-0 pb-5">
+                    <img srcset="./img/mixbox-scheme.jpg, ./img/mixbox-scheme@1.5x.jpg 1.5x, ./img/mixbox-scheme@2x.jpg 2x" src="./img/mixbox-scheme.jpg" class="img-fluid">
+                </div>
+                <div class="col-xl-5 col-lg-6 col-md-8 col-10 pt-lg-0 pt-md-5 pt-3">
+                    <h2 class="fw-bold pb-lg-4 pb-md-4 pb-2">Mixbox is a practical library for paint-like color mixing</h2>
+                    <!-- other -->
+                    <ul class="txt-mygray py-lg-4 py-md-2 d-md-block d-none">
+                        <li class="py-2">Treats colors as <strong>pigments</strong> using Kubelka &amp; Munk</li>
+                        <li class="py-2">Packed in a simple <strong>RGB-in, RGB-out</strong> interface</li>
+                        <li class="pt-2 pb-4">Available in <strong>C++, Python, GLSL</strong> and more</li>
+                    </ul>
+                    <!-- mobile -->
+                    <ul class="nomag txt-mygray py-lg-4 py-md-2 py-3 d-block d-md-none">
+                        <li class="py-1">Treats colors as <strong>pigments</strong></li>
+                        <li class="py-1">Simple <strong>RGB-in, RGB-out</strong> interface</li>
+                        <li class="pt-1 pb-2"><strong>C++, Python, GLSL</strong> and more</li>
+                    </ul>
+                    <!-- buttons other -->
+                    <div class="d-lg-flex d-none align-items-center">
+                        <a class="my-button button-green button-long me-3" href="https://github.com/scrtwpns/mixbox" role="button">
+                            <i class="bi bi-github fs-3 pe-2"></i>GitHub
+                        </a>
+                        <a class="my-button button-green-outline" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
+                    </div>
+                    <!-- buttons tablet -->
+                    <div class="d-lg-none d-md-flex d-none align-items-center">
+                        <a class="my-button button-green me-3" href="https://github.com/scrtwpns/mixbox" role="button">
+                            <i class="bi bi-github fs-3 pe-2"></i>GitHub
+                        </a>
+                        <a class="my-button button-green-outline" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
+                    </div>
+                    <!-- buttons mobile -->
+                    <div class="d-md-none d-block text-center">
+                        <a class="my-button button-green button-full-long mb-3" href="https://github.com/scrtwpns/mixbox" role="button">
+                            <i class="bi bi-github fs-3 pe-2"></i>GitHub
+                        </a>
+                        <a class="my-button button-green-outline button-full-long" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Real vs Digital -->
+     <section id="real-vs-digital">
+
+        <div class="container my-md-5 py-5">
+            <div class="row justify-content-center align-items-center text-center">
+                <div class="col"><hr class="gray"></div>
+                <div class="col-md-1 col-2"> <img src="./img/gray-arrow.svg"> </div>
+                <div class="col"><hr class="gray"></div>
+            </div>
+        </div>
+
+        <div class="container-fluid bg-video-img my-md-5 pt-md-5">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-11 col-12">
+                        <div class="video-wrap">
+                            <video autoplay="" muted="" playsinline="" loop="" poster="./img/video-poster.jpg">
+                            <source src="./src/mixbox-video.mp4" type="video/mp4">
+                            <!-- <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
+                            Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-md-5 py-4">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col col-10 mb-md-0 mb-3">
+                    <!-- buttons other -->
+                    <div class="d-md-block d-none align-items-center">
+                        <a class="my-button button-gray me-3" href="https://youtu.be/F2_JQG6YcQ4" target="_blank" role="button">Watch on Youtube</a>
+                        <a class="my-button button-gray-outline" href="comparisons.html" role="button">More Comparisons</a>
+                    </div>
+                    <!-- buttons mobile -->
+                    <div class="d-md-none d-block text-center">
+                        <a class="my-button button-gray button-full-long mb-3" href="https://youtu.be/F2_JQG6YcQ4" target="_blank" role="button">Watch on Youtube</a>
+                        <a class="my-button button-gray-outline button-full-long" href="comparisons.html" role="button">More Comparisons</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try it Out -->
+    <section id="try-it-out">
+        <div class="container-fluid bg-mygreen py-5 px-0">
+            <div class="container my-lg-5 py-md-5 py-3">
+                <div class="row justify-content-xxl-around justify-content-lg-evenly justify-content-center align-items-center text-lg-start text-md-center text-start">
+                    <div class="col-lg-4 col-md-8 col-10">
+                        <!-- other -->
+                        <h1 class="display-3 fw-bold text-white d-block d-lg-none d-xl-block">Try it Out!</h1>
+                        <!-- LG -->
+                        <h1 class="display-4 fw-bold text-white d-none d-lg-block d-xl-none">Try it Out!</h1>
+                        <!-- other -->
+                        <p class="d-none d-md-block text-white lh-lg py-3 pe-xxl-5"><strong>The best way to appreciate pigment mixing is to feel it on your own.</strong> Here's a demo painter for you to try Mixbox&nbsp;out.</p>
+                        <!-- mobile -->
+                        <p class="d-block d-md-none text-white py-3 pe-sm-5 pe-3"><strong>The best way to appreciate pigment mixing is to feel it on your own.</strong> Here's a demo painter for you to try Mixbox&nbsp;out.</p>
+                        <!-- button other -->
+                        <div class="d-none d-md-block">
+                            <a class="my-button button-white button-long mb-5 mb-lg-0" href="https://scrtwpns.com/mixbox/painter/" role="button">Open Painter</a>
+                        </div>
+                        <!-- button mobile -->
+                        <div class="d-md-none d-block">
+                            <a class="my-button button-white button-full-long mb-5" href="https://scrtwpns.com/mixbox/painter/" role="button">Open Painter</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-10">
+                        
+                            <video autoplay="" muted="" playsinline="" loop="" poster="./img/mixbox-painter.jpg" onclick="location.href='https://scrtwpns.com/mixbox/painter';" class="mycursor">
+                            <source src="./src/mixbox-painter.mp4" type="video/mp4"> 
+                            <!-- <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
+                            Your browser does not support HTML5 video.
+                          
+                      
+                        <!-- <img src="./img/mixbox-painter.jpg" class="img-fluid" alt="Mixbox Painter"> -->
+                    </video></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Effects of real paints -->
+    <section id="realpaints">
+        <div class="container py-md-5 py-2 mt-5 mb-3">
+            <div class="row justify-content-xxl-around justify-content-lg-center justify-content-evenly align-items-center py-3">
+                <div class="col-lg-4 col-md-8 col-10">
+                    <!-- desktop -->
+                    <h1 class="fw-bold display-5 txt-mygreen d-xxl-block d-none pb-3">Color Effects of Real Paints</h1>
+                    <!-- tablet -->
+                    <h1 class="fw-bold display-5 txt-mygreen d-lg-none d-md-block d-none pb-3">Color Effects of Real Paints</h1>
+                    <!-- other -->
+                    <h1 class="fw-bold txt-mygreen d-xxl-none d-lg-block d-md-none d-block pb-2">Color Effects of Real Paints</h1>
+                    <ul class="txt-mygray nomag py-3">
+                        <li class="py-md-2 py-1"><strong>Rich Gradients</strong> with Hue Shifts</li>
+                        <li class="py-md-2 py-1">Natural and <strong>Vibrant Mixtures</strong></li>
+                        <li class="pt-md-2 pb-md-4 pt-1 pb-2"><strong>Juicy Brushstroke</strong> Falloff</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7 col-md-7 col-9">
+                    <!-- other -->
+                    <img srcset="./img/paint-effects.jpg, ./img/paint-effects@1.5x.jpg 1.5x, ./img/paint-effects@2x.jpg 2x" src="./img/paint-effects.jpg" class="img-fluid d-none d-lg-block" alt="Paint Effects">
+                    <!-- tablet desktop -->
+                    <img srcset="./img/paint-effects-small.jpg, ./img/paint-effects-small@1.5x.jpg 1.5x, ./img/paint-effects-small@2x.jpg 2x" src="./img/paint-effects-small.jpg" class="img-fluid d-block d-lg-none" alt="Paint Effects">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col"> <hr class="gray"> </div>
+                <div class="col-md-1 col-2"> <img src="./img/gray-arrow.svg"> </div>
+                <div class="col-lg-4 col"> <hr class="gray"> </div>
+                <div class="col-1 d-none d-lg-block"> <img src="./img/gray-arrow.svg"> </div>  
+                <div class="col d-none d-lg-block"> <hr class="gray"> </div>   
+            </div>
+        </div>
+    </section>
+
+    <!-- Painting Software - Mixbox -->
+    <section id="software-vs-mixbox">
+        <div class="container my-md-5 my-4">
+            <div class="row justify-content-lg-center justify-content-md-evenly justify-content-evenly align-items-center text-center my-xxl-5 py-xxl-3 my-md-3 py-md-3 py-3 my-1 gx-md-4 gx-0">
+                <div class="col-lg-4 col-5">
+                    <!-- other -->
+                    <h2 class="fw-bold txt-mygray d-none d-md-block d-lg-none d-xl-block">Painting Software</h2>
+                    <!-- LG -->
+                    <h2 class="fw-bold txt-mygray d-none d-lg-block d-xl-none h3">Painting Software</h2>
+                    <!-- mobile -->
+                    <h2 class="fw-bold txt-mygray d-block d-md-none h4">Paint Apps</h2>
+                </div>
+                <div class="col-1 d-none d-lg-block"></div>
+                <div class="col-lg-4 col-5">
+                    <!-- other -->
+                    <h2 class="fw-bold txt-mygray d-none d-md-block d-lg-none d-xl-block">Mixbox</h2>
+                    <!-- LG -->
+                    <h2 class="fw-bold txt-mygray d-none d-lg-block d-xl-none h3">Mixbox</h2>
+                    <!-- mobile -->
+                    <h2 class="fw-bold txt-mygray d-block d-md-none h4">Mixbox</h2>
+                </div>
+            </div>
+            <div class="row justify-content-lg-around justify-content-evenly text-center align-items-center gx-md-4 gx-0">
+                <div class="col-5">
+                    <!-- PC -->   <img srcset="./img/software-vs-mixbox-left.jpg, ./img/software-vs-mixbox-left@1.5x.jpg 1.5x, ./img/software-vs-mixbox-left@2x.jpg 2x" src="./img/software-vs-mixbox-left.jpg" class="img-fluid d-none d-lg-block" alt="Software-vs-Mixbox"> 
+                    <!-- tablet--><img srcset="./img/software-vs-mixbox-left-medium.jpg, ./img/software-vs-mixbox-left-medium@1.5x.jpg 1.5x, ./img/software-vs-mixbox-left-medium@2x.jpg 2x" src="./img/software-vs-mixbox-left-medium.jpg" class="img-fluid d-none d-md-block d-lg-none" alt="Software-vs-Mixbox">
+                    <!-- mobile--><img srcset="./img/software-vs-mixbox-left-small.jpg, ./img/software-vs-mixbox-left-small@1.5x.jpg 1.5x, ./img/software-vs-mixbox-left-small@2x.jpg 2x" src="./img/software-vs-mixbox-left-small.jpg" class="img-fluid d-block d-md-none" alt="Software-vs-Mixbox">
+                </div>
+                <div class="col-5">
+                    <!-- PC -->   <img srcset="./img/software-vs-mixbox-right.jpg, ./img/software-vs-mixbox-right@1.5x.jpg 1.5x, ./img/software-vs-mixbox-right@2x.jpg 2x" src="./img/software-vs-mixbox-right.jpg" class="img-fluid d-none d-lg-block" alt="Software-vs-Mixbox">
+                    <!-- tablet--><img srcset="./img/software-vs-mixbox-right-medium.jpg, ./img/software-vs-mixbox-right-medium@1.5x.jpg 1.5x, ./img/software-vs-mixbox-right-medium@2x.jpg 2x" src="./img/software-vs-mixbox-right-medium.jpg" class="img-fluid d-none d-md-block d-lg-none" alt="Software-vs-Mixbox">
+                    <!-- mobile--><img srcset="./img/software-vs-mixbox-right-small.jpg, ./img/software-vs-mixbox-right-small@1.5x.jpg 1.5x, ./img/software-vs-mixbox-right-small@2x.jpg 2x" src="./img/software-vs-mixbox-right-small.jpg" class="img-fluid d-block d-md-none" alt="Software-vs-Mixbox">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact on Digital Art -->
+    <section id="Impact">
+        <div class="container mt-5 py-5">
+            <div class="row justify-content-center text-center">
+                <div class="col"><hr class="green"></div>
+                <div class="col-md-1 col-2"><img src="./img/green-arrow.svg"></div>
+                <div class="col"><hr class="green"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center text-md-center text-start mt-3 pt-3">
+                <div class="col-lg-12 col-md-9 col-10"><h1 class="fw-bold display-5 txt-mygreen text-md-center text-start">Impact on Digital <span class="d-inline d-md-none">Painting</span><span class="d-none d-md-inline">Art</span></h1></div>
+            </div>
+        </div>
+        <div class="container my-lg-5 py-md-5 py-4">
+            <div class="row justify-content-evenly align-items-center mb-lg-3 mb-md-5 mb-3">
+                <div class="col-lg-6 col-10 mb-lg-0 mb-3">
+                    <img srcset="./img/smudging.jpg, ./img/smudging@1.5x.jpg 1.5x, ./img/smudging@2x.jpg 2x" src="./img/smudging.jpg" class="img-fluid" alt="Layering of brushstrokes">
+                </div>
+                <div class="col-lg-4 col-md-9 col-10 text-lg-end text-md-center text-start">
+                    <!-- desktop, tablet --><h2 class="d-none d-md-block d-lg-none d-xl-block fw-bold txt-mylightgray">Satisfying Smudging</h2>
+                    <!-- LG --><h2 class="d-none d-lg-block d-xl-none fw-bold txt-mylightgray h3">Satisfying Smudging</h2>
+                    <!-- mobile --><h2 class="d-block d-md-none fw-bold txt-mylightgray h4">Satisfying Smudging</h2>
+
+                    <!-- desktop, tablet -->
+                    <p class="d-none d-md-block d-lg-none d-xl-block txt-mygray lh-lg pt-3">No more muddy mixtures, smudge brush is now your friend! It'll <span class="d-none d-lg-inline d-xxl-none">help you </span>bring natural gradients into your&nbsp;art.</p>
+                    <!-- LG -->
+                    <p class="d-none d-lg-block d-xl-none txt-mygray pt-3">No more muddy mixtures, smudge brush is now your friend! It'll <span class="d-none d-lg-inline d-xxl-none">help you </span>bring natural gradients into your&nbsp;art.</p>
+                    <!-- mobile --><p class="d-block d-md-none txt-mygray">No more muddy mixtures, smudge brush is now your&nbsp;friend!</p> 
+
+                </div>
+            </div>
+            <div class="row justify-content-evenly align-items-center mb-3 ">
+                <div class="col-lg-4 col-md-9 col-10 text-lg-start text-md-center text-start order-lg-1 order-2">
+                    <!-- other -->
+                        <!-- desktop, tablet --><h2 class="d-none d-md-block d-lg-none d-xl-block fw-bold txt-mylightgray">Juicy Brushstrokes</h2>
+                        <!-- LG --><h2 class="d-none d-lg-block d-xl-none fw-bold txt-mylightgray h3">Juicy Brushstrokes</h2>
+                        <!-- mobile --><h2 class="d-block d-md-none fw-bold txt-mylightgray h4">Juicy Brushstrokes</h2>
+
+                    <!-- desktop, tablet -->
+                    <p class="d-none d-md-block d-lg-none d-xl-block txt-mygray lh-lg pt-3">Layering of textured brushstrokes won't desaturate your art anymore. Brushes will have a rich and vibrant&nbsp;fallof.</p>
+                    <!-- LG -->
+                        <p class="d-none d-lg-block d-xl-none txt-mygray pt-3">Layering of textured brushstrokes won't desaturate your art anymore. Brushes will have a rich and vibrant&nbsp;fallof.</p>
+                    <!-- mobile --><p class="d-block d-md-none txt-mygray">Layering of textured brushstrokes won't desaturate your art&nbsp;anymore!</p>                 
+                </div>
+                <div class="col-lg-6 col-10 mb-lg-0 mb-3 order-lg-2 order-1">
+                    <img srcset="./img/layering.jpg, ./img/layering@1.5x.jpg 1.5x, ./img/layering@2x.jpg 2x" src="./img/layering.jpg" class="img-fluid" alt="Smudging">
+                </div>   
+            </div>
+            <div class="row justify-content-evenly align-items-center">
+                <div class="col-lg-6 col-10 mb-md-0 mb-3">
+                    <img srcset="./img/gradients.jpg, ./img/gradients@1.5x.jpg 1.5x, ./img/gradients@2x.jpg 2x" src="./img/gradients.jpg" class="img-fluid" alt="Layering of brushstrokes">
+                </div>
+                <div class="col-lg-4 col-md-9 col-10 text-lg-end text-md-center text-start">
+                    <!-- desktop, tablet --><h2 class="d-none d-md-block d-lg-none d-xl-block fw-bold txt-mylightgray">Rich, Deep Gradients</h2>
+                    <!-- LG --><h2 class="d-none d-lg-block d-xl-none fw-bold txt-mylightgray h3">Rich, Deep Gradients</h2>
+                    <!-- mobile --><h2 class="d-block d-md-none fw-bold txt-mylightgray h4">Rich, Deep Gradients</h2>
+
+                    <!-- dekstop, tablet -->
+                        <p class="d-none d-md-block d-lg-none d-xl-block txt-mygray lh-lg pt-3">Enjoy the hue shifts and radiant midtones! Build beautiful gradients from dark colors using just the pen&nbsp;pressure.</p>
+                    <!-- LG -->
+                        <p class="d-none d-lg-block d-xl-none txt-mygray pt-3">Enjoy the hue shifts and radiant midtones! Build beautiful gradients from dark colors using just the pen&nbsp;pressure.</p>
+                    <!-- mobile--><p class="d-block d-md-none txt-mygray">Build beautiful gradients from dark colors using just the pen&nbsp;pressure.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center my-md-5 py-md-5 my-4 py-4">
+                <div class="col"> <hr class="green"> </div>
+                <div class="col-md-1 col-2"> <img src="./img/green-arrow.svg"> </div>
+                <div class="col-lg-5 col"> <hr class="green"> </div>
+                <div class="col-1 d-none d-lg-block"> <img src="./img/green-arrow.svg"> </div>  
+                <div class="col d-none d-lg-block"> <hr class="green"> </div>   
+            </div>
+            <!-- desktop lg, xl, xxl -->
+            <div class="d-none d-lg-block">
+                <div class="row justify-content-center align-items-center text-center">
+                    <div class="col-6 text-center">
+                        <!-- xl, xxl --><h2 class="d-xl-block d-none fw-bold txt-mygreen">Natural Traditional Media</h2>   
+                        <!-- lg --><h2 class="d-xl-none d-block fw-bold txt-mygreen h3">Natural Traditional Media</h2>                   
+                    </div>
+                    <div class="col-6 text-center">
+                        <!-- xl, xxl --><h2 class="d-xl-block d-none fw-bold txt-mygreen">Realistic Fluid Simulation</h2>
+                        <!-- lg --><h2 class="d-xl-none d-block fw-bold txt-mygreen h3">Realistic Fluid Simulation</h2>  
+                    </div>   
+                </div>
+                <div class="row justify-content-around align-items-center text-center">
+                    <div class="col-xl-4 col-5 text-center">
+                        <p class=" lh-lg txt-mygray py-3">Mixbox is an essential part of Rebelle – a painting tool with beautiful digital oils&nbsp;and&nbsp;watercolors.</p>
+                    </div>
+                    <div class="col-xl-4 col-5 text-center">
+                        <p class=" lh-lg txt-mygray py-3">Mixbox is bringing realistic colors of liquids to Flip&nbsp;Fluids add-on&nbsp;for&nbsp;Blender.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center text-center">
+                    <div class="col text-center">
+                        <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/OqZCsqALNJ0" title="Mixbox in Rebelle" allowfullscreen=""></iframe></div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="ratio ratio-16x9">
+                            <video controls="" muted="" playsinline="" loop="" poster="./img/video-flipfluids-poster.jpg">
+                            <source src="./src/flipfluids-video.mp4" type="video/mp4">
+                            <!-- <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
+                            Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- tablet, mobil -->
+            <div class="d-block d-lg-none">
+                <div class="row justify-content-center align-items-center text-center pt-3">
+                    <div class="col-md-9 col-10 text-md-center text-start mb-5 pb-md-5 pb-3">
+                        <!-- tablet -->
+                        <h2 class="d-none d-md-block fw-bold txt-mygreen">Natural Traditional Media</h2>
+                        <p class="d-none d-md-block lh-lg txt-mygray py-3">Mixbox is an essential part of Rebelle – a painting tool with beautiful digital oils&nbsp;and&nbsp;watercolors.</p>
+                        <!-- mobil -->
+                        <h2 class="d-block d-md-none fw-bold txt-mygreen h4">Natural Traditional Media</h2>
+                        <p class="d-block d-md-none txt-mygray py-2">Mixbox is an essential part of Rebelle – a painting tool with beautiful digital oils&nbsp;and&nbsp;watercolors.</p>
+                       
+                        <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/OqZCsqALNJ0" title="Mixbox in Rebelle" allowfullscreen=""></iframe></div>
+                    </div>
+                    <div class="col-md-9 col-10 text-md-center text-start mb-3">
+                        <!-- tablet -->
+                        <h2 class="d-none d-md-block fw-bold txt-mygreen">Realistic Fluid Simulation</h2>
+                        <p class="d-none d-md-block lh-lg txt-mygray py-3">Mixbox is bringing realistic colors of liquids to Flip&nbsp;Fluids add-on&nbsp;for&nbsp;Blender.</p>
+                        <!-- mobil -->
+                        <h2 class="d-block d-md-none fw-bold txt-mygreen h4">Realistic Fluid Simulation</h2>
+                        <p class="d-block d-md-none txt-mygray py-2">Mixbox is bringing realistic colors of liquids to Flip&nbsp;Fluids add-on&nbsp;for&nbsp;Blender.</p>
+                        
+                        <div class="ratio ratio-16x9">
+                            <video controls="" muted="" playsinline="" loop="" poster="./img/video-flipfluids-poster.jpg">
+                            <source src="./src/flipfluids-video.mp4" type="video/mp4">
+                            <!-- <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
+                            Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- For Developers -->
+    <section id="for-developers">
+        <div class="container-fluid bg-brushstrokes-img bg-mydarkgreen pt-5">
+            <div class="container pt-5 mt-5">
+                <div class="row py-lg-3 py-md-1 my-md-5"></div>
+                <!-- DEVELOPERS -->
+                <div class="row justify-content-xxl-around justify-content-evenly align-items-center py-md-5 py-4">
+                    <div class="col-xl-4 col-lg-5 col-md-9 col-11 pb-lg-0 pb-3">
+                        <h1 class="fw-bold txt-mygreen pb-md-3 pb-2">For Developers</h1>
+                        <!-- XXL -->
+                        <ul class="green text-white py-3 d-none d-xxl-block">
+                            <li class="py-2">Mixbox has the classic <strong class="txt-mygreen fst-italic">lerp</strong> interface</li>
+                            <li class="py-2">You pass RGB colors in and get the mixed RGB out</li>
+                            <li class="py-2">Support for <strong class="txt-mygreen">Unity</strong> and <strong class="txt-mygreen">Android Studio</strong></li>
+                        </ul>
+                        <!-- LG, XL -->
+                        <ul class="green text-white py-3 d-none d-lg-block d-xxl-none">
+                            <li class="py-xl-2"><span>Mixbox has the classic <strong class="txt-mygreen fst-italic">lerp</strong> interface</span></li>
+                            <li class="py-xl-2"><span>You pass RGB in and get RGB out</span></li>
+                            <li class="py-xl-2"><span>Support for <strong class="txt-mygreen">Unity</strong> and <strong class="txt-mygreen">Android Studio</strong></span></li>
+                        </ul>
+                        <!-- tablet -->
+                        <ul class="green text-white pt-3 d-none d-md-block d-lg-none">
+                            <li class="py-2"><span>Mixbox has the classic <strong class="txt-mygreen fst-italic">lerp</strong> interface</span></li>
+                            <li class="py-2"><span>You pass RGB colors in and get the mixed RGB out</span></li>
+                            <li class="pt-2 pb-4"><span>Support for <strong class="txt-mygreen">Unity</strong> and <strong class="txt-mygreen">Android Studio</strong></span></li>
+                        </ul>
+                        <!-- mobile -->
+                        <ul class="nomag green text-white pt-3 d-block d-md-none">
+                            <li class=""><span>Mixbox has the <strong class="txt-mygreen fst-italic">lerp</strong> interface</span></li>
+                            <li class=""><span>Pass RGB in and get RGB out</span></li>
+                            <li class=""><span>Support for <strong class="txt-mygreen">Unity</strong> and <strong class="txt-mygreen">Android</strong></span></li>
+                        </ul>
+                        <!-- button github for LG, XL, XXL -->
+                        <div class="d-none d-lg-flex align-items-center pt-md-3 pt-2 pb-lg-0 pb-md-5 pb-2">
+                            <a class="my-button button-green button-long me-3" href="https://github.com/scrtwpns/mixbox" role="button">
+                                <i class="bi bi-github fs-3 pe-2"></i>GitHub
+                            </a>
+                            <a class="my-button button-green-outline" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
+                        </div>    
+                    </div>
+                    <div class="col-xl-6 col-lg-7 col-md-9 col-11">
+                        <!-- CODE -->
+                        <ul class="nav nav-tabs code-tabs" id="code" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="cpp-tab" data-bs-toggle="tab" data-bs-target="#cpp" type="button" role="tab" aria-controls="cpp" aria-selected="true">C++</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="glsl-tab" data-bs-toggle="tab" data-bs-target="#glsl" type="button" role="tab" aria-controls="glsl" aria-selected="false">GLSL</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="js-tab" data-bs-toggle="tab" data-bs-target="#js" type="button" role="tab" aria-controls="js" aria-selected="false">JS</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="python-tab" data-bs-toggle="tab" data-bs-target="#python" type="button" role="tab" aria-controls="python" aria-selected="false">Python</button>
+                            </li>
+                            <li class="nav-item d-none d-xxl-flex" role="presentation">
+                                <button class="nav-link" id="java-tab" data-bs-toggle="tab" data-bs-target="#java" type="button" role="tab" aria-controls="java" aria-selected="false">Java</button>
+                            </li>
+                            <li class="nav-item d-none d-xxl-flex" role="presentation">
+                                <button class="nav-link" id="rust-tab" data-bs-toggle="tab" data-bs-target="#rust" type="button" role="tab" aria-controls="rust" aria-selected="false">Rust</button>
+                            </li>
+                            <li class="nav-item d-none d-md-flex" role="presentation">
+                                <button class="nav-link" id="unity-tab" data-bs-toggle="tab" data-bs-target="#unity" type="button" role="tab" aria-controls="unity" aria-selected="false">Unity</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="codeContent">
+
+                            <div class="tab-pane fade show active" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
+<!-- CPP  -->
+<div class="mycode">
+<pre class="line-numbers language-cpp" tabindex="0"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"mixbox.h"</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">uint8_t</span> r1 <span class="token operator">=</span>   <span class="token number">0</span><span class="token punctuation">,</span> g1 <span class="token operator">=</span>  <span class="token number">33</span><span class="token punctuation">,</span> b1 <span class="token operator">=</span> <span class="token number">133</span><span class="token punctuation">;</span>
+  <span class="token keyword">uint8_t</span> r2 <span class="token operator">=</span> <span class="token number">252</span><span class="token punctuation">,</span> g2 <span class="token operator">=</span> <span class="token number">211</span><span class="token punctuation">,</span> b2 <span class="token operator">=</span>   <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">float</span> t <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span>                       
+  <span class="token keyword">uint8_t</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
+
+  <span class="token function">mixbox_lerp</span><span class="token punctuation">(</span>r1<span class="token punctuation">,</span> g1<span class="token punctuation">,</span> b1<span class="token punctuation">,</span>  <span class="token comment">// first color</span>
+              r2<span class="token punctuation">,</span> g2<span class="token punctuation">,</span> b2<span class="token punctuation">,</span>  <span class="token comment">// second color</span>
+              t<span class="token punctuation">,</span>           <span class="token comment">// mixing ratio</span>
+              <span class="token operator">&amp;</span>r<span class="token punctuation">,</span> <span class="token operator">&amp;</span>g<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// result</span>
+
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d %d\n"</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="glsl" role="tabpanel" aria-labelledby="glsl-tab">
+<!-- GLSL -->
+<div class="mycode">
+<pre class="line-numbers language-glsl" tabindex="0"><code class="language-glsl"><span class="token keyword">uniform</span> <span class="token keyword">sampler2D</span> mixbox_lut<span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"mixbox.glsl"</span></span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">vec3</span> blue <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.129</span><span class="token punctuation">,</span> <span class="token number">0.522</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">vec3</span> yellow <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">0.988</span><span class="token punctuation">,</span> <span class="token number">0.827</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token keyword">float</span> t <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span> <span class="token comment">// mixing ratio</span>
+
+  <span class="token keyword">vec3</span> rgb <span class="token operator">=</span> <span class="token function">mixbox_lerp</span><span class="token punctuation">(</span>blue<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  gl_FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>rgb<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+                            </div>
+
+                            <div class="tab-pane fade" id="js" role="tabpanel" aria-labelledby="js-tab">
+<!-- Javascript -->
+<div class="mycode">
+<pre class="line-numbers language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">import</span> mixbox <span class="token keyword">from</span> <span class="token string">'mixbox'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> blue <span class="token operator">=</span> <span class="token string">"rgb(0, 33, 133)"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> yellow <span class="token operator">=</span> <span class="token string">"rgb(252, 211, 0)"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> t <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span> <span class="token comment">// mixing ratio</span>
+
+<span class="token keyword">let</span> rgb <span class="token operator">=</span> mixbox<span class="token punctuation">.</span><span class="token function">lerp</span><span class="token punctuation">(</span>blue<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rgb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+                            </div>
+
+                            <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
+<!-- Python -->
+<div class="mycode">
+<pre class="line-numbers language-python" tabindex="0"><code class="language-python"><span class="token keyword">import</span> mixbox
+
+rgb1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">133</span><span class="token punctuation">)</span>  <span class="token comment"># blue</span>
+rgb2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">252</span><span class="token punctuation">,</span> <span class="token number">211</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># yellow</span>
+t <span class="token operator">=</span> <span class="token number">0.5</span>              <span class="token comment"># mixing ratio</span>
+
+rgb_mix <span class="token operator">=</span> mixbox<span class="token punctuation">.</span>lerp<span class="token punctuation">(</span>rgb1<span class="token punctuation">,</span> rgb2<span class="token punctuation">,</span> t<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>rgb_mix<span class="token punctuation">)</span>
+
+
+
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+                            </div>
+
+                            <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
+<!-- Java -->
+<div class="mycode">
+<pre class="line-numbers language-java" tabindex="0"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>scrtwpns<span class="token punctuation">.</span></span><span class="token class-name">Mixbox</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainActivity</span> <span class="token keyword">extends</span> <span class="token class-name">Activity</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span><span class="token class-name">Bundle</span> saved<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>saved<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> color1 <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">rgb</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">133</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// blue</span>
+    <span class="token keyword">int</span> color2 <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">rgb</span><span class="token punctuation">(</span><span class="token number">252</span><span class="token punctuation">,</span> <span class="token number">211</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// yellow</span>
+    <span class="token keyword">float</span> t <span class="token operator">=</span> <span class="token number">0.5f</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> colorMix <span class="token operator">=</span> <span class="token class-name">Mixbox</span><span class="token punctuation">.</span><span class="token function">lerp</span><span class="token punctuation">(</span>color1<span class="token punctuation">,</span> color2<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">View</span> view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">View</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    view<span class="token punctuation">.</span><span class="token function">setBackgroundColor</span><span class="token punctuation">(</span>colorMix<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">setContentView</span><span class="token punctuation">(</span>view<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+                            </div>
+
+                            <div class="tab-pane fade" id="rust" role="tabpanel" aria-labelledby="rust-tab">
+<!-- Rust -->
+<div class="mycode">
+<pre class="line-numbers language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> rgb1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">133</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// blue</span>
+  <span class="token keyword">let</span> rgb2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">252</span><span class="token punctuation">,</span> <span class="token number">211</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// yellow</span>
+        
+  <span class="token keyword">let</span> t <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span>  <span class="token comment">// mixing ratio</span>
+    
+  <span class="token keyword">let</span> <span class="token punctuation">[</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token namespace">mixbox<span class="token punctuation">::</span></span><span class="token function">lerp</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>rgb1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rgb2<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{} {} {}"</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+                            </div>
+                            <div class="tab-pane fade" id="unity" role="tabpanel" aria-labelledby="unity-tab">
+<!-- unity -->
+<div class="mycode">
+<pre class="line-numbers language-csharp" tabindex="0"><code class="language-csharp"><span class="token keyword">using</span> <span class="token namespace">Scrtwpns<span class="token punctuation">.</span>Mixbox</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NewBehaviourScript</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">MonoBehaviour</span></span>
+<span class="token punctuation">{</span>
+  <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token class-name">Color</span> blue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Color</span><span class="token punctuation">(</span><span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.13f</span><span class="token punctuation">,</span> <span class="token number">0.52f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Color</span> yellow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Color</span><span class="token punctuation">(</span><span class="token number">0.99f</span><span class="token punctuation">,</span> <span class="token number">0.83f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name"><span class="token keyword">float</span></span> t <span class="token operator">=</span> <span class="token number">0.5f</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">Color</span> mixed <span class="token operator">=</span> Mixbox<span class="token punctuation">.</span><span class="token function">Lerp</span><span class="token punctuation">(</span>blue<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+    Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>mixed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+                            </div>
+
+                        </div>    
+
+                        <!-- buttons tablet -->
+                        <div class="d-lg-none d-md-flex d-none align-items-center justify-content-center pt-md-5 pt-4">
+                            <a class="my-button button-green me-3" href="https://github.com/scrtwpns/mixbox" role="button">
+                                <i class="bi bi-github fs-3 pe-2"></i>GitHub
+                            </a>
+                            <a class="my-button button-green-outline" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
+                        </div>
+                        <!-- buttons mobile -->
+                        <div class="d-md-none d-block text-center pt-md-5 pt-4">
+                            <a class="my-button button-green button-full-long mb-3" href="https://github.com/scrtwpns/mixbox" role="button">
+                                <i class="bi bi-github fs-3 pe-2"></i>GitHub
+                            </a>
+                            <a class="my-button button-green-outline button-full-long" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- EXAMPLES -->
+                <div class="row justify-content-xxl-around justify-content-evenly align-items-center py-5">
+                    <div class="col-xl-6 col-lg-7 col-md-9 col-11 order-lg-1 order-2">
+                        <a href="examples.html"><img srcset="./img/examples.png, ./img/examples@1.5x.png 1.5x, ./img/examples@2x.png 2x" src="./img/examples.png" class="img-fluid" alt="Examples"></a>
+                        <!-- button examples for tablet -->
+                        <div class="d-none d-md-block d-lg-none text-center pt-md-4 pt-3 pb-md-0 pb-3">
+                            <a class="my-button button-green-outline button-long" href="examples.html" role="button">Examples</a>
+                        </div> 
+                        <!-- button examples for mobil -->
+                        <div class="d-block d-md-none text-center pt-md-4 pt-3 pb-md-0 pb-3">
+                            <a class="my-button button-green-outline button-full-long" href="examples.html" role="button">Examples</a>
+                        </div> 
+                    </div>
+                    <div class="col-xl-4 col-lg-5 col-md-8 col-11 text-md-end text-start order-lg-2 order-1 offset-lg-0 offset-md-2 offset-0">
+                        <h1 class="fw-bold txt-mygreen pb-md-3 pb-2">Coding Examples</h1>
+                        <!-- other -->
+                        <p class="d-none d-md-block lh-lg text-white py-3"><strong>See how Mixbox works in these fun and easy projects!</strong> They run live in your browser, so you can either play with the graphics or with&nbsp;the&nbsp;code.</p>
+                        <!-- mobile -->
+                        <p class="d-block d-md-none text-white py-3"><strong>See how Mixbox works in these easy projects!</strong> They run live in your browser, so go ahead and try&nbsp;them&nbsp;out.</p>
+                        <!-- button examples for lg, xl, xxl -->
+                        <div class="d-none d-lg-block pt-md-3 pt-2">
+                            <a class="my-button button-green-outline button-long" href="examples.html" role="button">Examples</a>
+                        </div>               
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research">
+        <div class="container-fluid bg-mydarkgreen bg-brushstrokes-btm-img pb-5">
+            <div class="container mb-5 pb-5">
+                <div class="row justify-content-xxl-around justify-content-evenly align-items-center py-md-5">
+                    <div class="col-xl-4 col-lg-5 col-md-9 col-11 pb-lg-0 pb-5">
+                        <h1 class="fw-bold txt-mygreen pb-md-3 pb-2">How it works</h1>
+                        <!-- other -->
+                        <p class="d-none d-md-block text-white fw-bold lh-lg pt-3">Do you want to know more about the science behind Mixbox? Here's&nbsp;our&nbsp;research.</p>
+                        <!-- mobile -->
+                        <p class="d-block d-md-none text-white fw-bold">Do you want to know more about the science behind Mixbox? Here's&nbsp;our&nbsp;research.</p>
+                        <p class="mt-md-5 mt-lg-3 mt-xl-5 pt-2">
+                            <button id="intro" class="mytoggle mytoggle-active" onclick="toggleVideo('intro', 'conference')">
+                                <i class="bi bi-play-fill pe-2"></i> Introduction video (10 minutes)
+                            </button>
+                        </p>
+                        <p class="mb-md-5 mb-lg-3 mb-xl-5 pb-2"> 
+                            <button id="conference" class="mytoggle" onclick="toggleVideo('conference', 'intro')">
+                                <i class="bi bi-play-fill pe-2"></i> Siggraph Talk (17 minutes)
+                            </button> 
+                        </p>
+                        <div class="d-inline white-link me-4"><a href="https://scrtwpns.com/mixbox.pdf"><i class="bi bi-file-earmark-text-fill fs-3 pe-2"></i>Paper.pdf</a></div>
+                        <div class="d-inline white-link"><a href="https://github.com/scrtwpns/mixbox" target="_blank"><i class="bi bi-github fs-3 pe-2"></i>GitHub</a></div> 
+                    </div>
+                    <div class="col-xl-6 col-lg-7 col-md-9 col-11">
+                        <div id="toggle-target">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/Xsqtg2yRl8M" title="Introduction Video" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-3 my-md-5"></div>
+                </div>    
+            </div>
+        </div>
+    </section>
+
+    <!-- License -->
+    <section id="license">
+        <div class="container my-md-5 pt-md-5 pb-md-5 pt-5 pb-3">
+            <div class="row justify-content-evenly align-items-center py-md-3">
+                <div class="col-xl-4 col-lg-5 col-md-9 col-10">
+                    <h1 class="fw-bold txt-mygreen pb-3">Licensing</h1>
+                    <!-- other -->
+                    <p class="txt-mygray lh-lg pt-md-3 pt-2 pb-lg-0 pb-md-5 pb-3 d-md-block d-none">
+                        <strong>Do you want Mixbox in your software? No problem! We have many flexible licensing options.</strong>
+                        Whether you're an indie developer or a big corporate, we'd be happy to hear you out and tailor the license to your needs. Get in touch with us to get the&nbsp;ball&nbsp;rolling!
+                    </p>
+                    <!-- mobile -->
+                    <p class="txt-mygray pt-md-3 pt-2 pb-lg-0 pb-md-5 pb-3 d-block d-md-none">
+                        <strong>Do you want Mixbox in your software? No problem! We have many flexible licensing options.</strong>
+                        Whether you're an indie developer or a big corporate, we'd be happy to hear you out and tailor the license to your needs. Get in touch with us to get the&nbsp;ball&nbsp;rolling!
+                    </p>
+                </div>
+                <div class="col-xl-4 col-lg-5 col-md-9 col-10">
+                    <p class="txt-mygray green-link">
+                        Leave us your contact details and we'll get back to you. You can also mail us directly at <a href="mailto:mixbox@scrtwpns.com" class="fw-bold">mixbox@scrtwpns.com</a>
+                    </p>
+                    <div class="text-center">
+                        <form action="https://formsubmit.co/d3e4637fbcb03ad0b8c5fcac40b443b1" method="post">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control form-lic" id="name" placeholder="Full Name" name="Name" required="">                                
+                                <label for="name">Full Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control form-lic" id="company" placeholder="Company / Product" name="Company-Product" required="">
+                                <label for="company">Company / Product</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control form-lic" id="floatingInput" placeholder="E-Mail Address" name="Email" required="">
+                                <label for="floatingInput">E-mail address</label>
+                            </div>
+                            <input type="text" name="_honey" style="display:none">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://scrtwpns.com/mixbox/index.html#license">
+                            <input type="hidden" name="_subject" value="License Request">
+                            <input type="hidden" name="_cc" value="ondrej.jamriska@gmail.com">
+                            <!-- other -->
+                            <button type="submit" class="my-button button-green button-long border-0 d-md-inline d-none">Submit</button>
+                            <!-- mobile -->
+                            <button type="submit" class="my-button-square button-green border-0 d-md-none d-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="formsent" tabindex="-1" aria-labelledby="formsentLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content p-md-4 p-2 txt-mygray">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="formsentLabel"> <i class="bi bi-envelope-fill me-2"></i> Thank you</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body green-link">
+                    Your message has been sent. We will get back to you as soon as possible.
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- About us -->
+    <section id="team">
+        <div class="container my-md-5 my-3 py-5">
+            <div class="row py-xl-3"></div>
+            <div class="row justify-content-center align-items-center text-center pb-5 mb-md-3">
+                <div class="col"><hr class="green"></div>
+                <div class="col-lg-3 col-md-5 col-7"><h3 class="fw-bold txt-mygreen">Secret Weapons</h3></div>
+                <div class="col"><hr class="green"></div>
+            </div>
+            <div class="row justify-content-center align-items-center text-md-center text-start txt-mygray pb-3 mb-md-3">
+                <div class="col-xl-6 col-md-10 col-10">
+                    <p class="lh-lg"><span class="fw-bold d-block">Hi! We are the development team behind EbSynth and Mixbox.</span>We both love computer graphics, art, and VFX. Together we founded Secret Weapons to transform our research into powerful tools for&nbsp;visual&nbsp;artists.</p> 
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center text-center gx-md-4 gx-0">
+                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 me-md-2 ps-md-0 ps-2">
+                    <div class="card border-0 align-items-center">
+                        <img srcset="./img/sarka2.jpg, ./img/sarka2@1.5x.jpg 1.5x, ./img/sarka2@2x.jpg 2x" src="img/sarka2.jpg" class="card-img-top profilepic" alt="Sarka Sochorova">
+                        <div class="card-body">
+                            <h6 class="card-title txt-mygray">Šárka Sochorová</h6>
+                            <a href="mailto:sarka@scrtwpns.com" class="green d-none d-md-block">sarka@scrtwpns.com</a>
+                            <a href="mailto:sarka@scrtwpns.com" class="green d-block d-md-none fs-mysize2">sarka@scrtwpns.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 ms-md-2 pe-md-0 pe-4">
+                    <div class="card border-0 align-items-center">
+                        <img srcset="./img/ondrej2.jpg, ./img/ondrej2@1.5x.jpg 1.5x, ./img/ondrej2@2x.jpg 2x" src="img/ondrej2.jpg" class="card-img-top profilepic" alt="Ondrej Jamriska">
+                        <div class="card-body">
+                            <h6 class="card-title txt-mygray">Ondřej Jamriška</h6>
+                            <a href="mailto:ondrej@scrtwpns.com" class="green d-none d-md-block">ondrej@scrtwpns.com</a>
+                            <a href="mailto:ondrej@scrtwpns.com" class="green d-block d-md-none fs-mysize2">ondrej@scrtwpns.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container-fluid bg-grad my-md-5 my-3 py-5">
+            <div class="row justify-content-center align-items-center pt-md-5 pt-4">
+                <div class="col-xxl-5 col-lg-7 col-md-9 col-11">
+                    <!-- other -->
+                    <h3 class="d-none d-md-block fw-bold txt-mygray text-center pb-5">Frequently Asked Questions</h3>
+                    <!-- mobil -->
+                    <h3 class="d-block d-md-none fw-bold txt-mygray pb-4 ps-3 h4">Frequently Asked Questions</h3>
+                    <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <span class="d-none d-md-inline">How do I use Mixbox in Photoshop / Procreate / CSP?</span>
+                                <span class="d-md-none d-inline">How do I use Mixbox in PS / Procreate / CSP?</span>  
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">We would love for you to have Mixbox inside your favorite painting tools. However, Mixbox is not a plugin you could install yourselves. It is a piece of code for a new blending mode, and the only way to get it in painting software is if the developers do it. A possible way to achieve that is by letting them know you want it. Here are some user forums where you can drop a note if you'd like:
+                                <!-- other -->
+                                <ul class="d-none d-md-block txt-mygray green-link mt-3">
+                                    <li>Adobe Photoshop - <a href="https://community.adobe.com/t5/photoshop-ecosystem/ct-p/ct-photoshop?page=1&amp;sort=latest_replies&amp;filter=all&amp;tabid=ideas" target="_blank">community.adobe.com</a></li>
+                                    <li>Adobe Fresco - <a href="https://adobefresco.uservoice.com/" target="_blank">adobefresco.uservoice.com</a></li>
+                                    <li>Procreate - <a href="https://folio.procreate.art/discussions/3" target="_blank">folio.procreate.art/discussions</a></li>
+                                    <li>Clip Studio Paint - <a href="mailto:tech@celsys.co.jp">tech@celsys.co.jp</a></li>
+                                    <li>Corel Painter - <a href="https://www.corel.com/en/support/?hptrack=mmsup#corel" target="_blank">corel.com/en/support</a></li>
+                                </ul>
+                                <!-- mobile -->
+                                <ul class="d-block d-md-none nomag txt-mygray green-link mt-3">
+                                    <li class="pb-3"><span class="d-block">Adobe Photoshop</span> 
+                                        <a href="https://community.adobe.com/t5/photoshop-ecosystem/ct-p/ct-photoshop?page=1&amp;sort=latest_replies&amp;filter=all&amp;tabid=ideas" target="_blank">community.adobe.com</a></li>
+                                    <li class="pb-3"><span class="d-block">Adobe Fresco</span>
+                                        <a href="https://adobefresco.uservoice.com/" target="_blank">adobefresco.uservoice.com</a></li>
+                                    <li class="pb-3"><span class="d-block">Procreate</span>
+                                        <a href="https://folio.procreate.art/discussions/3" target="_blank">folio.procreate.art/discussions</a></li>
+                                    <li class="pb-3"><span class="d-block">Clip Studio Paint</span>
+                                        <a href="mailto:tech@celsys.co.jp">tech@celsys.co.jp</a></li>
+                                    <li class="pb-3"><span class="d-block">Corel Painter</span>
+                                        <a href="https://www.corel.com/en/support/?hptrack=mmsup#corel" target="_blank">corel.com/en/support</a></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                              Can I try it out before buying license?
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body"><span class="d-block green-link pb-3">Yes, Mixbox is released under the <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> license. That means you can evaluate it for free. You won't need to buy the commercial license until you're ready to launch your product. Please get in touch with us by that time to set the license up: <a href="mailto:mixbox@scrtwpns.com">mixbox@scrtwpns.com</a>
+                            </span></div>
+                          </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                What pigments can Mixbox do?
+                              </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body"> 
+                                <div class="grid-container text-center">                                   
+                                    <div class="grid-item">
+                                        Cadmium Yellow Light<br>
+                                        <img srcset="./img/cadmium-yellow-light.jpg, ./img/cadmium-yellow-light@1.5x.jpg 1.5x, ./img/cadmium-yellow-light@2x.jpg 2x" src="cadmium-yellow-light.jpg" alt="Cadmium Yellow Light">
+                                    </div>
+                                    <div class="grid-item">
+                                        Hansa Yellow<br>
+                                        <img srcset="./img/hansa-yellow.jpg, ./img/hansa-yellow@1.5x.jpg 1.5x, ./img/hansa-yellow@2x.jpg 2x" src="hansa-yellow.jpg" alt="Hansa Yellow">
+                                    </div>
+                                    <div class="grid-item">
+                                        Cadmium Yellow Deep<br>
+                                        <img srcset="./img/cadmium-yellow-deep.jpg, ./img/cadmium-yellow-deep@1.5x.jpg 1.5x, ./img/cadmium-yellow-deep@2x.jpg 2x" src="cadmium-yellow-deep.jpg" alt="Cadmium Yellow Deep">
+                                    </div>
+                                    <div class="grid-item">
+                                        Cadmium Orange Light<br>
+                                        <img srcset="./img/cadmium-orange-light.jpg, ./img/cadmium-orange-light@1.5x.jpg 1.5x, ./img/cadmium-orange-light@2x.jpg 2x" src="cadmium-orange-light.jpg" alt="Cadmium Orange Light">
+                                    </div>
+                                    <div class="grid-item">
+                                        Cadmium Orange<br>
+                                        <img srcset="./img/cadmium-orange-medium.jpg, ./img/cadmium-orange-medium@1.5x.jpg 1.5x, ./img/cadmium-orange-medium@2x.jpg 2x" src="cadmium-orange-medium.jpg" alt="Cadmium Orange Medium">
+                                    </div>
+                                    <div class="grid-item">
+                                        Cadmium Red Light<br>
+                                        <img srcset="./img/cadmium-red-light.jpg, ./img/cadmium-red-light@1.5x.jpg 1.5x, ./img/cadmium-red-light@2x.jpg 2x" src="cadmium-red-light.jpg" alt="Cadmium Red Light">
+                                    </div>
+                                    <div class="grid-item">
+                                        Cadmium Red Medium<br>
+                                        <img srcset="./img/cadmium-red-medium.jpg, ./img/cadmium-red-medium@1.5x.jpg 1.5x, ./img/cadmium-red-medium@2x.jpg 2x" src="cadmium-red-medium.jpg" alt="Cadmium Red Medium">
+                                    </div>
+                                    <div class="grid-item">
+                                        Pyrrole Red<br>
+                                        <img srcset="./img/pyrrole-red.jpg, ./img/pyrrole-red@1.5x.jpg 1.5x, ./img/pyrrole-red@2x.jpg 2x" src="pyrrole-red.jpg" alt="Pyrrole Red">
+                                    </div>
+                                    <div class="grid-item">
+                                        Alizarin Crimson<br>
+                                        <img srcset="./img/alizarin-crimson.jpg, ./img/alizarin-crimson@1.5x.jpg 1.5x, ./img/alizarin-crimson@2x.jpg 2x" src="alizarin-crimson.jpg" alt="Alizarin Crimson">
+                                    </div>
+                                    <div class="grid-item">
+                                        Quinacridone Magenta<br>
+                                        <img srcset="./img/quinacridone-magenta.jpg, ./img/quinacridone-magenta@1.5x.jpg 1.5x, ./img/quinacridone-magenta@2x.jpg 2x" src="quinacridone-magenta.jpg" alt="Quinacridone Magenta">
+                                    </div>
+                                    <div class="grid-item">
+                                        Cobalt Violet<br>
+                                        <img srcset="./img/cobalt-violet.jpg, ./img/cobalt-violet@1.5x.jpg 1.5x, ./img/cobalt-violet@2x.jpg 2x" src="cobalt-violet.jpg" alt="Cobalt Violet">
+                                    </div>
+                                    <div class="grid-item">
+                                        Ultramarine Violet<br>
+                                        <img srcset="./img/ultramarine-violet.jpg, ./img/ultramarine-violet@1.5x.jpg 1.5x, ./img/ultramarine-violet@2x.jpg 2x" src="ultramarine-violet.jpg" alt="Ultramarine Violet">
+                                    </div>
+                                    <div class="grid-item">
+                                        Ultramarine Blue<br>
+                                        <img srcset="./img/ultramarine-blue.jpg, ./img/ultramarine-blue@1.5x.jpg 1.5x, ./img/ultramarine-blue@2x.jpg 2x" src="ultramarine-blue.jpg" alt="Ultramarine Blue">  
+                                    </div>
+                                    <div class="grid-item">
+                                        Cobalt Blue<br>
+                                        <img srcset="./img/cobalt-blue.jpg, ./img/cobalt-blue@1.5x.jpg 1.5x, ./img/cobalt-blue@2x.jpg 2x" src="cobalt-blue.jpg" alt="Cobalt Blue">     
+                                    </div>
+                                    <div class="grid-item">
+                                        Phthalo Blue<br>
+                                        <img srcset="./img/phthalo-blue.jpg, ./img/phthalo-blue@1.5x.jpg 1.5x, ./img/phthalo-blue@2x.jpg 2x" src="phthalo-blue.jpg" alt="Phthalo Blue">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Cerulean Blue<br>
+                                        <img srcset="./img/cerulean-blue.jpg, ./img/cerulean-blue@1.5x.jpg 1.5x, ./img/cerulean-blue@2x.jpg 2x" src="cerulean-blue.jpg" alt="Cerulean Blue">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Prussian Blue<br>
+                                        <img srcset="./img/prussian-blue.jpg, ./img/prussian-blue@1.5x.jpg 1.5x, ./img/prussian-blue@2x.jpg 2x" src="prussian-blue.jpg" alt="Prussian Blue">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Phthalo Green<br>
+                                        <img srcset="./img/phthalo-green.jpg, ./img/phthalo-green@1.5x.jpg 1.5x, ./img/phthalo-green@2x.jpg 2x" src="phthalo-green.jpg" alt="Phthalo Green">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Permanent Green<br>
+                                        <img srcset="./img/permanent-green.jpg, ./img/permanent-green@1.5x.jpg 1.5x, ./img/permanent-green@2x.jpg 2x" src="permanent-green.jpg" alt="Permanent Green">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Permanent Green Light<br>
+                                        <img srcset="./img/permanent-green-light.jpg, ./img/permanent-green-light@1.5x.jpg 1.5x, ./img/permanent-green-light@2x.jpg 2x" src="permanent-green-light.jpg" alt="Permanent Green Light">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Sap Green<br>
+                                        <img srcset="./img/sap-green.jpg, ./img/sap-green@1.5x.jpg 1.5x, ./img/sap-green@2x.jpg 2x" src="sap-green.jpg" alt="Sap Green">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Burnt Sienna<br>
+                                        <img srcset="./img/burnt-sienna.jpg, ./img/burnt-sienna@1.5x.jpg 1.5x, ./img/burnt-sienna@2x.jpg 2x" src="burnt-sienna.jpg" alt="Burnt Sienna">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Indian Red<br>
+                                        <img srcset="./img/indian-red.jpg, ./img/indian-red@1.5x.jpg 1.5x, ./img/indian-red@2x.jpg 2x" src="indian-red.jpg" alt="Indian Red">                                      
+                                    </div>
+                                    <div class="grid-item">
+                                        Bone Black<br>
+                                        <img srcset="./img/bone-black.jpg, ./img/bone-black@1.5x.jpg 1.5x, ./img/bone-black@2x.jpg 2x" src="bone-black.jpg" alt="Bone Black">
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                              How does pigment mixing work?
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">You might be familiar with terms like additive and subtractive mixing. True pigment mixing is a complex combination of both. When you push paints out of a tube and mix them, the light entering the substance starts bouncing around. It gets repeatedly scattered and absorbed, and that's how the final color is made. The process is called subsurface scattering. 
+                            <span class="d-block green-link pt-3">If you want to know more, watch our <a href="https://youtu.be/Xsqtg2yRl8M">Introduction Video</a>, or our <a href="https://www.youtube.com/watch?v=_qa5iWdfNKg" target="_blank">Siggraph Talk</a>.</span></div>
+                          </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFive">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                Is there a version for shaders?
+                              </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body green-link">Yes, <a href="https://github.com/scrtwpns/mixbox" target="_blank">Mixbox 2.0</a> is running in the following languages: 
+                                    <ul>
+                                        <li class="py-2 fw-bold">C++, Python, Javascript, GLSL, HLSL, C#, Java, and Rust</li>
+                                    </ul>
+                                    We have support for these engines and frameworks:
+                                    <ul>
+                                        <li class="py-2 fw-bold">Unity, Android Studio, P5js, WebGL, and Godot.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="container mb-md-3 pb-5">
+        <div class="row justify-content-center align-items-center text-md-center">
+            <div class="col-xl-5 col-lg-8 col-md-9 col-10">
+                <!-- other -->
+                <h3 class="d-none d-md-block fw-bold txt-mygray">Interested in News?</h3>
+                <!-- mobil -->
+                <h3 class="d-block d-md-none fw-bold txt-mygray h4 ps-1">Interested in News?</h3>
+                <!-- other -->
+                <div class="d-none d-md-flex my-5">
+                    <form action="https://formsubmit.co/681ec884852273e2e560a6b70441288d" method="post" class="input-group">
+                            <input type="text" class="form-control newsletter fst-italic form-lic px-4" placeholder="Your E-Mail Address" aria-label="Your E-Mail Address" aria-describedby="button-addon2" name="email" required="">
+                            <input type="text" name="_honey" style="display:none">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://scrtwpns.com/mixbox">
+                            <button class="my-button button-green border-0 border-rad" type="submit" id="button-addon2">Submit</button>
+                    </form>
+                </div>
+                <!-- mobil -->
+                <div class="d-block d-md-none pt-3">
+                    <form action="https://formsubmit.co/681ec884852273e2e560a6b70441288d" method="post">
+                        <div class="form-floating mb-2">
+                            <input type="email" class="form-control form-lic" id="floatingInput" placeholder="E-Mail Address" name="email" required="">
+                            <label for="floatingInput">E-mail address</label>
+                            <input type="text" name="_honey" style="display:none">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://scrtwpns.com/mixbox">
+                        </div>
+                        <button type="submit" class="my-button-square button-green border-0">Submit</button>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container-fluid pt-4 pb-2 bg-mygray fs-mysize">
+            <div class="container">
+                <!-- other -->
+                <div class="row justify-content-center align-items-top d-none d-md-flex">
+                    <div class="col-xl-8 col-11 ms-lg-5 ms-3">
+                        <table class="table table-borderless txt-mygray2" width="99%">
+                            <tbody><tr>
+                                <td width="33%">
+                                    <ul class="foot">
+                                        <li class="fw-bold txt-mylight">Secret Weapons</li>
+                                        <li class="pt-1">1111B S Governors Ave</li>
+                                        <li class="">Dover, DE 19904</li>
+                                        <li class="">United States</li>
+                                    </ul>
+                                </td>
+                                <td width="33%"> 
+                                    <ul class="foot">
+                                        <li class="fw-bold txt-mylight">Contact</li>
+                                        <li class="pt-1">team@scrtwpns.com</li>
+                                        <li class="">sarka@scrtwpns.com</li>
+                                        <li class="">ondrej@scrtwpns.com</li>
+                                    </ul>
+                                </td>
+                                <td width="33%">
+                                    <strong class="txt-mylight">Follow Us</strong>
+                                    <hr class="gray pb-1" style="width:50%;">
+                                    <div class="d-inline fs-5 myfooter">
+                                        <a href="https://twitter.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-twitter pe-3"></i></a>
+                                        <a href="https://instagram.com/scrt.wpns" target="_blank" class="foot-link"><i class="bi bi-instagram pe-3"></i></a>
+                                        <a href="https://facebook.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-facebook pe-3"></i></a>
+                                        <a href="https://www.youtube.com/channel/UCcYK15gnJhpuIrQ0er9wRUA" target="_blank" class="foot-link"><i class="bi bi-youtube pe-3"></i></a>
+                                        <a href="https://github.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-github"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>                      
+                    </div>
+                </div>
+                <!-- mobile -->
+                <div class="row justify-content-center align-items-center text-center d-flex d-md-none txt-mygray2">
+                    <div class="col pb-4">
+                        <ul class="foot">
+                            <li class="fw-bold txt-mylight">Secret Weapons</li>
+                            <li class="fs-5 py-3">
+                                <a href="https://twitter.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-twitter pe-3"></i></a>
+                                <a href="https://instagram.com/scrt.wpns" target="_blank" class="foot-link"><i class="bi bi-instagram pe-3"></i></a>
+                                <a href="https://facebook.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-facebook pe-3"></i></a>
+                                <a href="https://www.youtube.com/channel/UCcYK15gnJhpuIrQ0er9wRUA" target="_blank" class="foot-link"><i class="bi bi-youtube pe-3"></i></a>
+                                <a href="https://github.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-github"></i></a>
+                            </li>
+                            <li>team@scrtwpns.com</li>
+                            <li>1111B S Governors Ave</li>
+                            <li>Dover, DE 19904, US</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="prism.js"></script>
+
+    <script language="javascript">
+        window.onload = function(){ 
+            if(window.location.hash === '#license'){
+                var myModal = new bootstrap.Modal(document.getElementById('formsent'))
+                myModal.show();
+            }
+           
+        }
+    </script>
+
+
+    <script>
+        var introHtml = '<div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/Xsqtg2yRl8M" title="Introduction Video" allowfullscreen></iframe></div>';
+        var conferenceHtml = '<div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/_qa5iWdfNKg"title="Conference Video"allowfullscreen></iframe></div>';
+
+        function toggleVideo(first, second) {
+            document.getElementById(first).classList.add("mytoggle-active");
+            document.getElementById(second).classList.remove("mytoggle-active");
+
+            if(first.length > 5)
+            {
+                document.getElementById("toggle-target").innerHTML = conferenceHtml;
+            }
+            else {
+                document.getElementById("toggle-target").innerHTML = introHtml;
+            }
+          
+        } 
+    </script>
+
+    <script>
+        window.addEventListener('load', videoScroll);
+        window.addEventListener('scroll', videoScroll);
+
+        function videoScroll() {
+
+        if ( document.querySelectorAll('video[autoplay]').length > 0) {
+            var windowHeight = window.innerHeight,
+                videoEl = document.querySelectorAll('video[autoplay]');
+
+            for (var i = 0; i < videoEl.length; i++) {
+
+            var thisVideoEl = videoEl[i],
+                videoHeight = thisVideoEl.clientHeight,
+                videoClientRect = thisVideoEl.getBoundingClientRect().top;
+
+            if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
+                thisVideoEl.play();
+            } else {
+                thisVideoEl.pause();
+            }
+
+            }
+        }
+
+        }
+    </script>
+
+ 
 
 </body></html>
