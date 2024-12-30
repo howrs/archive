@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 www.typescriptlang.org/tsconfig/#experimentalDecorators
+=======
+www.typescriptlang.org/tsconfig/#emitDecoratorMetadata
+>>>>>>> Stashed changes
 =======
 www.typescriptlang.org/tsconfig/#emitDecoratorMetadata
 >>>>>>> Stashed changes
