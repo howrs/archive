@@ -1,1220 +1,550 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mixbox - Natural Color Mixing Based on Real Pigments</title>
+<!DOCTYPE html><html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en-GB" class="yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-minervamodern-n4-active wf-freightneopro-n4-active wf-minervamodern-i7-active wf-minervamodern-i4-active wf-minervamodern-n7-active wf-minionprodisplay-i4-active wf-active" style=""><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1">
 
-    <meta property="og:title" content="Mixbox - Natural Color Mixing Based on Real Pigments">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://scrtwpns.com/mixbox">
-    <meta property="og:image" content="https://scrtwpns.com/mixbox/og_image.jpg">
-    <meta property="og:description" content="Mixbox is a new blending method for natural color mixing. It produces saturated gradients with hue shifts and natural secondary colors during blending. Yellow and blue make green.">
+    <!-- This is Squarespace. --><!-- benedict-evans -->
+<base href="">
+<meta charset="utf-8">
+<title>Presentations — Benedict Evans</title>
+<meta http-equiv="Accept-CH" content="Sec-CH-UA-Platform-Version, Sec-CH-UA-Model"><link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/50363cf324ac8e905e7df861/ebdb4645-db93-4967-881d-db698ee59c2c/favicon.ico?format=100w">
+<link rel="canonical" href="https://www.ben-evans.com/presentations">
+<meta property="og:site_name" content="Benedict Evans">
+<meta property="og:title" content="Presentations — Benedict Evans">
+<meta property="og:url" content="https://www.ben-evans.com/presentations">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Every year, I produce a big presentation exploring macro and strategic trends in the tech industry. For 2024, ‘AI, and everything else’.">
+<meta property="og:image" content="http://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/673eeddeae9f233d450a5f35/1732817354152/AI+eats+the+world.001.png?format=1500w">
+<meta property="og:image:width" content="1500">
+<meta property="og:image:height" content="843">
+<meta itemprop="name" content="Presentations — Benedict Evans">
+<meta itemprop="url" content="https://www.ben-evans.com/presentations">
+<meta itemprop="description" content="Every year, I produce a big presentation exploring macro and strategic trends in the tech industry. For 2024, ‘AI, and everything else’.">
+<meta itemprop="thumbnailUrl" content="http://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/673eeddeae9f233d450a5f35/1732817354152/AI+eats+the+world.001.png?format=1500w">
+<link rel="image_src" href="http://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/673eeddeae9f233d450a5f35/1732817354152/AI+eats+the+world.001.png?format=1500w">
+<meta itemprop="image" content="http://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/673eeddeae9f233d450a5f35/1732817354152/AI+eats+the+world.001.png?format=1500w">
+<meta name="twitter:title" content="Presentations — Benedict Evans">
+<meta name="twitter:image" content="http://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/673eeddeae9f233d450a5f35/1732817354152/AI+eats+the+world.001.png?format=1500w">
+<meta name="twitter:url" content="https://www.ben-evans.com/presentations">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Every year, I produce a big presentation exploring macro and strategic trends in the tech industry. For 2024, ‘AI, and everything else’.">
+<meta name="description" content="Every year, I produce a big presentation exploring macro and strategic 
+trends in the tech industry. For 2024, ‘AI, and everything else’.">
+<link rel="preconnect" href="https://images.squarespace-cdn.com">
+<script type="text/javascript" src="//use.typekit.net/ik/XX-F5Wp7yw-zGOFfbqQjDRzGlG6Fen9FIFcmpK3S4OGfe7GIfFHN4UJLFRbh52jhWD93wDjDjhjDwRsyjDy85QMuZQiqZR6hws7fMkG0jAFu-WsoShFGZAsude80ZkoRdhXCHKoyjamTiY8Djhy8ZYmC-Ao1Oco8if37OcBDOcu8OfG0jcm0ZAsTjablZWZyd1w0SaBujW48Sagyjh90jhNlOfG0SaBujW48SagyjhmDjhy8ZYmC-Ao1OcFzdPUyjamTiY8Djhy8ZYmC-Ao1OcFzdPUyjamTiY8Djhy8ZYmC-Ao1Oco8ifUySkolZPUKZAtlZWZyd1w0jhNlOe48dcmq-AFXOAmhjAoDO1FUiABkZWF3jAF8OcFzdPUCdhFydeyzSabCSaBujW48SagyjhmDjhy8ZYmC-Ao1OcFzdPUaiaS0jAFu-WsoShFGZAsude80ZkoRdhXCiaiaOcBRiA8XpWFR-emqiAUTdcS0dcmXOYiaikoySkolZPUaiaS0jcm0OAmhjAoDOcFzdPUaiaS0jcm0ZAsTjablZWZyd1w0SaBujW48Sagyjh90jhNlOYiaikoDSWmyScmDSeBRZWFR-emqiAUTdcS0jhNlJ6ol-Ao8S1ZyOAuzZemkdKJVZ148-AiGifu0ZAvlSY4zJy4l-AoTdhtlSY4zOAsTSagCjWq7fbKuHUMMeMb6MKG4fOJnIMMjgkMfH6qJlfCbMg65JMJ7fbKDHUMMegI6MKGHfH_JMsMgeMb6MKGHfOK5MsMfeMt6MTMg_Thzx39.js"></script>
+<style type="text/css">@font-face{font-family:minerva-modern;src:url(https://use.typekit.net/af/3d9e8b/000000000000000077359a48/30/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/3d9e8b/000000000000000077359a48/30/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/3d9e8b/000000000000000077359a48/30/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:minerva-modern;src:url(https://use.typekit.net/af/0de237/000000000000000077359a4c/30/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/0de237/000000000000000077359a4c/30/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/0de237/000000000000000077359a4c/30/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:minerva-modern;src:url(https://use.typekit.net/af/af891e/000000000000000077359a4b/30/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/af891e/000000000000000077359a4b/30/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/af891e/000000000000000077359a4b/30/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:minerva-modern;src:url(https://use.typekit.net/af/e499e8/000000000000000077359a49/30/l?subset_id=2&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/e499e8/000000000000000077359a49/30/d?subset_id=2&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/e499e8/000000000000000077359a49/30/a?subset_id=2&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:freight-neo-pro;src:url(https://use.typekit.net/af/54d47a/000000000000000000017750/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/54d47a/000000000000000000017750/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/54d47a/000000000000000000017750/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:minion-pro-display;src:url(https://use.typekit.net/af/9508cb/00000000000000000001520d/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/9508cb/00000000000000000001520d/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/9508cb/00000000000000000001520d/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-stretch:normal;font-display:auto;}</style><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript" crossorigin="anonymous" nomodule="nomodule" src="//assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js"></script>
+<script type="text/javascript" crossorigin="anonymous" src="//assets.squarespace.com/@sqs/polyfiller/1.6/modern.js"></script>
+<script type="text/javascript">SQUARESPACE_ROLLUPS = {};</script>
+<script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-d2567e29420a12fceef7-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-extract_css_runtime');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-d2567e29420a12fceef7-min.en-US.js"></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-6c569122bfa66a51a056-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-extract_css_moment_js_vendor');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-6c569122bfa66a51a056-min.en-US.js"></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/cldr-resource-pack-907dfe7701e90c1e5cbd-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-cldr_resource_pack');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/cldr-resource-pack-907dfe7701e90c1e5cbd-min.en-US.js"></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-vendors-stable-61293f01d648eef165fc-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common_vendors_stable');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/common-vendors-stable-61293f01d648eef165fc-min.en-US.js"></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-vendors-7e83b47571ba105379d4-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common_vendors');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/common-vendors-7e83b47571ba105379d4-min.en-US.js"></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-2da35ee01c07a57ad47d-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/common-2da35ee01c07a57ad47d-min.en-US.js"></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/performance-a1f04ef378c5b48fe84b-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-performance');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/performance-a1f04ef378c5b48fe84b-min.en-US.js" defer=""></script><script data-name="static-context">Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {"betaFeatureFlags":["campaigns_import_discounts","campaigns_discount_section_in_blasts","campaigns_thumbnail_layout","campaigns_new_image_layout_picker","campaigns_global_uc_ab","enable_css_variable_tweaks","marketing_landing_page","visitor_react_forms","contacts_and_campaigns_redesign","order_status_page_checkout_landing_enabled","gdpr_cookie_banner","scripts_defer","i18n_beta_website_locales","commerce_site_visitor_metrics","campaigns_discount_section_in_automations","accounting_orders_sync","is_feature_gate_refresh_enabled","commerce_clearpay"],"facebookAppId":"314192535267336","facebookApiVersion":"v6.0","rollups":{"squarespace-announcement-bar":{"js":"//assets.squarespace.com/universal/scripts-compressed/announcement-bar-d4b60a491ecde5b97764-min.en-US.js"},"squarespace-audio-player":{"css":"//assets.squarespace.com/universal/styles-compressed/audio-player-ef238f99d44a3bdc6fbe-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/audio-player-aefad9514f1f48599523-min.en-US.js"},"squarespace-blog-collection-list":{"css":"//assets.squarespace.com/universal/styles-compressed/blog-collection-list-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/blog-collection-list-93d51fbe4a919163e8fd-min.en-US.js"},"squarespace-calendar-block-renderer":{"css":"//assets.squarespace.com/universal/styles-compressed/calendar-block-renderer-10dac239e5ffd3b32e9c-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/calendar-block-renderer-eb98a9772eef10a61680-min.en-US.js"},"squarespace-chartjs-helpers":{"css":"//assets.squarespace.com/universal/styles-compressed/chartjs-helpers-9e75b5d75bb5cb4c1f67-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/chartjs-helpers-0555106212c61832dc1b-min.en-US.js"},"squarespace-comments":{"css":"//assets.squarespace.com/universal/styles-compressed/comments-a0d9356d7c1596ab2c53-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/comments-e836f4dfa856d84f2b35-min.en-US.js"},"squarespace-custom-css-popup":{"css":"//assets.squarespace.com/universal/styles-compressed/custom-css-popup-3a08a59ab0d49f924e34-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/custom-css-popup-d46410282f57be3f82d7-min.en-US.js"},"squarespace-dialog":{"css":"//assets.squarespace.com/universal/styles-compressed/dialog-2dcac307baebe70727dc-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/dialog-da9aa7d67069c81c8e17-min.en-US.js"},"squarespace-events-collection":{"css":"//assets.squarespace.com/universal/styles-compressed/events-collection-10dac239e5ffd3b32e9c-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/events-collection-46066e12a6beadb43ff2-min.en-US.js"},"squarespace-form-rendering-utils":{"js":"//assets.squarespace.com/universal/scripts-compressed/form-rendering-utils-d65143596c1fd2db6a8c-min.en-US.js"},"squarespace-forms":{"css":"//assets.squarespace.com/universal/styles-compressed/forms-b952cddb94c5d471b8d3-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/forms-e6a04df1ede4c6abe0ce-min.en-US.js"},"squarespace-gallery-collection-list":{"css":"//assets.squarespace.com/universal/styles-compressed/gallery-collection-list-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/gallery-collection-list-8ab6d60c33aaa9220d48-min.en-US.js"},"squarespace-image-zoom":{"css":"//assets.squarespace.com/universal/styles-compressed/image-zoom-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/image-zoom-fde0b4da7f2332d3851c-min.en-US.js"},"squarespace-pinterest":{"css":"//assets.squarespace.com/universal/styles-compressed/pinterest-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/pinterest-42b2471f35a458529d41-min.en-US.js"},"squarespace-popup-overlay":{"css":"//assets.squarespace.com/universal/styles-compressed/popup-overlay-e89b4cc96c222ed66c64-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/popup-overlay-33a8c57ef48606891d16-min.en-US.js"},"squarespace-product-quick-view":{"css":"//assets.squarespace.com/universal/styles-compressed/product-quick-view-2f87c3dcb76ca485179d-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/product-quick-view-2e3fc5d747483a2b3196-min.en-US.js"},"squarespace-products-collection-item-v2":{"css":"//assets.squarespace.com/universal/styles-compressed/products-collection-item-v2-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/products-collection-item-v2-921b8aa24f5746dfa032-min.en-US.js"},"squarespace-products-collection-list-v2":{"css":"//assets.squarespace.com/universal/styles-compressed/products-collection-list-v2-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/products-collection-list-v2-52403235629e0d8a003b-min.en-US.js"},"squarespace-search-page":{"css":"//assets.squarespace.com/universal/styles-compressed/search-page-917382e71b023cec7555-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/search-page-336715e1da1dc4d74c9a-min.en-US.js"},"squarespace-search-preview":{"js":"//assets.squarespace.com/universal/scripts-compressed/search-preview-13a7d5fe3349c6c1aa31-min.en-US.js"},"squarespace-simple-liking":{"css":"//assets.squarespace.com/universal/styles-compressed/simple-liking-4279cc7bb78333b8db43-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/simple-liking-cede7154e30542cabab1-min.en-US.js"},"squarespace-social-buttons":{"css":"//assets.squarespace.com/universal/styles-compressed/social-buttons-3a7d186e7e5e3b30911b-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/social-buttons-626c1bfe3e61606c3766-min.en-US.js"},"squarespace-tourdates":{"css":"//assets.squarespace.com/universal/styles-compressed/tourdates-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/tourdates-3388e569034b8c9cef97-min.en-US.js"},"squarespace-website-overlays-manager":{"css":"//assets.squarespace.com/universal/styles-compressed/website-overlays-manager-efd3c12d460f58781eb3-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/website-overlays-manager-773808c9b3d89fc7a462-min.en-US.js"}},"pageType":2,"website":{"id":"50363cf324ac8e905e7df861","identifier":"benedict-evans","websiteType":1,"contentModifiedOn":1734922019764,"cloneable":false,"hasBeenCloneable":false,"siteStatus":{},"language":"en-GB","timeZone":"Europe/London","machineTimeZoneOffset":0,"timeZoneOffset":0,"timeZoneAbbr":"GMT","siteTitle":"Benedict Evans","fullSiteTitle":"Presentations \u2014 Benedict Evans","siteTagLine":"","siteDescription":"","location":{"mapZoom":11.0,"mapLat":37.4206011,"mapLng":-122.20938660000002,"markerLat":37.4206011,"markerLng":-122.20938660000002,"addressTitle":"","addressLine1":"","addressLine2":"","addressCountry":""},"shareButtonOptions":{},"authenticUrl":"https://www.ben-evans.com","internalUrl":"https://benedict-evans.squarespace.com","baseUrl":"https://www.ben-evans.com","primaryDomain":"www.ben-evans.com","sslSetting":3,"isHstsEnabled":true,"socialAccounts":[{"serviceId":62,"screenname":"Twitter","addedOn":1604796992120,"profileUrl":"http://twitter.com/benedictevans","iconEnabled":true,"serviceName":"twitter-unauth"},{"serviceId":65,"screenname":"LinkedIn","addedOn":1604797007973,"profileUrl":"https://www.linkedin.com/in/benedictevans/","iconEnabled":true,"serviceName":"linkedin-unauth"}],"typekitId":"","statsMigrated":true,"imageMetadataProcessingEnabled":false,"screenshotId":"9680014f6c4a8dbbfcd5ff67bd8ec1cf0e1b4038ab6ac44cdfe89ce1f67d3ba2","captchaSettings":{"siteKey":"","enabledForDonations":false},"showOwnerLogin":false},"websiteSettings":{"id":"50363cf324ac8e905e7df862","websiteId":"50363cf324ac8e905e7df861","type":"Business","subjects":[{"systemSubject":"tech"},{"systemSubject":"other","otherSubject":"Consulting Services"}],"country":"GB","state":"CA","simpleLikingEnabled":false,"mobileInfoBarSettings":{"isContactEmailEnabled":false,"isContactPhoneNumberEnabled":false,"isLocationEnabled":false,"isBusinessHoursEnabled":false},"announcementBarSettings":{"style":1,"text":""},"commentLikesAllowed":true,"commentAnonAllowed":true,"commentThreaded":true,"commentApprovalRequired":false,"commentAvatarsOn":true,"commentSortType":2,"commentFlagThreshold":0,"commentFlagsAllowed":true,"commentEnableByDefault":true,"commentDisableAfterDaysDefault":0,"disqusShortname":"","commentsEnabled":false,"contactPhoneNumber":"","businessHours":{"monday":{"text":"","ranges":[{}]},"tuesday":{"text":"","ranges":[{}]},"wednesday":{"text":"","ranges":[{}]},"thursday":{"text":"","ranges":[{}]},"friday":{"text":"","ranges":[{}]},"saturday":{"text":"","ranges":[{}]},"sunday":{"text":"","ranges":[{}]}},"storeSettings":{"returnPolicy":"","termsOfService":"","privacyPolicy":"","expressCheckout":false,"continueShoppingLinkUrl":"/","useLightCart":false,"showNoteField":false,"shippingCountryDefaultValue":"US","billToShippingDefaultValue":false,"showShippingPhoneNumber":true,"isShippingPhoneRequired":false,"showBillingPhoneNumber":false,"isBillingPhoneRequired":false,"currenciesSupported":["USD","ARS","AUD","BRL","CAD","CHF","COP","CZK","DKK","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","MYR","NOK","NZD","PHP","PLN","RUB","SEK","SGD","THB","ZAR"],"defaultCurrency":"GBP","selectedCurrency":"GBP","measurementStandard":1,"showCustomCheckoutForm":false,"checkoutPageMarketingOptInEnabled":true,"enableMailingListOptInByDefault":true,"sameAsRetailLocation":false,"merchandisingSettings":{"scarcityEnabledOnProductItems":false,"scarcityEnabledOnProductBlocks":false,"scarcityMessageType":"DEFAULT_SCARCITY_MESSAGE","scarcityThreshold":10,"multipleQuantityAllowedForServices":true,"restockNotificationsEnabled":false,"restockNotificationsSuccessText":"","restockNotificationsMailingListSignUpEnabled":false,"relatedProductsEnabled":false,"relatedProductsOrdering":"random","soldOutVariantsDropdownDisabled":false,"productComposerOptedIn":false,"productComposerABTestOptedOut":false,"productReviewsEnabled":false,"displayImportedProductReviewsEnabled":false,"hasOptedToCollectNativeReviews":false},"minimumOrderSubtotalEnabled":false,"minimumOrderSubtotal":{"currency":"GBP","value":"0.00"},"isLive":true,"multipleQuantityAllowedForServices":true},"useEscapeKeyToLogin":false,"ssBadgeType":1,"ssBadgePosition":4,"ssBadgeVisibility":1,"ssBadgeDevices":1,"pinterestOverlayOptions":{"mode":"disabled"},"ampEnabled":false,"userAccountsSettings":{"loginAllowed":false,"signupAllowed":false}},"cookieSettings":{"isCookieBannerEnabled":true,"isRestrictiveCookiePolicyEnabled":true,"cookieBannerText":"<p class=\"\" style=\"white-space:pre-wrap;\">This site uses cookies to function, and for anonymous analytics. You can read the privacy policy <a href=\"/privacy\" target=\"\">here</a>. </p>","cookieBannerTheme":"DARK","cookieBannerThemeName":"black","cookieBannerVariant":"POPUP","cookieBannerPosition":"BOTTOM_LEFT","cookieBannerCtaVariant":"TEXT","cookieBannerCtaText":"Yes, that's OK","cookieBannerAcceptType":"OPT_IN_AND_OUT","cookieBannerOptOutCtaText":"Essential cookies only","cookieBannerHasOptOut":true,"cookieBannerHasManageCookies":false,"cookieBannerManageCookiesLabel":"Manage cookies","cookieBannerSavedPreferencesText":"Cookie Preferences","cookieBannerSavedPreferencesLayout":"HIDDEN"},"websiteCloneable":false,"collection":{"title":"Presentations","id":"673eeb37132cd034a738dddb","fullUrl":"/presentations","type":10,"permissionType":1},"subscribed":false,"appDomain":"squarespace.com","templateTweakable":true,"tweakJSON":{"aspect-ratio":"Auto","gallery-arrow-style":"No Background","gallery-aspect-ratio":"3:2 Standard","gallery-auto-crop":"true","gallery-autoplay":"false","gallery-design":"Slideshow","gallery-info-overlay":"Show on Hover","gallery-loop":"false","gallery-navigation":"Bullets","gallery-show-arrows":"true","gallery-transitions":"Fade","galleryArrowBackground":"rgba(34,34,34,1)","galleryArrowColor":"rgba(255,255,255,1)","galleryAutoplaySpeed":"3","galleryCircleColor":"rgba(255,255,255,1)","galleryInfoBackground":"rgba(0, 0, 0, .7)","galleryThumbnailSize":"100px","gridSize":"350px","gridSpacing":"20px","tweak-blog-list-columns":"2","tweak-blog-list-item-image-aspect-ratio-grid":"1:1 Square","tweak-blog-list-item-image-aspect-ratio-stacked":"1:1 Square","tweak-blog-list-item-image-show":"false","tweak-blog-list-spacing":"60px","tweak-blog-list-style":"Grid","tweak-footer-layout":"Stacked","tweak-header-bottom-overlay-on-index-gallery":"false","tweak-index-gallery-apply-bottom-spacing":"true","tweak-index-gallery-autoplay-duration":"2","tweak-index-gallery-autoplay-enable":"true","tweak-index-gallery-fixed-height":"true","tweak-index-gallery-height":"100vh","tweak-index-gallery-indicators":"Lines","tweak-index-gallery-layout":"Packed","tweak-index-gallery-transition":"Fade","tweak-index-gallery-transition-duration":"500","tweak-index-nav-position":"Right","tweak-index-page-apply-bottom-spacing":"false","tweak-index-page-fullscreen":"None","tweak-index-page-min-height":"100vh","tweak-mobile-breakpoint":"800px","tweak-overlay-parallax-enabled":"false","tweak-overlay-parallax-new-math":"false","tweak-product-item-image-zoom-factor":"1.5","tweak-product-list-item-hover-behavior":"Show Alternate Image","tweak-product-list-items-per-row":"2","tweak-related-products-items-per-row":"3","tweak-related-products-title-spacing":"50px","tweak-site-ajax-loading-enable":"false","tweak-site-border-show":"false","tweak-site-border-width":"5px"},"templateId":"55f0aac0e4b0f0a5b7e0b22e","templateVersion":"7","pageFeatures":[1,2,4],"gmRenderKey":"QUl6YVN5Q0JUUk9xNkx1dkZfSUUxcjQ2LVQ0QWVUU1YtMGQ3bXk4","templateScriptsRootUrl":"https://static1.squarespace.com/static/ta/55f0a9b0e4b0f3eb70352f6d/354/scripts/","impersonatedSession":false,"tzData":{"zones":[[0,"EU","GMT/BST",null]],"rules":{"EU":[[1981,"max",null,"Mar","lastSun","1:00u","1:00","S"],[1996,"max",null,"Oct","lastSun","1:00u","0",null]]}},"showAnnouncementBar":false,"recaptchaEnterpriseContext":{"recaptchaEnterpriseSiteKey":"6LdDFQwjAAAAAPigEvvPgEVbb7QBm-TkVJdDTlAv"},"i18nContext":{"timeZoneData":{"id":"Europe/London","name":"Greenwich Mean Time"}},"env":"PRODUCTION"};</script><script>Squarespace.load(window);</script>
+<script type="application/ld+json">{"url":"https://www.ben-evans.com","name":"Benedict Evans","description":"","@context":"http://schema.org","@type":"WebSite"}</script><script type="application/ld+json">{"legalName":"","address":"","email":"","telephone":"","sameAs":["http://twitter.com/benedictevans","https://www.linkedin.com/in/benedictevans/"],"@context":"http://schema.org","@type":"Organization"}</script><script type="application/ld+json">{"address":"","name":"","openingHours":", , , , , , ","@context":"http://schema.org","@type":"LocalBusiness"}</script><link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/sitecss/50363cf324ac8e905e7df861/1202/55f0aac0e4b0f0a5b7e0b22e/5e844f843f1eeb2f755f59d9/354/site.css"><script data-sqs-type="cookiepreferencesgetter">(function(){window.getSquarespaceCookies = function() {    const getCookiesAllowed = function(cookieName){ return ('; '+document.cookie).split('; ' + cookieName + '=').pop().split(';')[0] === 'true'};    return {      performance: getCookiesAllowed('ss_performanceCookiesAllowed') ? 'accepted' : 'declined',      marketing: getCookiesAllowed('ss_marketingCookiesAllowed') ? 'accepted' : 'declined'    }}})()</script><meta name="twitter:card" content="summary_large_image"><style>
+.blogsummary {
+  visibility:hidden; !important;
+  }  
+</style><script>Static.COOKIE_BANNER_CAPABLE = true;</script>
+<!-- End of Squarespace Headers -->
+  <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/scripts-compressed/../styles-compressed/2356ee25bed07678b7ee-min.en-US.css"></head>
+  <body id="collection-673eeb37132cd034a738dddb" class="tweak-social-icons-style-regular tweak-social-icons-shape-square tweak-site-width-option-full-background tweak-icon-weight-hairline   tweak-site-ajax-loading-bar-show ancillary-header-top-left-layout-horizontal ancillary-header-top-center-layout-horizontal ancillary-header-top-right-layout-horizontal ancillary-header-bottom-left-layout-horizontal ancillary-header-bottom-center-layout-stacked ancillary-header-bottom-right-layout-horizontal ancillary-header-branding-position-top-left ancillary-header-tagline-position-top-left ancillary-header-primary-nav-position-top-center ancillary-header-secondary-nav-position-hide ancillary-header-social-position-hide ancillary-header-search-position-hide ancillary-header-cart-position-bottom-right ancillary-header-account-position-hide tweak-header-primary-nav-hover-style-active tweak-header-primary-nav-button-style-solid tweak-header-primary-nav-button-shape-square tweak-header-secondary-nav-inherit-styles tweak-header-secondary-nav-hover-style-spotlight tweak-header-secondary-nav-button-style-solid tweak-header-secondary-nav-button-shape-square tweak-header-search-style-underlined tweak-header-search-placeholder-show tweak-header-cart-style-text tweak-header-account-style-text   tweak-index-nav-style-none tweak-index-nav-position-right tweak-index-nav-text-show tweak-index-page-fullscreen-none  tweak-index-page-scroll-indicator-none tweak-index-page-scroll-indicator-icon-arrow tweak-index-page-scroll-indicator-icon-weight-hairline  tweak-index-gallery-layout-packed tweak-index-gallery-spacing-sides-show tweak-index-gallery-spacing-top-bottom-show tweak-index-gallery-fixed-height tweak-index-gallery-apply-bottom-spacing tweak-index-gallery-hover-style-plain tweak-index-gallery-controls-small-arrows tweak-index-gallery-controls-icon-weight-hairline tweak-index-gallery-indicators-lines tweak-index-gallery-autoplay-enable tweak-index-gallery-transition-fade tweak-index-gallery-content-position-bottom-left tweak-index-gallery-content-text-alignment-left tweak-footer-show tweak-footer-layout-stacked tweak-footer-layout-columns-auto tweak-footer-stacked-alignment-left   tweak-mobile-bar-top-fixed ancillary-mobile-bar-branding-position-top-left ancillary-mobile-bar-menu-icon-position-top-right tweak-mobile-bar-menu-icon-hamburger ancillary-mobile-bar-search-icon-position-hide ancillary-mobile-bar-cart-position-hide tweak-mobile-bar-cart-style-text ancillary-mobile-bar-account-position-hide tweak-mobile-bar-account-style-text tweak-mobile-overlay-slide-origin-right tweak-mobile-overlay-close-show  tweak-mobile-overlay-menu-primary-button-style-solid tweak-mobile-overlay-menu-primary-button-shape-square tweak-mobile-overlay-menu-secondary-inherit  tweak-mobile-overlay-menu-secondary-button-style-solid tweak-mobile-overlay-menu-secondary-button-shape-square tweak-quote-block-alignment-left  tweak-blog-meta-primary-date tweak-blog-meta-secondary-category tweak-blog-list-style-grid tweak-blog-list-separator-show tweak-blog-list-alignment-center  tweak-blog-list-item-image-aspect-ratio-grid-11-square tweak-blog-list-item-image-aspect-ratio-stacked-11-square tweak-blog-list-item-title-show tweak-blog-list-item-excerpt-show tweak-blog-list-item-body-show tweak-blog-list-item-readmore-hide tweak-blog-list-item-meta-position-below-title tweak-blog-list-pagination-link-label-show tweak-blog-list-pagination-link-icon-show tweak-blog-list-pagination-link-icon-weight-light tweak-blog-item-alignment-center tweak-blog-item-meta-position-below-title tweak-blog-item-share-position-below-content  tweak-blog-item-pagination-link-label-show tweak-blog-item-pagination-link-title-show tweak-blog-item-pagination-link-meta-tags tweak-blog-item-pagination-link-icon-weight-hairline   event-thumbnails event-thumbnail-size-32-standard event-date-label  event-list-show-cats event-list-date event-list-time event-list-address     event-excerpts  event-item-back-link    gallery-design-slideshow aspect-ratio-auto lightbox-style-dark gallery-navigation-bullets gallery-info-overlay-show-on-hover gallery-aspect-ratio-32-standard gallery-arrow-style-no-background gallery-transitions-fade gallery-show-arrows gallery-auto-crop   tweak-product-list-image-aspect-ratio-11-square tweak-product-list-item-hover-behavior-show-alternate-image tweak-product-list-meta-position-under tweak-product-list-mobile-meta-position-under tweak-product-list-meta-alignment-under-center tweak-product-list-meta-alignment-overlay-center-center tweak-product-list-show-title tweak-product-list-show-price tweak-product-list-filter-display-hide tweak-product-list-filter-alignment-left tweak-product-item-nav-show-breadcrumb-and-pagination tweak-product-item-nav-pagination-style-previousnext tweak-product-item-nav-breadcrumb-alignment-left tweak-product-item-nav-pagination-alignment-split tweak-product-item-gallery-position-left tweak-product-item-gallery-design-slideshow tweak-product-item-gallery-aspect-ratio-11-square tweak-product-item-gallery-thumbnail-alignment-left tweak-product-item-details-alignment-left tweak-product-item-details-show-title tweak-product-item-details-show-price tweak-product-item-details-show-excerpt tweak-product-item-details-excerpt-position-below-price tweak-product-item-details-show-share-buttons tweak-product-item-details-show-variants tweak-product-item-details-show-quantity tweak-product-item-details-options-style-square tweak-product-item-details-show-add-to-cart-button tweak-product-item-details-add-to-cart-button-style-outline tweak-product-item-details-add-to-cart-button-shape-square tweak-product-item-details-add-to-cart-button-padding-small tweak-product-item-image-zoom-enabled tweak-product-item-image-zoom-behavior-click tweak-product-item-lightbox-enabled tweak-related-products-image-aspect-ratio-11-square tweak-related-products-meta-alignment-under-center tweak-product-badge-style-rectangle tweak-product-badge-position-top-right tweak-product-badge-inset-floating newsletter-style-custom hide-opentable-icons opentable-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-center image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left  image-block-stack-text-alignment-left button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light tweak-share-buttons-style-solid  tweak-share-buttons-labels-show tweak-share-buttons-counts-show tweak-share-buttons-standard-icon-color native-currency-code-gbp collection-type-page collection-673eeb37132cd034a738dddb collection-layout-default mobile-style-available sqs-has-custom-cart has-site-title has-social enable-load-effects has-primary-nav" data-controller="HashManager, SiteLoader, MobileClassname" data-controllers-bound="HashManager, SiteLoader, MobileClassname"><div class="cookie-banner-mount-point"><section data-section-theme="legacy-dark" aria-label="Cookie banner" class="gdpr-cookie-banner BOTTOM_LEFT legacy-dark popup full-styling"><p class="disclaimer-text sqs-cookie-banner-v2-text"><p class="" style="white-space:pre-wrap;">This site uses cookies to function, and for anonymous analytics. You can read the privacy policy <a href="/privacy" target="">here</a>. </p></p><div class="button-group sqs-cookie-banner-v2-cta-container"><button class="accept sqs-button-element--primary sqs-cookie-banner-v2-accept sqs-cookie-banner-v2-cta"><span>Yes, that's OK</span></button><button class="decline sqs-button-element--secondary sqs-cookie-banner-v2-deny sqs-cookie-banner-v2-cta"><span>Essential cookies only</span></button></div></section></div>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-    <link rel="icon" href="img/mixbox_favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="prism.css">
+    <div class="Loader"></div>
 
-</head>
+    <div class="Mobile loaded" data-nc-base="mobile-bar" data-controller="AncillaryLayout" data-controllers-bound="AncillaryLayout">
+  <div class="Mobile-bar Mobile-bar--top" data-nc-group="top" data-controller="MobileOffset" data-controllers-bound="MobileOffset">
 
-<body>
-    
-    <!-- Navbar --> 
-    <nav class="navbar navbar-expand-lg bg-light navbar-light">
-        <div class="container">
-            <a href="https://scrtwpns.com" class="navbar-brand"><img srcset="./img/scrtwpns-logo.png, ./img/scrtwpns-logo@1.5x.png 1.5x, ./img/scrtwpns-logo@2x.png 2x" src="./img/scrtwpns-logo.png" alt="Secret Weapons logo" width="40px"></a>    
-            <a href="https://scrtwpns.com" class="navbar-brand fs-6">Secret Weapons</a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="navbar-nav ms-auto text-center ">
-                    <li class="nav-item px-3 py-3 py-lg-0">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item px-3 py-3 py-lg-0">
-                        <a href="https://scrtwpns.com" class="nav-link">Other Tools</a>
-                    </li>
-                    <li class="nav-item px-3 py-3 py-lg-0">
-                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contact">Need Help?</a>
-                    </li>
-                    <li class="nav-item ms-lg-4 my-3 my-lg-0">
-                    <a class="my-button button-green button-small" href="https://scrtwpns.com/mixbox/painter" role="button">Try Demo</a>
-                </li>
-                </ul>
-            </div>   
-        </div>
-    </nav> 
-
-    <!-- Modal -->
-    <div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contactLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content p-md-4 p-2 txt-mygray">
-            <div class="modal-header">
-            <h5 class="modal-title" id="contactLabel"> <i class="bi bi-envelope-fill me-2"></i> Contact</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body green-link">
-            If there's anything we can help you with, mail us at <a href="mailto:mixbox@scrtwpns.com">mixbox@scrtwpns.com</a> and we'll get back to you as soon as possible.
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <!-- Header -->
-    <section id="header">
-        <div class="container py-xxl-4 my-xxl-4 py-md-3 my-md-3 py-1 my-1">
-            <div class="row justify-content-center align-items-center text-center py-md-2">
-                <div class="col-lg-10 col-11">
-                    <img srcset="./img/mixbox-teaser-small.jpg, ./img/mixbox-teaser-small@1.5x.jpg 1.5x, ./img/mixbox-teaser-small@2x.jpg 2x" src="./img/mixbox-teaser-small.jpg" class="img-fluid d-block d-lg-none mx-auto" alt="Mixbox Poster">
-                    <img srcset="./img/mixbox-teaser.jpg, ./img/mixbox-teaser@1.5x.jpg 1.5x, ./img/mixbox-teaser@2x.jpg 2x" src="./img/mixbox-teaser.jpg" class="img-fluid d-none d-lg-block mx-auto" alt="Mixbox Poster">
-                </div>
-            </div>
-            <div class="row justify-content-center align-items-center text-md-center py-lg-5 py-md-4 py-3">
-                <div class="col-xl-9 col-lg-8 col-md-9 col-10">
-                    <!-- other -->
-                    <h2 class="d-lg-block d-md-none d-block fw-bold">Colors in painting software do not act like real&nbsp;pigments.</h2>
-                    <!-- tablet -->
-                    <h2 class="d-none d-md-block d-lg-none fw-bold h1">Colors in painting software do not act like real&nbsp;pigments.</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center align-items-center text-md-center pb-xxl-3 pb-lg-0 pb-md-5 pb-3">
-                <div class="col-xxl-7 col-lg-9 col-md-8 col-10">
-                    <!-- tablet XL XXL -->
-                    <h4 class="d-xl-block d-lg-none d-md-block d-none fw-normal txt-mygray lh-base">Why? Because there was no practical way to implement true pigment mixing into digital painting. Until&nbsp;now.</h4>
-                    <!-- LG -->
-                    <h4 class="d-xl-none d-lg-block d-none fw-normal txt-mygray lh-base h5">Why? Because there was no practical way to implement true pigment mixing into digital painting. Until&nbsp;now.</h4>
-                    <!-- mobile -->
-                    <h4 class="d-md-none d-block fw-normal txt-mygray h6">Why? Because there was no practical way to implement true pigment mixing into digital painting. Until&nbsp;now.</h4>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center text-center">
-                <div class="col-5"><hr class="green" style="width:89%; float: right;"></div>
-                <div class="col-md-1 col-2"><img src="./img/green-arrow.svg"></div>
-                <div class="col-5"><hr class="green" style="width:89%;"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mixbox Scheme -->
-    <section id="scheme">
-        <div class="container py-md-5 my-5">
-            <div class="row justify-content-xxl-around justify-content-evenly align-items-center py-lg-5">
-                <div class="col-xl-5 col-lg-5 col-md-8 col-10 pb-lg-0 pb-5">
-                    <img srcset="./img/mixbox-scheme.jpg, ./img/mixbox-scheme@1.5x.jpg 1.5x, ./img/mixbox-scheme@2x.jpg 2x" src="./img/mixbox-scheme.jpg" class="img-fluid">
-                </div>
-                <div class="col-xl-5 col-lg-6 col-md-8 col-10 pt-lg-0 pt-md-5 pt-3">
-                    <h2 class="fw-bold pb-lg-4 pb-md-4 pb-2">Mixbox is a practical library for paint-like color mixing</h2>
-                    <!-- other -->
-                    <ul class="txt-mygray py-lg-4 py-md-2 d-md-block d-none">
-                        <li class="py-2">Treats colors as <strong>pigments</strong> using Kubelka &amp; Munk</li>
-                        <li class="py-2">Packed in a simple <strong>RGB-in, RGB-out</strong> interface</li>
-                        <li class="pt-2 pb-4">Available in <strong>C++, Python, GLSL</strong> and more</li>
-                    </ul>
-                    <!-- mobile -->
-                    <ul class="nomag txt-mygray py-lg-4 py-md-2 py-3 d-block d-md-none">
-                        <li class="py-1">Treats colors as <strong>pigments</strong></li>
-                        <li class="py-1">Simple <strong>RGB-in, RGB-out</strong> interface</li>
-                        <li class="pt-1 pb-2"><strong>C++, Python, GLSL</strong> and more</li>
-                    </ul>
-                    <!-- buttons other -->
-                    <div class="d-lg-flex d-none align-items-center">
-                        <a class="my-button button-green button-long me-3" href="https://github.com/scrtwpns/mixbox" role="button">
-                            <i class="bi bi-github fs-3 pe-2"></i>GitHub
-                        </a>
-                        <a class="my-button button-green-outline" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
-                    </div>
-                    <!-- buttons tablet -->
-                    <div class="d-lg-none d-md-flex d-none align-items-center">
-                        <a class="my-button button-green me-3" href="https://github.com/scrtwpns/mixbox" role="button">
-                            <i class="bi bi-github fs-3 pe-2"></i>GitHub
-                        </a>
-                        <a class="my-button button-green-outline" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
-                    </div>
-                    <!-- buttons mobile -->
-                    <div class="d-md-none d-block text-center">
-                        <a class="my-button button-green button-full-long mb-3" href="https://github.com/scrtwpns/mixbox" role="button">
-                            <i class="bi bi-github fs-3 pe-2"></i>GitHub
-                        </a>
-                        <a class="my-button button-green-outline button-full-long" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-     <!-- Real vs Digital -->
-     <section id="real-vs-digital">
-
-        <div class="container my-md-5 py-5">
-            <div class="row justify-content-center align-items-center text-center">
-                <div class="col"><hr class="gray"></div>
-                <div class="col-md-1 col-2"> <img src="./img/gray-arrow.svg"> </div>
-                <div class="col"><hr class="gray"></div>
-            </div>
-        </div>
-
-        <div class="container-fluid bg-video-img my-md-5 pt-md-5">
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-md-11 col-12">
-                        <div class="video-wrap">
-                            <video autoplay="" muted="" playsinline="" loop="" poster="./img/video-poster.jpg">
-                            <source src="./src/mixbox-video.mp4" type="video/mp4">
-                            <!-- <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
-                            Your browser does not support HTML5 video.
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container my-md-5 py-4">
-            <div class="row align-items-center justify-content-center text-center">
-                <div class="col col-10 mb-md-0 mb-3">
-                    <!-- buttons other -->
-                    <div class="d-md-block d-none align-items-center">
-                        <a class="my-button button-gray me-3" href="https://youtu.be/F2_JQG6YcQ4" target="_blank" role="button">Watch on Youtube</a>
-                        <a class="my-button button-gray-outline" href="comparisons.html" role="button">More Comparisons</a>
-                    </div>
-                    <!-- buttons mobile -->
-                    <div class="d-md-none d-block text-center">
-                        <a class="my-button button-gray button-full-long mb-3" href="https://youtu.be/F2_JQG6YcQ4" target="_blank" role="button">Watch on Youtube</a>
-                        <a class="my-button button-gray-outline button-full-long" href="comparisons.html" role="button">More Comparisons</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Try it Out -->
-    <section id="try-it-out">
-        <div class="container-fluid bg-mygreen py-5 px-0">
-            <div class="container my-lg-5 py-md-5 py-3">
-                <div class="row justify-content-xxl-around justify-content-lg-evenly justify-content-center align-items-center text-lg-start text-md-center text-start">
-                    <div class="col-lg-4 col-md-8 col-10">
-                        <!-- other -->
-                        <h1 class="display-3 fw-bold text-white d-block d-lg-none d-xl-block">Try it Out!</h1>
-                        <!-- LG -->
-                        <h1 class="display-4 fw-bold text-white d-none d-lg-block d-xl-none">Try it Out!</h1>
-                        <!-- other -->
-                        <p class="d-none d-md-block text-white lh-lg py-3 pe-xxl-5"><strong>The best way to appreciate pigment mixing is to feel it on your own.</strong> Here's a demo painter for you to try Mixbox&nbsp;out.</p>
-                        <!-- mobile -->
-                        <p class="d-block d-md-none text-white py-3 pe-sm-5 pe-3"><strong>The best way to appreciate pigment mixing is to feel it on your own.</strong> Here's a demo painter for you to try Mixbox&nbsp;out.</p>
-                        <!-- button other -->
-                        <div class="d-none d-md-block">
-                            <a class="my-button button-white button-long mb-5 mb-lg-0" href="https://scrtwpns.com/mixbox/painter/" role="button">Open Painter</a>
-                        </div>
-                        <!-- button mobile -->
-                        <div class="d-md-none d-block">
-                            <a class="my-button button-white button-full-long mb-5" href="https://scrtwpns.com/mixbox/painter/" role="button">Open Painter</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-10">
-                        
-                            <video autoplay="" muted="" playsinline="" loop="" poster="./img/mixbox-painter.jpg" onclick="location.href='https://scrtwpns.com/mixbox/painter';" class="mycursor">
-                            <source src="./src/mixbox-painter.mp4" type="video/mp4"> 
-                            <!-- <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
-                            Your browser does not support HTML5 video.
-                          
-                      
-                        <!-- <img src="./img/mixbox-painter.jpg" class="img-fluid" alt="Mixbox Painter"> -->
-                    </video></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Color Effects of real paints -->
-    <section id="realpaints">
-        <div class="container py-md-5 py-2 mt-5 mb-3">
-            <div class="row justify-content-xxl-around justify-content-lg-center justify-content-evenly align-items-center py-3">
-                <div class="col-lg-4 col-md-8 col-10">
-                    <!-- desktop -->
-                    <h1 class="fw-bold display-5 txt-mygreen d-xxl-block d-none pb-3">Color Effects of Real Paints</h1>
-                    <!-- tablet -->
-                    <h1 class="fw-bold display-5 txt-mygreen d-lg-none d-md-block d-none pb-3">Color Effects of Real Paints</h1>
-                    <!-- other -->
-                    <h1 class="fw-bold txt-mygreen d-xxl-none d-lg-block d-md-none d-block pb-2">Color Effects of Real Paints</h1>
-                    <ul class="txt-mygray nomag py-3">
-                        <li class="py-md-2 py-1"><strong>Rich Gradients</strong> with Hue Shifts</li>
-                        <li class="py-md-2 py-1">Natural and <strong>Vibrant Mixtures</strong></li>
-                        <li class="pt-md-2 pb-md-4 pt-1 pb-2"><strong>Juicy Brushstroke</strong> Falloff</li>
-                    </ul>
-                </div>
-                <div class="col-lg-7 col-md-7 col-9">
-                    <!-- other -->
-                    <img srcset="./img/paint-effects.jpg, ./img/paint-effects@1.5x.jpg 1.5x, ./img/paint-effects@2x.jpg 2x" src="./img/paint-effects.jpg" class="img-fluid d-none d-lg-block" alt="Paint Effects">
-                    <!-- tablet desktop -->
-                    <img srcset="./img/paint-effects-small.jpg, ./img/paint-effects-small@1.5x.jpg 1.5x, ./img/paint-effects-small@2x.jpg 2x" src="./img/paint-effects-small.jpg" class="img-fluid d-block d-lg-none" alt="Paint Effects">
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col"> <hr class="gray"> </div>
-                <div class="col-md-1 col-2"> <img src="./img/gray-arrow.svg"> </div>
-                <div class="col-lg-4 col"> <hr class="gray"> </div>
-                <div class="col-1 d-none d-lg-block"> <img src="./img/gray-arrow.svg"> </div>  
-                <div class="col d-none d-lg-block"> <hr class="gray"> </div>   
-            </div>
-        </div>
-    </section>
-
-    <!-- Painting Software - Mixbox -->
-    <section id="software-vs-mixbox">
-        <div class="container my-md-5 my-4">
-            <div class="row justify-content-lg-center justify-content-md-evenly justify-content-evenly align-items-center text-center my-xxl-5 py-xxl-3 my-md-3 py-md-3 py-3 my-1 gx-md-4 gx-0">
-                <div class="col-lg-4 col-5">
-                    <!-- other -->
-                    <h2 class="fw-bold txt-mygray d-none d-md-block d-lg-none d-xl-block">Painting Software</h2>
-                    <!-- LG -->
-                    <h2 class="fw-bold txt-mygray d-none d-lg-block d-xl-none h3">Painting Software</h2>
-                    <!-- mobile -->
-                    <h2 class="fw-bold txt-mygray d-block d-md-none h4">Paint Apps</h2>
-                </div>
-                <div class="col-1 d-none d-lg-block"></div>
-                <div class="col-lg-4 col-5">
-                    <!-- other -->
-                    <h2 class="fw-bold txt-mygray d-none d-md-block d-lg-none d-xl-block">Mixbox</h2>
-                    <!-- LG -->
-                    <h2 class="fw-bold txt-mygray d-none d-lg-block d-xl-none h3">Mixbox</h2>
-                    <!-- mobile -->
-                    <h2 class="fw-bold txt-mygray d-block d-md-none h4">Mixbox</h2>
-                </div>
-            </div>
-            <div class="row justify-content-lg-around justify-content-evenly text-center align-items-center gx-md-4 gx-0">
-                <div class="col-5">
-                    <!-- PC -->   <img srcset="./img/software-vs-mixbox-left.jpg, ./img/software-vs-mixbox-left@1.5x.jpg 1.5x, ./img/software-vs-mixbox-left@2x.jpg 2x" src="./img/software-vs-mixbox-left.jpg" class="img-fluid d-none d-lg-block" alt="Software-vs-Mixbox"> 
-                    <!-- tablet--><img srcset="./img/software-vs-mixbox-left-medium.jpg, ./img/software-vs-mixbox-left-medium@1.5x.jpg 1.5x, ./img/software-vs-mixbox-left-medium@2x.jpg 2x" src="./img/software-vs-mixbox-left-medium.jpg" class="img-fluid d-none d-md-block d-lg-none" alt="Software-vs-Mixbox">
-                    <!-- mobile--><img srcset="./img/software-vs-mixbox-left-small.jpg, ./img/software-vs-mixbox-left-small@1.5x.jpg 1.5x, ./img/software-vs-mixbox-left-small@2x.jpg 2x" src="./img/software-vs-mixbox-left-small.jpg" class="img-fluid d-block d-md-none" alt="Software-vs-Mixbox">
-                </div>
-                <div class="col-5">
-                    <!-- PC -->   <img srcset="./img/software-vs-mixbox-right.jpg, ./img/software-vs-mixbox-right@1.5x.jpg 1.5x, ./img/software-vs-mixbox-right@2x.jpg 2x" src="./img/software-vs-mixbox-right.jpg" class="img-fluid d-none d-lg-block" alt="Software-vs-Mixbox">
-                    <!-- tablet--><img srcset="./img/software-vs-mixbox-right-medium.jpg, ./img/software-vs-mixbox-right-medium@1.5x.jpg 1.5x, ./img/software-vs-mixbox-right-medium@2x.jpg 2x" src="./img/software-vs-mixbox-right-medium.jpg" class="img-fluid d-none d-md-block d-lg-none" alt="Software-vs-Mixbox">
-                    <!-- mobile--><img srcset="./img/software-vs-mixbox-right-small.jpg, ./img/software-vs-mixbox-right-small@1.5x.jpg 1.5x, ./img/software-vs-mixbox-right-small@2x.jpg 2x" src="./img/software-vs-mixbox-right-small.jpg" class="img-fluid d-block d-md-none" alt="Software-vs-Mixbox">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact on Digital Art -->
-    <section id="Impact">
-        <div class="container mt-5 py-5">
-            <div class="row justify-content-center text-center">
-                <div class="col"><hr class="green"></div>
-                <div class="col-md-1 col-2"><img src="./img/green-arrow.svg"></div>
-                <div class="col"><hr class="green"></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center align-items-center text-md-center text-start mt-3 pt-3">
-                <div class="col-lg-12 col-md-9 col-10"><h1 class="fw-bold display-5 txt-mygreen text-md-center text-start">Impact on Digital <span class="d-inline d-md-none">Painting</span><span class="d-none d-md-inline">Art</span></h1></div>
-            </div>
-        </div>
-        <div class="container my-lg-5 py-md-5 py-4">
-            <div class="row justify-content-evenly align-items-center mb-lg-3 mb-md-5 mb-3">
-                <div class="col-lg-6 col-10 mb-lg-0 mb-3">
-                    <img srcset="./img/smudging.jpg, ./img/smudging@1.5x.jpg 1.5x, ./img/smudging@2x.jpg 2x" src="./img/smudging.jpg" class="img-fluid" alt="Layering of brushstrokes">
-                </div>
-                <div class="col-lg-4 col-md-9 col-10 text-lg-end text-md-center text-start">
-                    <!-- desktop, tablet --><h2 class="d-none d-md-block d-lg-none d-xl-block fw-bold txt-mylightgray">Satisfying Smudging</h2>
-                    <!-- LG --><h2 class="d-none d-lg-block d-xl-none fw-bold txt-mylightgray h3">Satisfying Smudging</h2>
-                    <!-- mobile --><h2 class="d-block d-md-none fw-bold txt-mylightgray h4">Satisfying Smudging</h2>
-
-                    <!-- desktop, tablet -->
-                    <p class="d-none d-md-block d-lg-none d-xl-block txt-mygray lh-lg pt-3">No more muddy mixtures, smudge brush is now your friend! It'll <span class="d-none d-lg-inline d-xxl-none">help you </span>bring natural gradients into your&nbsp;art.</p>
-                    <!-- LG -->
-                    <p class="d-none d-lg-block d-xl-none txt-mygray pt-3">No more muddy mixtures, smudge brush is now your friend! It'll <span class="d-none d-lg-inline d-xxl-none">help you </span>bring natural gradients into your&nbsp;art.</p>
-                    <!-- mobile --><p class="d-block d-md-none txt-mygray">No more muddy mixtures, smudge brush is now your&nbsp;friend!</p> 
-
-                </div>
-            </div>
-            <div class="row justify-content-evenly align-items-center mb-3 ">
-                <div class="col-lg-4 col-md-9 col-10 text-lg-start text-md-center text-start order-lg-1 order-2">
-                    <!-- other -->
-                        <!-- desktop, tablet --><h2 class="d-none d-md-block d-lg-none d-xl-block fw-bold txt-mylightgray">Juicy Brushstrokes</h2>
-                        <!-- LG --><h2 class="d-none d-lg-block d-xl-none fw-bold txt-mylightgray h3">Juicy Brushstrokes</h2>
-                        <!-- mobile --><h2 class="d-block d-md-none fw-bold txt-mylightgray h4">Juicy Brushstrokes</h2>
-
-                    <!-- desktop, tablet -->
-                    <p class="d-none d-md-block d-lg-none d-xl-block txt-mygray lh-lg pt-3">Layering of textured brushstrokes won't desaturate your art anymore. Brushes will have a rich and vibrant&nbsp;fallof.</p>
-                    <!-- LG -->
-                        <p class="d-none d-lg-block d-xl-none txt-mygray pt-3">Layering of textured brushstrokes won't desaturate your art anymore. Brushes will have a rich and vibrant&nbsp;fallof.</p>
-                    <!-- mobile --><p class="d-block d-md-none txt-mygray">Layering of textured brushstrokes won't desaturate your art&nbsp;anymore!</p>                 
-                </div>
-                <div class="col-lg-6 col-10 mb-lg-0 mb-3 order-lg-2 order-1">
-                    <img srcset="./img/layering.jpg, ./img/layering@1.5x.jpg 1.5x, ./img/layering@2x.jpg 2x" src="./img/layering.jpg" class="img-fluid" alt="Smudging">
-                </div>   
-            </div>
-            <div class="row justify-content-evenly align-items-center">
-                <div class="col-lg-6 col-10 mb-md-0 mb-3">
-                    <img srcset="./img/gradients.jpg, ./img/gradients@1.5x.jpg 1.5x, ./img/gradients@2x.jpg 2x" src="./img/gradients.jpg" class="img-fluid" alt="Layering of brushstrokes">
-                </div>
-                <div class="col-lg-4 col-md-9 col-10 text-lg-end text-md-center text-start">
-                    <!-- desktop, tablet --><h2 class="d-none d-md-block d-lg-none d-xl-block fw-bold txt-mylightgray">Rich, Deep Gradients</h2>
-                    <!-- LG --><h2 class="d-none d-lg-block d-xl-none fw-bold txt-mylightgray h3">Rich, Deep Gradients</h2>
-                    <!-- mobile --><h2 class="d-block d-md-none fw-bold txt-mylightgray h4">Rich, Deep Gradients</h2>
-
-                    <!-- dekstop, tablet -->
-                        <p class="d-none d-md-block d-lg-none d-xl-block txt-mygray lh-lg pt-3">Enjoy the hue shifts and radiant midtones! Build beautiful gradients from dark colors using just the pen&nbsp;pressure.</p>
-                    <!-- LG -->
-                        <p class="d-none d-lg-block d-xl-none txt-mygray pt-3">Enjoy the hue shifts and radiant midtones! Build beautiful gradients from dark colors using just the pen&nbsp;pressure.</p>
-                    <!-- mobile--><p class="d-block d-md-none txt-mygray">Build beautiful gradients from dark colors using just the pen&nbsp;pressure.</p>
-                </div>
-            </div>
-            <div class="row justify-content-center text-center my-md-5 py-md-5 my-4 py-4">
-                <div class="col"> <hr class="green"> </div>
-                <div class="col-md-1 col-2"> <img src="./img/green-arrow.svg"> </div>
-                <div class="col-lg-5 col"> <hr class="green"> </div>
-                <div class="col-1 d-none d-lg-block"> <img src="./img/green-arrow.svg"> </div>  
-                <div class="col d-none d-lg-block"> <hr class="green"> </div>   
-            </div>
-            <!-- desktop lg, xl, xxl -->
-            <div class="d-none d-lg-block">
-                <div class="row justify-content-center align-items-center text-center">
-                    <div class="col-6 text-center">
-                        <!-- xl, xxl --><h2 class="d-xl-block d-none fw-bold txt-mygreen">Natural Traditional Media</h2>   
-                        <!-- lg --><h2 class="d-xl-none d-block fw-bold txt-mygreen h3">Natural Traditional Media</h2>                   
-                    </div>
-                    <div class="col-6 text-center">
-                        <!-- xl, xxl --><h2 class="d-xl-block d-none fw-bold txt-mygreen">Realistic Fluid Simulation</h2>
-                        <!-- lg --><h2 class="d-xl-none d-block fw-bold txt-mygreen h3">Realistic Fluid Simulation</h2>  
-                    </div>   
-                </div>
-                <div class="row justify-content-around align-items-center text-center">
-                    <div class="col-xl-4 col-5 text-center">
-                        <p class=" lh-lg txt-mygray py-3">Mixbox is an essential part of Rebelle – a painting tool with beautiful digital oils&nbsp;and&nbsp;watercolors.</p>
-                    </div>
-                    <div class="col-xl-4 col-5 text-center">
-                        <p class=" lh-lg txt-mygray py-3">Mixbox is bringing realistic colors of liquids to Flip&nbsp;Fluids add-on&nbsp;for&nbsp;Blender.</p>
-                    </div>
-                </div>
-                <div class="row justify-content-center align-items-center text-center">
-                    <div class="col text-center">
-                        <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/OqZCsqALNJ0" title="Mixbox in Rebelle" allowfullscreen=""></iframe></div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="ratio ratio-16x9">
-                            <video controls="" muted="" playsinline="" loop="" poster="./img/video-flipfluids-poster.jpg">
-                            <source src="./src/flipfluids-video.mp4" type="video/mp4">
-                            <!-- <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
-                            Your browser does not support HTML5 video.
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- tablet, mobil -->
-            <div class="d-block d-lg-none">
-                <div class="row justify-content-center align-items-center text-center pt-3">
-                    <div class="col-md-9 col-10 text-md-center text-start mb-5 pb-md-5 pb-3">
-                        <!-- tablet -->
-                        <h2 class="d-none d-md-block fw-bold txt-mygreen">Natural Traditional Media</h2>
-                        <p class="d-none d-md-block lh-lg txt-mygray py-3">Mixbox is an essential part of Rebelle – a painting tool with beautiful digital oils&nbsp;and&nbsp;watercolors.</p>
-                        <!-- mobil -->
-                        <h2 class="d-block d-md-none fw-bold txt-mygreen h4">Natural Traditional Media</h2>
-                        <p class="d-block d-md-none txt-mygray py-2">Mixbox is an essential part of Rebelle – a painting tool with beautiful digital oils&nbsp;and&nbsp;watercolors.</p>
-                       
-                        <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/OqZCsqALNJ0" title="Mixbox in Rebelle" allowfullscreen=""></iframe></div>
-                    </div>
-                    <div class="col-md-9 col-10 text-md-center text-start mb-3">
-                        <!-- tablet -->
-                        <h2 class="d-none d-md-block fw-bold txt-mygreen">Realistic Fluid Simulation</h2>
-                        <p class="d-none d-md-block lh-lg txt-mygray py-3">Mixbox is bringing realistic colors of liquids to Flip&nbsp;Fluids add-on&nbsp;for&nbsp;Blender.</p>
-                        <!-- mobil -->
-                        <h2 class="d-block d-md-none fw-bold txt-mygreen h4">Realistic Fluid Simulation</h2>
-                        <p class="d-block d-md-none txt-mygray py-2">Mixbox is bringing realistic colors of liquids to Flip&nbsp;Fluids add-on&nbsp;for&nbsp;Blender.</p>
-                        
-                        <div class="ratio ratio-16x9">
-                            <video controls="" muted="" playsinline="" loop="" poster="./img/video-flipfluids-poster.jpg">
-                            <source src="./src/flipfluids-video.mp4" type="video/mp4">
-                            <!-- <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
-                            Your browser does not support HTML5 video.
-                            </video>
-                        </div>
-                    </div>   
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- For Developers -->
-    <section id="for-developers">
-        <div class="container-fluid bg-brushstrokes-img bg-mydarkgreen pt-5">
-            <div class="container pt-5 mt-5">
-                <div class="row py-lg-3 py-md-1 my-md-5"></div>
-                <!-- DEVELOPERS -->
-                <div class="row justify-content-xxl-around justify-content-evenly align-items-center py-md-5 py-4">
-                    <div class="col-xl-4 col-lg-5 col-md-9 col-11 pb-lg-0 pb-3">
-                        <h1 class="fw-bold txt-mygreen pb-md-3 pb-2">For Developers</h1>
-                        <!-- XXL -->
-                        <ul class="green text-white py-3 d-none d-xxl-block">
-                            <li class="py-2">Mixbox has the classic <strong class="txt-mygreen fst-italic">lerp</strong> interface</li>
-                            <li class="py-2">You pass RGB colors in and get the mixed RGB out</li>
-                            <li class="py-2">Support for <strong class="txt-mygreen">Unity</strong> and <strong class="txt-mygreen">Android Studio</strong></li>
-                        </ul>
-                        <!-- LG, XL -->
-                        <ul class="green text-white py-3 d-none d-lg-block d-xxl-none">
-                            <li class="py-xl-2"><span>Mixbox has the classic <strong class="txt-mygreen fst-italic">lerp</strong> interface</span></li>
-                            <li class="py-xl-2"><span>You pass RGB in and get RGB out</span></li>
-                            <li class="py-xl-2"><span>Support for <strong class="txt-mygreen">Unity</strong> and <strong class="txt-mygreen">Android Studio</strong></span></li>
-                        </ul>
-                        <!-- tablet -->
-                        <ul class="green text-white pt-3 d-none d-md-block d-lg-none">
-                            <li class="py-2"><span>Mixbox has the classic <strong class="txt-mygreen fst-italic">lerp</strong> interface</span></li>
-                            <li class="py-2"><span>You pass RGB colors in and get the mixed RGB out</span></li>
-                            <li class="pt-2 pb-4"><span>Support for <strong class="txt-mygreen">Unity</strong> and <strong class="txt-mygreen">Android Studio</strong></span></li>
-                        </ul>
-                        <!-- mobile -->
-                        <ul class="nomag green text-white pt-3 d-block d-md-none">
-                            <li class=""><span>Mixbox has the <strong class="txt-mygreen fst-italic">lerp</strong> interface</span></li>
-                            <li class=""><span>Pass RGB in and get RGB out</span></li>
-                            <li class=""><span>Support for <strong class="txt-mygreen">Unity</strong> and <strong class="txt-mygreen">Android</strong></span></li>
-                        </ul>
-                        <!-- button github for LG, XL, XXL -->
-                        <div class="d-none d-lg-flex align-items-center pt-md-3 pt-2 pb-lg-0 pb-md-5 pb-2">
-                            <a class="my-button button-green button-long me-3" href="https://github.com/scrtwpns/mixbox" role="button">
-                                <i class="bi bi-github fs-3 pe-2"></i>GitHub
-                            </a>
-                            <a class="my-button button-green-outline" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
-                        </div>    
-                    </div>
-                    <div class="col-xl-6 col-lg-7 col-md-9 col-11">
-                        <!-- CODE -->
-                        <ul class="nav nav-tabs code-tabs" id="code" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="cpp-tab" data-bs-toggle="tab" data-bs-target="#cpp" type="button" role="tab" aria-controls="cpp" aria-selected="true">C++</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="glsl-tab" data-bs-toggle="tab" data-bs-target="#glsl" type="button" role="tab" aria-controls="glsl" aria-selected="false">GLSL</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="js-tab" data-bs-toggle="tab" data-bs-target="#js" type="button" role="tab" aria-controls="js" aria-selected="false">JS</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="python-tab" data-bs-toggle="tab" data-bs-target="#python" type="button" role="tab" aria-controls="python" aria-selected="false">Python</button>
-                            </li>
-                            <li class="nav-item d-none d-xxl-flex" role="presentation">
-                                <button class="nav-link" id="java-tab" data-bs-toggle="tab" data-bs-target="#java" type="button" role="tab" aria-controls="java" aria-selected="false">Java</button>
-                            </li>
-                            <li class="nav-item d-none d-xxl-flex" role="presentation">
-                                <button class="nav-link" id="rust-tab" data-bs-toggle="tab" data-bs-target="#rust" type="button" role="tab" aria-controls="rust" aria-selected="false">Rust</button>
-                            </li>
-                            <li class="nav-item d-none d-md-flex" role="presentation">
-                                <button class="nav-link" id="unity-tab" data-bs-toggle="tab" data-bs-target="#unity" type="button" role="tab" aria-controls="unity" aria-selected="false">Unity</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="codeContent">
-
-                            <div class="tab-pane fade show active" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
-<!-- CPP  -->
-<div class="mycode">
-<pre class="line-numbers language-cpp" tabindex="0"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"mixbox.h"</span></span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">uint8_t</span> r1 <span class="token operator">=</span>   <span class="token number">0</span><span class="token punctuation">,</span> g1 <span class="token operator">=</span>  <span class="token number">33</span><span class="token punctuation">,</span> b1 <span class="token operator">=</span> <span class="token number">133</span><span class="token punctuation">;</span>
-  <span class="token keyword">uint8_t</span> r2 <span class="token operator">=</span> <span class="token number">252</span><span class="token punctuation">,</span> g2 <span class="token operator">=</span> <span class="token number">211</span><span class="token punctuation">,</span> b2 <span class="token operator">=</span>   <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">float</span> t <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span>                       
-  <span class="token keyword">uint8_t</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
-
-  <span class="token function">mixbox_lerp</span><span class="token punctuation">(</span>r1<span class="token punctuation">,</span> g1<span class="token punctuation">,</span> b1<span class="token punctuation">,</span>  <span class="token comment">// first color</span>
-              r2<span class="token punctuation">,</span> g2<span class="token punctuation">,</span> b2<span class="token punctuation">,</span>  <span class="token comment">// second color</span>
-              t<span class="token punctuation">,</span>           <span class="token comment">// mixing ratio</span>
-              <span class="token operator">&amp;</span>r<span class="token punctuation">,</span> <span class="token operator">&amp;</span>g<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// result</span>
-
-  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d %d\n"</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-                            </div>
-                            
-                            <div class="tab-pane fade" id="glsl" role="tabpanel" aria-labelledby="glsl-tab">
-<!-- GLSL -->
-<div class="mycode">
-<pre class="line-numbers language-glsl" tabindex="0"><code class="language-glsl"><span class="token keyword">uniform</span> <span class="token keyword">sampler2D</span> mixbox_lut<span class="token punctuation">;</span>
-
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"mixbox.glsl"</span></span>
-
-<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">vec3</span> blue <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.129</span><span class="token punctuation">,</span> <span class="token number">0.522</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">vec3</span> yellow <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">0.988</span><span class="token punctuation">,</span> <span class="token number">0.827</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    
-  <span class="token keyword">float</span> t <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span> <span class="token comment">// mixing ratio</span>
-
-  <span class="token keyword">vec3</span> rgb <span class="token operator">=</span> <span class="token function">mixbox_lerp</span><span class="token punctuation">(</span>blue<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  gl_FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>rgb<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-                            </div>
-
-                            <div class="tab-pane fade" id="js" role="tabpanel" aria-labelledby="js-tab">
-<!-- Javascript -->
-<div class="mycode">
-<pre class="line-numbers language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">import</span> mixbox <span class="token keyword">from</span> <span class="token string">'mixbox'</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> blue <span class="token operator">=</span> <span class="token string">"rgb(0, 33, 133)"</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> yellow <span class="token operator">=</span> <span class="token string">"rgb(252, 211, 0)"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> t <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span> <span class="token comment">// mixing ratio</span>
-
-<span class="token keyword">let</span> rgb <span class="token operator">=</span> mixbox<span class="token punctuation">.</span><span class="token function">lerp</span><span class="token punctuation">(</span>blue<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rgb<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-
-
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-                            </div>
-
-                            <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
-<!-- Python -->
-<div class="mycode">
-<pre class="line-numbers language-python" tabindex="0"><code class="language-python"><span class="token keyword">import</span> mixbox
-
-rgb1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">133</span><span class="token punctuation">)</span>  <span class="token comment"># blue</span>
-rgb2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">252</span><span class="token punctuation">,</span> <span class="token number">211</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># yellow</span>
-t <span class="token operator">=</span> <span class="token number">0.5</span>              <span class="token comment"># mixing ratio</span>
-
-rgb_mix <span class="token operator">=</span> mixbox<span class="token punctuation">.</span>lerp<span class="token punctuation">(</span>rgb1<span class="token punctuation">,</span> rgb2<span class="token punctuation">,</span> t<span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>rgb_mix<span class="token punctuation">)</span>
-
-
-
-
-
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-                            </div>
-
-                            <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
-<!-- Java -->
-<div class="mycode">
-<pre class="line-numbers language-java" tabindex="0"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>scrtwpns<span class="token punctuation">.</span></span><span class="token class-name">Mixbox</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainActivity</span> <span class="token keyword">extends</span> <span class="token class-name">Activity</span> <span class="token punctuation">{</span>
-  <span class="token annotation punctuation">@Override</span>
-  <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span><span class="token class-name">Bundle</span> saved<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>saved<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> color1 <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">rgb</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">133</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// blue</span>
-    <span class="token keyword">int</span> color2 <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">rgb</span><span class="token punctuation">(</span><span class="token number">252</span><span class="token punctuation">,</span> <span class="token number">211</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// yellow</span>
-    <span class="token keyword">float</span> t <span class="token operator">=</span> <span class="token number">0.5f</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> colorMix <span class="token operator">=</span> <span class="token class-name">Mixbox</span><span class="token punctuation">.</span><span class="token function">lerp</span><span class="token punctuation">(</span>color1<span class="token punctuation">,</span> color2<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">View</span> view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">View</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    view<span class="token punctuation">.</span><span class="token function">setBackgroundColor</span><span class="token punctuation">(</span>colorMix<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">setContentView</span><span class="token punctuation">(</span>view<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-                            </div>
-
-                            <div class="tab-pane fade" id="rust" role="tabpanel" aria-labelledby="rust-tab">
-<!-- Rust -->
-<div class="mycode">
-<pre class="line-numbers language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> rgb1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">133</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// blue</span>
-  <span class="token keyword">let</span> rgb2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">252</span><span class="token punctuation">,</span> <span class="token number">211</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// yellow</span>
+    <div data-nc-container="top-left">
+      
+    <a href="/" class="Mobile-bar-branding" data-nc-element="branding" data-content-field="site-title">
         
-  <span class="token keyword">let</span> t <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span>  <span class="token comment">// mixing ratio</span>
+          
+            Benedict Evans
+          
+        
+      </a></div>
+    <div data-nc-container="top-center"></div>
+    <div data-nc-container="top-right"><button class="Mobile-bar-menu" data-nc-element="menu-icon" data-controller-overlay="menu" data-controller="MobileOverlayToggle" aria-label="Open navigation menu" data-controllers-bound="MobileOverlayToggle">
+        <svg class="Icon Icon--hamburger" viewBox="0 0 24 18">
+          <use xlink:href="/assets/ui-icons.svg#hamburger-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#hamburger-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg class="Icon Icon--hotdog" viewBox="0 0 24 14">
+          <use xlink:href="/assets/ui-icons.svg#hotdog-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#hotdog-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg class="Icon Icon--plus" viewBox="0 0 20 20">
+          <use xlink:href="/assets/ui-icons.svg#plus-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#plus-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg class="Icon Icon--dots-horizontal" viewBox="0 0 25 7">
+          <use xlink:href="/assets/ui-icons.svg#dots-horizontal-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#dots-horizontal-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg class="Icon Icon--dots-vertical" viewBox="0 0 7 25">
+          <use xlink:href="/assets/ui-icons.svg#dots-vertical-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#dots-vertical-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg class="Icon Icon--squares-horizontal" viewBox="0 0 25 7">
+          <use xlink:href="/assets/ui-icons.svg#squares-horizontal-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#squares-horizontal-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg class="Icon Icon--squares-vertical" viewBox="0 0 7 25">
+          <use xlink:href="/assets/ui-icons.svg#squares-vertical-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#squares-vertical-icon--odd" class="use--odd"></use>
+        </svg>
+      </button></div>
+  </div>
+  <div class="Mobile-bar Mobile-bar--bottom" data-nc-group="bottom" data-controller="MobileOffset" data-controllers-bound="MobileOffset">
+    <div data-nc-container="bottom-left">
+      
+    </div>
+    <div data-nc-container="bottom-center">
+      
+    </div>
+    <div data-nc-container="bottom-right">
+      
+      
+    </div>
+  </div>
+
+  <div class="Mobile-overlay">
+    <div class="Mobile-overlay-menu" data-controller="MobileOverlayFolders" data-controllers-bound="MobileOverlayFolders">
+      <div class="Mobile-overlay-menu-main">
+        <nav class="Mobile-overlay-nav Mobile-overlay-nav--primary" data-content-field="navigation">
+          
+  
     
-  <span class="token keyword">let</span> <span class="token punctuation">[</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token namespace">mixbox<span class="token punctuation">::</span></span><span class="token function">lerp</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>rgb1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rgb2<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+        
+          <a href="/essays" class="Mobile-overlay-nav-item">
+            Essays
+          </a>
+        
+      
     
-  <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{} {} {}"</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    
+  
+    
+      
+        
+          <a href="/presentations" class="Mobile-overlay-nav-item">
+            Presentations
+          </a>
+        
+      
+    
+    
+  
+    
+      
+        
+          <a href="/newsletter" class="Mobile-overlay-nav-item">
+            Newsletter
+          </a>
+        
+      
+    
+    
+  
+    
+      
+        
+          <a href="/contact" class="Mobile-overlay-nav-item">
+            About &amp; Contact
+          </a>
+        
+      
+    
+    
+  
+
+        </nav>
+        <nav class="Mobile-overlay-nav Mobile-overlay-nav--secondary" data-content-field="navigation">
+          
+        </nav>
+      </div>
+      <div class="Mobile-overlay-folders" data-content-field="navigation">
+        
+  
+
+  
+
+  
+
+  
+
+        
+      </div>
+    </div>
+    <button class="Mobile-overlay-close" data-controller="MobileOverlayToggle" aria-label="Close navigation menu" data-controllers-bound="MobileOverlayToggle">
+      <svg class="Icon Icon--close" viewBox="0 0 16 16">
+        <use xlink:href="/assets/ui-icons.svg#close-icon"></use>
+      </svg>
+    </button>
+    <div class="Mobile-overlay-back" data-controller="MobileOverlayToggle" data-controllers-bound="MobileOverlayToggle"></div>
+  </div>
+</div>
 
 
-
-
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-                            </div>
-                            <div class="tab-pane fade" id="unity" role="tabpanel" aria-labelledby="unity-tab">
-<!-- unity -->
-<div class="mycode">
-<pre class="line-numbers language-csharp" tabindex="0"><code class="language-csharp"><span class="token keyword">using</span> <span class="token namespace">Scrtwpns<span class="token punctuation">.</span>Mixbox</span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NewBehaviourScript</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">MonoBehaviour</span></span>
-<span class="token punctuation">{</span>
-  <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">{</span>
-    <span class="token class-name">Color</span> blue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Color</span><span class="token punctuation">(</span><span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.13f</span><span class="token punctuation">,</span> <span class="token number">0.52f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">Color</span> yellow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Color</span><span class="token punctuation">(</span><span class="token number">0.99f</span><span class="token punctuation">,</span> <span class="token number">0.83f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name"><span class="token keyword">float</span></span> t <span class="token operator">=</span> <span class="token number">0.5f</span><span class="token punctuation">;</span>
-
-    <span class="token class-name">Color</span> mixed <span class="token operator">=</span> Mixbox<span class="token punctuation">.</span><span class="token function">Lerp</span><span class="token punctuation">(</span>blue<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-    Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>mixed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-                            </div>
-
-                        </div>    
-
-                        <!-- buttons tablet -->
-                        <div class="d-lg-none d-md-flex d-none align-items-center justify-content-center pt-md-5 pt-4">
-                            <a class="my-button button-green me-3" href="https://github.com/scrtwpns/mixbox" role="button">
-                                <i class="bi bi-github fs-3 pe-2"></i>GitHub
-                            </a>
-                            <a class="my-button button-green-outline" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
-                        </div>
-                        <!-- buttons mobile -->
-                        <div class="d-md-none d-block text-center pt-md-5 pt-4">
-                            <a class="my-button button-green button-full-long mb-3" href="https://github.com/scrtwpns/mixbox" role="button">
-                                <i class="bi bi-github fs-3 pe-2"></i>GitHub
-                            </a>
-                            <a class="my-button button-green-outline button-full-long" href="https://scrtwpns.com/mixbox/docs" role="button">Documentation</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- EXAMPLES -->
-                <div class="row justify-content-xxl-around justify-content-evenly align-items-center py-5">
-                    <div class="col-xl-6 col-lg-7 col-md-9 col-11 order-lg-1 order-2">
-                        <a href="examples.html"><img srcset="./img/examples.png, ./img/examples@1.5x.png 1.5x, ./img/examples@2x.png 2x" src="./img/examples.png" class="img-fluid" alt="Examples"></a>
-                        <!-- button examples for tablet -->
-                        <div class="d-none d-md-block d-lg-none text-center pt-md-4 pt-3 pb-md-0 pb-3">
-                            <a class="my-button button-green-outline button-long" href="examples.html" role="button">Examples</a>
-                        </div> 
-                        <!-- button examples for mobil -->
-                        <div class="d-block d-md-none text-center pt-md-4 pt-3 pb-md-0 pb-3">
-                            <a class="my-button button-green-outline button-full-long" href="examples.html" role="button">Examples</a>
-                        </div> 
-                    </div>
-                    <div class="col-xl-4 col-lg-5 col-md-8 col-11 text-md-end text-start order-lg-2 order-1 offset-lg-0 offset-md-2 offset-0">
-                        <h1 class="fw-bold txt-mygreen pb-md-3 pb-2">Coding Examples</h1>
-                        <!-- other -->
-                        <p class="d-none d-md-block lh-lg text-white py-3"><strong>See how Mixbox works in these fun and easy projects!</strong> They run live in your browser, so you can either play with the graphics or with&nbsp;the&nbsp;code.</p>
-                        <!-- mobile -->
-                        <p class="d-block d-md-none text-white py-3"><strong>See how Mixbox works in these easy projects!</strong> They run live in your browser, so go ahead and try&nbsp;them&nbsp;out.</p>
-                        <!-- button examples for lg, xl, xxl -->
-                        <div class="d-none d-lg-block pt-md-3 pt-2">
-                            <a class="my-button button-green-outline button-long" href="examples.html" role="button">Examples</a>
-                        </div>               
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research">
-        <div class="container-fluid bg-mydarkgreen bg-brushstrokes-btm-img pb-5">
-            <div class="container mb-5 pb-5">
-                <div class="row justify-content-xxl-around justify-content-evenly align-items-center py-md-5">
-                    <div class="col-xl-4 col-lg-5 col-md-9 col-11 pb-lg-0 pb-5">
-                        <h1 class="fw-bold txt-mygreen pb-md-3 pb-2">How it works</h1>
-                        <!-- other -->
-                        <p class="d-none d-md-block text-white fw-bold lh-lg pt-3">Do you want to know more about the science behind Mixbox? Here's&nbsp;our&nbsp;research.</p>
-                        <!-- mobile -->
-                        <p class="d-block d-md-none text-white fw-bold">Do you want to know more about the science behind Mixbox? Here's&nbsp;our&nbsp;research.</p>
-                        <p class="mt-md-5 mt-lg-3 mt-xl-5 pt-2">
-                            <button id="intro" class="mytoggle mytoggle-active" onclick="toggleVideo('intro', 'conference')">
-                                <i class="bi bi-play-fill pe-2"></i> Introduction video (10 minutes)
-                            </button>
-                        </p>
-                        <p class="mb-md-5 mb-lg-3 mb-xl-5 pb-2"> 
-                            <button id="conference" class="mytoggle" onclick="toggleVideo('conference', 'intro')">
-                                <i class="bi bi-play-fill pe-2"></i> Siggraph Talk (17 minutes)
-                            </button> 
-                        </p>
-                        <div class="d-inline white-link me-4"><a href="https://scrtwpns.com/mixbox.pdf"><i class="bi bi-file-earmark-text-fill fs-3 pe-2"></i>Paper.pdf</a></div>
-                        <div class="d-inline white-link"><a href="https://github.com/scrtwpns/mixbox" target="_blank"><i class="bi bi-github fs-3 pe-2"></i>GitHub</a></div> 
-                    </div>
-                    <div class="col-xl-6 col-lg-7 col-md-9 col-11">
-                        <div id="toggle-target">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/Xsqtg2yRl8M" title="Introduction Video" allowfullscreen=""></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-3 my-md-5"></div>
-                </div>    
-            </div>
-        </div>
-    </section>
-
-    <!-- License -->
-    <section id="license">
-        <div class="container my-md-5 pt-md-5 pb-md-5 pt-5 pb-3">
-            <div class="row justify-content-evenly align-items-center py-md-3">
-                <div class="col-xl-4 col-lg-5 col-md-9 col-10">
-                    <h1 class="fw-bold txt-mygreen pb-3">Licensing</h1>
-                    <!-- other -->
-                    <p class="txt-mygray lh-lg pt-md-3 pt-2 pb-lg-0 pb-md-5 pb-3 d-md-block d-none">
-                        <strong>Do you want Mixbox in your software? No problem! We have many flexible licensing options.</strong>
-                        Whether you're an indie developer or a big corporate, we'd be happy to hear you out and tailor the license to your needs. Get in touch with us to get the&nbsp;ball&nbsp;rolling!
-                    </p>
-                    <!-- mobile -->
-                    <p class="txt-mygray pt-md-3 pt-2 pb-lg-0 pb-md-5 pb-3 d-block d-md-none">
-                        <strong>Do you want Mixbox in your software? No problem! We have many flexible licensing options.</strong>
-                        Whether you're an indie developer or a big corporate, we'd be happy to hear you out and tailor the license to your needs. Get in touch with us to get the&nbsp;ball&nbsp;rolling!
-                    </p>
-                </div>
-                <div class="col-xl-4 col-lg-5 col-md-9 col-10">
-                    <p class="txt-mygray green-link">
-                        Leave us your contact details and we'll get back to you. You can also mail us directly at <a href="mailto:mixbox@scrtwpns.com" class="fw-bold">mixbox@scrtwpns.com</a>
-                    </p>
-                    <div class="text-center">
-                        <form action="https://formsubmit.co/d3e4637fbcb03ad0b8c5fcac40b443b1" method="post">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-lic" id="name" placeholder="Full Name" name="Name" required="">                                
-                                <label for="name">Full Name</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-lic" id="company" placeholder="Company / Product" name="Company-Product" required="">
-                                <label for="company">Company / Product</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control form-lic" id="floatingInput" placeholder="E-Mail Address" name="Email" required="">
-                                <label for="floatingInput">E-mail address</label>
-                            </div>
-                            <input type="text" name="_honey" style="display:none">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="https://scrtwpns.com/mixbox/index.html#license">
-                            <input type="hidden" name="_subject" value="License Request">
-                            <input type="hidden" name="_cc" value="ondrej.jamriska@gmail.com">
-                            <!-- other -->
-                            <button type="submit" class="my-button button-green button-long border-0 d-md-inline d-none">Submit</button>
-                            <!-- mobile -->
-                            <button type="submit" class="my-button-square button-green border-0 d-md-none d-block">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>    
-        </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="formsent" tabindex="-1" aria-labelledby="formsentLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content p-md-4 p-2 txt-mygray">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="formsentLabel"> <i class="bi bi-envelope-fill me-2"></i> Thank you</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body green-link">
-                    Your message has been sent. We will get back to you as soon as possible.
-                    </div>
-                </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- About us -->
-    <section id="team">
-        <div class="container my-md-5 my-3 py-5">
-            <div class="row py-xl-3"></div>
-            <div class="row justify-content-center align-items-center text-center pb-5 mb-md-3">
-                <div class="col"><hr class="green"></div>
-                <div class="col-lg-3 col-md-5 col-7"><h3 class="fw-bold txt-mygreen">Secret Weapons</h3></div>
-                <div class="col"><hr class="green"></div>
-            </div>
-            <div class="row justify-content-center align-items-center text-md-center text-start txt-mygray pb-3 mb-md-3">
-                <div class="col-xl-6 col-md-10 col-10">
-                    <p class="lh-lg"><span class="fw-bold d-block">Hi! We are the development team behind EbSynth and Mixbox.</span>We both love computer graphics, art, and VFX. Together we founded Secret Weapons to transform our research into powerful tools for&nbsp;visual&nbsp;artists.</p> 
-                </div>
-            </div>
-            <div class="row justify-content-center align-items-center text-center gx-md-4 gx-0">
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 me-md-2 ps-md-0 ps-2">
-                    <div class="card border-0 align-items-center">
-                        <img srcset="./img/sarka2.jpg, ./img/sarka2@1.5x.jpg 1.5x, ./img/sarka2@2x.jpg 2x" src="img/sarka2.jpg" class="card-img-top profilepic" alt="Sarka Sochorova">
-                        <div class="card-body">
-                            <h6 class="card-title txt-mygray">Šárka Sochorová</h6>
-                            <a href="mailto:sarka@scrtwpns.com" class="green d-none d-md-block">sarka@scrtwpns.com</a>
-                            <a href="mailto:sarka@scrtwpns.com" class="green d-block d-md-none fs-mysize2">sarka@scrtwpns.com</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 ms-md-2 pe-md-0 pe-4">
-                    <div class="card border-0 align-items-center">
-                        <img srcset="./img/ondrej2.jpg, ./img/ondrej2@1.5x.jpg 1.5x, ./img/ondrej2@2x.jpg 2x" src="img/ondrej2.jpg" class="card-img-top profilepic" alt="Ondrej Jamriska">
-                        <div class="card-body">
-                            <h6 class="card-title txt-mygray">Ondřej Jamriška</h6>
-                            <a href="mailto:ondrej@scrtwpns.com" class="green d-none d-md-block">ondrej@scrtwpns.com</a>
-                            <a href="mailto:ondrej@scrtwpns.com" class="green d-block d-md-none fs-mysize2">ondrej@scrtwpns.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="container-fluid bg-grad my-md-5 my-3 py-5">
-            <div class="row justify-content-center align-items-center pt-md-5 pt-4">
-                <div class="col-xxl-5 col-lg-7 col-md-9 col-11">
-                    <!-- other -->
-                    <h3 class="d-none d-md-block fw-bold txt-mygray text-center pb-5">Frequently Asked Questions</h3>
-                    <!-- mobil -->
-                    <h3 class="d-block d-md-none fw-bold txt-mygray pb-4 ps-3 h4">Frequently Asked Questions</h3>
-                    <div class="accordion accordion-flush " id="accordionFlushExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                <span class="d-none d-md-inline">How do I use Mixbox in Photoshop / Procreate / CSP?</span>
-                                <span class="d-md-none d-inline">How do I use Mixbox in PS / Procreate / CSP?</span>  
-                            </button>
-                          </h2>
-                          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">We would love for you to have Mixbox inside your favorite painting tools. However, Mixbox is not a plugin you could install yourselves. It is a piece of code for a new blending mode, and the only way to get it in painting software is if the developers do it. A possible way to achieve that is by letting them know you want it. Here are some user forums where you can drop a note if you'd like:
-                                <!-- other -->
-                                <ul class="d-none d-md-block txt-mygray green-link mt-3">
-                                    <li>Adobe Photoshop - <a href="https://community.adobe.com/t5/photoshop-ecosystem/ct-p/ct-photoshop?page=1&amp;sort=latest_replies&amp;filter=all&amp;tabid=ideas" target="_blank">community.adobe.com</a></li>
-                                    <li>Adobe Fresco - <a href="https://adobefresco.uservoice.com/" target="_blank">adobefresco.uservoice.com</a></li>
-                                    <li>Procreate - <a href="https://folio.procreate.art/discussions/3" target="_blank">folio.procreate.art/discussions</a></li>
-                                    <li>Clip Studio Paint - <a href="mailto:tech@celsys.co.jp">tech@celsys.co.jp</a></li>
-                                    <li>Corel Painter - <a href="https://www.corel.com/en/support/?hptrack=mmsup#corel" target="_blank">corel.com/en/support</a></li>
-                                </ul>
-                                <!-- mobile -->
-                                <ul class="d-block d-md-none nomag txt-mygray green-link mt-3">
-                                    <li class="pb-3"><span class="d-block">Adobe Photoshop</span> 
-                                        <a href="https://community.adobe.com/t5/photoshop-ecosystem/ct-p/ct-photoshop?page=1&amp;sort=latest_replies&amp;filter=all&amp;tabid=ideas" target="_blank">community.adobe.com</a></li>
-                                    <li class="pb-3"><span class="d-block">Adobe Fresco</span>
-                                        <a href="https://adobefresco.uservoice.com/" target="_blank">adobefresco.uservoice.com</a></li>
-                                    <li class="pb-3"><span class="d-block">Procreate</span>
-                                        <a href="https://folio.procreate.art/discussions/3" target="_blank">folio.procreate.art/discussions</a></li>
-                                    <li class="pb-3"><span class="d-block">Clip Studio Paint</span>
-                                        <a href="mailto:tech@celsys.co.jp">tech@celsys.co.jp</a></li>
-                                    <li class="pb-3"><span class="d-block">Corel Painter</span>
-                                        <a href="https://www.corel.com/en/support/?hptrack=mmsup#corel" target="_blank">corel.com/en/support</a></li>
-                                </ul>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="flush-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                              Can I try it out before buying license?
-                            </button>
-                          </h2>
-                          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body"><span class="d-block green-link pb-3">Yes, Mixbox is released under the <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> license. That means you can evaluate it for free. You won't need to buy the commercial license until you're ready to launch your product. Please get in touch with us by that time to set the license up: <a href="mailto:mixbox@scrtwpns.com">mixbox@scrtwpns.com</a>
-                            </span></div>
-                          </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingFour">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                                What pigments can Mixbox do?
-                              </button>
-                            </h2>
-                            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body"> 
-                                <div class="grid-container text-center">                                   
-                                    <div class="grid-item">
-                                        Cadmium Yellow Light<br>
-                                        <img srcset="./img/cadmium-yellow-light.jpg, ./img/cadmium-yellow-light@1.5x.jpg 1.5x, ./img/cadmium-yellow-light@2x.jpg 2x" src="cadmium-yellow-light.jpg" alt="Cadmium Yellow Light">
-                                    </div>
-                                    <div class="grid-item">
-                                        Hansa Yellow<br>
-                                        <img srcset="./img/hansa-yellow.jpg, ./img/hansa-yellow@1.5x.jpg 1.5x, ./img/hansa-yellow@2x.jpg 2x" src="hansa-yellow.jpg" alt="Hansa Yellow">
-                                    </div>
-                                    <div class="grid-item">
-                                        Cadmium Yellow Deep<br>
-                                        <img srcset="./img/cadmium-yellow-deep.jpg, ./img/cadmium-yellow-deep@1.5x.jpg 1.5x, ./img/cadmium-yellow-deep@2x.jpg 2x" src="cadmium-yellow-deep.jpg" alt="Cadmium Yellow Deep">
-                                    </div>
-                                    <div class="grid-item">
-                                        Cadmium Orange Light<br>
-                                        <img srcset="./img/cadmium-orange-light.jpg, ./img/cadmium-orange-light@1.5x.jpg 1.5x, ./img/cadmium-orange-light@2x.jpg 2x" src="cadmium-orange-light.jpg" alt="Cadmium Orange Light">
-                                    </div>
-                                    <div class="grid-item">
-                                        Cadmium Orange<br>
-                                        <img srcset="./img/cadmium-orange-medium.jpg, ./img/cadmium-orange-medium@1.5x.jpg 1.5x, ./img/cadmium-orange-medium@2x.jpg 2x" src="cadmium-orange-medium.jpg" alt="Cadmium Orange Medium">
-                                    </div>
-                                    <div class="grid-item">
-                                        Cadmium Red Light<br>
-                                        <img srcset="./img/cadmium-red-light.jpg, ./img/cadmium-red-light@1.5x.jpg 1.5x, ./img/cadmium-red-light@2x.jpg 2x" src="cadmium-red-light.jpg" alt="Cadmium Red Light">
-                                    </div>
-                                    <div class="grid-item">
-                                        Cadmium Red Medium<br>
-                                        <img srcset="./img/cadmium-red-medium.jpg, ./img/cadmium-red-medium@1.5x.jpg 1.5x, ./img/cadmium-red-medium@2x.jpg 2x" src="cadmium-red-medium.jpg" alt="Cadmium Red Medium">
-                                    </div>
-                                    <div class="grid-item">
-                                        Pyrrole Red<br>
-                                        <img srcset="./img/pyrrole-red.jpg, ./img/pyrrole-red@1.5x.jpg 1.5x, ./img/pyrrole-red@2x.jpg 2x" src="pyrrole-red.jpg" alt="Pyrrole Red">
-                                    </div>
-                                    <div class="grid-item">
-                                        Alizarin Crimson<br>
-                                        <img srcset="./img/alizarin-crimson.jpg, ./img/alizarin-crimson@1.5x.jpg 1.5x, ./img/alizarin-crimson@2x.jpg 2x" src="alizarin-crimson.jpg" alt="Alizarin Crimson">
-                                    </div>
-                                    <div class="grid-item">
-                                        Quinacridone Magenta<br>
-                                        <img srcset="./img/quinacridone-magenta.jpg, ./img/quinacridone-magenta@1.5x.jpg 1.5x, ./img/quinacridone-magenta@2x.jpg 2x" src="quinacridone-magenta.jpg" alt="Quinacridone Magenta">
-                                    </div>
-                                    <div class="grid-item">
-                                        Cobalt Violet<br>
-                                        <img srcset="./img/cobalt-violet.jpg, ./img/cobalt-violet@1.5x.jpg 1.5x, ./img/cobalt-violet@2x.jpg 2x" src="cobalt-violet.jpg" alt="Cobalt Violet">
-                                    </div>
-                                    <div class="grid-item">
-                                        Ultramarine Violet<br>
-                                        <img srcset="./img/ultramarine-violet.jpg, ./img/ultramarine-violet@1.5x.jpg 1.5x, ./img/ultramarine-violet@2x.jpg 2x" src="ultramarine-violet.jpg" alt="Ultramarine Violet">
-                                    </div>
-                                    <div class="grid-item">
-                                        Ultramarine Blue<br>
-                                        <img srcset="./img/ultramarine-blue.jpg, ./img/ultramarine-blue@1.5x.jpg 1.5x, ./img/ultramarine-blue@2x.jpg 2x" src="ultramarine-blue.jpg" alt="Ultramarine Blue">  
-                                    </div>
-                                    <div class="grid-item">
-                                        Cobalt Blue<br>
-                                        <img srcset="./img/cobalt-blue.jpg, ./img/cobalt-blue@1.5x.jpg 1.5x, ./img/cobalt-blue@2x.jpg 2x" src="cobalt-blue.jpg" alt="Cobalt Blue">     
-                                    </div>
-                                    <div class="grid-item">
-                                        Phthalo Blue<br>
-                                        <img srcset="./img/phthalo-blue.jpg, ./img/phthalo-blue@1.5x.jpg 1.5x, ./img/phthalo-blue@2x.jpg 2x" src="phthalo-blue.jpg" alt="Phthalo Blue">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Cerulean Blue<br>
-                                        <img srcset="./img/cerulean-blue.jpg, ./img/cerulean-blue@1.5x.jpg 1.5x, ./img/cerulean-blue@2x.jpg 2x" src="cerulean-blue.jpg" alt="Cerulean Blue">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Prussian Blue<br>
-                                        <img srcset="./img/prussian-blue.jpg, ./img/prussian-blue@1.5x.jpg 1.5x, ./img/prussian-blue@2x.jpg 2x" src="prussian-blue.jpg" alt="Prussian Blue">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Phthalo Green<br>
-                                        <img srcset="./img/phthalo-green.jpg, ./img/phthalo-green@1.5x.jpg 1.5x, ./img/phthalo-green@2x.jpg 2x" src="phthalo-green.jpg" alt="Phthalo Green">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Permanent Green<br>
-                                        <img srcset="./img/permanent-green.jpg, ./img/permanent-green@1.5x.jpg 1.5x, ./img/permanent-green@2x.jpg 2x" src="permanent-green.jpg" alt="Permanent Green">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Permanent Green Light<br>
-                                        <img srcset="./img/permanent-green-light.jpg, ./img/permanent-green-light@1.5x.jpg 1.5x, ./img/permanent-green-light@2x.jpg 2x" src="permanent-green-light.jpg" alt="Permanent Green Light">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Sap Green<br>
-                                        <img srcset="./img/sap-green.jpg, ./img/sap-green@1.5x.jpg 1.5x, ./img/sap-green@2x.jpg 2x" src="sap-green.jpg" alt="Sap Green">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Burnt Sienna<br>
-                                        <img srcset="./img/burnt-sienna.jpg, ./img/burnt-sienna@1.5x.jpg 1.5x, ./img/burnt-sienna@2x.jpg 2x" src="burnt-sienna.jpg" alt="Burnt Sienna">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Indian Red<br>
-                                        <img srcset="./img/indian-red.jpg, ./img/indian-red@1.5x.jpg 1.5x, ./img/indian-red@2x.jpg 2x" src="indian-red.jpg" alt="Indian Red">                                      
-                                    </div>
-                                    <div class="grid-item">
-                                        Bone Black<br>
-                                        <img srcset="./img/bone-black.jpg, ./img/bone-black@1.5x.jpg 1.5x, ./img/bone-black@2x.jpg 2x" src="bone-black.jpg" alt="Bone Black">
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="flush-headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                              How does pigment mixing work?
-                            </button>
-                          </h2>
-                          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">You might be familiar with terms like additive and subtractive mixing. True pigment mixing is a complex combination of both. When you push paints out of a tube and mix them, the light entering the substance starts bouncing around. It gets repeatedly scattered and absorbed, and that's how the final color is made. The process is called subsurface scattering. 
-                            <span class="d-block green-link pt-3">If you want to know more, watch our <a href="https://youtu.be/Xsqtg2yRl8M">Introduction Video</a>, or our <a href="https://www.youtube.com/watch?v=_qa5iWdfNKg" target="_blank">Siggraph Talk</a>.</span></div>
-                          </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingFive">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                                Is there a version for shaders?
-                              </button>
-                            </h2>
-                            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body green-link">Yes, <a href="https://github.com/scrtwpns/mixbox" target="_blank">Mixbox 2.0</a> is running in the following languages: 
-                                    <ul>
-                                        <li class="py-2 fw-bold">C++, Python, Javascript, GLSL, HLSL, C#, Java, and Rust</li>
-                                    </ul>
-                                    We have support for these engines and frameworks:
-                                    <ul>
-                                        <li class="py-2 fw-bold">Unity, Android Studio, P5js, WebGL, and Godot.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <div class="container mb-md-3 pb-5">
-        <div class="row justify-content-center align-items-center text-md-center">
-            <div class="col-xl-5 col-lg-8 col-md-9 col-10">
-                <!-- other -->
-                <h3 class="d-none d-md-block fw-bold txt-mygray">Interested in News?</h3>
-                <!-- mobil -->
-                <h3 class="d-block d-md-none fw-bold txt-mygray h4 ps-1">Interested in News?</h3>
-                <!-- other -->
-                <div class="d-none d-md-flex my-5">
-                    <form action="https://formsubmit.co/681ec884852273e2e560a6b70441288d" method="post" class="input-group">
-                            <input type="text" class="form-control newsletter fst-italic form-lic px-4" placeholder="Your E-Mail Address" aria-label="Your E-Mail Address" aria-describedby="button-addon2" name="email" required="">
-                            <input type="text" name="_honey" style="display:none">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="https://scrtwpns.com/mixbox">
-                            <button class="my-button button-green border-0 border-rad" type="submit" id="button-addon2">Submit</button>
-                    </form>
-                </div>
-                <!-- mobil -->
-                <div class="d-block d-md-none pt-3">
-                    <form action="https://formsubmit.co/681ec884852273e2e560a6b70441288d" method="post">
-                        <div class="form-floating mb-2">
-                            <input type="email" class="form-control form-lic" id="floatingInput" placeholder="E-Mail Address" name="email" required="">
-                            <label for="floatingInput">E-mail address</label>
-                            <input type="text" name="_honey" style="display:none">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="https://scrtwpns.com/mixbox">
-                        </div>
-                        <button type="submit" class="my-button-square button-green border-0">Submit</button>
-                    </form>
-                </div>
-            </div>
-         </div>
+    <div class="Parallax-host-outer">
+      <div class="Parallax-host" data-parallax-host="">
+        
+          
+            
+              
+                
+                
+                  
+                
+              
+            
+          
+        
+      </div>
     </div>
 
-    <!-- Footer -->
-    <section id="footer">
-        <div class="container-fluid pt-4 pb-2 bg-mygray fs-mysize">
-            <div class="container">
-                <!-- other -->
-                <div class="row justify-content-center align-items-top d-none d-md-flex">
-                    <div class="col-xl-8 col-11 ms-lg-5 ms-3">
-                        <table class="table table-borderless txt-mygray2" width="99%">
-                            <tbody><tr>
-                                <td width="33%">
-                                    <ul class="foot">
-                                        <li class="fw-bold txt-mylight">Secret Weapons</li>
-                                        <li class="pt-1">1111B S Governors Ave</li>
-                                        <li class="">Dover, DE 19904</li>
-                                        <li class="">United States</li>
-                                    </ul>
-                                </td>
-                                <td width="33%"> 
-                                    <ul class="foot">
-                                        <li class="fw-bold txt-mylight">Contact</li>
-                                        <li class="pt-1">team@scrtwpns.com</li>
-                                        <li class="">sarka@scrtwpns.com</li>
-                                        <li class="">ondrej@scrtwpns.com</li>
-                                    </ul>
-                                </td>
-                                <td width="33%">
-                                    <strong class="txt-mylight">Follow Us</strong>
-                                    <hr class="gray pb-1" style="width:50%;">
-                                    <div class="d-inline fs-5 myfooter">
-                                        <a href="https://twitter.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-twitter pe-3"></i></a>
-                                        <a href="https://instagram.com/scrt.wpns" target="_blank" class="foot-link"><i class="bi bi-instagram pe-3"></i></a>
-                                        <a href="https://facebook.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-facebook pe-3"></i></a>
-                                        <a href="https://www.youtube.com/channel/UCcYK15gnJhpuIrQ0er9wRUA" target="_blank" class="foot-link"><i class="bi bi-youtube pe-3"></i></a>
-                                        <a href="https://github.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-github"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody></table>                      
-                    </div>
-                </div>
-                <!-- mobile -->
-                <div class="row justify-content-center align-items-center text-center d-flex d-md-none txt-mygray2">
-                    <div class="col pb-4">
-                        <ul class="foot">
-                            <li class="fw-bold txt-mylight">Secret Weapons</li>
-                            <li class="fs-5 py-3">
-                                <a href="https://twitter.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-twitter pe-3"></i></a>
-                                <a href="https://instagram.com/scrt.wpns" target="_blank" class="foot-link"><i class="bi bi-instagram pe-3"></i></a>
-                                <a href="https://facebook.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-facebook pe-3"></i></a>
-                                <a href="https://www.youtube.com/channel/UCcYK15gnJhpuIrQ0er9wRUA" target="_blank" class="foot-link"><i class="bi bi-youtube pe-3"></i></a>
-                                <a href="https://github.com/scrtwpns" target="_blank" class="foot-link"><i class="bi bi-github"></i></a>
-                            </li>
-                            <li>team@scrtwpns.com</li>
-                            <li>1111B S Governors Ave</li>
-                            <li>Dover, DE 19904, US</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div class="Site loaded" data-nc-base="header" data-controller="AncillaryLayout" data-controllers-bound="AncillaryLayout">
+      <div class="sqs-announcement-bar-dropzone"></div>
+
+      <header class="Header Header--top">
+        <div class="Header-inner Header-inner--top" data-nc-group="top">
+          <div data-nc-container="top-left">
+
+            
+
+          <a href="/" class="Header-branding" data-nc-element="branding" data-content-field="site-title">
+                
+                  
+                    Benedict Evans
+                  
+                
+              </a></div>
+          <div data-nc-container="top-center">
+            
+            
+              
+            
+          <nav class="Header-nav Header-nav--primary" data-nc-element="primary-nav" data-content-field="navigation">
+                
+  <div class="Header-nav-inner">
+    <a href="/essays" class="Header-nav-item" data-test="template-nav">Essays</a><a href="/presentations" class="Header-nav-item Header-nav-item--active" data-test="template-nav">Presentations</a><a href="/newsletter" class="Header-nav-item" data-test="template-nav">Newsletter</a><a href="/contact" class="Header-nav-item" data-test="template-nav">About &amp; Contact</a>
+  </div>
+
+              </nav></div>
+          <div data-nc-container="top-right">
+
+            
+
+          </div>
         </div>
-    </section>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      </header>
 
-    <script src="prism.js"></script>
+      <div class="Site-inner">
 
-    <script language="javascript">
-        window.onload = function(){ 
-            if(window.location.hash === '#license'){
-                var myModal = new bootstrap.Modal(document.getElementById('formsent'))
-                myModal.show();
-            }
-           
-        }
-    </script>
+        <header class="Header Header--bottom">
+          <div class="Header-inner Header-inner--bottom" data-nc-group="bottom">
+            <div data-nc-container="bottom-left">
+              
+            </div>
+            <div data-nc-container="bottom-center">
 
+              
+              
 
-    <script>
-        var introHtml = '<div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/Xsqtg2yRl8M" title="Introduction Video" allowfullscreen></iframe></div>';
-        var conferenceHtml = '<div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/_qa5iWdfNKg"title="Conference Video"allowfullscreen></iframe></div>';
+            </div>
+            <div data-nc-container="bottom-right">
 
-        function toggleVideo(first, second) {
-            document.getElementById(first).classList.add("mytoggle-active");
-            document.getElementById(second).classList.remove("mytoggle-active");
+              
 
-            if(first.length > 5)
-            {
-                document.getElementById("toggle-target").innerHTML = conferenceHtml;
-            }
-            else {
-                document.getElementById("toggle-target").innerHTML = introHtml;
-            }
+            </div>
+          </div>
+        </header>
+
+        <div class="Content-outer">
           
-        } 
-    </script>
+            
+              
+                
+                  
+                
+              
+            
+          
 
-    <script>
-        window.addEventListener('load', videoScroll);
-        window.addEventListener('scroll', videoScroll);
+          <main class="Main Main--page">
+            
+              <section class="Main-content" data-content-field="main-content">
+                <div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1732929293326" id="page-673eeb37132cd034a738dddb"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-b9f3159875c236988b92"><div class="sqs-block-content"><div class="bigheader">
+<div class="headline1">Presentations</div>
+<div class="summary">Every year, I produce a big presentation exploring macro and strategic trends in the tech industry. <p></p>For 2025, ‘AI eats the world’.
 
-        function videoScroll() {
+  </div></div>
+<div class="redruler"></div></div></div><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-aspect-ratio="0.3" data-block-type="21" id="block-d41d78aaf4b5d42c5cc1"><div class="sqs-block-content sqs-intrinsic" id="yui_3_17_2_1_1735525551685_69" style="padding-bottom: 0.3%;">&nbsp;</div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-272dc683588449394635"><div class="sqs-block-content"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSONoA0DF6w8zkUwk1WcOon31tpm_5E5_LkD3t99HPEDYIYxjCmc-DP-JXbt6IsXRTu3tlD4s6E_0-9/embed?start=false&amp;loop=false&amp;delayms=1000" frameborder="0" width="100%" height="618" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div></div><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-aspect-ratio="4.7" data-block-type="21" id="block-9483d9d023cc045853d1"><div class="sqs-block-content sqs-intrinsic" id="yui_3_17_2_1_1735525551685_72" style="padding-bottom: 4.7%;">&nbsp;</div></div><div class="row sqs-row"><div class="col sqs-col-4 span-4"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-1bd34ee2dcdd3e0fadbc"><div class="sqs-block-content"><div class="sidetitle">Presentations
+</div></div></div></div><div class="col sqs-col-8 span-8"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-439707cafc4e118b802a"><div class="sqs-block-content"><div class="PageRightSingle" style="padding-bottom:30px;">
+<p>In the last few years, I’ve given presentations for companies including Alphabet, Amazon, AT&amp;T, Axa, Bertelsmann, Deutsche Telekom, Hitachi, L’Oréal, LVMH, Nasdaq, Swiss Re, Warner Media, Verizon and Vodafone.</p>
 
-        if ( document.querySelectorAll('video[autoplay]').length > 0) {
-            var windowHeight = window.innerHeight,
-                videoEl = document.querySelectorAll('video[autoplay]');
+  
+<p>I gave this year’s presentation as a keynote at the <a href="https://www.slush.org/events/helsinki/">Slush</a> conference in Helsinki in November 2024 - you can watch the video here. </p>
 
-            for (var i = 0; i < videoEl.length; i++) {
+  </div>
+<div class="PageRightSingle" style="border-top:0;">
+<iframe width="100%" height="350" src="https://www.youtube-nocookie.com/embed/LGDa3pO23Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>And I gave a version of the previous year’s presentation at the <a href="https://www.superai.com/">SuperAI</a> conference in Singapore. </p>
+<iframe width="100%" height="350" src="https://www.youtube-nocookie.com/embed/9HrfUVgDOps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
-            var thisVideoEl = videoEl[i],
-                videoHeight = thisVideoEl.clientHeight,
-                videoClientRect = thisVideoEl.getBoundingClientRect().top;
+</div>
 
-            if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
-                thisVideoEl.play();
-            } else {
-                thisVideoEl.pause();
-            }
+</div></div></div></div><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-aspect-ratio="5.5" data-block-type="21" id="block-42811cb940e207aa9de1"><div class="sqs-block-content sqs-intrinsic" id="yui_3_17_2_1_1735525551685_75" style="padding-bottom: 5.5%;">&nbsp;</div></div><div class="row sqs-row"><div class="col sqs-col-4 span-4"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-da2abdf8841f3afd0287"><div class="sqs-block-content"><div class="sidetitle">Previous presentations
+</div></div></div></div><div class="col sqs-col-8 span-8"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-45b32f51c2f1638af03e"><div class="sqs-block-content"><div class="PageRight" style="padding-bottom:20px;">
+<div class="PageRightEyebrow">2024</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2024-AI-and-Everything-Else-11.pdf" style="text-decoration: none">AI and Everything Else</a>
+</div>
+</div>
 
-            }
-        }
+<div class="PageRight" style="padding-bottom:20px;border-top:0 !important">
+<div class="PageRightEyebrow">2023</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2023-New-Gatekeepers-11.pdf" style="text-decoration: none">The New Gatekeepers</a>
+</div>
+</div>
 
-        }
-    </script>
+<div class="PageRight" style="padding-bottom:20px;border-top:0 !important"> 
+<div class="PageRightEyebrow">2022</div>
+  
+<div class="olddecks">
+<a href="https://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/63c45cd6bed94f61a1a7392e/1673813211420/2022+steps+to+the+future.pdf" style="text-decoration: none">Three Steps to the Future</a>
+</div>
+</div>
 
+<div class="PageRight" style="padding-bottom:20px;border-top:0 !important"> 
+<div class="PageRightEyebrow">2021</div>
+  
+<div class="olddecks">
+<a href="https://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/61acbe45d70c547d4a9334d4/1638710874348/2021+Great+Unbundling.pdf" style="text-decoration: none">The Great Unbundling</a>
+</div>
+</div>
+
+<div class="PageRight" style="padding-bottom:20px;border-top:0 !important"> 
+<div class="PageRightEyebrow">2020</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2020-12-Europe-55zp.pdf">European Unicorns</a>
+
+</div>
+</div>
+<div class="PageRight" style="padding-bottom:20px;border-top:0 !important">
+
+  
+<div class="PageRightEyebrow">2020</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2020-Benedict-Evans-Shoulders-of-Giants.pdf" style="text-decoration: none">Shoulders of Giants</a>
+</div>
+</div>
+
+
+<div class="PageRight" style="padding-bottom:20px;border-top:0 !important">
  
+<div class="PageRightEyebrow">2018</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2018-Benedict-Evans-End-of-the-beginning.pdf" style="text-decoration: none">The End of the Beginning</a>
 
-</body></html>
+</div>
+</div><div class="PageRight" style="padding-bottom:20px;border-top:0 !important">
+ 
+<div class="PageRightEyebrow">2017</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2017-Benedict-Evans-Ten-Year-Futures.pdf" style="text-decoration: none">Ten Year Futures</a> 
+
+</div>
+</div><div class="PageRight" style="padding-bottom:20px;border-top:0 !important">
+ 
+<div class="PageRightEyebrow">2016</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2016-Benedict-Evans-Mobile-eating-the-World.pdf" style="text-decoration: none">Mobile is Eating the World</a>
+
+</div>
+</div><div class="PageRight" style="padding-bottom:20px;border-top:0 !important">
+ 
+<div class="PageRightEyebrow">2015</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2015-Benedict-Evans-Mobile-eating-the-world.pdf" style="text-decoration: none">Mobile is Eating the World</a> 
+
+</div>
+</div><div class="PageRight" style="border-top:0 !important">
+ 
+<div class="PageRightEyebrow">2013</div>
+  
+<div class="olddecks">
+<a href="https://www.ben-evans.com/s/2013-Benedict-Evans-Mobile-eating-the-world.pdf" style="text-decoration: none">Mobile is Eating the World</a>
+
+</div>
+</div>
+
+</div></div></div></div></div><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-aspect-ratio="1.6" data-block-type="21" id="block-017cb459351574bc61e5"><div class="sqs-block-content sqs-intrinsic" id="yui_3_17_2_1_1735525551685_78" style="padding-bottom: 1.6%;">&nbsp;</div></div></div></div></section></main></div>
+              
+            
+          
+
+        </div>
+      </div>
+
+      <footer class="Footer" role="contentinfo" data-controller="FooterBreakpoints" data-controllers-bound="FooterBreakpoints">
+
+  <div class="Footer-inner clear">
+
+    <div class="sqs-layout sqs-grid-12 columns-12 Footer-blocks Footer-blocks--top sqs-alternate-block-style-container" data-layout-label="Footer Top Blocks" data-type="block-field" data-updated-on="1626006188417" id="footerBlocksTop"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1613825224523_7574"><div class="sqs-block-content"><hr></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1613825224523_5921"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <h2 style="white-space:pre-wrap;">Subscribe </h2>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1616455904842_5082"><div class="sqs-block-content">
+<p>What mattered in tech this week?</p>
+
+<p>
+  
+Once a week, I send an email newsletter to over 150,000 people - what happened in tech that actually mattered, and what it means. I pick out the changes and ideas you don’t want to miss in all the noise, and give them context and analysis. </p>
+<span class="redlink">
+  <a href="https://www.ben-evans.com/newsletter">Subscribe</a>
+</span></div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1608134717135_29011"><div class="sqs-block-content"><hr></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1609109316127_15866"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <p style="text-align:center;white-space:pre-wrap;" class="">© Benedict Evans</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div></div>
+
+    <div class="Footer-middle">
+      <div class="Footer-business">
+
+        
+
+        
+          
+            <div class="Footer-business-hours">
+              <div class="Footer-business-hours-heading">Hours</div>
+              
+              
+              
+              
+              
+              
+              
+            </div>
+          
+        
+
+      </div>
+
+      <div class="sqs-layout sqs-grid-12 columns-12 Footer-blocks Footer-blocks--middle sqs-alternate-block-style-container" data-layout-label="Footer Middle Blocks" data-type="block-field" data-updated-on="1704998731856" id="footerBlocksMiddle"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="row sqs-row"><div class="col sqs-col-4 span-4"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1628823491875_8515"><div class="sqs-block-content"><div class="FooterSidetitle"><a href="https://www.ben-evans.com/newsletter/">Newsletter</a>
+</div></div></div></div><div class="col sqs-col-8 span-8"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1628823491875_9243"><div class="sqs-block-content"><div class="PageRightFooter">
+  
+<div class="PageRightEyebrow" style="color: white !important;">
+  2024
+  </div>
+  
+<div class="PageRightText" style="color: white">
+<div class="FooterRightHeader"><a href="https://www.ben-evans.com/newsletter/">What mattered in tech this week?</a></div> 
+
+<div class="pagerightbody">Once a week, I send a newsletter to 175,000 people - what happened in tech that actually mattered, and what it means. I pick out the changes and ideas you don’t want to miss in all the noise, and give them context and analysis. 
+  </div>
+  <span class="C1" style="color: white"> <a href="/newsletter/">SUBSCRIBE</a></span>
+
+
+  </div>
+</div></div></div></div></div></div></div></div>
+
+      
+    </div>
+
+    <div class="sqs-layout sqs-grid-12 columns-12 Footer-blocks Footer-blocks--bottom sqs-alternate-block-style-container" data-layout-label="Footer Bottom Blocks" data-type="block-field" data-updated-on="1628823658386" id="footerBlocksBottom"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1628823491875_11710"><div class="sqs-block-content">
+<div class="copyright">
+  <div class="redruler" style="margin-top:-20px !important; padding-top:45px;"></div>© BENEDICT EVANS</div></div></div></div></div></div>
+
+  </div>
+
+</footer>
+
+
+    
+
+    <script src="https://static1.squarespace.com/static/ta/55f0a9b0e4b0f3eb70352f6d/354/scripts/site-bundle.js" type="text/javascript"></script>
+
+    <!-- Cloudflare Web Analytics --><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;78014ba9c0ac4efbb081b9f6ec01f2ca&quot;}"></script><!-- End Cloudflare Web Analytics -->
+
+<div id="mysummary" class="blogsummary">
+      <script>
+  document.write(document.querySelector('meta[name="description"]').content
+                )</script>Every year, I produce a big presentation exploring macro and strategic 
+trends in the tech industry. For 2024, ‘AI, and everything else’.
+</div>
+
+<div id="myruler" class="redrulerblog"></div>
+
+<script>
+//give title a div ID
+  document.querySelector('H1.BlogItem-title').id = 'y';
+//move summary to below title
+y.insertAdjacentElement('beforeend', mysummary);
+  //move rule to below summary
+mysummary.insertAdjacentElement('afterend', myruler);
+  
+</script><script data-sqs-type="imageloader-bootstrapper">if(window.ImageLoader) window.ImageLoader.bootstrap({}, document);</script><script>Squarespace.afterBodyLoad(Y);</script><svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" data-usage="social-icons-svg"><symbol id="twitter-unauth-icon" viewBox="0 0 64 64"><path d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"></path></symbol><symbol id="twitter-unauth-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M44.7,25.5c0,0.3,0,0.6,0,0.8C44.7,35,38.1,45,26.1,45c-3.7,0-7.2-1.1-10.1-2.9 c0.5,0.1,1,0.1,1.6,0.1c3.1,0,5.9-1,8.2-2.8c-2.9-0.1-5.3-2-6.1-4.6c0.4,0.1,0.8,0.1,1.2,0.1c0.6,0,1.2-0.1,1.7-0.2 c-3-0.6-5.3-3.3-5.3-6.4c0,0,0-0.1,0-0.1c0.9,0.5,1.9,0.8,3,0.8c-1.8-1.2-2.9-3.2-2.9-5.5c0-1.2,0.3-2.3,0.9-3.3 c3.2,4,8.1,6.6,13.5,6.9c-0.1-0.5-0.2-1-0.2-1.5c0-3.6,2.9-6.6,6.6-6.6c1.9,0,3.6,0.8,4.8,2.1c1.5-0.3,2.9-0.8,4.2-1.6 c-0.5,1.5-1.5,2.8-2.9,3.6c1.3-0.2,2.6-0.5,3.8-1C47.1,23.4,46,24.5,44.7,25.5z"></path></symbol><symbol id="linkedin-unauth-icon" viewBox="0 0 64 64"><path d="M20.4,44h5.4V26.6h-5.4V44z M23.1,18c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1 c1.7,0,3.1-1.4,3.1-3.1C26.2,19.4,24.8,18,23.1,18z M39.5,26.2c-2.6,0-4.4,1.4-5.1,2.8h-0.1v-2.4h-5.2V44h5.4v-8.6 c0-2.3,0.4-4.5,3.2-4.5c2.8,0,2.8,2.6,2.8,4.6V44H46v-9.5C46,29.8,45,26.2,39.5,26.2z"></path></symbol><symbol id="linkedin-unauth-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M25.8,44h-5.4V26.6h5.4V44z M23.1,24.3c-1.7,0-3.1-1.4-3.1-3.1c0-1.7,1.4-3.1,3.1-3.1 c1.7,0,3.1,1.4,3.1,3.1C26.2,22.9,24.8,24.3,23.1,24.3z M46,44h-5.4v-8.4c0-2,0-4.6-2.8-4.6c-2.8,0-3.2,2.2-3.2,4.5V44h-5.4V26.6 h5.2V29h0.1c0.7-1.4,2.5-2.8,5.1-2.8c5.5,0,6.5,3.6,6.5,8.3V44z"></path></symbol></svg>
+
+  
+
+<div class="cookie-banner-manager"></div></body></html>
