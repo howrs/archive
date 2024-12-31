@@ -1,1075 +1,316 @@
-<!DOCTYPE html><html><head>
-          <script type="text/javascript">
-        if (!Element.prototype.scrollIntoViewIfNeeded) {
-          Element.prototype.scrollIntoViewIfNeeded = function (centerIfNeeded) {
-            centerIfNeeded = arguments.length === 0 ? true : !!centerIfNeeded;
-        
-            var parent = this.parentNode,
-                parentComputedStyle = window.getComputedStyle(parent, null),
-                parentBorderTopWidth = parseInt(parentComputedStyle.getPropertyValue('border-top-width')),
-                parentBorderLeftWidth = parseInt(parentComputedStyle.getPropertyValue('border-left-width')),
-                overTop = this.offsetTop - parent.offsetTop < parent.scrollTop,
-                overBottom = (this.offsetTop - parent.offsetTop + this.clientHeight - parentBorderTopWidth) > (parent.scrollTop + parent.clientHeight),
-                overLeft = this.offsetLeft - parent.offsetLeft < parent.scrollLeft,
-                overRight = (this.offsetLeft - parent.offsetLeft + this.clientWidth - parentBorderLeftWidth) > (parent.scrollLeft + parent.clientWidth),
-                alignWithTop = overTop && !overBottom;
-        
-            if ((overTop || overBottom) && centerIfNeeded) {
-              parent.scrollTop = this.offsetTop - parent.offsetTop - parent.clientHeight / 2 - parentBorderTopWidth + this.clientHeight / 2;
-            }
-        
-            if ((overLeft || overRight) && centerIfNeeded) {
-              parent.scrollLeft = this.offsetLeft - parent.offsetLeft - parent.clientWidth / 2 - parentBorderLeftWidth + this.clientWidth / 2;
-            }
-        
-            if ((overTop || overBottom || overLeft || overRight) && !centerIfNeeded) {
-              this.scrollIntoView(alignWithTop);
-            }
-          };
-        }
+<!DOCTYPE html><html lang="KR"><head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <script src="/vendor/markdown-it.min.js"></script>
+        <link rel="stylesheet" href="/vendor/highlight-default.min.css">
+        <script src="/vendor/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
+                <!-- Global site tag (gtag.js) - Google Analytics v4 -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MCD87E7SF0"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MCD87E7SF0');
         </script>
-        <base href="/"> 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <!--
-        Note that some WebKit ports may set custom 'frame-src', 'img-src', and 'connect-src' directives via HTTP response header.
-        The combined CSP policy requires a request to be allowed by both directive lists, so 'default-src' is omitted.
-    -->
-    <meta http-equiv="Content-Security-Policy" content="media-src * blob:; font-src * blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' data:; object-src 'none'">
+                        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Kent Hendricks가 2024년에 배운 52가지</title>
+        <meta name="description" content="@reagea0 → <p>그러고 보니. 긱뉴스의 성비가 궁금해지네요. 저는 남자입니다.</p>">
 
-    <link rel="stylesheet" href="External/CodeMirror/codemirror.css">
+        <meta property="og:url" content="https://news.hada.io/comment?id=32823">
+        <meta property="og:title" content="Kent Hendricks가 2024년에 배운 52가지">
+            <meta property="og:locale" content="ko_KR">
+        <meta property="og:site_name" content="GeekNews">
+        <meta property="og:description" content="@reagea0 → <p>그러고 보니. 긱뉴스의 성비가 궁금해지네요. 저는 남자입니다.</p>">
+        <meta property="fb:app_id" content="2417316805247011">
 
-    <link rel="stylesheet" href="Views/AlignmentEditor.css">
-    <link rel="stylesheet" href="Views/AnimationCollectionContentView.css">
-    <link rel="stylesheet" href="Views/AnimationContentView.css">
-    <link rel="stylesheet" href="Views/AnimationDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/ApplicationCacheFrameContentView.css">
-    <link rel="stylesheet" href="Views/AuditNavigationSidebarPanel.css">
-    <link rel="stylesheet" href="Views/AuditTestCaseContentView.css">
-    <link rel="stylesheet" href="Views/AuditTestContentView.css">
-    <link rel="stylesheet" href="Views/AuditTestGroupContentView.css">
-    <link rel="stylesheet" href="Views/AuditTreeElement.css">
-    <link rel="stylesheet" href="Views/BannerView.css">
-    <link rel="stylesheet" href="Views/BlackboxedGroupTreeElement.css">
-    <link rel="stylesheet" href="Views/BlackboxedGroupView.css">
-    <link rel="stylesheet" href="Views/BlackboxSettingsView.css">
-    <link rel="stylesheet" href="Views/BootstrapScriptTreeElement.css">
-    <link rel="stylesheet" href="Views/BoxModelDetailsSectionRow.css">
-    <link rel="stylesheet" href="Views/BoxShadowEditor.css">
-    <link rel="stylesheet" href="Views/BreakpointActionView.css">
-    <link rel="stylesheet" href="Views/BreakpointInlineWidget.css">
-    <link rel="stylesheet" href="Views/BreakpointPopover.css">
-    <link rel="stylesheet" href="Views/BreakpointTreeElement.css">
-    <link rel="stylesheet" href="Views/ButtonNavigationItem.css">
-    <link rel="stylesheet" href="Views/CPUTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/CPUTimelineView.css">
-    <link rel="stylesheet" href="Views/CPUUsageCombinedView.css">
-    <link rel="stylesheet" href="Views/CPUUsageView.css">
-    <link rel="stylesheet" href="Views/CallFrameIcons.css">
-    <link rel="stylesheet" href="Views/CallFrameTreeElement.css">
-    <link rel="stylesheet" href="Views/CallFrameView.css">
-    <link rel="stylesheet" href="Views/CanvasContentView.css">
-    <link rel="stylesheet" href="Views/CanvasDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/CanvasOverviewContentView.css">
-    <link rel="stylesheet" href="Views/CanvasSidebarPanel.css">
-    <link rel="stylesheet" href="Views/ChangesDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/ChartDetailsSectionRow.css">
-    <link rel="stylesheet" href="Views/CheckboxNavigationItem.css">
-    <link rel="stylesheet" href="Views/CircleChart.css">
-    <link rel="stylesheet" href="Views/ClusterContentView.css">
-    <link rel="stylesheet" href="Views/CodeMirrorLocalOverrideURLMode.css">
-    <link rel="stylesheet" href="Views/CodeMirrorOverrides.css">
-    <link rel="stylesheet" href="Views/CodeMirrorRegexMode.css">
-    <link rel="stylesheet" href="Views/CollectionContentView.css">
-    <link rel="stylesheet" href="Views/ColorPicker.css">
-    <link rel="stylesheet" href="Views/ColorSquare.css">
-    <link rel="stylesheet" href="Views/CompletionSuggestionsView.css">
-    <link rel="stylesheet" href="Views/ComputedStyleDetailsPanel.css">
-    <link rel="stylesheet" href="Views/ComputedStyleSection.css">
-    <link rel="stylesheet" href="Views/ConsoleDrawer.css">
-    <link rel="stylesheet" href="Views/ConsoleMessageView.css">
-    <link rel="stylesheet" href="Views/ConsolePrompt.css">
-    <link rel="stylesheet" href="Views/ConsoleSnippetTreeElement.css">
-    <link rel="stylesheet" href="Views/ContentBrowser.css">
-    <link rel="stylesheet" href="Views/ContentBrowserTabContentView.css">
-    <link rel="stylesheet" href="Views/ContentView.css">
-    <link rel="stylesheet" href="Views/ContentViewContainer.css">
-    <link rel="stylesheet" href="Views/CSSDocumentationPopover.css">
-    <link rel="stylesheet" href="Views/CookiePopover.css">
-    <link rel="stylesheet" href="Views/CookieStorageContentView.css">
-    <link rel="stylesheet" href="Views/CreateAuditPopover.css">
-    <link rel="stylesheet" href="Views/CubicBezierTimingFunctionEditor.css">
-    <link rel="stylesheet" href="Views/DOMBreakpointTreeElement.css">
-    <link rel="stylesheet" href="Views/DOMEventsBreakdownView.css">
-    <link rel="stylesheet" href="Views/DOMNodeDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/DOMNodeEventsContentView.css">
-    <link rel="stylesheet" href="Views/DOMNodeTreeElement.css">
-    <link rel="stylesheet" href="Views/DOMStorageContentView.css">
-    <link rel="stylesheet" href="Views/DOMTreeContentView.css">
-    <link rel="stylesheet" href="Views/DOMTreeElement.css">
-    <link rel="stylesheet" href="Views/DOMTreeOutline.css">
-    <link rel="stylesheet" href="Views/DataGrid.css">
-    <link rel="stylesheet" href="Views/DatabaseContentView.css">
-    <link rel="stylesheet" href="Views/DatabaseTableContentView.css">
-    <link rel="stylesheet" href="Views/DetailsSection.css">
-    <link rel="stylesheet" href="Views/DividerNavigationItem.css">
-    <link rel="stylesheet" href="Views/DropZoneView.css">
-    <link rel="stylesheet" href="Views/Editing.css">
-    <link rel="stylesheet" href="Views/ElementsTabContentView.css">
-    <link rel="stylesheet" href="Views/ErrorObjectView.css">
-    <link rel="stylesheet" href="Views/EventBreakpointTreeElement.css">
-    <link rel="stylesheet" href="Views/EventListenerSectionGroup.css">
-    <link rel="stylesheet" href="Views/FilterBar.css">
-    <link rel="stylesheet" href="Views/FindBanner.css">
-    <link rel="stylesheet" href="Views/FlexibleSpaceNavigationItem.css">
-    <link rel="stylesheet" href="Views/FolderIcon.css">
-    <link rel="stylesheet" href="Views/FontDetailsPanel.css">
-    <link rel="stylesheet" href="Views/FontResourceContentView.css">
-    <link rel="stylesheet" href="Views/FontVariationDetailsSectionRow.css">
-    <link rel="stylesheet" href="Views/FormattedValue.css">
-    <link rel="stylesheet" href="Views/GaugeChart.css">
-    <link rel="stylesheet" href="Views/GeneralStyleDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/GoToLineDialog.css">
-    <link rel="stylesheet" href="Views/GradientEditor.css">
-    <link rel="stylesheet" href="Views/GradientSlider.css">
-    <link rel="stylesheet" href="Views/GraphicsOverviewContentView.css">
-    <link rel="stylesheet" href="Views/GraphicsTabContentView.css">
-    <link rel="stylesheet" href="Views/HeapAllocationsTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/HeapAllocationsTimelineView.css">
-    <link rel="stylesheet" href="Views/HeapSnapshotInstancesContentView.css">
-    <link rel="stylesheet" href="Views/HierarchicalPathComponent.css">
-    <link rel="stylesheet" href="Views/HoverMenu.css">
-    <link rel="stylesheet" href="Views/IdleTreeElement.css">
-    <link rel="stylesheet" href="Views/ImageResourceContentView.css">
-    <link rel="stylesheet" href="Views/IndeterminateProgressSpinner.css">
-    <link rel="stylesheet" href="Views/IndeterminateProgressSpinnerNavigationItem.css">
-    <link rel="stylesheet" href="Views/IndexedDatabaseContentView.css">
-    <link rel="stylesheet" href="Views/IndexedDatabaseObjectStoreContentView.css">
-    <link rel="stylesheet" href="Views/InlineSwatch.css">
-    <link rel="stylesheet" href="Views/InputPopover.css">
-    <link rel="stylesheet" href="Views/IssueTreeElement.css">
-    <link rel="stylesheet" href="Views/JavaScriptBreakpointTreeElement.css">
-    <link rel="stylesheet" href="Views/LayerDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/LayerTreeDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/Layers3DContentView.css">
-    <link rel="stylesheet" href="Views/LayoutDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/LayoutTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/LayoutTimelineView.css">
-    <link rel="stylesheet" href="Views/LinearTimingFunctionEditor.css">
-    <link rel="stylesheet" href="Views/LocalRemoteObjectContentView.css">
-    <link rel="stylesheet" href="Views/LocalResourceOverrideLabelView.css">
-    <link rel="stylesheet" href="Views/LocalResourceOverridePopover.css">
-    <link rel="stylesheet" href="Views/LocalResourceOverrideRequestContentView.css">
-    <link rel="stylesheet" href="Views/LocalResourceOverrideTreeElement.css">
-    <link rel="stylesheet" href="Views/LocalResourceOverrideWarningView.css">
-    <link rel="stylesheet" href="Views/LogContentView.css">
-    <link rel="stylesheet" href="Views/LogIcon.css">
-    <link rel="stylesheet" href="Views/MediaDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/MediaTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/MediaTimelineView.css">
-    <link rel="stylesheet" href="Views/MemoryCategoryView.css">
-    <link rel="stylesheet" href="Views/MemoryTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/MemoryTimelineView.css">
-    <link rel="stylesheet" href="Views/Main.css">
-    <link rel="stylesheet" href="Views/MultiSidebar.css">
-    <link rel="stylesheet" href="Views/NavigationBar.css">
-    <link rel="stylesheet" href="Views/NavigationSidebarPanel.css">
-    <link rel="stylesheet" href="Views/NetworkDetailView.css">
-    <link rel="stylesheet" href="Views/NetworkResourceDetailView.css">
-    <link rel="stylesheet" href="Views/NetworkTabContentView.css">
-    <link rel="stylesheet" href="Views/NetworkTableContentView.css">
-    <link rel="stylesheet" href="Views/NetworkTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/NetworkTimelineView.css">
-    <link rel="stylesheet" href="Views/NodeOverlayListSection.css">
-    <link rel="stylesheet" href="Views/ObjectPreviewView.css">
-    <link rel="stylesheet" href="Views/ObjectTreeArrayIndexTreeElement.css">
-    <link rel="stylesheet" href="Views/ObjectTreeMapEntryTreeElement.css">
-    <link rel="stylesheet" href="Views/ObjectTreePropertyTreeElement.css">
-    <link rel="stylesheet" href="Views/ObjectTreeView.css">
-    <link rel="stylesheet" href="Views/OpenResourceDialog.css">
-    <link rel="stylesheet" href="Views/OverrideDeviceSettingsPopover.css">
-    <link rel="stylesheet" href="Views/OverrideUserPreferencesPopover.css">
-    <link rel="stylesheet" href="Views/OverviewTimelineView.css">
-    <link rel="stylesheet" href="Views/PathComponentIcons.css">
-    <link rel="stylesheet" href="Views/Popover.css">
-    <link rel="stylesheet" href="Views/ProbeDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/ProbeSetDataGrid.css">
-    <link rel="stylesheet" href="Views/ProfileView.css">
-    <link rel="stylesheet" href="Views/ProgressView.css">
-    <link rel="stylesheet" href="Views/QuickConsole.css">
-    <link rel="stylesheet" href="Views/RadioButtonNavigationItem.css">
-    <link rel="stylesheet" href="Views/RecordingActionTreeElement.css">
-    <link rel="stylesheet" href="Views/RecordingContentView.css">
-    <link rel="stylesheet" href="Views/RecordingStateDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/RecordingTraceDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/RenderingFrameTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/RenderingFrameTimelineView.css">
-    <link rel="stylesheet" href="Views/Resizer.css">
-    <link rel="stylesheet" href="Views/ResourceCollectionContentView.css">
-    <link rel="stylesheet" href="Views/ResourceContentView.css">
-    <link rel="stylesheet" href="Views/ResourceCookiesContentView.css">
-    <link rel="stylesheet" href="Views/ResourceDetailsSection.css">
-    <link rel="stylesheet" href="Views/ResourceDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/ResourceHeadersContentView.css">
-    <link rel="stylesheet" href="Views/ResourceIcons.css">
-    <link rel="stylesheet" href="Views/ResourceSecurityContentView.css">
-    <link rel="stylesheet" href="Views/ResourceSizesContentView.css">
-    <link rel="stylesheet" href="Views/ResourceTimelineDataGridNode.css">
-    <link rel="stylesheet" href="Views/ResourceTimingBreakdownView.css">
-    <link rel="stylesheet" href="Views/ResourceTimingContentView.css">
-    <link rel="stylesheet" href="Views/ResourceTreeElement.css">
-    <link rel="stylesheet" href="Views/ScopeBar.css">
-    <link rel="stylesheet" href="Views/ScopeChainDetailsSidebarPanel.css">
-    <link rel="stylesheet" href="Views/ScreenshotsTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/ScreenshotsTimelineView.css">
-    <link rel="stylesheet" href="Views/ScriptContentView.css">
-    <link rel="stylesheet" href="Views/ScriptDetailsTimelineView.css">
-    <link rel="stylesheet" href="Views/ScriptTimelineOverviewGraph.css">
-    <link rel="stylesheet" href="Views/ScrubberNavigationItem.css">
-    <link rel="stylesheet" href="Views/SearchIcons.css">
-    <link rel="stylesheet" href="Views/SearchSidebarPanel.css">
-    <link rel="stylesheet" href="Views/SettingEditor.css">
-    <link rel="stylesheet" href="Views/SettingsPopover.css">
-    <link rel="stylesheet" href="Views/SettingsTabContentView.css">
-    <link rel="stylesheet" href="Views/ShaderProgramContentView.css">
-    <link rel="stylesheet" href="Views/ShaderProgramTreeElement.css">
-    <link rel="stylesheet" href="Views/Sidebar.css">
-    <link rel="stylesheet" href="Views/SidebarPanel.css">
-    <link rel="stylesheet" href="Views/SingleSidebar.css">
-    <link rel="stylesheet" href="Views/Slider.css">
-    <link rel="stylesheet" href="Views/SoftContextMenu.css">
-    <link rel="stylesheet" href="Views/SourceCodeTextEditor.css">
-    <link rel="stylesheet" href="Views/SourceCodeTreeElement.css">
-    <link rel="stylesheet" href="Views/SourcesNavigationSidebarPanel.css">
-    <link rel="stylesheet" href="Views/SpreadsheetCSSStyleDeclarationEditor.css">
-    <link rel="stylesheet" href="Views/SpreadsheetCSSStyleDeclarationSection.css">
-    <link rel="stylesheet" href="Views/SpreadsheetRulesStyleDetailsPanel.css">
-    <link rel="stylesheet" href="Views/SpringTimingFunctionEditor.css">
-    <link rel="stylesheet" href="Views/StackTraceView.css">
-    <link rel="stylesheet" href="Views/StepsTimingFunctionEditor.css">
-    <link rel="stylesheet" href="Views/StorageIcons.css">
-    <link rel="stylesheet" href="Views/StorageSidebarPanel.css">
-    <link rel="stylesheet" href="Views/StyleRuleIcons.css">
-    <link rel="stylesheet" href="Views/SymbolicBreakpointTreeElement.css">
-    <link rel="stylesheet" href="Views/SyntaxHighlightingDefaultTheme.css">
-    <link rel="stylesheet" href="Views/TabBar.css">
-    <link rel="stylesheet" href="Views/TabBrowser.css">
-    <link rel="stylesheet" href="Views/Table.css">
-    <link rel="stylesheet" href="Views/TextContentView.css">
-    <link rel="stylesheet" href="Views/TextEditor.css">
-    <link rel="stylesheet" href="Views/TextNavigationItem.css">
-    <link rel="stylesheet" href="Views/TextResourceContentView.css">
-    <link rel="stylesheet" href="Views/TextToggleButtonNavigationItem.css">
-    <link rel="stylesheet" href="Views/ThreadTreeElement.css">
-    <link rel="stylesheet" href="Views/TimelineDataGrid.css">
-    <link rel="stylesheet" href="Views/TimelineIcons.css">
-    <link rel="stylesheet" href="Views/TimelineOverview.css">
-    <link rel="stylesheet" href="Views/TimelineRecordBar.css">
-    <link rel="stylesheet" href="Views/TimelineRecordFrame.css">
-    <link rel="stylesheet" href="Views/TimelineRecordingContentView.css">
-    <link rel="stylesheet" href="Views/TimelineRuler.css">
-    <link rel="stylesheet" href="Views/TimelineTabContentView.css">
-    <link rel="stylesheet" href="Views/TimelineView.css">
-    <link rel="stylesheet" href="Views/TitleView.css">
-    <link rel="stylesheet" href="Views/TreeElementStatusButton.css">
-    <link rel="stylesheet" href="Views/TreeOutline.css">
-    <link rel="stylesheet" href="Views/TypeTokenView.css">
-    <link rel="stylesheet" href="Views/TypeTreeElement.css">
-    <link rel="stylesheet" href="Views/TypeTreeView.css">
-    <link rel="stylesheet" href="Views/URLBreakpointTreeElement.css">
-    <link rel="stylesheet" href="Views/Variables.css">
-    <link rel="stylesheet" href="Views/WebInspectorExtensionTabContentView.css">
-    <link rel="stylesheet" href="Views/WebSocketContentView.css">
+            <meta name="twitter:title" content="Kent Hendricks가 2024년에 배운 52가지">
+        <meta name="twitter:creator" content="@GeekNewsBot">
+        <meta name="twitter:site" content="@GeekNewsBot">
+        <meta name="twitter:description" content="@reagea0 → <p>그러고 보니. 긱뉴스의 성비가 궁금해지네요. 저는 남자입니다.</p>">
 
-    <link rel="stylesheet" href="Controllers/CodeMirrorCompletionController.css">
-    <link rel="stylesheet" href="Controllers/CodeMirrorDragToAdjustNumberController.css">
-    <link rel="stylesheet" href="Controllers/CodeMirrorTokenTrackingController.css">
+            <meta property="og:type" content="article">
+        <meta property="article:published_time" content="2024-12-31T14:03:04+09:00">
+        <meta property="article:author" content="reagea0">
+        <meta property="article:section" content="Comment">
+        <meta name="twitter:card" content="summary_large_image">
+            
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/vendor/hotkeys.min.js"></script>
 
-    <link rel="stylesheet" href="Debug/Bootstrap.css">
-    <link rel="stylesheet" href="Debug/UncaughtExceptionReporter.css">
-    <link rel="stylesheet" href="Debug/DebugContentView.css">
+        <link rel="stylesheet" href="/assets/main.css?20241220" type="text/css">
+        <link rel="manifest" href="/manifest.json?20240404a">
+        <meta name="theme-color" content="#000065">
+        <meta name="google-site-verification" content="xfNJ7NBfDxPJBTNxTxSIQ7UVPA5zwPKBCC6STmWrQYE">
+        <script src="/assets/main.js?20230914" type="text/javascript"></script>
 
-    <link rel="stylesheet" href="WebKitAdditions/WebInspectorUI/WebInspectorUIAdditions.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji&amp;display=swap" rel="stylesheet">
+        <link rel="webmention" href="https://webmention.io/news.hada.io/webmention">
+        <link rel="pingback" href="https://webmention.io/news.hada.io/xmlrpc">
+        <script>
+			function getUrlParameter(name) {
+				name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+				var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+				var results = regex.exec(location.search);
+				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+			};	
 
-    <script>var WI = {};
-</script>
 
-    <script src="External/CodeMirror/codemirror.js"></script>
-
-    <script src="External/CodeMirror/clike.js"></script>
-    <script src="External/CodeMirror/clojure.js"></script>
-    <script src="External/CodeMirror/closebrackets.js"></script>
-    <script src="External/CodeMirror/coffeescript.js"></script>
-    <script src="External/CodeMirror/comment.js"></script>
-    <script src="External/CodeMirror/css.js"></script>
-    <script src="External/CodeMirror/htmlmixed.js"></script>
-    <script src="External/CodeMirror/javascript.js"></script>
-    <script src="External/CodeMirror/jsx.js"></script>
-    <script src="External/CodeMirror/livescript.js"></script>
-    <script src="External/CodeMirror/mark-selection.js"></script>
-    <script src="External/CodeMirror/matchbrackets.js"></script>
-    <script src="External/CodeMirror/overlay.js"></script>
-    <script src="External/CodeMirror/placeholder.js"></script>
-    <script src="External/CodeMirror/runmode.js"></script>
-    <script src="External/CodeMirror/sass.js"></script>
-    <script src="External/CodeMirror/searchcursor.js"></script>
-    <script src="External/CodeMirror/sql.js"></script>
-    <script src="External/CodeMirror/sublime.js"></script>
-    <script src="External/CodeMirror/xml.js"></script>
-
-    <script src="External/CSSDocumentation/CSSDocumentation.js"></script>
-
-    <script src="External/Esprima/esprima.js"></script>
-
-    <script src="External/three.js/three.js"></script>
-    <script src="External/three.js/OrbitControls.js"></script>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    <script src="Base/DOMUtilities.js"></script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-
-    <script src="WebKitAdditions/WebInspectorUI/WebInspectorUIAdditions.js"></script>
-
-    
-
-        <style>
-            body {
-                --undocked-title-area-height: 0px !important;
+            function submitReply(form) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/comments',
+                    data: $(".write_reply").serialize(),
+                    success: function(data)
+                    {
+                        if (data.status) {
+                            window.location.href = "comment?id="+data.rid+"#cid"+data.cid;
+                            location.reload();
+                        } else {
+                            if (data.code == 213) {
+                                document.getElementById('msg').innerText = "비정상적인 사용으로 계정이 정지되었습니다.";
+                            } else if (data.code == 490) {
+                                document.getElementById('msg').innerText = "의견을 조금 더 길게 작성해주세요.";
+                            } else {
+                                document.getElementById('msg').innerText = "알 수 없는 에러입니다.";
+                            }
+                        }
+                    }
+                });
             }
-        </style>
-        <script src="manifest-yr1khc1r.js"></script><script src="Protocol/InspectorBackendCommands.js"></script>
 
-        <script type="text/javascript">
-            WI.sharedApp = new WI.AppController;
-            WI.sharedApp.initialize();
-        </script><style>.tree-outline:not(.custom-indent) > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 10px); }
-.tree-outline:not(.custom-indent) > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 20px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 30px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 40px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 50px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 60px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 70px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 80px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 90px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 100px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 110px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 120px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 130px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 140px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 150px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 160px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 170px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 180px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 190px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 200px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 210px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 220px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 230px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 240px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 250px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 260px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 270px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 280px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 290px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 300px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 310px); }
-.tree-outline:not(.custom-indent) > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children > .children .children > .item { padding-inline-start: calc(var(--tree-outline-item-padding) + 320px); }
-</style></head>
-<body class="windows-platform javascript" dir="ltr" style="tab-size: 4; --console-saved-result-prefix: &quot;$&quot;; --zoom-factor: 1; filter: grayscale(100%);">
-<div id="docked-resizer"></div>
-<div id="undocked-title-area"></div>
-<div id="tab-bar" class="tab-bar"><div class="border top"></div><div class="navigation-bar"><div class="item group"><div class="item inspect activate button image-only hidden" role="button" tabindex="0" title="Start element selection (⌃⇧C)"><div class="glyph" style="width: 16px; height: 16px;"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/Crosshair.svg#root"></use></svg></div></div><div class="item reload button image-only hidden" role="button" tabindex="0" title="Restart (⌃R)"><div class="glyph" style="width: 16px; height: 16px;"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/ReloadToolbar.svg#root"></use></svg></div></div><div class="item download button image-only hidden" role="button" tabindex="0" title="Download Web Archive"><div class="glyph" style="width: 16px; height: 16px;"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/DownloadArrow.svg#root"></use></svg></div></div></div><div class="item divider hidden"></div><div class="item group"><div class="item console-warnings button image-only hidden" role="button" tabindex="0" title="0 Console warnings"><img src="Images/IssuesEnabled.svg"></div><div class="item console-errors button image-only hidden" role="button" tabindex="0" title="0 Console errors"><img src="Images/ErrorsEnabled.svg"></div></div></div><div class="tabs hide-border-start hide-border-end" role="tablist"><div class="item selected" role="tab" tabindex="0" aria-selected="true"><div class="flex-space"></div><img class="icon" src="Images/Console.svg"><span class="name"><span class="content">Console</span></span><div class="flex-space"></div></div><div class="item" role="tab" tabindex="0"><div class="flex-space"></div><img class="icon" src="Images/Sources.svg"><span class="name"><span class="content">Sources</span></span><div class="flex-space"></div></div><div class="item" role="tab" tabindex="0"><div class="flex-space"></div><img class="icon" src="Images/Timeline.svg"><span class="name"><span class="content">Timelines</span></span><div class="flex-space"></div></div><div class="item pinned hidden" role="tab" tabindex="0" title="Show hidden tabs…"><div class="flex-space"></div><img class="icon" src="Images/Overflow.svg"><div class="flex-space"></div></div><div class="item pinned hidden" role="tab" tabindex="0" title="Open closed tabs…"><div class="flex-space"></div><img class="icon" src="Images/Plus15.svg"><div class="flex-space"></div></div><div class="item pinned" role="tab" tabindex="0" title="Search (⌃⇧F)"><div class="flex-space"></div><img class="icon" src="Images/Search.svg"><div class="flex-space"></div></div><div class="item pinned" role="tab" tabindex="0" title="Settings (⌃,)"><div class="flex-space"></div><img class="icon" src="Images/Gear.svg"><div class="flex-space"></div></div></div><div class="navigation-bar"><div class="item group hidden"><div class="item dump-messages activate button image-only" role="button" tabindex="0" title="Enable dump inspector messages to console.
-Shift-click to dump all inspector messages with no filtering." aria-pressed="false" aria-label="Enable dump inspector messages to console.
-Shift-click to dump all inspector messages with no filtering."><div class="glyph" style="width: 16px; height: 16px;"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/Console.svg#root"></use></svg></div></div><div class="item inspect-inspector button text-only" role="button" tabindex="0">2</div></div></div><div class="border bottom"></div></div>
-<div id="main">
-    <div id="content" role="tabpanel" aria-label="Console">
-        <div id="navigation-sidebar" class="sidebar leading collapsed single-sidebar" role="group" aria-label="Navigation" style="width: 300px; min-width: 250px;"><div class="resizer vertical-rule"></div><div class="resizer horizontal-rule"></div></div>
-        <div id="tab-browser" class="tab-browser"><div class="content-view-container"><div class="content-view tab console content-browser"><div class="content-browser"><div class="navigation-bar"><div class="item hierarchical-path"></div><div class="item"></div><div class="item find-banner console showing"><label></label><input type="search" placeholder=" " spellcheck="false" results="5" autosave="inspector-search"><button class="segmented previous-result" disabled="" title="Find Previous (⌃⇧G)"><div class="glyph"></div></button><button class="segmented next-result" disabled="" title="Find Next (⌃G)"><div class="glyph"></div></button></div><div class="item log-scope-bar scope-bar default-item-selected"><li class="exclusive selected" aria-pressed="true" tabindex="0">All</li><li class="evaluations" aria-pressed="false" tabindex="-1">Evaluations</li><li class="errors" aria-pressed="false" tabindex="-1">Errors</li><li class="warnings" aria-pressed="false" tabindex="-1">Warnings</li><li class="logs" aria-pressed="false" tabindex="-1">Logs</li><li class="infos hidden" aria-pressed="false" tabindex="-1">Infos</li><li class="debugs hidden" aria-pressed="false" tabindex="-1">Debugs</li></div><div class="item console-other-filters-button" role="button" title="Other filter options…"><div class="glyph"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/Filter.svg#root"></use></svg></div></div><div class="item flexible-space"></div><div class="item console-snippets button image-only" role="button" tabindex="0" title="Run Console Snippet…"><img></div><div class="item garbage-collect button image-only" role="button" tabindex="0" title="Collect garbage"><div class="glyph" style="width: 16px; height: 16px;"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/NavigationItemGarbageCollect.svg#root"></use></svg></div></div><div class="item clear-log button image-only" role="button" tabindex="0" title="Clear log (⌃K or ⌃L)"><div class="glyph" style="width: 15px; height: 15px;"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/NavigationItemTrash.svg#root"></use></svg></div></div></div><div class="content-view-container"><div class="content-view log supports-find-banner"><div class="console-messages" tabindex="0" role="log"><div class="console-session"><div class="console-session-header">Console opened at 5:31:37 AM</div></div></div></div></div></div></div></div></div>
-        <div id="details-sidebar" class="sidebar trailing multi-sidebar collapsed" role="group" aria-label="Details"><div class="resizer horizontal-rule"></div><div class="sidebar trailing single-sidebar has-navigation-bar collapsed" role="group" aria-label="Details" style="width: 300px; min-width: 250px;"><div class="resizer vertical-rule"></div><div class="resizer horizontal-rule"></div><div class="navigation-bar" role="tablist"></div></div></div>
-    </div>
-    <div id="console-drawer" class="hidden content-browser console-drawer" style="height: 150px;"><div class="navigation-bar"><div class="item toggle-drawer toggle button image-only" role="button" tabindex="0" title="Show Console"><div class="glyph" style="width: 16px; height: 16px;"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/ShowConsoleDrawer.svg#root"></use></svg></div></div><div class="item hierarchical-path"></div><div class="item"></div></div><div class="content-view-container"></div></div>
-    <div id="quick-console" class="quick-console showing-log"><div class="console-prompt syntax-highlighted read-only" dir="ltr"><div class="glyph"><svg style="width: 100%; height: 100%;"><use xlink:href="Images/UserInputPrompt.svg#root"></use></svg></div><div class="CodeMirror cm-s-default CodeMirror-wrap CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" aria-label="Console prompt" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 30px; min-height: 14px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"><div class="CodeMirror-cursor" style="left: 7px; top: 0px; height: 13px;">&nbsp;</div></div><div class="CodeMirror-code"><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; border-bottom: 0px solid transparent; top: 14px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></div><div class="navigation-bar"><div class="item divider hidden"></div><div class="item active-execution-context hidden"></div></div></div>
+            $(function() {
+                $(".cmtreply").on('click', function(e) {                    
+                    e.preventDefault();                    
+
+                    var userid = $("#userid").val();
+                    if (userid == null || userid == '') {
+                        window.location.href = "login?code=101&return=" + encodeURI('/comment?id='+32823);
+                    } else if (!$(this).parent().has('form').length) {
+                        $('.write_reply').remove();                      
+
+                        cmtform = '<form class="write_reply" autocomplete="off" onsubmit="return replace2spaces(\'reply_contents\')"> \
+                        <div class="table_reply comment-table"> \
+                            <div> \
+                                <textarea id="reply_contents" rows=5 style="width:100%" name="contents" class="comment_textarea" required placeholder="댓글에 대한 답변"></textarea> \
+                            </div>\
+                            <div> \
+                                <input type="submit" class="reply_button" value="답변 달기"> \
+                                <input type="hidden" name="dynamic" value="true"> \
+                                <input type="hidden" name="rid" value="' + 32823 +  '"> \
+                                <input type="hidden" name="parent_id" value="' + $(this).data('cid') +  '"> \
+                                <input type="hidden" name="tid" value="' + $(this).data('tid') + '"> \
+                            </div> \
+                        </div> \
+                        </form> \
+                        ';
+
+                        $(this).parent().append(cmtform);
+
+                        $(this).parent().on("submit", ".write_reply", function (event){
+                            event.preventDefault();
+                            submitReply(this);
+                        });
+                    }
+                });
+
+                $('#topic_contents').shorten({
+                    moreText: '[+ 글 내용 펼치기]',
+                    lessText: '[- 글 내용 닫기]',
+                    showChars: 200,
+                });
+
+				$('.write_comment').on('submit',function(){
+					$('.comment_textarea').each(function(){   
+						var id = $(this).attr('id');
+						var value = $(this).val();
+						localStorage.setItem(id, value);
+					});   
+				});
+
+				var c = getUrlParameter("code");
+
+				if (c) {
+					$('.comment_textarea').each(function(){    
+						var id = $(this).attr('id');
+						var value = localStorage.getItem(id);
+
+						$(this).val(value);
+					}); 
+				} else {
+					$('.comment_textarea').each(function(){    
+						var id = $(this).attr('id');						
+						localStorage.removeItem(id);
+					});   
+				}
+            });
+
+            function child_toggle(id,count) {
+                var start_index;
+                $(".comment_row").each(function( index ) {
+                    if ($( this ).attr('id') == "cid" + id ) start_index = index;
+                    if ( start_index + count >= index ) {
+                        if ($( this ).attr('id') == "cid" + id ) {
+                            $(this).find('.comment').toggleClass('hide');
+                            $(this).find('.commentreply').toggleClass('hide');
+                            commentfold = $(this).find('.commentfold').html();
+                            if (commentfold.indexOf('[-]') !== -1 ) 
+                                $(this).find('.commentfold').html('[+'+(count+1)+']');
+                            else 
+                                $(this).find('.commentfold').html('[-]');
+                        } else {
+                            if ($(this).css("display") == "grid") {
+                                $(this).css("display","none");
+                            } else {
+                                $(this).css("display","grid");
+                            }
+                            $( this ).toggleClass('hide');
+                        }
+                    }
+                });
+            }
+
+            async function delete_comment(id, topic_id) {
+                if(window.confirm("삭제하시겠어요?")) {
+					try {
+						let response = await fetch('/comments/' + id, {
+							method: 'DELETE'
+						});
+
+						if(!response.ok) {
+							throw new Error("Network response was not ok");
+						}
+
+						let data = await response.json();
+
+						if (data.status) {
+							alert("삭제했습니다.");
+                            window.location.href = "/topic?id="+topic_id;
+						} else {
+                            if (data.code == 101) {
+                                window.location.href = "/login?code=101&return=/comment?id=" + id;
+                            } else {
+                                alert("삭제 실패했습니다.");
+                            }
+						}
+					} catch(error) {
+						console.error('Error:', error);
+					}
+                }
+                
+            }
+        </script>
+        <script src="/vendor/jquery.shorten.min.js" type="text/javascript"></script>
+        <script src="/assets/watch.js?20210630a"></script>
+	</head>
+	<body>
+        <header>
+            <nav>
+                <div class="ltd"><span class="geeknews"><a href="/">GeekNews</a></span>
+                    <a href="/new">최신글</a> <a href="/comments">댓글</a> <a href="/past">예전글</a> <a href="/ask">Ask</a> <a href="/show">Show</a> <a href="/plus">GN⁺</a> <a href="/weekly">Weekly</a>  | <a href="/write">글등록</a>                     <span class="curnavitem">
+                    </span>
+                </div>
+                <div class="rtd">
+                    <form class="search-cse" action="search" method="GET">
+                        <input id="q" name="q" type="search" maxlength="20" class="input" placeholder="검색">
+                    </form>
+                    <a href="/login">로그인</a>                </div>
+			</nav>
+        </header>		<main>			
+			<article>     
+				<div class="comment-table">
+<div id="msg"></div><div class="comment"><div class="vote"><span id="votec32823"><a class="upvote" href="javascript:votec(32823, &quot;up&quot;);"><span>▲</span></a></span></div><div class="topicinfo"><a href="/user?id=reagea0">reagea0</a> 45분전 | <a href="/topic?id=18518">parent</a><span id="unvotec32823"></span><span id="favc32823"> | <a href="javascript:favc(32823, &quot;favorite&quot;)">favorite</a></span> | on: <a href="topic?id=18518">Kent Hendricks가 2024년에 배운 52가지</a><span class="topicurl">(kenthendricks.com)</span></div><div class="commentTD"><span id="contents32823" class="comment_contents"><p>그러고 보니. 긱뉴스의 성비가 궁금해지네요. 저는 남자입니다.</p>
+</span></div></div>            <div class="comment_form">
+                    <form class="write_comment" action="/comments" method="POST" onsubmit="return replace2spaces('contents')">
+                        <div class="group">
+                            <input type="hidden" name="rid" value="32823">
+                            <input type="hidden" name="parent_id" value="32823">
+                            <input type="hidden" name="tid" value="18518">
+                            <textarea id="contents" rows="5" style="width: 100%" name="contents" class="comment_textarea" required="" placeholder="예의 있는 댓글 적기"></textarea>
+                        </div>
+                        <div class="group comment_button_box">
+                            <input type="submit" class="comment_button" value="댓글 달기">
+                        </div>
+                        <div class="hr"></div>
+                    </form>    
+                    <input type="hidden" id="userid" value="">
+            </div>
 </div>
+            <div class="comment_thread descendant">
+<!-- comments -->
+  
+<!-- comments --> 
+            </div>
+            </article>            
+		</main>
+<script>
+document.addEventListener('keydown', function(event) {
+    if(event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
+        var handled = false;
+        var replyForms = document.getElementsByClassName('write_reply');
+        if(replyForms.length > 0) {
+            var replyForm = replyForms[0];
+            var replyContents = document.getElementById('reply_contents');
+            if (replyContents && replyContents.value.trim() !== "") {
+                if(replace2spaces('reply_contents')) {
+                submitReply(replyForm);
+                handled = true;
+            }
+            }
+        }
 
-
-<div id="layout-measurement-container"></div></body></html>
+        if (!handled) {
+            var forms = document.getElementsByClassName('write_comment');
+            if (forms.length > 0) {
+                var form = forms[0];
+                var contents = document.getElementById('contents');
+                if (contents && contents.value.trim() !== "") {
+                    if(replace2spaces('contents')) {
+                        form.submit();
+                    }
+                }
+            }
+        }
+    }
+});
+</script>
+		<footer>
+			<div>
+				<a href="/guidelines" class="u">사이트 이용법</a>
+				<a href="/faq" class="u">FAQ</a>
+				<a href="/about" class="u">About &amp; ToS</a>
+				<!-- <a href='release' class=u>Releases</a> -->
+				&nbsp; | 
+				 <a href="/blog" class="u">Blog</a>
+				 <a href="/lists" class="u">Lists</a>
+				 <a href="/podcast" class="u">Podcast</a>
+				 <a href="https://news.hada.io/rss/news" class="u">RSS</a>
+				&nbsp; | 
+				 <a href="/bookmarklet" class="u">Bookmarklet</a>
+				&nbsp; | 
+				 <a href="https://twitter.com/GeekNewsBot" class="u" rel="me">Twitter</a>
+				 <a href="https://facebook.com/GeekNewsBot" class="u">Facebook</a>
+				 &nbsp; | &nbsp; 긱뉴스봇 : 
+				 <a href="/slackbot" class="u keepall">Slack</a>
+				 <a href="/jandibot" class="u keepall">잔디</a>
+				 <a href="/discordbot" class="u keepall">Discord</a>
+				 <a href="/teamsbot" class="u keepall">Teams</a>
+				 <a href="/googlechatbot" class="u keepall">Google Chat</a>
+				 <a href="/switbot" class="u keepall">Swit</a>
+				
+            </div>
+			<div style="width: fit-content; display: inline-block;">
+				<form class="search-cse" action="search" method="GET">
+					<label for="q" class="label">검색</label>
+					<input id="q" name="q" type="text" maxlength="30" class="input" style="width: 200px">
+				</form>
+			</div>
+					</footer>	
+            </body></html>
