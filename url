@@ -1,1 +1,5 @@
+<<<<<<< Updated upstream
 doc.replicache.dev/strategies/per-space-version
+=======
+doc.replicache.dev/strategies/row-version
+>>>>>>> Stashed changes
