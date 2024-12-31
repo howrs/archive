@@ -1,184 +1,811 @@
-<!DOCTYPE html><html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>reCAPTCHA</title>
-<style type="text/css">
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+<!DOCTYPE html><html lang="en" class="h-full scroll-smooth bg-white antialiased __variable_d65c78 __variable_86777a"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/_next/static/css/0d5be9f721f25a34.css" data-precedence="next"><link rel="stylesheet" href="/_next/static/css/278fc728fe8fc0f1.css" data-precedence="next"><link rel="stylesheet" href="/_next/static/css/b1530ca0d04e3658.css" data-precedence="next"><link rel="preload" as="script" fetchpriority="low" href="/_next/static/chunks/webpack-5867c32033c65cdc.js"><script src="/_next/static/chunks/fd9d1056-028545ef2a5e36a5.js" async=""></script><script src="/_next/static/chunks/7023-298ce35078ddf656.js" async=""></script><script src="/_next/static/chunks/main-app-b8d8f654a4c3de8b.js" async=""></script><script src="/_next/static/chunks/9da6db1e-f20d8a5d03f5f3d6.js" async=""></script><script src="/_next/static/chunks/app/layout-b48b81b56e73a442.js" async=""></script><script src="/_next/static/chunks/c16f53c3-f9f481fb80ad18ee.js" async=""></script><script src="/_next/static/chunks/ebbfb5c1-9b9fd20dbf34ff5b.js" async=""></script><script src="/_next/static/chunks/4593-27ced29191e70fa1.js" async=""></script><script src="/_next/static/chunks/2525-9e3421f881b77e3a.js" async=""></script><script src="/_next/static/chunks/8669-6b79051cccf0bc09.js" async=""></script><script src="/_next/static/chunks/231-c57bce99e4c5353a.js" async=""></script><script src="/_next/static/chunks/9785-7d8b9f8a3ebd227e.js" async=""></script><script src="/_next/static/chunks/8011-b1ee55e56944fe18.js" async=""></script><script src="/_next/static/chunks/1829-6e0ec4568bcde28b.js" async=""></script><script src="/_next/static/chunks/862-3f0117e08526fd9c.js" async=""></script><script src="/_next/static/chunks/1017-5c56b8723f24249e.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-b4414749063760b3.js" async=""></script><title>What Every Developer Should Know About Offline-First Apps - Dev Starter Packs</title><meta name="description" content="Build beautiful cross-platform React Native and React apps with Dev Starter Packs."><link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"><meta name="next-size-adjust"><script src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js" nomodule=""></script><link rel="preload" href="/_next/static/media/84455f2b5a591033-s.p.woff2" as="font" crossorigin="" type="font/woff2"><link rel="preload" href="/_next/static/media/a34f9d1faa5f3315-s.p.woff2" as="font" crossorigin="" type="font/woff2"><script src="https://js.stripe.com/v3"></script></head><body class="flex h-full flex-col"><header class="py-10 bg-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><nav class="relative z-50 flex justify-between"><div class="flex items-center md:gap-x-12"><a aria-label="Home" href="/"><div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon" class="mr-1 h-5 w-5"><path d="M12 4.467c0-.405.262-.75.559-1.027.276-.257.441-.584.441-.94 0-.828-.895-1.5-2-1.5s-2 .672-2 1.5c0 .362.171.694.456.953.29.265.544.6.544.994a.968.968 0 0 1-1.024.974 39.655 39.655 0 0 1-3.014-.306.75.75 0 0 0-.847.847c.14.993.242 1.999.306 3.014A.968.968 0 0 1 4.447 10c-.393 0-.729-.253-.994-.544C3.194 9.17 2.862 9 2.5 9 1.672 9 1 9.895 1 11s.672 2 1.5 2c.356 0 .683-.165.94-.441.276-.297.622-.559 1.027-.559a.997.997 0 0 1 1.004 1.03 39.747 39.747 0 0 1-.319 3.734.75.75 0 0 0 .64.842c1.05.146 2.111.252 3.184.318A.97.97 0 0 0 10 16.948c0-.394-.254-.73-.545-.995C9.171 15.693 9 15.362 9 15c0-.828.895-1.5 2-1.5s2 .672 2 1.5c0 .356-.165.683-.441.94-.297.276-.559.622-.559 1.027a.998.998 0 0 0 1.03 1.005c1.337-.05 2.659-.162 3.961-.337a.75.75 0 0 0 .644-.644c.175-1.302.288-2.624.337-3.961A.998.998 0 0 0 16.967 12c-.405 0-.75.262-1.027.559-.257.276-.584.441-.94.441-.828 0-1.5-.895-1.5-2s.672-2 1.5-2c.362 0 .694.17.953.455.265.291.601.545.995.545a.97.97 0 0 0 .976-1.024 41.159 41.159 0 0 0-.318-3.184.75.75 0 0 0-.842-.64c-1.228.164-2.473.271-3.734.319A.997.997 0 0 1 12 4.467Z"></path></svg><h1 class="text-xl font-bold text-gray-900">DevStarterPacks</h1></div></a><div class="hidden md:flex md:gap-x-6"><a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#react-native-components">Components</a><a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#mobile-starter-pack">Mobile</a><a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#web-starter-pack">Web</a><a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#pricing">Pricing</a></div></div><div class="flex items-center gap-x-5 md:gap-x-8"><div class="hidden md:block"><a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/login">Sign in</a></div><a class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-indigo-600 text-white hover:text-slate-100 hover:bg-indigo-500 active:bg-indigo-800 active:text-indigo-100 focus-visible:outline-indigo-600" color="indigo" variant="solid" href="#pricing"><span>Get started <span class="hidden lg:inline">today</span></span></a><div class="-mr-1 md:hidden"><div data-headlessui-state=""><button class="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none" aria-label="Toggle Navigation" type="button" aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:R1n9jttsq:"><svg aria-hidden="true" class="h-3.5 w-3.5 overflow-visible stroke-slate-700" fill="none" stroke-width="2" stroke-linecap="round"><path d="M0 1H14M0 7H14M0 13H14" class="origin-center transition"></path><path d="M2 2L12 12M12 2L2 12" class="origin-center transition scale-90 opacity-0"></path></svg></button></div></div></div></nav></div></header><main class="flex-auto"><div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8"><div class="max-w-2xl mx-auto"><a class="inline-flex items-center mb-4 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200" href="/blog"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>Back</a></div><article><h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter leading-tight md:leading-none mb-10 text-center">What Every Developer Should Know About Offline-First Apps</h1><div class="max-w-2xl mx-auto"></div><div class="max-w-4xl mx-auto"><div class="post-body_content__bSN5_"><div>
+<h2 class="wp-block-heading">Understanding Offline-First Philosophy</h2>
+
+
+
+<p>Imagine you’re on a train commuting to work, using a note-taking app to jot down ideas for your next project. The train enters a tunnel, and suddenly your connection drops. In a traditional online-only application, you might see a frustrating “Connection Lost” message, and your latest changes could be lost. But in an offline-first application, you’d continue working seamlessly, unaware and unbothered by the connectivity interruption.</p>
+
+
+
+<p>This scenario illustrates the fundamental philosophy behind offline-first development: treating the offline state as the default, and online connectivity as an enhancement. It’s a complete reversal of the traditional web development paradigm, where we assumed constant connectivity and treated offline states as errors.</p>
+
+
+
+<h3 class="wp-block-heading">The Problem with “Online-Only” Thinking</h3>
+
+
+
+<p>Traditional web applications are built with an “online-only” mindset, following a pattern that looks something like this:</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)"><span style="display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7">JavaScript</span><span role="button" tabindex="0" data-code="async function saveUserData(data) {
+
+&nbsp;&nbsp;try {
+
+&nbsp;&nbsp;&nbsp;&nbsp;const response = await fetch('/api/save', {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method: 'POST',
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body: JSON.stringify(data)
+
+&nbsp;&nbsp;&nbsp;&nbsp;});
+
+&nbsp;&nbsp;&nbsp;&nbsp;if (!response.ok) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error('Failed to save');
+
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;showSuccess('Data saved successfully');
+
+&nbsp;&nbsp;} catch (error) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Show error message and lose data
+
+&nbsp;&nbsp;&nbsp;&nbsp;showError('Unable to save. Please check your connection.');
+
+&nbsp;&nbsp;}
+
+}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">async</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">function</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">saveUserData</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">data</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #C586C0">try</span><span style="color: #D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569CD6">const</span><span style="color: #D4D4D4"> </span><span style="color: #4FC1FF">response</span><span style="color: #D4D4D4"> = </span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">fetch</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'/api/save'</span><span style="color: #D4D4D4">, {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9CDCFE">method:</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">'POST'</span><span style="color: #D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9CDCFE">body:</span><span style="color: #D4D4D4"> </span><span style="color: #4FC1FF">JSON</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">stringify</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">data</span><span style="color: #D4D4D4">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">if</span><span style="color: #D4D4D4"> (!</span><span style="color: #9CDCFE">response</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">ok</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">throw</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">new</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">Error</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'Failed to save'</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DCDCAA">showSuccess</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'Data saved successfully'</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;} </span><span style="color: #C586C0">catch</span><span style="color: #D4D4D4"> (</span><span style="color: #9CDCFE">error</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6A9955">// Show error message and lose data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DCDCAA">showError</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'Unable to save. Please check your connection.'</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre></div>
+
+
+
+<p>This approach has several critical problems:</p>
+
+
+
+<ol class="wp-block-list">
+<li>It assumes connectivity is the default state</li>
+
+
+
+<li>It treats disconnection as an error condition</li>
+
+
+
+<li>It often results in lost data or interrupted user experiences</li>
+
+
+
+<li>It fails to account for varying network conditions</li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">The Offline-First Paradigm Shift</h3>
+
+
+
+<p>In contrast, offline-first development approaches the problem from a different angle. Here’s how the same functionality might look in an offline-first application:</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)"><span style="display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7">JavaScript</span><span role="button" tabindex="0" data-code="async function saveUserData(data) {
+
+&nbsp;&nbsp;// First, save locally to ensure data persistence
+
+&nbsp;&nbsp;await saveToLocalStorage(data);
+
+&nbsp;&nbsp;// Notify user their changes are saved locally
+
+&nbsp;&nbsp;showStatus('Changes saved locally');
+
+&nbsp;&nbsp;// Attempt to sync with server in the background
+
+&nbsp;&nbsp;syncManager.enqueueChange({
+
+&nbsp;&nbsp;&nbsp;&nbsp;type: 'saveUserData',
+
+&nbsp;&nbsp;&nbsp;&nbsp;data: data,
+
+&nbsp;&nbsp;&nbsp;&nbsp;timestamp: Date.now()
+
+&nbsp;&nbsp;});
+
 }
 
-</style>
-<link rel="stylesheet" type="text/css" href="https://www.gstatic.com/recaptcha/releases/zIriijn3uj5Vpknvt_LnfNbF/styles__ltr.css">
-<script nonce="Zc5pEaVH4RVSJy0GIkpl0g" type="text/javascript">window['__recaptcha_api'] = 'https://www.google.com/recaptcha/enterprise/';</script>
-<script type="text/javascript" src="https://www.gstatic.com/recaptcha/releases/zIriijn3uj5Vpknvt_LnfNbF/recaptcha__en.js" nonce="Zc5pEaVH4RVSJy0GIkpl0g">
-      
-    </script><script type="text/javascript" charset="UTF-8" src="//www.google.com/js/bg/GaYUpI3TM2ZeJrJuY6shdNLJBEVQZd83XqI1ZKo9ZSY.js" nonce="Zc5pEaVH4RVSJy0GIkpl0g"></script></head>
-<body><div id="rc-anchor-alert" class="rc-anchor-alert"></div>
-<input type="hidden" id="recaptcha-token" value="03AFcWeA5WL3TgLRZHYbSLeaOV3gAnU-h-Lbnu5t_TlYr4U_OEzmg0qtae0lq_pYy7ECN-mhhUzI-IkDt5E97As7CmAfP0oI1PzSW7ZW1zuBvnc99-oxtY9nN9Y63Ku0Nox3HBZirz5ta7NW3SgplkCToAHM5Vx50CbDjML5wr_CiVOk_mIMgJElIxSTv9rUWgfBxmcCOknsvcCDIGFISoKycM6Xo3XOdhmjPJLaBdks0yoB3xlSskB9I-VuyBfPGAQ_MgLA5ny1U6tPS4mgp_vAZrIo7u4YJNJSfnyPLGei-82cdYH2CM56-I2kQfP5bGjGTl3-yNZXNfrFoiOioLZ7DRU7GBWAfCSzV2GP4faFHo012HUJPNPWr0xhgiyaCCNN_h1yRJibLOVCcJqOlgxWnWyHXszIvgrjVFYt1GUNC5idPiQoML_Qmv5ghHJu95ud_QmGYCLf7PHD-zfLCZqRPgN5jZp6dTo44f2NGfKdLqSRrHseW8Pa-yw4LwUh0-IeCa4ZWligTDxZ_3ilepeAlpWMFnzmZ1jXcmQT9Lqhm92xsP542rdvMQiwndB7Hfo7jP2qBhDSUl3BbTzFr3MU35x0GrR7hrGWDZVtYWVCXxkMu5S6C4Si3ewRpZvLrU278cJr_Nx4TqAds1gumlja3OJfF5zQhHih0DJC88bi40BzBuoi0smS5R1nVygdSoDp_1PJewn1CKMriOvZZ0OOsUSu1wgkZkcj9-W0kYVm0tO-NSTYmQE_bhaM_9NXceKqTb6TlQj4noZ6Fcj8ffxceTQTL4lnTpB_VWPugoNCOUgv3xFh5n8FyTpJChrf6VMRuPo9YXCspKQ34QLamGc_R1_fLZpWPgjzF17Y1KD5MDG8lWR8Hkt6yqZPk1H2zwZcciOzs3xD-2b1clYFWuenB3Pt7E1lcDN2ROmhVR6_pqjgNMapfOexVkOR4xAh4lcKhQKzga8uc3VN53RzIcCs-Ak5LnCGttB0vkY9uSKbUP1Idv8Q65yKWtXnvJvsQimJf3FRqQOVvJ28Eho0qep3T4aB2pANKfeCgy9-KVocLzGXeUy-LHMC5ArGdFoKIDIU61U2Edptj0jz0GjzCeQHMq6-bXIthS2P3XNE1x4FhWFel-Dq9yGWUNUQtTA4J5Qj6_vs1Z42CY0Zfwd806uOfgeVofwjHAjdfdsiRK6W39ZZX5pG-gpzPU9RL3SQDOiIW41IkPJLKnw1a1B99KkGh0F7hef1VFeS7FcdcS4fN2nKYaxcrHdSZRDnmripto4yK1yTkQkW5ZmH2Qxt6sQad64GYOvZteLLaNvXERMBYA61EVkorTM9cfF_ilynk6PjQLbnakX0nXxLVwTTLDukAvBMwGvs5-gglChjgAynXrI4NesZrU94Wgmx5XhRcpa9PZvUPSf1wTTLzRoaILteDcQLOXxNwk-fQ1RGbvrsnlVJb6Cj4xSA3tf3ISxiV3PXx7wgNV39wVZLSTTSXOOLDG0Da0ALhviw5QXlsXzv1v4NBJZhFzpPSi1uMyvUokK7psxy-TspaaoNaVK9vWF75lXDjFKZ2nZdjWFHd9QZM81xERMYweLDr_os9KW_AxOzckKFbj2bU1lsKNXFeUoaVwOc4eJ-JGS07ERALwqouewFNCzww36TxBrWA9ZdTemSc5HmLhfA7sREqPQDij-gPhtQfn8zUAjg">
-<script type="text/javascript" nonce="Zc5pEaVH4RVSJy0GIkpl0g">
-      recaptcha.anchor.Main.init("[\x22ainput\x22,[\x22bgdata\x22,\x22Ly93d3cuZ29vZ2xlLmNvbS9qcy9iZy9HYVlVcEkzVE0yWmVKckp1WTZzaGROTEpCRVZRWmQ4M1hxSTFaS285WlNZLmpz\x22,\x22\x22,\x22UlVaOCt4cFA2cnR2UWVuaFhSUmVSY0xBelNCb1B3cXJRMVNKazE2K2c4MW9PSUJQMVk2QVZvWnBhRzBpTXN0WVdscS95dWk1Zk1vTFJ6dnJIVW9wQVVUdDhpd01TOFRYQ0duR081SzJhVzRmKzhkRWgxdzA5OFBnTXNYNllqc3NjeS9pVldaQTdaWEpQOFJ1dHFHWWlwYjBibEVXV1FOSlpQYk03V3ZDanNnLy95Q0R5YTJCVjJSZGErSHhkcVZtVjdnUDZ5VjF4cjh0UzVLVWhUL2xtNlltOVFBZnVUK09jS3lYYnVsUlliK1AxQzduekpNcExQN01rSzBtVjBQM0RYc3ozeFFyZ0RpWkhVVmhrdWxlcW1NUllKNlNmM0orTVJuWDR1SC95eCtibmwwVktXRUNZaVNOaE9Xanl4NldrbWw3MWpoaHV2N0w5aVJ2OEp1bFk0MFB5dzh5dlkwUnYwUy9xK0NqR1Q1WDBtd2Rxc1Zja3BSZEY2Tm9ndm5Hd0hMR1llTW1hektWbldWTXRMbzFGbzJIWi9acXRFMFZTMVJ3Sm9Wd01sZENhQ2R0RHE5NTFKZTVlWVR4U0FSaFZBMFZrMHRNN1VMWjRYeWRqZGtXaGtjTDFpaFUzeWJRY0FQRkNyN2dMSjlLeWVFVERzU0FHSEp2USsxODd3azVicUJSNmI3SENqV0tiaGFaV2VrQUoxb2FmYlJqMkpKellIMDNzQTFncTdwVlZLMVYyWmV3bmNHdW14SjFLemZObU5OMVo2T3g2RXVES3FLTWEzQlNNZEtsdjZrM0JHQU01MGpkSkJCNld6ZXlSMlRhUmUvNlhPN0JXOGxybUlYYTJBVUdZVWppY01HZ2tDK1ZJOStmejlRMHRpdjJLNXFLOEh6Z0swRVdBcmlOU3NXelNxK0QvSjhJVWhMaytNZzlsaHZwMmxuem9ybmpESm5MbWVwd0dJbmVQc1ZrM2JvNU8yTWcrU1VEWk5GR3ZFZTdWajlZUWIrQk8vWml5VGJhb1hxKzN1MGFoNFFaZ2VFU3NLZWljeWxXOG1xdDZmMlVScGhtMnhzV09UZVlqK0FDKzNpdlpSVnhUQVNmTW0yMllJVDk0TWNKbS9qVnJVQmJwU1pJOFJyQjZFenhCaHl3STREVmtDTExES24yVngwKzE3ekQ1UVk4cWllTWdNUXZzeis5UXVQdjlZMzhOZld3T09Bc0tQVkx1VHhMM1gzYnZDTVVsMmp1dG9CUTZ0S1NTL1pwbjg4SXhoK21Mc2Z4Y3RGOXovNHZiZVJTVUt6UkRUS21NK2dYNFVNbS9jSTZubXFEVWFPRWVLQ2NHaXpsamdOejhFM2NFaUhucGlTWkdEQWFtbDNxenE5N25ZbE9jaThyTVlEdStxYzJIc1FqWEhjZ1RWb25wTkVZVGFNZUdJN0t4L2U1cVhJZlR6dThsNlJxM3hWU3EzajdNalRxODNMNUY4VS9hWklVb3JUMlVleEFwYU9oMUd1ZW9uZUZ4c2hzQUhZdjB2NFdVeVJDTTZTTGc0bFI4TVRhZDloOFdUa21VL2xNMWxiWFVtd3orL0FObG1SWDRNNnBwNXNEU1dNUWJ6Y3FoeG5VTDc1SXdxYzVWZlRHWEhqTXZBeHBOdGUyeGpyUTBmTGZSL1VqdzhyS1Bpb1ZMVSs0MUt1aVJ1OWtrRktpOVpXd2ZLMW5URnRHa0F3dGt5dFhyVGF4enFXSUMzTE5yOGQwTWdSc1lTeGxLajkwVWdES2I3dG1DTEpud2JDVys0MmlZeUpTWGZJbkQ0OXIrbldWRVZUVkNVSi9CaUo3N2FLV1JuRU5xMnJrNjBHbFIrMHoxSjNJc3Q2aVpCRVBwbDZ1MGJkcjVmTS91QXhRR0pRaTlBU3hlN3VqRlcyVnVkemQvZm5kWEpLeFRrK2V2YWhWYk5nUmtsZnJsQ3F5aDhXR2NmOHZuQk9ZSG5BU2pxOVBCdzZDQit3ellRbitYdk5iNHVTaDZCTUJMdkdPWDFveXAvcHl2NWxRNmM2Y1RwT2xibFZXTHkrZ0d2bnBSSE5OSURZMzBDbm1xTThsT0lIYU14a0VhN0JHcm43K3NwczErVmgyVlkrYmtSaEtFNStZV3NseFRQTU1LRjRYR2d6ZEt3SGMxTmdsOCtWWnM3enNSZDV0eDZDRGdHYXdza0RXME9ydHdKajlyQTdrQXdleE5oNHZncU9iTzFlWko1RXZyMGI1amVleEsxVHdwaHpFU1ltb1RUU3dqRUdXWm5YUE5DeUczcWdtZFJ0d2E2VWxlNXhzVDJ0ZkMrM1daYjRqZEJ3dmpXc092dERRQnBjNHNTd3R1ejVCdjBwUGRaVzZNaXBQWmN0RlFHYUw1YWtuK0VqbTlHWW1lSjNSb2Yxb1RTam5yeDM0NURPMzlMYjB2SmtiN1k5d0phbThDdlY5bkl5MW9JckU4YXExbGYwMjhHQ2FqM29ob0YxeDMrbFpTdFJXQVNTM1VzWnVhaWRRNU9YQURVSjViclJucnlwSFB1ZHUvLzlmY1FGZkVzcUZJY2JaZGJUY2MwU05abUMxeWVTaDVtTGFlRE84dFU2WnVqbVR5dGkzaEc4bVBlTGpEMVIvMnA2bmI0dzJEM3ZaemhpMlZxSzFKcTRGMWtFanphWnlZamlpWE1ON3Q2TzA0OHZUeFVLTndocERjT2Joem1jK3RjVWdSS2RHM0NwRXlEa0F6KytUYkZpR0h6RFpMMkRVNEVPTU0yanBnT3FidXhhM0wrWUViM1c0MkZTUEEwalhycFZieFFrNHZSUDhJa3FReVk1QkdjSXdKRDNrdHEyM20zdGRtWGpLYi8vZ3o2RGt6eitwZkR2eTBXd2ozS0tiMll6RVQ1ZFlQWFJmUktTWTJLN3czY2p1aTVsRnU4T3BJVkV2Vm5HZVpxWGNaQzR0MXhjOVdDRHJTWE1teGMrV3p1ODZIbGhUTVRSSVpzWDVzaC95UzhDMStUeDV0ckRyaVNjVEhJcDNLdmx4SVFONE00UVhIc1E0R3ZydkExVER5a2pPQ1ZBc1kyN3prb2dET0JjaFJ0N1VhNkpRNlFldG4rVnZQNXZLNnNFMWN0OGlsMkE3ZGdZb0hFWmFxbXUzSkMyRGZXVVNZM0xSYXRYV0FHMklSWG1JUTEyUjdJekFUMUZHaHZvSjRsYkJGYXhndDAyVDl2eEJwVTNRK0oyN0YwclZnR2V2Y3NkTG9JNnF5SmtwTDBEVlE0WHZvSnhVRzk5VWg4aHMwVEZyYk1udXpwQ1dqclVHZWt2MWovMkFoOFNoV2pNc1NnblpDSngxR3o5NnhKS2tKczJaOGRLM3JFTFBaTVNPa0RqdDVwTEx0NHczMWp6SzArU0ZKUysydjZBdTB4aFpCZjBKL3V6S1psb25kNERjMDhBK0VxajRvRmhiUjZ5bWdxeVRwLzkxRXNOdlFzblpzNC83b0VVemwrMVFKNFljOGZtY1NrcXVzWmVNdXN0TU5LL2hOZnNHcm9TTk9tWEhMREpDSzVkbERJbkJINkh1ZzBrRWxDcXA5dmlFaXU1SkdjNWx3WWFQSFBNMWxPSkFyYWM2YzN0NHhyNXhTTG5aUFFlc3NhcjRNZ3pzUWRzcmw0Qyt0cHVQR2pWZ09mSTBJbTJXVDkwVTR6WXY3VjNGNjh0RjZSdFNHM3RUTUV3M3FEdy9WZnplTFg4aUlHOU51NkdFVzRmeHhYVjZOUTlSemtqOXZOTGI1M1Q5S0RtZEhHZ2F1b2pIOUtlSTgxeEZ5a091V3Q0NHJNQkhwTnU5N1lSVUpYcklWemxiTVcrTm5mVi9VUkNNZDBYRk5aTXYwa2NLdWZSeWNVUU41MFozbXVCM2RxZW80WUYyUklyc2VVeGVYZU81TTB6eW5ieHZOc0NWc0UrNElWZ0t4aERiS0h1Sm96enVaVWdyUEhOTFpqRWNxMGh1b09Vam90K1Y4ekhQSzhGMUp5QUpXZVJ1ZmtzY3lDcHVUZlVjYkRRZTFheDhKcTl1UEEvaWhTRWZCVDNQdUZVVnk5eUd0KzEzeGQ4ellNQkZTcGNEVytNL0RhNXlnSzJEUTRJaTViNFR0VTFrR2hLb003MUpLcHR6cE42OWx3SzlUNCt6VHRIWHE1d2VrczFkYjkzUDdDSjhwV3NncXl1WE5UOGdpOTY1TUl1UmRDSVNaQWJBMnNBbXBtdXBlTWhOTVJtOThPRW0vNG5lWlF6OTFyWmxNK2c2dkd4UWNuK2ppMDNrSjJHRCtpY1dJcUpuUlJZQ2lXVVQzbVcyRjFBTmdhOXluSjM5Z0hLMHpaKzJtZWdoOGsrMU51bDhSQ2s3QUJYQWwxbXFsV2Y3eFZiRFhhWUFkbG5NZ0d5UjVlVmI2Vlg1L1V3OUcwekptWU12a1RTc1ArZFhRcnYvTWg1Q0VZN21iVkxOOEJpZ0xVOFo4Y1FGODRMdFd4WlVITFYyTFRRblNxT1lwRk5GZXRJemUxMjZtZElRcnBLWjh4K0wzQ3FDRFNLS01OWEdpU29ZWkVWT0VadFNtdE4vWEpjeW5mZkMvZkkrMndnclBBL2dUd2VGOUdDMVlFekE1aUhXa2dKOVZBRU5FOHF5MTZ2SzNMNGdEZXgrYU5SNmhmNTlIWTQ4U3lKQU83V0xMdFYybjJMT3BQVGFHUHV2SXZnVG9ZdTJ0V1E0dFRqQ3pHR1FqSHhUamRtanprOTFCTmdzR0tuRTdmYU4rQk5oWjNvaUkxWHhWWHg3azU5K0xzcXpiZklWUGp4c1gxblYwZEdiVWJyWTU0VG5YMFV4OHhTaEpEbnRyQkNyenB2ZVYwMDFkU1lOdEkwSHFrSmZoRDNrRFphdXJ0NkFyWDRBcld1TVcvZUcyaXRhWkFtNVJFRG5LM2ZDZ2U3SVVnRFVSN1l1WEJJaWt4YVJwTldSUEcvdk5lREFPRUlFSTdPelEvb1BNSzlsaUlTN1dzeHMxNDdCeWdoYzBid01IMXdvNjU2NnovbkpCT0phcGNKVEF6WFRuWmVzdm9hM2wvUnlUdE1LYkhnQmkyUkVPN2QwMUJOcGJLRi9vRHpjNkMzL1AzZ0hhcUxmUGNONXd0VWo0STNsVk1YRFo4WXpHZlBuWnVKMWJ3VUxhdmlKS1pmK05jWmphaDJTQktzc1g3NnAxYmdqdXMwSFZ0S2lRVUh3V25SYVVWaW54QnVMaW50NGt6Rmd4QVJYMnJ3RW0rMEFUd3BsbVVmcnhGcGduYno2K1Z2YzNybW81NFppUHgvZ3BrTURZVlB2Q1lGTklRUjhsUEIwWlZiR2N0YXJ0Ukw0NExDcTR3UjZ0VzIvZDRXTlFlWmdvUlVMQXhFV1N3eTNEamNlUVF2VzRKbUhBQmpqdkhIaFYyZGNGTndWME40dnNLRndnTWRUVmRlOEUzZmVmcU41VmFxcWwrVmxJOEo3ZjRsbWpXRm53RTR3Szl0QmdyN0w4M1JYNkFKU1p4Vi9aMldNTVhFbkFjL3F4dHppeDJZbDdSeXlIZFpwQlZiN296cnpMSTRiUXBHTkdUcFlFUks1Zml4ajVKTlFmNXNiRkhDaXZkRWtmTmNMdFl1ZzFrUzlCdU9CTlo4ZVdGRU85TVhWT3hPc25Hdm9aV0hJektVSGRVQTYweFBKekxuYlQ3cVB1UzhibFovaEJKL3piSlVobmRTZVpqZGVKb3g5dGZaY3ZnSitLRmJ1U2cvQXg2cnljc05MVXRJblQ0bDhoV05TQlRNWTkxdkZ3cFdybW9KaE5MdTlIcFBJM2VXYUNRSGR0K0xOWitQdS9NdzBma3hVa1d6VkpIWUt6WElyNjZYd1FmVFNiUHR6YlFKVGlpTFlDVFJTL0VVSEZJaGNFUG5zUGRLMzBsZ1RCLzVxUTArUzIzWTVRbXlobnBFbGlPeGNyNERPYmVwc0xrU1pML1J2NHV5K043YkQvSHdPL1NLckIzQm9wazFnYlFCaytsZ2NIVmRncjRNVjJTUngrV1JiSTYyYURBeWtBN3oxMWUrY3BSMC81bU50UXhNK2FYQldtQW42SkJPNzdvMmdaV215SE1jeGVyVTljQmZYWWFWS0pENjQrb1dwTk00dFV5OStvelBIUzZIc1cyblRlRkZZa0lJK3VHVEQxb3ZuQ0Q0Tkx4cjRTQnpSTlNWcnE2RlZ2SnA1Zjl6TmpGbWZHUTlKZVV2NDV2akE0ekNQUzBjakorZ3llOWtjK0tWUnM4SUhyVk42bFR6ZGhibkNDeEJZSjJiQ3dDY1IydDAvNDE0N01OemZXeFRYdFBjTHUzbUlRN0Z5OW9KRUFFWWhNTE52K2V4QWx0Y0dxSGszYVZtMmg4c3JieWcrM1U3eEdxSm5kNlpqK1VFV1ptZE04UlNacG54V3NWdDYwQ2hJZ1IyR2JHamg0UWlNMDYzeDlTVysvbHZtTmlOSllVNFhhWU5Rc2VUS0lud3VRRWlsS2p6eVZXREg2b2NwWVR1d2FaNVBJY1AvNHd1bndZeW9Ja2NRb0ZKejJvdUdrSVBqNDlnVE9qejNNNFc4VnNnei9vczlXV1BTT29vV0tJZU1KQXdHbXdEVnhmODh1RFFQWFcwTUFRcjFjQVB0YUFjaE5HNFNoalFSa2NkSWJTbWhBRWs4ODBFNVA5M01MN3lmS2ZvZC90bTlkc3ZZM1ZGOEt2Mi9pa0F4dnpBUk9NZ0lUcHV2VlNDRHlXV0VKMzNKM21ya1NucEk4aGZwRmRMc2NhRmhZa1RicWN0RjAvWEFEcVJWK1ZSODRmZUplRmNXTGU4UUJpa3dhTnZNeXRJWjVpY3hnYjZDQU9vZjZsSlRkY01NeitvcnJtcGZQK0ljVkI2dmtsaHBWRGZhSjVONHV6TEM1Q1hKSk9weElUU3ZNZUx5TUh2ZFozclgrOS9PV2JUczkwZkJsR0daS0hmT2NCL2lsZTVFYmNlMmlzT1RvZUVBeEd3OVAwU29ZN1BuWHJzdUZwTDljOXRQcDJ5cEFFL25wQXBvVms4VXFXeWFOV3QwT1pVd1VKWGwwSWsyYzZ1SjIvNSt4dHBtZFJHVHg0OUl3N0QwM3cyejB0a2hySktFV1p6K25mZldzZGZVN3YyeDBDKytFeDBvVFlhaVIwQTZBOEZjNlZUcUJRbUdnYlo5aE5VRktyTlZDUmsyeUtTZnpzZmhGZ2dwVlJvZVVpVDR3NnMyL2JDM1FWQllHb0FBODYyY1RPa29mdS9wczV1bWJOV1d5TVNQM1hqdTJhbnJLVURsRzhDWHdscTl3d2dMSndiN3lMa0Z1U2poRElYSW9QbUhQUW9rMjN0VDlqSFRxVG5ZTXdCeHhwUFkrc1JUSmFHcE9EZzVvZXRzdW04VGtkM3hLQk5NWUJuOUJaTWNpWDhjQkpBRzNRTGxTSDJhYmZ4NUx2RGtmZEJLY0l3OTlxamhiQVFHM2FOK0E1b1AyakVjbnFrZFV0UHM1d21PbW50UVFxZzhBZUZWQUMzajhiSkVudEJKTk5oODhhOUNDc1pHMVpncldERHdSUVEzcGdqa1hueHkxV1ZTMHhIcmJhN1RzaG9oVnY0bXUwbW5VTmI1VXRPaDBjcVZDc28xdy9aM1JPODkvSytCMUxucmUzOXRoajNYUHE3SHlCS09pRSsweDZsMGgrWE9vNWNwTHI0dE1lbytYOCtxZ1MrenU3K3dDVkdNRW1PbmlKeDdjTXgwL2YxemZCQm56RTJmakY5U1YreFNETVYwbFYwZnUzNTNrNlJIQ3BSeUpYRXpMQTlsWlNCVXBrT09rYmJLSkd2TzZRZVRuYmhBVTFLNjFlaHh0RFg4M1Z2MGdkSTJLNGl0bWJuZXBhVTB4MDVzZlNwejZvdEg1cnh0OE5pS3dIeXdJak16NFlZanV4SDdjZGZoeXZkYXBLb29ISXYyN1BnRUxTTmV4a3VjMWFoU0RhdlJBakFNVVNQK0wxVGFPWkt3K05MVjNzVkRTMjNQMlcwdHpvWTA1ek93bzZXaGFyTmtDajVDTWl3Q0RRYXRkVWRqVWdQOEtOUFZvWlBXSlBCQ1c1ZzZyYk4vNlI5Z1p4dFhGNjVacE5zZlQzN0lWbVYwWmw3QllpQ2R1YmM5WnVtUFh2cmtzQnM4TFBGbWdpazJuTHNtU1VXSnRzZytPSVM1cHQ3NkRvajg1RFVUaUo1ZkkrQ2NwdmV4UkJwd0hxODBlWE1kZEtsTzZ0OGxTYnJIamt3bS9uWGxnY21NUkx5cHg1N2x3L1F6UGxmRVIrY0NaOEV6SjFYbFBLVU1QZlA3NHl2VHZSTUR2dm5sL2QyTCtaRWdQVS9sOFB5cmEvS0NGeFJBS2R3MnJlQ0Z3SWRiZFk1T2tjVUhzWW82cllJRVdlS3lud1lCV2xUUVBrU1BJN1Z4K1doWlNxbks2RXZXa2pxOTZHUVZVOHEycDNmT0tmQmltckVQKzIwMWRxR2ZLVTNFMzhBZTFzakZGdG95djdnSDNOclhNenQ5WGVqR29ucnFidWkwczJpUTU0a1NBRGRYNXhwWDAwNUV1SWxFdTVqTmdEVkVtc3kzNk9zTldnT1hwbkZHajY0Vmt3Mnl0ZVNLTVZBd09DUmdTaVpKS1lzTW9DeDlkWk1acm5icjdONHBXa1hyZmF5RWpBYVErTk9RaWZEMlNEdWhrMEhIWW9Jc1VOOHVkTytpM1ZyeVFiQkZDb0JTSGRoOTA2RCtmS0hyMENYbEQ1ZHFDMmtLSzJkM21Kb0FFdDFpWVZnMnVxWTRzZ2xWK2VDcG84c0owaDE0aHc0N0tOU3FPQTcvVUxYVWYyNEV0QXJ6U3JDakkwT2lGS3VxNEN5cElLNG5BWHVTYUY2eG5xWStuOGxFY2RBSEZlMitHUUJNdWY0dzJIdEYySmZLcFowZkV2UWVzOCsxcE9tSWx0WERsK0FWYVJJU3VoMHQ3eEtHRnlZOEFwRUlsTldMQlU2a2FXYTVOTEhaR0lzeCtXMDJEQWVOckx6OTdYaHJCdUN3bG9YOVROUzI5Q2hxT1RLbG5tWUprM09oeGFPSjczdnluZzJtalZGYnlkRHMyUlVkeVZSOFo0ZWtxalZreFp1Q0ZuL3JOUERVWlVyd0hmQi9SekVHUlk1aWZFNUZxVlh1TG5lRyswMjlNNzhQeEtPL1B1T3VoU2hSVWZrSTJ2S2xQaUJZbjBiSXMwT3VHcHFMV3BDOS90bmF0Qm1TYnR2QUZSbnZIZjBuU3NFbTBMRXJDWFI3WEJhdlI3N1JRYWxSS0NCQjhyWnhvTkdYU2RsVGQ5bEtpUFVzZEFpeVFUV0lsMmxtUnFnMDl5MFdoTnpUNVJpb0orL0JVZ1N0NXdvTERyTWtza29rYjEvdDZwWWd5K0ViaDV0KzgycXFaM1BQdExFdndxdW9hbTRBQkt1MWl5MnVSVGRoa0IzV1ozQ1g2NW5PSEZ5RER2OHp2Qm0xQ29FemJHVzNZYmxBdUxrMW9ob2ZqOXFWZDZjdlY0cGc3Sy9JOCtXY3ZTamR4Y3R3Z1BObzJiL0NvYzJnaGdaVTVtUXBmTTI4STJtQ0JQeVdCZldOTjRSRzJwZ25uakhMMmVoU21VYm1SNC9GdndIQjlIWGVYTjUybk50cEZheHZkWTFEWncyc1NvZm1JZFVmcmQwVHRVb2tMY1QzdjVONUxaUXpEc2lzbFo3VXpDMjBsUHZ2OWNwbk81MysxWGVCd1FsaG5QeHJDWTRVS0tZWDFkbUxpUzR0ZkdCRDcxeTVtZVlqdTIvR1hLd2pOeU9uaXdhZzBvQTRTbU1sSTVFT3lsK1pXeE1adWRkR3RuR3pDSFFZeDFPbTVxK1VTM0RpNURMdmlvTTVFY3kzN3hGTmpteXAzVWM3ZVF5cDV2ZUtDT3NpdHZnZEZZT0ExVVR4ekhnd0ZPTzAwMVZmWGhJR29zTWxFUjZZZWh6QUdseHdySnhUaktFaElaU3RTVi83aGg0OFh0ODZFZUEvM0U1ZTdEWFE0NHhtdkhQZDN0MnNvT21KY0F2cCtOSjVvYlVGSk9ydlI0SEFncjg4c1pVQ0RoTTNqd01Fa3RIK0ZjREpHck1UQTlqZnFMb0hOQ0RPdXF0U2ZTVVVvVmJVcDRoRnJKbGlJM3JNOUZtTkcwQ1ZiNjl2NVpYdEwvQ29PeFhiQVJGYlJJeDI3SkJpWGpqVmFoSFpGNERScnNsTFk0cXZnTDdtYU5KQWJuMGpPM1NNcmVwNHJubkJELy9zMG5MTDBoVzBaS21FaFhtVFRHYjN0S0QzVXA4ZitJdU5OeTdSQmtybGNwTHF3S1NnREhxOWs2YVlHaWxmcVVzdTBZMFZvZE03L2VkZklicVBLZmpIWEVabUgrcjRVMlVKS0hLblhGUnFCbVpsMTVZMW5oVklaeVF5OE13LzRWWFM4c2piTWJ5aThYbnZsT2VsZzVFU3c2RStZVU5ITE4zZXF2K3B0TUR3OHhXYkx4Y055aGxMM3d0R1BPQ2VERkRTSEpabDh0OU1JN1VvVWdVb1RRRkZoRHFuWDVycjVsUHliR0E4MDlPb1oybjFHNE5VUEdac0VQL2FpZXhFSkJoVUJrZHdhTUZsK204U1FNZE52Y0ZlTzVXU0pPY1d0M3I3bnZJaXI4MHR6OGt2dVVLOXR3OW9TbEQrNGY4TnlybUVXSTVFbHBUaTY3VVR4MHRhRWUxMTh1SWRVZnI0S0E1KzZZMzBFbDhRdEdOUis5bytoa1hVQldmMlJzd3cvVlhyNnZ3TDF4ODkwZDlRWjJIbUtLQWNTSzU3NFNHbDBNRmU3d0cvc012YW0rbnJqVmFhRkdiTm1vOXErZklYeHoyV2trdlNFRGlYTXptS3IxQkZSOFA1bWlLOUk4YzJPQkZFMXRsb1NhN2VTeWVwZVA3YkJuZExYWGYxbmFyZTVXeFg4TXF4VGFzSkF2VVF1bWVJVUtTVVBYTEtvZHE5bkxUZ2hhcUVtNlpHV1JabXNla2tSbU8vK1hlR1d0bnh1NmcyRkVZeXdwOFh4dmNlYlRzeU9Wb3BlMVNWM280WTZUVUd0SFFuYkNmMHNUYUVtV0xmQUc1MWlXRURlT2FpNUM3dmVEODZUUmlqWDRxRm90V3lTb3pxMDFkU21TaTFZVVJXYzVHTXVpaHBVa0Qxb1NsL3REcTQvelF0SEJFQUM3dUxhNWpvUEVOVVgzYk0xUjlGZGowSTllTUJZNU1mb3JQTUJ0eDNBWGV2YzFnQ2ljZjVuSkNBeVVkaWo0OC9KOU9LUkVFUUkycjhRcTJab2R0ZHZTVEcrOUFDUnREOFhrNnp0SFNJTHFaRXNiQ2RLWnFVQ0hKZWRCRVZWM0I4RkZoRFFKLytnV1RmN1BMQVVNdGxTUCtnaGdGSm1WV1hESmFqUC8yK25QV2J2cjRKaWtIU1dlcGVMNEduUldvdkpwQXpTNEV2WlNzVTBZOUlsUElraXk3WjFTd2l6N0J1eG5hV1prYjBlZmF3c0daNmZXbkpDOWtMbXNYa2NzV3V3WW91U1VHZ1d0WlZTeXpkSVRLaC9XZ3E3djNudU9DQ1JDRGovakwxN3h4eUVmMXFTR0Z4eDNRcGcxS2Fyd2poRnlNMmF2VGRNNFB4SThSbnJ3eVFHUG9MQjhIWDdEQ2F6dWw4VXNDdE8wenpSeFczK0JJYjZ5NGVhQ2RCVDZ5cEt2K1MrM0U5RVVCL2MvQ0loVlNidnFxNGlLcEVjYWlXZWdhdWFVSE1UY1d2eFVWZWtGMXRka09GZlNXanhxaENza3VKU3RqRFFQamMzRG9ja0l1VGtETXpiVkZ3cGJOR1VoZXVpNWhxYk92WlRiQnpxM0x3MTdteHRIU3pPcVRIZWhKOEVvai8wMlpsMVE5NWdPMWljMlJobVBwRlN2bFdBcnBGUUpvOElQYjJHUHQ5RitsQmxacjZTb3Q3SkppNXllS3BBSTZObU5vK2oxb3lBYlB4RlZyTmV6Zlp1RFRlaXA3YWRmVlVLZUNLTzQ5dlFxQkhBTEljbEVZUCtxZkxwZ1RCTUkrdGhuQ2hoZGwzeVpMbG9VUi9rdTdqbWFwSlorcmtibERTTU1XRlFSaVFhMk1qNVdFTmlBSUs4Z1NsRGRRY2g1RVdqS3BWWGxuM0pvd0p2UXNsSmFwRXY5QTdXcGJiUUE4Qm9ndjNQNjY4eStCeW9Yb25qYjhyeHU1VHpJaVNmMThpckVrVmhGd2xiT2ZTSXI0UndFRUY4SFBlNFZGL1dTTk1WMTZOcnhXZlNNdXFnQT0\\u003d\x22,\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\x22],null,[\x22conf\x22,null,\x226LfCVLAUAAAAALFwwRnnCJ12DalriUGbj8FW_J39\x22,0,null,null,null,1,[21,125,63,73,95,87,41,43,42,83,102,105,109,121],[-6421353,970],0,null,null,null,null,0,null,0,null,700,1,1,0,\x22Cg0aCwgDEgcdAqHJrCgO\x22,0],\x22https://open.spotify.com:443\x22,null,[3,1,1],null,null,null,1,3600,[\x22https://www.google.com/intl/en/policies/privacy/\x22,\x22https://www.google.com/intl/en/policies/terms/\x22],\x22hfhH+siOBQWzZNy/kdhBe+Cw5nIRZtVPWoYnMXuMnKU\\u003d\x22,1,0,null,1,1735650257267,0,0,[96,35,192,73],null,[27,237,13],\x22RC-rrjIoVTolAjCjQ\x22,null,1]");
-    </script><div class="rc-anchor rc-anchor-invisible rc-anchor-light rc-anchor-invisible-hover-hovered"><div id="recaptcha-accessible-status" class="rc-anchor-aria-status" aria-hidden="true">Recaptcha requires verification. </div><div class="rc-anchor-error-msg-container" style="display:none"><span class="rc-anchor-error-msg" aria-hidden="true"></span></div><div class="rc-anchor-normal-footer"><div class="rc-anchor-logo-large" role="presentation"><div class="rc-anchor-logo-img rc-anchor-logo-img-large"></div></div><div class="rc-anchor-pt"><a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">Privacy</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/en/policies/terms/" target="_blank">Terms</a></div></div><div class="rc-anchor-invisible-text"><span>protected by <strong>reCAPTCHA</strong></span><div class="rc-anchor-pt"><a href="https://www.google.com/intl/en/policies/privacy/" target="_blank" style="">Privacy</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/en/policies/terms/" target="_blank" style="">Terms</a></div></div></div></body></html>
+// Background sync manager
+
+class SyncManager {
+
+&nbsp;&nbsp;async enqueueChange(change) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Add to queue of pending changes
+
+&nbsp;&nbsp;&nbsp;&nbsp;await this.addToSyncQueue(change);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Attempt immediate sync if online
+
+&nbsp;&nbsp;&nbsp;&nbsp;if (navigator.onLine) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await this.attemptSync();
+
+&nbsp;&nbsp;&nbsp;&nbsp;} else {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Register for online event to sync later
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.addEventListener('online', () => this.attemptSync());
+
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;async attemptSync() {
+
+&nbsp;&nbsp;&nbsp;&nbsp;const pendingChanges = await this.getSyncQueue();
+
+&nbsp;&nbsp;&nbsp;&nbsp;for (const change of pendingChanges) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await this.syncWithServer(change);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await this.removeFromSyncQueue(change);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showStatus('Changes synced with server');
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Failed sync isn't fatal - will retry later
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Sync failed, will retry later:', error);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;}
+
+}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">async</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">function</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">saveUserData</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">data</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #6A9955">// First, save locally to ensure data persistence</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">saveToLocalStorage</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">data</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #6A9955">// Notify user their changes are saved locally</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #DCDCAA">showStatus</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'Changes saved locally'</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #6A9955">// Attempt to sync with server in the background</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">syncManager</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">enqueueChange</span><span style="color: #D4D4D4">({</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9CDCFE">type:</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">'saveUserData'</span><span style="color: #D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9CDCFE">data:</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">data</span><span style="color: #D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9CDCFE">timestamp:</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">Date</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">now</span><span style="color: #D4D4D4">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A9955">// Background sync manager</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #569CD6">class</span><span style="color: #D4D4D4"> </span><span style="color: #4EC9B0">SyncManager</span><span style="color: #D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #569CD6">async</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">enqueueChange</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6A9955">// Add to queue of pending changes</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">this</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">addToSyncQueue</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6A9955">// Attempt immediate sync if online</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">if</span><span style="color: #D4D4D4"> (</span><span style="color: #9CDCFE">navigator</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">onLine</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">this</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">attemptSync</span><span style="color: #D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;} </span><span style="color: #C586C0">else</span><span style="color: #D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6A9955">// Register for online event to sync later</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9CDCFE">window</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">addEventListener</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'online'</span><span style="color: #D4D4D4">, () </span><span style="color: #569CD6">=&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">this</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">attemptSync</span><span style="color: #D4D4D4">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #569CD6">async</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">attemptSync</span><span style="color: #D4D4D4">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569CD6">const</span><span style="color: #D4D4D4"> </span><span style="color: #4FC1FF">pendingChanges</span><span style="color: #D4D4D4"> = </span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">this</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">getSyncQueue</span><span style="color: #D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">for</span><span style="color: #D4D4D4"> (</span><span style="color: #569CD6">const</span><span style="color: #D4D4D4"> </span><span style="color: #4FC1FF">change</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">of</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">pendingChanges</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">try</span><span style="color: #D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">this</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">syncWithServer</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">this</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">removeFromSyncQueue</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DCDCAA">showStatus</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'Changes synced with server'</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} </span><span style="color: #C586C0">catch</span><span style="color: #D4D4D4"> (</span><span style="color: #9CDCFE">error</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6A9955">// Failed sync isn't fatal - will retry later</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9CDCFE">console</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">log</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'Sync failed, will retry later:'</span><span style="color: #D4D4D4">, </span><span style="color: #9CDCFE">error</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre></div>
+
+
+
+<p>This code demonstrates several key principles of offline-first development:</p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>Local-First Storage</strong>: Changes are immediately saved to local storage, ensuring no data loss regardless of connectivity.</li>
+
+
+
+<li><strong>Background Synchronization</strong>: Server communication happens asynchronously, without blocking the user interface.</li>
+
+
+
+<li><strong>Queue-Based Architecture</strong>: Changes are tracked and can be synced when connectivity is restored.</li>
+
+
+
+<li><strong>Progressive Enhancement</strong>: The application works without a connection, but takes advantage of connectivity when available.</li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">Real-World Benefits</h3>
+
+
+
+<p>The offline-first approach provides several tangible benefits:</p>
+
+
+
+<p><strong>Better Reliability</strong>: Applications continue functioning regardless of network conditions. This is particularly crucial for users in areas with unreliable internet access or those who frequently transition between connected and disconnected states.</p>
+
+
+
+<p><strong>Improved (Perceived) Performance</strong>: By prioritizing local operations, applications feel more responsive. Users don’t have to wait for network requests to complete before seeing their changes reflected in the interface.</p>
+
+
+
+<p><strong>Better User Experience</strong>: Users can work confidently knowing their data is safe, even when offline. The application handles network transitions gracefully without interrupting their workflow.</p>
+
+
+
+<p><strong>Reduced Server Load</strong>: By batching synchronization operations and only sending necessary updates, offline-first applications can reduce server load and bandwidth usage, which is MUCH more useful for targeting areas with relatively slower internet connections.</p>
+
+
+
+<h3 class="wp-block-heading">When to Consider Offline-First</h3>
+
+
+
+<p>While offline-first development requires more upfront planning and complexity, it’s becoming increasingly relevant for:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Mobile applications where users frequently experience connectivity changes</li>
+
+
+
+<li>Professional tools where data loss is unacceptable</li>
+
+
+
+<li>Applications targeting regions with unreliable internet infrastructure</li>
+
+
+
+<li>Progressive Web Apps (PWAs) aiming to provide native-like experiences</li>
+
+
+
+<li>Any application where user productivity shouldn’t be dependent on network status</li>
+</ul>
+
+
+
+<p>The investment in offline-first architecture pays dividends in user satisfaction, application reliability, and reduced support costs from data loss or connectivity issues.</p>
+
+
+
+<p>In the next section, we’ll dive into the technical foundations that make offline-first applications possible, exploring browser storage options and service workers that form the backbone of offline capability.</p>
+
+
+
+<h2 class="wp-block-heading">Technical Foundations</h2>
+
+
+
+<p>The ability to build robust offline-first applications rests on two fundamental pillars: efficient local storage and service workers. Understanding these components thoroughly is crucial for any developer venturing into offline-first development.</p>
+
+
+
+<h3 class="wp-block-heading">Storage Strategies</h3>
+
+
+
+<p>When building offline-first applications, choosing the right storage strategy is like selecting the proper foundation for a house – it affects everything built on top of it. Modern browsers offer several storage options, each with its own strengths and ideal use cases.</p>
+
+
+
+<p><strong>LocalStorage</strong>: Think of LocalStorage as a small, simple safety deposit box. It’s perfect for storing small amounts of data (typically limited to 5-10 MB) and is incredibly easy to use. However, it’s synchronous, meaning it can block your main thread, and it only supports string data. Consider it for storing user preferences or small configuration objects:</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(1 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)"><span style="display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7">JavaScript</span><span role="button" tabindex="0" data-code="// Simple but limited - good for small config items
+
+localStorage.setItem('userPreferences', JSON.stringify({
+
+&nbsp;&nbsp;theme: 'dark',
+
+&nbsp;&nbsp;fontSize: 'large'
+
+}));" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #6A9955">// Simple but limited - good for small config items</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9CDCFE">localStorage</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">setItem</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'userPreferences'</span><span style="color: #D4D4D4">, </span><span style="color: #4FC1FF">JSON</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">stringify</span><span style="color: #D4D4D4">({</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">theme:</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">'dark'</span><span style="color: #D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">fontSize:</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">'large'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">}));</span></span></code></pre></div>
+
+
+
+<p><strong>IndexedDB</strong>: This is your industrial-grade storage solution. It’s asynchronous, can handle massive amounts of structured data, and supports indexes for efficient querying. IndexedDB is ideal for applications that need to store significant amounts of data, like offline document editors or media applications.</p>
+
+
+
+<p>The true power of IndexedDB lies in its ability to handle complex data structures and its transactional nature, ensuring data integrity even when dealing with large datasets. While the native API can be verbose, libraries like idb or Dexie make working with IndexedDB much more approachable.</p>
+
+
+
+<p><strong>WebAssembly + SQLite</strong>: One of the most exciting recent developments in offline storage is the ability to run SQLite directly in the browser through WebAssembly. Imagine having a complete SQL database engine running locally in your browser – it’s like carrying a miniature data center in your pocket. This approach offers several compelling advantages over traditional browser storage solutions.</p>
+
+
+
+<p>For developers already familiar with SQL, this option feels like coming home. Instead of learning new APIs or adapting to the peculiarities of IndexedDB, you can write standard SQL queries just as you would in a server environment. Complex operations that might require multiple IndexedDB transactions can often be expressed in a single, SQL query.</p>
+
+
+
+<p>The combination of WebAssembly and SQLite provides near-native performance, making it particularly powerful for applications that need to handle large datasets or complex queries. The familiar SQL interface also makes it easier to migrate existing applications that already use SQLite on the backend.</p>
+
+
+
+<p>However, this power comes with important trade-offs to consider. The initial load time of the WebAssembly module can be noticeable, and the overall bundle size is larger than using native browser storage options. This solution works best for applications where users typically engage in longer sessions and require sophisticated data querying capabilities.</p>
+
+
+
+<p><strong>Cache API</strong>: The Cache API serves a different purpose – it’s designed specifically for storing network requests and responses. Imagine it as your application’s personal proxy server, sitting between your app and the network. It works hand-in-hand with Service Workers to enable offline access to your application’s resources.</p>
+
+
+
+<p>When designing your storage architecture, consider implementing a tiered storage strategy. This approach uses different storage mechanisms for different types of data:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Critical application state in IndexedDB</li>
+
+
+
+<li>User preferences in LocalStorage</li>
+
+
+
+<li>Network resources in Cache API</li>
+
+
+
+<li>Temporary calculations in Memory</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Service Workers</h3>
+
+
+
+<p>Service Workers represent a paradigm shift in web application architecture. Think of a Service Worker as your application’s loyal butler – it runs separately from your main application, can intercept network requests, and manages caching strategies, all while operating independently of your application’s lifecycle.</p>
+
+
+
+<p>The power of Service Workers lies in their ability to act as a proxy between your application, the network, and the cache. They can:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Intercept network requests and provide custom responses</li>
+
+
+
+<li>Enable sophisticated caching strategies</li>
+
+
+
+<li>Handle background synchronization</li>
+
+
+
+<li>Manage push notifications</li>
+</ul>
+
+
+
+<p>Setting up a basic Service Worker involves a few key steps:</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)"><span style="display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7">JavaScript</span><span role="button" tabindex="0" data-code="// In your main application
+
+if ('serviceWorker' in navigator) {
+
+&nbsp;&nbsp;navigator.serviceWorker.register('/sw.js').then(registration => {
+
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Service Worker registered');
+
+&nbsp;&nbsp;});
+
+}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #6A9955">// In your main application</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C586C0">if</span><span style="color: #D4D4D4"> (</span><span style="color: #CE9178">'serviceWorker'</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">in</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">navigator</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">navigator</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">serviceWorker</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">register</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'/sw.js'</span><span style="color: #D4D4D4">).</span><span style="color: #DCDCAA">then</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">registration</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">=&gt;</span><span style="color: #D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9CDCFE">console</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">log</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">'Service Worker registered'</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre></div>
+
+
+
+<p>The real magic happens in how you structure your Service Worker’s caching strategies. Instead of a one-size-fits-all approach, consider implementing different strategies for different types of resources:</p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>Cache-First Strategy</strong>: Perfect for static assets like images, CSS, and JavaScript files. The Service Worker checks the cache first and only goes to the network if the resource isn’t found.</li>
+</ol>
+
+
+
+<ol start="2" class="wp-block-list">
+<li><strong>Network-First Strategy</strong>: Ideal for API calls where you want the freshest data when online, but can fall back to cached data when offline.</li>
+</ol>
+
+
+
+<ol start="3" class="wp-block-list">
+<li><strong>Stale-While-Revalidate</strong>: A hybrid approach that serves cached content immediately while updating the cache in the background, providing a balance between speed and freshness.</li>
+</ol>
+
+
+
+<p>When implementing Service Workers, it’s crucial to understand their lifecycle. Service Workers can be in several states: installing, installed, activating, activated, and redundant. Each state transition provides opportunities to set up caches, clean up old data, and ensure smooth updates to your application.</p>
+
+
+
+<p>One often-overlooked aspect of Service Workers is their update mechanism. When you deploy a new version of your Service Worker, it won’t take control immediately. Instead, it waits until all tabs running the old version are closed. This behavior, while sometimes frustrating during development, is crucial for maintaining consistency in your application’s offline capabilities.</p>
+
+
+
+<p>A robust implementation also needs to consider error cases. What happens when cache storage is full? How do you handle failed background syncs? These edge cases should be part of your initial design, not afterthoughts:</p>
+
+
+
+<ol class="wp-block-list">
+<li>Implement storage quota management</li>
+
+
+
+<li>Set up retry mechanisms for failed synchronization</li>
+
+
+
+<li>Provide clear feedback to users about the state of their offline data</li>
+
+
+
+<li>Handle Service Worker updates gracefully</li>
+</ol>
+
+
+
+<p>Remember that while Service Workers are powerful, they should be implemented progressively. Start with basic caching strategies and gradually add more sophisticated features as you understand your application’s needs better.</p>
+
+
+
+<h2 class="wp-block-heading">Data Synchronization and State Management</h2>
+
+
+
+<p>Perhaps the most challenging aspect of offline-first applications is maintaining data consistency between local and server states while handling the complexities of concurrent updates and conflict resolution. Think of it as choreographing a dance between multiple partners who can’t always see each other – timing and coordination are everything.</p>
+
+
+
+<h3 class="wp-block-heading">Understanding Data Flow in Offline-First Applications</h3>
+
+
+
+<p>In an offline-first world, data flows in multiple directions and exists in multiple states simultaneously. Imagine your application’s data as a river system with numerous tributaries and branches. The main river (your server) receives water (data) from multiple sources (client devices), but each tributary also maintains its own local reservoir (client-side storage).</p>
+
+
+
+<p>When designing your synchronization strategy, you need to consider three primary states of data:</p>
+
+
+
+<ol class="wp-block-list">
+<li>Local changes that haven’t been synchronized</li>
+
+
+
+<li>Server changes that haven’t been downloaded</li>
+
+
+
+<li>The last known synchronized state</li>
+</ol>
+
+
+
+<p>A robust synchronization system needs to track all these states while handling various scenarios:</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)"><span style="display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7">JavaScript</span><span role="button" tabindex="0" data-code="class SyncState {
+
+&nbsp;&nbsp;timestamp: number;&nbsp; &nbsp; &nbsp; &nbsp; // Last sync timestamp
+
+&nbsp;&nbsp;localVersion: number; &nbsp; &nbsp; // Local change version
+
+&nbsp;&nbsp;serverVersion: number;&nbsp; &nbsp; // Known server version
+
+&nbsp;&nbsp;pendingChanges: Change[]; // Unsynced local changes
+
+&nbsp;&nbsp;conflictResolution: ConflictStrategy;
+
+}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">class</span><span style="color: #D4D4D4"> </span><span style="color: #4EC9B0">SyncState</span><span style="color: #D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">timestamp</span><span style="color: #D4D4D4">: </span><span style="color: #4EC9B0">number</span><span style="color: #D4D4D4">;&nbsp; &nbsp; &nbsp; &nbsp; </span><span style="color: #6A9955">// Last sync timestamp</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">localVersion</span><span style="color: #D4D4D4">: </span><span style="color: #4EC9B0">number</span><span style="color: #D4D4D4">; &nbsp; &nbsp; </span><span style="color: #6A9955">// Local change version</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">serverVersion</span><span style="color: #D4D4D4">: </span><span style="color: #4EC9B0">number</span><span style="color: #D4D4D4">;&nbsp; &nbsp; </span><span style="color: #6A9955">// Known server version</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">pendingChanges</span><span style="color: #D4D4D4">: </span><span style="color: #4EC9B0">Change</span><span style="color: #D4D4D4">[]; </span><span style="color: #6A9955">// Unsynced local changes</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #9CDCFE">conflictResolution</span><span style="color: #D4D4D4">: </span><span style="color: #4EC9B0">ConflictStrategy</span><span style="color: #D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre></div>
+
+
+
+<h3 class="wp-block-heading">Implementing Robust Sync Protocols</h3>
+
+
+
+<p>The key to successful synchronization lies in implementing a protocol that can handle all possible scenarios while remaining efficient. One effective approach is the “versioned changes” pattern, where each change is tracked with a version number and timestamp.</p>
+
+
+
+<p>Consider this sequence of events:</p>
+
+
+
+<ol class="wp-block-list">
+<li>Device A makes a change while offline</li>
+
+
+
+<li>Device B makes a different change to the same data and syncs with the server</li>
+
+
+
+<li>Device A comes back online and needs to reconcile its changes</li>
+</ol>
+
+
+
+<p>This scenario highlights why naive approaches to synchronization often fail. Simply applying changes in chronological order might lose important updates. Instead, we need a more sophisticated approach that considers the nature of the changes and can intelligently resolve conflicts.</p>
+
+
+
+<h3 class="wp-block-heading">Conflict Detection and Resolution</h3>
+
+
+
+<p>Conflicts are inevitable in offline-first applications. The question isn’t whether they’ll occur, but how we’ll handle them when they do. Think of conflict resolution like sorting out a scheduling conflict – sometimes there’s an obvious solution, and sometimes you need to ask for human input.</p>
+
+
+
+<p>There are several common approaches to conflict resolution:</p>
+
+
+
+<p><strong>Last Write Wins (LWW)</strong>: The simplest approach, where the most recent change takes precedence. While easy to implement, it can lead to lost updates. It’s suitable for simple data types where overwrites are acceptable, like user preferences or status settings.</p>
+
+
+
+<p><strong>Three-Way Merge</strong>: This approach compares the current server state, the local change, and the last known synchronized state to make intelligent merge decisions. It’s like having a mediator who knows what both parties originally agreed upon and can help reconcile their current positions.</p>
+
+
+
+<p><strong>Operational Transformation (OT)</strong>: Used by collaborative editing applications, OT transforms concurrent operations to achieve consistency. Think of it as adjusting your movements based on what your dance partner is doing, ensuring you stay in sync even when you can’t directly communicate.</p>
+
+
+
+<p><strong>Conflict-Free Replicated Data Types (CRDTs)</strong>: These are special data structures designed to automatically resolve conflicts in a predictable way. They’re like self-organizing systems where the final state is mathematically guaranteed to be consistent, regardless of the order of operations.</p>
+
+
+
+<h3 class="wp-block-heading">Managing Application State</h3>
+
+
+
+<p>State management in offline-first applications requires thinking in terms of eventual consistency rather than immediate consistency. Your application needs to be designed to handle multiple versions of the truth existing simultaneously.</p>
+
+
+
+<p>Here’s a pattern for managing optimistic updates while handling potential conflicts:</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)"><span style="display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7">JavaScript</span><span role="button" tabindex="0" data-code="async function updateData(change) {
+
+&nbsp;&nbsp;// Apply change optimistically
+
+&nbsp;&nbsp;applyLocalChange(change);
+
+&nbsp;&nbsp;// Track change in pending queue
+
+&nbsp;&nbsp;trackPendingChange(change);
+
+&nbsp;&nbsp;try {
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Attempt to sync when possible
+
+&nbsp;&nbsp;&nbsp;&nbsp;await synchronizeChange(change);
+
+&nbsp;&nbsp;} catch (error) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;if (error.type === 'ConflictError') {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Handle conflict based on strategy
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await resolveConflict(change, error.serverState);
+
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;}
+
+}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">async</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">function</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">updateData</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #6A9955">// Apply change optimistically</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #DCDCAA">applyLocalChange</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #6A9955">// Track change in pending queue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #DCDCAA">trackPendingChange</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;</span><span style="color: #C586C0">try</span><span style="color: #D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6A9955">// Attempt to sync when possible</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">synchronizeChange</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;} </span><span style="color: #C586C0">catch</span><span style="color: #D4D4D4"> (</span><span style="color: #9CDCFE">error</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">if</span><span style="color: #D4D4D4"> (</span><span style="color: #9CDCFE">error</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">type</span><span style="color: #D4D4D4"> === </span><span style="color: #CE9178">'ConflictError'</span><span style="color: #D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6A9955">// Handle conflict based on strategy</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #C586C0">await</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">resolveConflict</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">change</span><span style="color: #D4D4D4">, </span><span style="color: #9CDCFE">error</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">serverState</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">&nbsp;&nbsp;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre></div>
+
+
+
+<h3 class="wp-block-heading">Practical Considerations and Edge Cases</h3>
+
+
+
+<p>When implementing synchronization and state management, several practical considerations deserve attention:</p>
+
+
+
+<p><strong>Bandwidth and Battery Usage</strong>: Synchronization strategies should be mindful of mobile device constraints. Consider implementing batch synchronization instead of sending individual changes, and use compression when appropriate.</p>
+
+
+
+<p><strong>Partial Sync Support</strong>: Not all data needs to be available offline. Implement intelligent prefetching strategies based on user behavior and device capabilities. Think of it as packing a suitcase – you bring what you’re most likely to need, not everything you own.</p>
+
+
+
+<p><strong>Error Recovery</strong>: Sync processes can fail for many reasons. Implement retry mechanisms with exponential backoff, and ensure your application can recover from interrupted sync operations gracefully.</p>
+
+
+
+<p><strong>Version Management</strong>: As your application evolves, so will your data structures. Design your sync system to handle schema migrations and version differences between clients and servers.</p>
+
+
+
+<p><strong>Storage Limits</strong>: Mobile devices have limited storage. Implement cleanup strategies for old sync data and provide clear feedback when storage limits are approached.</p>
+
+
+
+<h3 class="wp-block-heading">Testing Synchronization Systems</h3>
+
+
+
+<p>Testing offline-first applications requires special attention to timing and state management. Create test scenarios that simulate various network conditions and synchronization patterns:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Concurrent updates from multiple devices</li>
+
+
+
+<li>Network interruptions during sync</li>
+
+
+
+<li>Recovery from failed sync operations</li>
+
+
+
+<li>Storage quota exceeded scenarios</li>
+
+
+
+<li>Schema version mismatches</li>
+</ul>
+
+
+
+<p>Remember that real-world usage patterns often uncover edge cases that are difficult to anticipate in testing. Logging and monitoring is definitely needed. All of our Dev Starter Packs for both Web and Mobile come with logging setups with PostHog.</p>
+</div></div></div></article></div></main><script type="text/javascript" src="https://us-assets.i.posthog.com/static/web-vitals.js?v=1.161.5"></script><script src="/_next/static/chunks/webpack-5867c32033c65cdc.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/media/84455f2b5a591033-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n2:HL[\"/_next/static/media/a34f9d1faa5f3315-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n3:HL[\"/_next/static/css/0d5be9f721f25a34.css\",\"style\"]\n4:HL[\"/_next/static/css/278fc728fe8fc0f1.css\",\"style\"]\n5:HL[\"/_next/static/css/b1530ca0d04e3658.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"6:I[95751,[],\"\"]\n9:I[39275,[],\"\"]\nb:I[61343,[],\"\"]\nc:I[22438,[\"5878\",\"static/chunks/9da6db1e-f20d8a5d03f5f3d6.js\",\"3185\",\"static/chunks/app/layout-b48b81b56e73a442.js\"],\"CSPostHogProvider\"]\nd:I[231,[\"5878\",\"static/chunks/9da6db1e-f20d8a5d03f5f3d6.js\",\"5501\",\"static/chunks/c16f53c3-f9f481fb80ad18ee.js\",\"1919\",\"static/chunks/ebbfb5c1-9b9fd20dbf34ff5b.js\",\"4593\",\"static/chunks/4593-27ced29191e70fa1.js\",\"2525\",\"static/chunks/2525-9e3421f881b77e3a.js\",\"8669\",\"static/chunks/8669-6b79051cccf0bc09.js\",\"231\",\"static/chunks/231-c57bce99e4c5353a.js\",\"9785\",\"static/chunks/9785-7d8b9f8a3ebd227e.js\",\"8011\",\"static/chunks/8011-b1ee55e56944fe18.js\",\"1829\",\"static/chunks/1829-6e0ec4568bcde28b.js\",\"862\",\"static/chunks/862-3f0117e08526fd9c.js\",\"1017\",\"static/chunks/1017-5c56b8723f24249e.js\",\"308\",\"static/chunks/app/blog/%5Bslug%5D/page-b4414749063760b3.js\"],\"\"]\n10:I[76130,[],\"\"]\na:[\"slug\",\"what-every-developer-should-know-about-offline-first-apps\",\"d\"]\ne:T43a,M12 4.467c0-.405.262-.75.559-1.027.276-.257.441-.584.441-.94 0-.828-.895-1.5-2-1.5s-2 .672-2 1.5c0 .362.171.694.456.953.29.265.544.6.544.994a.968.968 0 0 1-1.024.974 39.655 39.655 0 0 1-3.014-.306.75.75 0 0 0-.847.847c.14.993.242 1.999.306 3.014A.968.968 0 0 1 4.447 10c-.393 0-.729-.253-.994-.544C3.194 9.17 2.862 9 2.5 9 1.672 9 1 9.895 1 11s.672 2 1.5 2c.356 0 .683-.165.94-.441.276-.297.622-.559 1.027-.559a.997.997 0 0 1 1.004 1.03 39.747 39.747 0 0 1-.319 3.734.75.75 0 0 0 .64.842c1.05.146 2.111.252 3.184.318A.97.97 0 0 0 10 16.948c0-.394-.254-.73-.545-.995C9.171 15.693 9 15.362 9 15c0-.828.895-1.5 2-1.5s2 .672 2 1.5c0 .356-.165.683-.441.94-.297.276-.559.622-.559 1.027a.998.998 0 0 0 1.03 1.005c1.337-.05 2.659-.162 3.961-.337a.75.75 0 0 0 .644-.644c.175-1.302.288-2.624.337-3.961A.998.998 0 0 0 16.967 12c-.405 0-.75.262-1.027.559-.257.276-.584.441-.94.441-.828 0-1.5-.895-1.5-2s.672-2 1.5-2c.362 0 .694.17.953.455.265.291.601.545.995.545a.97.97 0 0 0 .976-1.024 41.159 41.159 0 0 0-.318-3.184.75.75 0 0 0-.842-.64c-1.228.164-2.473.271-3.734.319A.997.997 0 0 1 12 4.467Z11:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$L6\",null,{\"buildId\":\"qxd1CmlvaKHmo8PvSk-Le\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"blog\",\"what-every-developer-should-know-about-offline-first-apps\"],\"initialTree\":[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"what-every-developer-should-know-about-offline-first-apps\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"what-every-developer-should-know-about-offline-first-apps\",\"d\"],{\"children\":[\"__PAGE__\",{},[[\"$L7\",\"$L8\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/b1530ca0d04e3658.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]]],null],null]},[null,[\"$\",\"$L9\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"blog\",\"children\",\"$a\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L9\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"blog\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/0d5be9f721f25a34.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/278fc728fe8fc0f1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"h-full scroll-smooth bg-white antialiased __variable_d65c78 __variable_86777a\",\"children\":[\"$\",\"$Lc\",null,{\"children\":[\"$\",\"body\",null,{\"className\":\"flex h-full flex-col\",\"children\":[\"$\",\"$L9\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"flex\",\"children\":[\"$\",\"$Ld\",null,{\"href\":\"/\",\"aria-label\":\"Home\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex items-center\",\"children\":[[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"viewBox\":\"0 0 20 20\",\"fill\":\"currentColor\",\"aria-hidden\":\"true\",\"data-slot\":\"icon\",\"aria-labelledby\":\"$undefined\",\"className\":\"mr-1 h-5 w-5\",\"children\":[null,[\"$\",\"path\",null,{\"d\":\"$e\"}]]}],[\"$\",\"h1\",null,{\"className\":\"text-xl font-bold text-gray-900\",\"children\":\"DevStarterPacks\"}]]}]}]}],[\"$\",\"p\",null,{\"className\":\"mt-20 text-sm font-medium text-gray-700\",\"children\":\"404\"}],[\"$\",\"h1\",null,{\"className\":\"mt-3 text-lg font-semibold text-gray-900\",\"children\":\"Page not found\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-sm text-gray-700\",\"children\":\"Sorry, we couldn’t find the page you’re looking for.\"}],[\"$\",\"$Ld\",null,{\"className\":\"group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900 mt-10\",\"href\":\"/\",\"children\":\"Go back home\",\"variant\":\"solid\",\"color\":\"slate\"}]],\"notFoundStyles\":[]}]}]}]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$Lf\"],\"globalErrorComponent\":\"$10\",\"missingSlots\":\"$W11\"}]\n"])</script><script>self.__next_f.push([1,"12:I[21017,[\"5878\",\"static/chunks/9da6db1e-f20d8a5d03f5f3d6.js\",\"5501\",\"static/chunks/c16f53c3-f9f481fb80ad18ee.js\",\"1919\",\"static/chunks/ebbfb5c1-9b9fd20dbf34ff5b.js\",\"4593\",\"static/chunks/4593-27ced29191e70fa1.js\",\"2525\",\"static/chunks/2525-9e3421f881b77e3a.js\",\"8669\",\"static/chunks/8669-6b79051cccf0bc09.js\",\"231\",\"static/chunks/231-c57bce99e4c5353a.js\",\"9785\",\"static/chunks/9785-7d8b9f8a3ebd227e.js\",\"8011\",\"static/chunks/8011-b1ee55e56944fe18.js\",\"1829\",\"static/chunks/1829-6e0ec4568bcde28b.js\",\"862\",\"static/chunks/862-3f0117e08526fd9c.js\",\"1017\",\"static/chunks/1017-5c56b8723f24249e.js\",\"308\",\"static/chunks/app/blog/%5Bslug%5D/page-b4414749063760b3.js\"],\"Header\"]\n13:Tca43,"])</script><script>self.__next_f.push([1,"\n\u003ch2 class=\"wp-block-heading\"\u003eUnderstanding Offline-First Philosophy\u003c/h2\u003e\n\n\n\n\u003cp\u003eImagine you\u0026#8217;re on a train commuting to work, using a note-taking app to jot down ideas for your next project. The train enters a tunnel, and suddenly your connection drops. In a traditional online-only application, you might see a frustrating \u0026#8220;Connection Lost\u0026#8221; message, and your latest changes could be lost. But in an offline-first application, you\u0026#8217;d continue working seamlessly, unaware and unbothered by the connectivity interruption.\u003c/p\u003e\n\n\n\n\u003cp\u003eThis scenario illustrates the fundamental philosophy behind offline-first development: treating the offline state as the default, and online connectivity as an enhancement. It\u0026#8217;s a complete reversal of the traditional web development paradigm, where we assumed constant connectivity and treated offline states as errors.\u003c/p\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eThe Problem with \u0026#8220;Online-Only\u0026#8221; Thinking\u003c/h3\u003e\n\n\n\n\u003cp\u003eTraditional web applications are built with an \u0026#8220;online-only\u0026#8221; mindset, following a pattern that looks something like this:\u003c/p\u003e\n\n\n\n\u003cdiv class=\"wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers\" data-code-block-pro-font-family=\"Code-Pro-JetBrains-Mono\" style=\"font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)\"\u003e\u003cspan style=\"display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7\"\u003eJavaScript\u003c/span\u003e\u003cspan role=\"button\" tabindex=\"0\" data-code=\"async function saveUserData(data) {\n\n  try {\n\n    const response = await fetch('/api/save', {\n\n      method: 'POST',\n\n      body: JSON.stringify(data)\n\n    });\n\n    if (!response.ok) {\n\n      throw new Error('Failed to save');\n\n    }\n\n    showSuccess('Data saved successfully');\n\n  } catch (error) {\n\n    // Show error message and lose data\n\n    showError('Unable to save. Please check your connection.');\n\n  }\n\n}\" style=\"color:#D4D4D4;display:none\" aria-label=\"Copy\" class=\"code-block-pro-copy-button\"\u003e\u003csvg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:24px;height:24px\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"\u003e\u003cpath class=\"with-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 12.75l6 6 9-13.5\"\u003e\u003c/path\u003e\u003cpath class=\"without-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6\"\u003e\u003c/path\u003e\u003c/svg\u003e\u003c/span\u003e\u003cpre class=\"shiki dark-plus\" style=\"background-color: #1E1E1E\" tabindex=\"0\"\u003e\u003ccode\u003e\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #569CD6\"\u003easync\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003efunction\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003esaveUserData\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003edata\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003etry\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003econst\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #4FC1FF\"\u003eresponse\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e = \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003efetch\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;/api/save\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e, {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003emethod:\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;POST\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e,\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003ebody:\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #4FC1FF\"\u003eJSON\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003estringify\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003edata\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e)\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    });\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eif\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e (!\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eresponse\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eok\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003ethrow\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003enew\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eError\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;Failed to save\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eshowSuccess\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;Data saved successfully\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  } \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003ecatch\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e (\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eerror\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Show error message and lose data\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eshowError\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;Unable to save. Please check your connection.\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e}\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\n\n\n\u003cp\u003eThis approach has several critical problems:\u003c/p\u003e\n\n\n\n\u003col class=\"wp-block-list\"\u003e\n\u003cli\u003eIt assumes connectivity is the default state\u003c/li\u003e\n\n\n\n\u003cli\u003eIt treats disconnection as an error condition\u003c/li\u003e\n\n\n\n\u003cli\u003eIt often results in lost data or interrupted user experiences\u003c/li\u003e\n\n\n\n\u003cli\u003eIt fails to account for varying network conditions\u003c/li\u003e\n\u003c/ol\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eThe Offline-First Paradigm Shift\u003c/h3\u003e\n\n\n\n\u003cp\u003eIn contrast, offline-first development approaches the problem from a different angle. Here\u0026#8217;s how the same functionality might look in an offline-first application:\u003c/p\u003e\n\n\n\n\u003cdiv class=\"wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers\" data-code-block-pro-font-family=\"Code-Pro-JetBrains-Mono\" style=\"font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)\"\u003e\u003cspan style=\"display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7\"\u003eJavaScript\u003c/span\u003e\u003cspan role=\"button\" tabindex=\"0\" data-code=\"async function saveUserData(data) {\n\n  // First, save locally to ensure data persistence\n\n  await saveToLocalStorage(data);\n\n  // Notify user their changes are saved locally\n\n  showStatus('Changes saved locally');\n\n  // Attempt to sync with server in the background\n\n  syncManager.enqueueChange({\n\n    type: 'saveUserData',\n\n    data: data,\n\n    timestamp: Date.now()\n\n  });\n\n}\n\n// Background sync manager\n\nclass SyncManager {\n\n  async enqueueChange(change) {\n\n    // Add to queue of pending changes\n\n    await this.addToSyncQueue(change);\n\n    // Attempt immediate sync if online\n\n    if (navigator.onLine) {\n\n      await this.attemptSync();\n\n    } else {\n\n      // Register for online event to sync later\n\n      window.addEventListener('online', () =\u0026gt; this.attemptSync());\n\n    }\n\n  }\n\n  async attemptSync() {\n\n    const pendingChanges = await this.getSyncQueue();\n\n    for (const change of pendingChanges) {\n\n      try {\n\n        await this.syncWithServer(change);\n\n        await this.removeFromSyncQueue(change);\n\n        showStatus('Changes synced with server');\n\n      } catch (error) {\n\n        // Failed sync isn't fatal - will retry later\n\n        console.log('Sync failed, will retry later:', error);\n\n      }\n\n    }\n\n  }\n\n}\" style=\"color:#D4D4D4;display:none\" aria-label=\"Copy\" class=\"code-block-pro-copy-button\"\u003e\u003csvg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:24px;height:24px\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"\u003e\u003cpath class=\"with-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 12.75l6 6 9-13.5\"\u003e\u003c/path\u003e\u003cpath class=\"without-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6\"\u003e\u003c/path\u003e\u003c/svg\u003e\u003c/span\u003e\u003cpre class=\"shiki dark-plus\" style=\"background-color: #1E1E1E\" tabindex=\"0\"\u003e\u003ccode\u003e\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #569CD6\"\u003easync\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003efunction\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003esaveUserData\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003edata\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// First, save locally to ensure data persistence\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003esaveToLocalStorage\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003edata\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Notify user their changes are saved locally\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eshowStatus\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;Changes saved locally\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Attempt to sync with server in the background\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003esyncManager\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eenqueueChange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e({\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003etype:\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;saveUserData\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e,\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003edata:\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003edata\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e,\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003etimestamp:\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eDate\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003enow\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e()\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  });\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e}\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #6A9955\"\u003e// Background sync manager\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #569CD6\"\u003eclass\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #4EC9B0\"\u003eSyncManager\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003easync\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eenqueueChange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Add to queue of pending changes\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003ethis\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eaddToSyncQueue\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Attempt immediate sync if online\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eif\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e (\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003enavigator\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eonLine\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003ethis\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eattemptSync\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e();\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    } \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eelse\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Register for online event to sync later\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003ewindow\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eaddEventListener\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;online\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e, () \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003e=\u0026gt;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003ethis\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eattemptSync\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e());\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003easync\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eattemptSync\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e() {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003econst\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #4FC1FF\"\u003ependingChanges\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e = \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003ethis\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003egetSyncQueue\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e();\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003efor\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e (\u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003econst\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #4FC1FF\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003eof\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003ependingChanges\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003etry\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e        \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003ethis\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003esyncWithServer\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e        \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003ethis\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eremoveFromSyncQueue\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e        \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eshowStatus\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;Changes synced with server\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      } \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003ecatch\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e (\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eerror\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e        \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Failed sync isn\u0026#39;t fatal - will retry later\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e        \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003econsole\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003elog\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;Sync failed, will retry later:\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e, \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eerror\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e}\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\n\n\n\u003cp\u003eThis code demonstrates several key principles of offline-first development:\u003c/p\u003e\n\n\n\n\u003col class=\"wp-block-list\"\u003e\n\u003cli\u003e\u003cstrong\u003eLocal-First Storage\u003c/strong\u003e: Changes are immediately saved to local storage, ensuring no data loss regardless of connectivity.\u003c/li\u003e\n\n\n\n\u003cli\u003e\u003cstrong\u003eBackground Synchronization\u003c/strong\u003e: Server communication happens asynchronously, without blocking the user interface.\u003c/li\u003e\n\n\n\n\u003cli\u003e\u003cstrong\u003eQueue-Based Architecture\u003c/strong\u003e: Changes are tracked and can be synced when connectivity is restored.\u003c/li\u003e\n\n\n\n\u003cli\u003e\u003cstrong\u003eProgressive Enhancement\u003c/strong\u003e: The application works without a connection, but takes advantage of connectivity when available.\u003c/li\u003e\n\u003c/ol\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eReal-World Benefits\u003c/h3\u003e\n\n\n\n\u003cp\u003eThe offline-first approach provides several tangible benefits:\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eBetter Reliability\u003c/strong\u003e: Applications continue functioning regardless of network conditions. This is particularly crucial for users in areas with unreliable internet access or those who frequently transition between connected and disconnected states.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eImproved (Perceived) Performance\u003c/strong\u003e: By prioritizing local operations, applications feel more responsive. Users don\u0026#8217;t have to wait for network requests to complete before seeing their changes reflected in the interface.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eBetter User Experience\u003c/strong\u003e: Users can work confidently knowing their data is safe, even when offline. The application handles network transitions gracefully without interrupting their workflow.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eReduced Server Load\u003c/strong\u003e: By batching synchronization operations and only sending necessary updates, offline-first applications can reduce server load and bandwidth usage, which is MUCH more useful for targeting areas with relatively slower internet connections.\u003c/p\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eWhen to Consider Offline-First\u003c/h3\u003e\n\n\n\n\u003cp\u003eWhile offline-first development requires more upfront planning and complexity, it\u0026#8217;s becoming increasingly relevant for:\u003c/p\u003e\n\n\n\n\u003cul class=\"wp-block-list\"\u003e\n\u003cli\u003eMobile applications where users frequently experience connectivity changes\u003c/li\u003e\n\n\n\n\u003cli\u003eProfessional tools where data loss is unacceptable\u003c/li\u003e\n\n\n\n\u003cli\u003eApplications targeting regions with unreliable internet infrastructure\u003c/li\u003e\n\n\n\n\u003cli\u003eProgressive Web Apps (PWAs) aiming to provide native-like experiences\u003c/li\u003e\n\n\n\n\u003cli\u003eAny application where user productivity shouldn\u0026#8217;t be dependent on network status\u003c/li\u003e\n\u003c/ul\u003e\n\n\n\n\u003cp\u003eThe investment in offline-first architecture pays dividends in user satisfaction, application reliability, and reduced support costs from data loss or connectivity issues.\u003c/p\u003e\n\n\n\n\u003cp\u003eIn the next section, we\u0026#8217;ll dive into the technical foundations that make offline-first applications possible, exploring browser storage options and service workers that form the backbone of offline capability.\u003c/p\u003e\n\n\n\n\u003ch2 class=\"wp-block-heading\"\u003eTechnical Foundations\u003c/h2\u003e\n\n\n\n\u003cp\u003eThe ability to build robust offline-first applications rests on two fundamental pillars: efficient local storage and service workers. Understanding these components thoroughly is crucial for any developer venturing into offline-first development.\u003c/p\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eStorage Strategies\u003c/h3\u003e\n\n\n\n\u003cp\u003eWhen building offline-first applications, choosing the right storage strategy is like selecting the proper foundation for a house – it affects everything built on top of it. Modern browsers offer several storage options, each with its own strengths and ideal use cases.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eLocalStorage\u003c/strong\u003e: Think of LocalStorage as a small, simple safety deposit box. It\u0026#8217;s perfect for storing small amounts of data (typically limited to 5-10 MB) and is incredibly easy to use. However, it\u0026#8217;s synchronous, meaning it can block your main thread, and it only supports string data. Consider it for storing user preferences or small configuration objects:\u003c/p\u003e\n\n\n\n\u003cdiv class=\"wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers\" data-code-block-pro-font-family=\"Code-Pro-JetBrains-Mono\" style=\"font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(1 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)\"\u003e\u003cspan style=\"display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7\"\u003eJavaScript\u003c/span\u003e\u003cspan role=\"button\" tabindex=\"0\" data-code=\"// Simple but limited - good for small config items\n\nlocalStorage.setItem('userPreferences', JSON.stringify({\n\n  theme: 'dark',\n\n  fontSize: 'large'\n\n}));\" style=\"color:#D4D4D4;display:none\" aria-label=\"Copy\" class=\"code-block-pro-copy-button\"\u003e\u003csvg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:24px;height:24px\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"\u003e\u003cpath class=\"with-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 12.75l6 6 9-13.5\"\u003e\u003c/path\u003e\u003cpath class=\"without-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6\"\u003e\u003c/path\u003e\u003c/svg\u003e\u003c/span\u003e\u003cpre class=\"shiki dark-plus\" style=\"background-color: #1E1E1E\" tabindex=\"0\"\u003e\u003ccode\u003e\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #6A9955\"\u003e// Simple but limited - good for small config items\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #9CDCFE\"\u003elocalStorage\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003esetItem\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;userPreferences\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e, \u003c/span\u003e\u003cspan style=\"color: #4FC1FF\"\u003eJSON\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003estringify\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e({\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003etheme:\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;dark\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e,\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003efontSize:\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;large\u0026#39;\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e}));\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eIndexedDB\u003c/strong\u003e: This is your industrial-grade storage solution. It\u0026#8217;s asynchronous, can handle massive amounts of structured data, and supports indexes for efficient querying. IndexedDB is ideal for applications that need to store significant amounts of data, like offline document editors or media applications.\u003c/p\u003e\n\n\n\n\u003cp\u003eThe true power of IndexedDB lies in its ability to handle complex data structures and its transactional nature, ensuring data integrity even when dealing with large datasets. While the native API can be verbose, libraries like idb or Dexie make working with IndexedDB much more approachable.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eWebAssembly + SQLite\u003c/strong\u003e: One of the most exciting recent developments in offline storage is the ability to run SQLite directly in the browser through WebAssembly. Imagine having a complete SQL database engine running locally in your browser – it\u0026#8217;s like carrying a miniature data center in your pocket. This approach offers several compelling advantages over traditional browser storage solutions.\u003c/p\u003e\n\n\n\n\u003cp\u003eFor developers already familiar with SQL, this option feels like coming home. Instead of learning new APIs or adapting to the peculiarities of IndexedDB, you can write standard SQL queries just as you would in a server environment. Complex operations that might require multiple IndexedDB transactions can often be expressed in a single, SQL query.\u003c/p\u003e\n\n\n\n\u003cp\u003eThe combination of WebAssembly and SQLite provides near-native performance, making it particularly powerful for applications that need to handle large datasets or complex queries. The familiar SQL interface also makes it easier to migrate existing applications that already use SQLite on the backend.\u003c/p\u003e\n\n\n\n\u003cp\u003eHowever, this power comes with important trade-offs to consider. The initial load time of the WebAssembly module can be noticeable, and the overall bundle size is larger than using native browser storage options. This solution works best for applications where users typically engage in longer sessions and require sophisticated data querying capabilities.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eCache API\u003c/strong\u003e: The Cache API serves a different purpose – it\u0026#8217;s designed specifically for storing network requests and responses. Imagine it as your application\u0026#8217;s personal proxy server, sitting between your app and the network. It works hand-in-hand with Service Workers to enable offline access to your application\u0026#8217;s resources.\u003c/p\u003e\n\n\n\n\u003cp\u003eWhen designing your storage architecture, consider implementing a tiered storage strategy. This approach uses different storage mechanisms for different types of data:\u003c/p\u003e\n\n\n\n\u003cul class=\"wp-block-list\"\u003e\n\u003cli\u003eCritical application state in IndexedDB\u003c/li\u003e\n\n\n\n\u003cli\u003eUser preferences in LocalStorage\u003c/li\u003e\n\n\n\n\u003cli\u003eNetwork resources in Cache API\u003c/li\u003e\n\n\n\n\u003cli\u003eTemporary calculations in Memory\u003c/li\u003e\n\u003c/ul\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eService Workers\u003c/h3\u003e\n\n\n\n\u003cp\u003eService Workers represent a paradigm shift in web application architecture. Think of a Service Worker as your application\u0026#8217;s loyal butler – it runs separately from your main application, can intercept network requests, and manages caching strategies, all while operating independently of your application\u0026#8217;s lifecycle.\u003c/p\u003e\n\n\n\n\u003cp\u003eThe power of Service Workers lies in their ability to act as a proxy between your application, the network, and the cache. They can:\u003c/p\u003e\n\n\n\n\u003cul class=\"wp-block-list\"\u003e\n\u003cli\u003eIntercept network requests and provide custom responses\u003c/li\u003e\n\n\n\n\u003cli\u003eEnable sophisticated caching strategies\u003c/li\u003e\n\n\n\n\u003cli\u003eHandle background synchronization\u003c/li\u003e\n\n\n\n\u003cli\u003eManage push notifications\u003c/li\u003e\n\u003c/ul\u003e\n\n\n\n\u003cp\u003eSetting up a basic Service Worker involves a few key steps:\u003c/p\u003e\n\n\n\n\u003cdiv class=\"wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers\" data-code-block-pro-font-family=\"Code-Pro-JetBrains-Mono\" style=\"font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)\"\u003e\u003cspan style=\"display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7\"\u003eJavaScript\u003c/span\u003e\u003cspan role=\"button\" tabindex=\"0\" data-code=\"// In your main application\n\nif ('serviceWorker' in navigator) {\n\n  navigator.serviceWorker.register('/sw.js').then(registration =\u0026gt; {\n\n    console.log('Service Worker registered');\n\n  });\n\n}\" style=\"color:#D4D4D4;display:none\" aria-label=\"Copy\" class=\"code-block-pro-copy-button\"\u003e\u003csvg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:24px;height:24px\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"\u003e\u003cpath class=\"with-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 12.75l6 6 9-13.5\"\u003e\u003c/path\u003e\u003cpath class=\"without-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6\"\u003e\u003c/path\u003e\u003c/svg\u003e\u003c/span\u003e\u003cpre class=\"shiki dark-plus\" style=\"background-color: #1E1E1E\" tabindex=\"0\"\u003e\u003ccode\u003e\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #6A9955\"\u003e// In your main application\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #C586C0\"\u003eif\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e (\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;serviceWorker\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003ein\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003enavigator\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003enavigator\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eserviceWorker\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eregister\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;/sw.js\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e).\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003ethen\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eregistration\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003e=\u0026gt;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003econsole\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003elog\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;Service Worker registered\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  });\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e}\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\n\n\n\u003cp\u003eThe real magic happens in how you structure your Service Worker\u0026#8217;s caching strategies. Instead of a one-size-fits-all approach, consider implementing different strategies for different types of resources:\u003c/p\u003e\n\n\n\n\u003col class=\"wp-block-list\"\u003e\n\u003cli\u003e\u003cstrong\u003eCache-First Strategy\u003c/strong\u003e: Perfect for static assets like images, CSS, and JavaScript files. The Service Worker checks the cache first and only goes to the network if the resource isn\u0026#8217;t found.\u003c/li\u003e\n\u003c/ol\u003e\n\n\n\n\u003col start=\"2\" class=\"wp-block-list\"\u003e\n\u003cli\u003e\u003cstrong\u003eNetwork-First Strategy\u003c/strong\u003e: Ideal for API calls where you want the freshest data when online, but can fall back to cached data when offline.\u003c/li\u003e\n\u003c/ol\u003e\n\n\n\n\u003col start=\"3\" class=\"wp-block-list\"\u003e\n\u003cli\u003e\u003cstrong\u003eStale-While-Revalidate\u003c/strong\u003e: A hybrid approach that serves cached content immediately while updating the cache in the background, providing a balance between speed and freshness.\u003c/li\u003e\n\u003c/ol\u003e\n\n\n\n\u003cp\u003eWhen implementing Service Workers, it\u0026#8217;s crucial to understand their lifecycle. Service Workers can be in several states: installing, installed, activating, activated, and redundant. Each state transition provides opportunities to set up caches, clean up old data, and ensure smooth updates to your application.\u003c/p\u003e\n\n\n\n\u003cp\u003eOne often-overlooked aspect of Service Workers is their update mechanism. When you deploy a new version of your Service Worker, it won\u0026#8217;t take control immediately. Instead, it waits until all tabs running the old version are closed. This behavior, while sometimes frustrating during development, is crucial for maintaining consistency in your application\u0026#8217;s offline capabilities.\u003c/p\u003e\n\n\n\n\u003cp\u003eA robust implementation also needs to consider error cases. What happens when cache storage is full? How do you handle failed background syncs? These edge cases should be part of your initial design, not afterthoughts:\u003c/p\u003e\n\n\n\n\u003col class=\"wp-block-list\"\u003e\n\u003cli\u003eImplement storage quota management\u003c/li\u003e\n\n\n\n\u003cli\u003eSet up retry mechanisms for failed synchronization\u003c/li\u003e\n\n\n\n\u003cli\u003eProvide clear feedback to users about the state of their offline data\u003c/li\u003e\n\n\n\n\u003cli\u003eHandle Service Worker updates gracefully\u003c/li\u003e\n\u003c/ol\u003e\n\n\n\n\u003cp\u003eRemember that while Service Workers are powerful, they should be implemented progressively. Start with basic caching strategies and gradually add more sophisticated features as you understand your application\u0026#8217;s needs better.\u003c/p\u003e\n\n\n\n\u003ch2 class=\"wp-block-heading\"\u003eData Synchronization and State Management\u003c/h2\u003e\n\n\n\n\u003cp\u003ePerhaps the most challenging aspect of offline-first applications is maintaining data consistency between local and server states while handling the complexities of concurrent updates and conflict resolution. Think of it as choreographing a dance between multiple partners who can\u0026#8217;t always see each other – timing and coordination are everything.\u003c/p\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eUnderstanding Data Flow in Offline-First Applications\u003c/h3\u003e\n\n\n\n\u003cp\u003eIn an offline-first world, data flows in multiple directions and exists in multiple states simultaneously. Imagine your application\u0026#8217;s data as a river system with numerous tributaries and branches. The main river (your server) receives water (data) from multiple sources (client devices), but each tributary also maintains its own local reservoir (client-side storage).\u003c/p\u003e\n\n\n\n\u003cp\u003eWhen designing your synchronization strategy, you need to consider three primary states of data:\u003c/p\u003e\n\n\n\n\u003col class=\"wp-block-list\"\u003e\n\u003cli\u003eLocal changes that haven\u0026#8217;t been synchronized\u003c/li\u003e\n\n\n\n\u003cli\u003eServer changes that haven\u0026#8217;t been downloaded\u003c/li\u003e\n\n\n\n\u003cli\u003eThe last known synchronized state\u003c/li\u003e\n\u003c/ol\u003e\n\n\n\n\u003cp\u003eA robust synchronization system needs to track all these states while handling various scenarios:\u003c/p\u003e\n\n\n\n\u003cdiv class=\"wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers\" data-code-block-pro-font-family=\"Code-Pro-JetBrains-Mono\" style=\"font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)\"\u003e\u003cspan style=\"display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7\"\u003eJavaScript\u003c/span\u003e\u003cspan role=\"button\" tabindex=\"0\" data-code=\"class SyncState {\n\n  timestamp: number;        // Last sync timestamp\n\n  localVersion: number;     // Local change version\n\n  serverVersion: number;    // Known server version\n\n  pendingChanges: Change[]; // Unsynced local changes\n\n  conflictResolution: ConflictStrategy;\n\n}\" style=\"color:#D4D4D4;display:none\" aria-label=\"Copy\" class=\"code-block-pro-copy-button\"\u003e\u003csvg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:24px;height:24px\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"\u003e\u003cpath class=\"with-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 12.75l6 6 9-13.5\"\u003e\u003c/path\u003e\u003cpath class=\"without-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6\"\u003e\u003c/path\u003e\u003c/svg\u003e\u003c/span\u003e\u003cpre class=\"shiki dark-plus\" style=\"background-color: #1E1E1E\" tabindex=\"0\"\u003e\u003ccode\u003e\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #569CD6\"\u003eclass\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #4EC9B0\"\u003eSyncState\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003etimestamp\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e: \u003c/span\u003e\u003cspan style=\"color: #4EC9B0\"\u003enumber\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e;        \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Last sync timestamp\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003elocalVersion\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e: \u003c/span\u003e\u003cspan style=\"color: #4EC9B0\"\u003enumber\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e;     \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Local change version\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eserverVersion\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e: \u003c/span\u003e\u003cspan style=\"color: #4EC9B0\"\u003enumber\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e;    \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Known server version\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003ependingChanges\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e: \u003c/span\u003e\u003cspan style=\"color: #4EC9B0\"\u003eChange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e[]; \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Unsynced local changes\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003econflictResolution\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e: \u003c/span\u003e\u003cspan style=\"color: #4EC9B0\"\u003eConflictStrategy\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e;\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e}\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eImplementing Robust Sync Protocols\u003c/h3\u003e\n\n\n\n\u003cp\u003eThe key to successful synchronization lies in implementing a protocol that can handle all possible scenarios while remaining efficient. One effective approach is the \u0026#8220;versioned changes\u0026#8221; pattern, where each change is tracked with a version number and timestamp.\u003c/p\u003e\n\n\n\n\u003cp\u003eConsider this sequence of events:\u003c/p\u003e\n\n\n\n\u003col class=\"wp-block-list\"\u003e\n\u003cli\u003eDevice A makes a change while offline\u003c/li\u003e\n\n\n\n\u003cli\u003eDevice B makes a different change to the same data and syncs with the server\u003c/li\u003e\n\n\n\n\u003cli\u003eDevice A comes back online and needs to reconcile its changes\u003c/li\u003e\n\u003c/ol\u003e\n\n\n\n\u003cp\u003eThis scenario highlights why naive approaches to synchronization often fail. Simply applying changes in chronological order might lose important updates. Instead, we need a more sophisticated approach that considers the nature of the changes and can intelligently resolve conflicts.\u003c/p\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eConflict Detection and Resolution\u003c/h3\u003e\n\n\n\n\u003cp\u003eConflicts are inevitable in offline-first applications. The question isn\u0026#8217;t whether they\u0026#8217;ll occur, but how we\u0026#8217;ll handle them when they do. Think of conflict resolution like sorting out a scheduling conflict – sometimes there\u0026#8217;s an obvious solution, and sometimes you need to ask for human input.\u003c/p\u003e\n\n\n\n\u003cp\u003eThere are several common approaches to conflict resolution:\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eLast Write Wins (LWW)\u003c/strong\u003e: The simplest approach, where the most recent change takes precedence. While easy to implement, it can lead to lost updates. It\u0026#8217;s suitable for simple data types where overwrites are acceptable, like user preferences or status settings.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eThree-Way Merge\u003c/strong\u003e: This approach compares the current server state, the local change, and the last known synchronized state to make intelligent merge decisions. It\u0026#8217;s like having a mediator who knows what both parties originally agreed upon and can help reconcile their current positions.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eOperational Transformation (OT)\u003c/strong\u003e: Used by collaborative editing applications, OT transforms concurrent operations to achieve consistency. Think of it as adjusting your movements based on what your dance partner is doing, ensuring you stay in sync even when you can\u0026#8217;t directly communicate.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eConflict-Free Replicated Data Types (CRDTs)\u003c/strong\u003e: These are special data structures designed to automatically resolve conflicts in a predictable way. They\u0026#8217;re like self-organizing systems where the final state is mathematically guaranteed to be consistent, regardless of the order of operations.\u003c/p\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eManaging Application State\u003c/h3\u003e\n\n\n\n\u003cp\u003eState management in offline-first applications requires thinking in terms of eventual consistency rather than immediate consistency. Your application needs to be designed to handle multiple versions of the truth existing simultaneously.\u003c/p\u003e\n\n\n\n\u003cp\u003eHere\u0026#8217;s a pattern for managing optimistic updates while handling potential conflicts:\u003c/p\u003e\n\n\n\n\u003cdiv class=\"wp-block-kevinbatdorf-code-block-pro cbp-has-line-numbers\" data-code-block-pro-font-family=\"Code-Pro-JetBrains-Mono\" style=\"font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--cbp-line-number-color:#D4D4D4;--cbp-line-number-width:calc(2 * 0.6 * .875rem);line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)\"\u003e\u003cspan style=\"display:flex;align-items:center;padding:10px 0px 10px 16px;margin-bottom:-2px;width:100%;text-align:left;background-color:#2b2b2b;color:#c7c7c7\"\u003eJavaScript\u003c/span\u003e\u003cspan role=\"button\" tabindex=\"0\" data-code=\"async function updateData(change) {\n\n  // Apply change optimistically\n\n  applyLocalChange(change);\n\n  // Track change in pending queue\n\n  trackPendingChange(change);\n\n  try {\n\n    // Attempt to sync when possible\n\n    await synchronizeChange(change);\n\n  } catch (error) {\n\n    if (error.type === 'ConflictError') {\n\n      // Handle conflict based on strategy\n\n      await resolveConflict(change, error.serverState);\n\n    }\n\n  }\n\n}\" style=\"color:#D4D4D4;display:none\" aria-label=\"Copy\" class=\"code-block-pro-copy-button\"\u003e\u003csvg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:24px;height:24px\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"\u003e\u003cpath class=\"with-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 12.75l6 6 9-13.5\"\u003e\u003c/path\u003e\u003cpath class=\"without-check\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6\"\u003e\u003c/path\u003e\u003c/svg\u003e\u003c/span\u003e\u003cpre class=\"shiki dark-plus\" style=\"background-color: #1E1E1E\" tabindex=\"0\"\u003e\u003ccode\u003e\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #569CD6\"\u003easync\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #569CD6\"\u003efunction\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eupdateData\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Apply change optimistically\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eapplyLocalChange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Track change in pending queue\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003etrackPendingChange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003etry\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Attempt to sync when possible\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003esynchronizeChange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  } \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003ecatch\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e (\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eerror\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eif\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e (\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eerror\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003etype\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e === \u003c/span\u003e\u003cspan style=\"color: #CE9178\"\u003e\u0026#39;ConflictError\u0026#39;\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e) {\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #6A9955\"\u003e// Handle conflict based on strategy\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e      \u003c/span\u003e\u003cspan style=\"color: #C586C0\"\u003eawait\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e \u003c/span\u003e\u003cspan style=\"color: #DCDCAA\"\u003eresolveConflict\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e(\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003echange\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e, \u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eerror\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e.\u003c/span\u003e\u003cspan style=\"color: #9CDCFE\"\u003eserverState\u003c/span\u003e\u003cspan style=\"color: #D4D4D4\"\u003e);\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e    }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e  }\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color: #D4D4D4\"\u003e}\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003ePractical Considerations and Edge Cases\u003c/h3\u003e\n\n\n\n\u003cp\u003eWhen implementing synchronization and state management, several practical considerations deserve attention:\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eBandwidth and Battery Usage\u003c/strong\u003e: Synchronization strategies should be mindful of mobile device constraints. Consider implementing batch synchronization instead of sending individual changes, and use compression when appropriate.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003ePartial Sync Support\u003c/strong\u003e: Not all data needs to be available offline. Implement intelligent prefetching strategies based on user behavior and device capabilities. Think of it as packing a suitcase – you bring what you\u0026#8217;re most likely to need, not everything you own.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eError Recovery\u003c/strong\u003e: Sync processes can fail for many reasons. Implement retry mechanisms with exponential backoff, and ensure your application can recover from interrupted sync operations gracefully.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eVersion Management\u003c/strong\u003e: As your application evolves, so will your data structures. Design your sync system to handle schema migrations and version differences between clients and servers.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eStorage Limits\u003c/strong\u003e: Mobile devices have limited storage. Implement cleanup strategies for old sync data and provide clear feedback when storage limits are approached.\u003c/p\u003e\n\n\n\n\u003ch3 class=\"wp-block-heading\"\u003eTesting Synchronization Systems\u003c/h3\u003e\n\n\n\n\u003cp\u003eTesting offline-first applications requires special attention to timing and state management. Create test scenarios that simulate various network conditions and synchronization patterns:\u003c/p\u003e\n\n\n\n\u003cul class=\"wp-block-list\"\u003e\n\u003cli\u003eConcurrent updates from multiple devices\u003c/li\u003e\n\n\n\n\u003cli\u003eNetwork interruptions during sync\u003c/li\u003e\n\n\n\n\u003cli\u003eRecovery from failed sync operations\u003c/li\u003e\n\n\n\n\u003cli\u003eStorage quota exceeded scenarios\u003c/li\u003e\n\n\n\n\u003cli\u003eSchema version mismatches\u003c/li\u003e\n\u003c/ul\u003e\n\n\n\n\u003cp\u003eRemember that real-world usage patterns often uncover edge cases that are difficult to anticipate in testing. Logging and monitoring is definitely needed. All of our Dev Starter Packs for both Web and Mobile come with logging setups with PostHog.\u003c/p\u003e\n"])</script><script>self.__next_f.push([1,"8:[[\"$\",\"$L12\",null,{}],[\"$\",\"main\",null,{\"className\":\"flex-auto\",\"children\":[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8\",\"children\":[[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto\",\"children\":[\"$\",\"$Ld\",null,{\"href\":\"/blog\",\"className\":\"inline-flex items-center mb-4 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200\",\"children\":[[\"$\",\"svg\",null,{\"className\":\"w-4 h-4 mr-2\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"viewBox\":\"0 0 24 24\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"strokeWidth\":2,\"d\":\"M10 19l-7-7m0 0l7-7m-7 7h18\"}]}],\"Back\"]}]}],[\"$\",\"article\",null,{\"children\":[[[\"$\",\"h1\",null,{\"className\":\"text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter leading-tight md:leading-none mb-10 text-center\",\"dangerouslySetInnerHTML\":{\"__html\":\"What Every Developer Should Know About Offline-First Apps\"}}],[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto\"}]],[\"$\",\"div\",null,{\"className\":\"max-w-4xl mx-auto\",\"children\":[\"$\",\"div\",null,{\"className\":\"post-body_content__bSN5_\",\"children\":[[\"$\",\"div\",\"content\",{\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}]]}]}]]}]]}]}]]\nf:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"What Every Developer Should Know About Offline-First Apps - Dev Starter Packs\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Build beautiful cross-platform React Native and React apps with Dev Starter Packs.\"}],[\"$\",\"link\",\"4\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}],[\"$\",\"meta\",\"5\",{\"name\":\"next-size-adjust\"}]]\n7:null\n"])</script><next-route-announcer style="position: absolute;"></next-route-announcer></body></html>
