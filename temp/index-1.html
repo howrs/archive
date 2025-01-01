@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html><html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-a11y-animated-images="system" data-a11y-link-underlines="true" data-turbo-loaded=""><head><style type="text/css">.turbo-progress-bar {
   position: fixed;
   display: block;
@@ -5942,3 +5943,284 @@
 
 
 </body></html>
+=======
+<!DOCTYPE html>
+<html data-version="7a12849ef68d0183d0615f3f8a9788dc41980895" lang="en" translate="no">
+  <head>
+    <!-- Primary Meta Tags -->
+    <title>Deel - Your forever people platform</title>
+    <meta name="title" content="Deel - Your forever people platform" />
+    <meta
+      name="description"
+      content="Deel is the first payroll platform for remote teams that connects localized compliance and payments in one system of record and automates everything."
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.deel.com/" />
+    <meta property="og:title" content="Deel - Your forever people platform" />
+    <meta
+      property="og:description"
+      content="Deel is the first payroll platform for remote teams that connects localized compliance and payments in one system of record and automates everything."
+    />
+    <meta property="og:image" content="https://media.letsdeel.com/images/ogimage_hr.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.deel.com/" />
+    <meta property="twitter:title" content="Deel - Your forever people platform" />
+    <meta
+      property="twitter:description"
+      content="Deel is the first payroll platform for remote teams that connects localized compliance and payments in one system of record and automates everything."
+    />
+    <meta property="twitter:image" content="https://media.letsdeel.com/images/ogimage_hr.png" />
+    <meta name="twitter:site" content="@deel" />
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/favicon.ico?v=2" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <script type="text/javascript">
+      (function () {
+        if (window.location.pathname == '/login/google') {
+          const [, token] = String(window.location.search).match(/[?&#]accessToken=([^&]+)/) || [];
+          if (token) {
+            window.opener.postMessage({token});
+            window.close();
+          }
+        }
+
+        var stage = localStorage.getItem('VITE_STAGE');
+        if (!stage && /(^(staging|demo)\.(letsdeel|deel)\.com|\.letsdeel\.team)$/.test(window.location.hostname)) {
+          stage = 'demo';
+        } else if (window.location.hostname === 'deel.xyz') {
+          stage = 'dev-dr';
+        }
+        window.STAGE = stage || 'production';
+        var rand = parseFloat(localStorage.getItem('BE_RAND'));
+        if (isNaN(rand)) {
+          rand = Math.random();
+          localStorage.setItem('BE_RAND', rand);
+        }
+
+        var tokenRand = parseFloat(localStorage.getItem('TOKEN_RAND'));
+        if (isNaN(tokenRand)) {
+          tokenRand = Math.random();
+          localStorage.setItem('TOKEN_RAND', tokenRand);
+        }
+
+        window.IS_COOKIE_TOKEN =
+          window.STAGE === 'staging' ||
+          window.STAGE === 'demo' ||
+          window.STAGE === 'production' ||
+          window.STAGE === 'dev-dr'
+            ? tokenRand < 0.01
+            : tokenRand < 1;
+
+        const isCustomDomain = /\.(deel\.(team|cafe)|letsdeel\.team)$/.test(window.location.hostname);
+        const isWhiteLabelCalculatorDomain =
+          /^eorquotecalculator-[a-z0-9-]+\.(deel\.(team|cafe|training|wtf)|letsdeel\.team)$/.test(
+            window.location.hostname
+          );
+        const whiteLabelCustomDomain =
+          'false' === 'true' ? `${window.location.origin}/deelapi` : undefined;
+
+        window.API_URL =
+          whiteLabelCustomDomain ||
+          {
+            production: isCustomDomain ? 'https://api.deel.team' : 'https://api.deel.com',
+            staging: 'https://api-demo.letsdeel.com',
+            demo: 'https://api.demo.deel.com',
+            'dev-dr': 'https://api.deel.xyz', // ingress for backend service
+            development: isCustomDomain
+              ? 'https://api.deel.cafe'
+              : /^(app|www)(-dev[-\w]+)?\.(deel|giger)\.training$/.test(window.location.hostname)
+              ? window.location.origin.replace(/:\/\/(app|www)/, '://api')
+              : /\.(deel\.ninja)$/.test(window.location.hostname)
+              ? 'https://api.deel.wtf'
+              : 'https://api.deel.wtf',
+            local: 'http://localhost:3030',
+          }[window.STAGE] ||
+          window.STAGE;
+
+        if (isCustomDomain) {
+          const lastUsedWindowTitle = localStorage.getItem('customDomainWindowTitle');
+          if (lastUsedWindowTitle) document.title = lastUsedWindowTitle;
+        }
+
+        const shouldEmulateCustomDomains =
+          stage === 'staging' ||
+          stage === 'demo' ||
+          stage === 'dev-dr' ||
+          (stage !== 'production' && localStorage.getItem('emulateCustomDomain'));
+
+        window.loadDomainConfig = new Promise(function (resolve, reject) {
+          if (
+            localStorage.getItem('SIMULATE_CUSTOM_DOMAIN_ENDPOINT') ||
+            isCustomDomain ||
+            isWhiteLabelCalculatorDomain ||
+            shouldEmulateCustomDomains
+          ) {
+            const customDomainApiPath = isWhiteLabelCalculatorDomain ? '/calculator_settings/public' : '/custom_domain';
+
+            var script = document.createElement('script');
+            script.src =
+              localStorage.getItem('SIMULATE_CUSTOM_DOMAIN_ENDPOINT') === 'mocked'
+                ? '/custom_domain.js'
+                : localStorage.getItem('SIMULATE_CUSTOM_DOMAIN_ENDPOINT') === 'failure'
+                ? '/custom_domain_failure.js'
+                : window.API_URL +
+                  customDomainApiPath +
+                  '?hostname=' +
+                  window.location.hostname +
+                  (shouldEmulateCustomDomains ? '&emulated=true' : '');
+            document.head.appendChild(script);
+            script.onload = function () {
+              resolve(true);
+            };
+            script.onerror = reject;
+          } else resolve(false);
+        });
+      })();
+    </script>
+    <!-- Cal com -->
+    <script>
+      (function (C, A, L) {
+        let p = function (a, ar) {
+          a.q.push(ar);
+        };
+        let d = C.document;
+        C.Cal =
+          C.Cal ||
+          function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement('script')).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () {
+                p(api, arguments);
+              };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              typeof namespace === 'string' ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+      })(window, 'https://cal.com/embed.js', 'init');
+      Cal('init');
+    </script>
+    <!-- End cal com -->
+    <script>
+      const deelDomains = ['https://app.deel.com', 'https://dev.deel.wtf', 'https://demo.deel.com'];
+      try {
+        if (deelDomains.includes(window.location.origin)) {
+          const script = document.createElement('script');
+          script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
+          script.onload = function () {
+            const loading = document.getElementById('deel_loading');
+            const cachedTheme = localStorage.getItem('last_used_theme');
+            let animation = 'animations/rebrand_logo_animation.json';
+
+            if (loading && window.bodymovin) {
+              if (cachedTheme && cachedTheme === 'dark') {
+                loading.classList.add('dark-bg');
+                animation = 'animations/white_deel_rebrand_logo_animation.json';
+              } else {
+                loading.classList.add('light-bg');
+              }
+
+              const animItem = bodymovin.loadAnimation({
+                wrapper: loading,
+                animType: 'svg',
+                loop: true,
+                path: animation,
+              });
+            }
+          };
+          document.head.appendChild(script);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    <style>
+      .deel-loading-fade-out {
+        animation: fadeOut 0.4s forwards;
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      .light-bg {
+        background-color: #f7f5f2;
+      }
+
+      .dark-bg {
+        background-color: #1b1b1b;
+      }
+
+      #deel_loading {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #deel_loading svg {
+        max-width: 180px;
+        max-height: 180px;
+      }
+    </style>
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+    <script>
+      function init() {
+        gapi.load('auth2', function () {
+          /* Ready. Make a call to gapi.auth2.init or some other API */
+        });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-ZX4Xif6W.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-CdPL8a_o.js">
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5KK3DK6"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <div id="deel_loading"></div>
+    <div id="root"></div>
+  </body>
+</html>
+>>>>>>> Stashed changes
