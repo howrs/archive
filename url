@@ -2,6 +2,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 github.com/wordbricks/getgpt/settings/actions
 =======
 github.com/wordbricks/getgpt/settings
@@ -14,4 +15,7 @@ github.com/wordbricks/getgpt/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Amerged
 >>>>>>> Stashed changes
 =======
 github.com/wordbricks/getgpt/pull/3225
+>>>>>>> Stashed changes
+=======
+github.com/wordbricks/getgpt/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed
 >>>>>>> Stashed changes
