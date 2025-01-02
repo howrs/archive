@@ -1,74 +1,316 @@
-<!DOCTYPE html><html lang="en" class="dark"><head><style>
-    .utterances {
-      position: relative;
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .utterances-frame {
-      color-scheme: light;
-      position: absolute;
-      left: 0;
-      right: 0;
-      width: 1px;
-      min-width: 100%;
-      max-width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  </style>
-		<meta charset="utf-8">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="https://www.swyx.io/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="https://www.swyx.io/favicon-16x16.png">
-		<link rel="icon" href="https://www.swyx.io/favicon.ico">
-		<link rel="manifest" href="/site.webmanifest">
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#facc15" media="(prefers-color-scheme: light)">
-		<meta name="theme-color" content="#3730a3" media="(prefers-color-scheme: dark)">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script nonce="swyx">
-			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-			if (
-				localStorage.theme === 'dark' ||
-				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-			) {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
-		</script>
-		
-		<link href="./_app/immutable/assets/0.274a02ea.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/3.f3156e24.css" rel="stylesheet"><title>Date me</title><link rel="alternate" type="application/rss+xml" title="RSS Feed for swyx's site" href="/rss.xml"><link rel="webmention" href="https://webmention.io/www.swyx.io/webmention"><link rel="pingback" href="https://webmention.io/www.swyx.io/xmlrpc"><link rel="canonical" href="https://www.swyx.io/date-me"><meta property="og:url" content="https://www.swyx.io/date-me"><meta property="og:type" content="article"><meta property="og:title" content="Date me"><meta name="description" content="if you like me, and you're interested but never thought to ask, just ask! "><meta property="og:description" content="if you like me, and you're interested but never thought to ask, just ask! "><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="@swyx"><meta name="twitter:title" content="Date me"><meta name="twitter:description" content="if you like me, and you're interested but never thought to ask, just ask! "><meta property="og:image" content="https://og.tailgraph.com/og?fontFamily=Roboto&amp;title=Date%20me&amp;titleTailwind=font-bold%20bg-transparent%20text-7xl&amp;titleFontFamily=Poppins&amp;textTailwind=text-2xl%20mt-4&amp;logoTailwind=h-8&amp;bgUrl=https%3A%2F%2Fwallpaper.dog%2Flarge%2F20455104.jpg&amp;footer=https%3A%2F%2Fwww.swyx.io&amp;footerTailwind=text-teal-900&amp;containerTailwind=border-2%20border-orange-200%20bg-transparent%20p-4"><meta name="twitter:image" content="https://og.tailgraph.com/og?fontFamily=Roboto&amp;title=Date%20me&amp;titleTailwind=font-bold%20bg-transparent%20text-7xl&amp;titleFontFamily=Poppins&amp;textTailwind=text-2xl%20mt-4&amp;logoTailwind=h-8&amp;bgUrl=https%3A%2F%2Fwallpaper.dog%2Flarge%2F20455104.jpg&amp;footer=https%3A%2F%2Fwww.swyx.io&amp;footerTailwind=text-teal-900&amp;containerTailwind=border-2%20border-orange-200%20bg-transparent%20p-4">
-	<link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/nodes/0.e80d9a89.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/scheduler.63a2d8a4.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/index.6836d4b8.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/siteConfig.0cfae95a.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/stores.ea43839a.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/singletons.8053a651.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/index.0e16eab0.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/nodes/1.5c8ab078.js"><link rel="stylesheet" href="https://www.swyx.io/_app/immutable/assets/1.472fec2e.css"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/nodes/3.886bc36d.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/index.d7aae61d.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/control.f5b05b5f.js"><link rel="modulepreload" as="script" crossorigin="" href="https://www.swyx.io/_app/immutable/chunks/Newsletter.bd32527c.js"></head>
-	<body class="vsc-initialized bg-white text-white dark:bg-gray-900 dark:text-black" data-sveltekit-preload-data="hover">
-		<div id="svelte"> <div class="flex flex-col justify-center bg-gray-50 px-4 dark:bg-gray-900 sm:px-8"><nav class="relative mx-auto flex w-full max-w-2xl items-center justify-between border-gray-200 bg-gray-50 bg-opacity-60 py-8 text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 sm:pb-16"><a href="#skip" class="skip-nav svelte-15u0p09" data-svelte-h="svelte-g0qoez">Skip to content</a> <div class="ml-[-0.60rem] md:hidden svelte-b7fbj"><button class="burger visible svelte-b7fbj" aria-label="Toggle menu" type="button"><svg class="absolute h-5 w-5 text-gray-900 dark:text-gray-100 svelte-b7fbj" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2.5 7.5H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svelte-b7fbj"></path><path d="M2.5 12.5H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svelte-b7fbj"></path></svg></button> </div> <ul class="ml-[-0.60rem] flex"><li><a class="hidden rounded-lg p-1 text-gray-800 transition-all hover:bg-yellow-200 dark:text-gray-200 dark:hover:bg-yellow-800 sm:px-3 sm:py-2 md:inline-block" href="/"><span class="capsize">Home</span></a></li> <li class="group flex relative items-center"><a class="hidden rounded-lg p-1 text-gray-800 transition-all hover:bg-yellow-200 dark:text-gray-200 dark:hover:bg-yellow-800 sm:px-3 sm:py-2 md:inline-block" href="/ideas"><span class="capsize">Ideas</span></a> <span class="absolute hidden group-hover:flex text-center top-8 text-xs text-opacity-50" data-svelte-h="svelte-1wekid2">Writing &amp; Speaking</span></li> <li class="group flex relative items-center" data-svelte-h="svelte-1r56yum"><a class="hidden rounded-lg p-1 text-gray-800 transition-all hover:bg-yellow-200 dark:text-gray-200 dark:hover:bg-yellow-800 sm:px-3 sm:py-2 md:inline-block" rel="external" href="https://learninpublic.org"><span class="capsize">Book</span></a> <span class="absolute hidden group-hover:flex text-center top-8 text-xs text-opacity-50">Tactics, Strategy, Principles</span></li> <li class="group flex relative items-center"><a class="hidden rounded-lg p-1 text-gray-800 transition-all hover:bg-yellow-200 dark:text-gray-200 dark:hover:bg-yellow-800 sm:px-3 sm:py-2 md:inline-block" href="/about"><span class="capsize">About</span></a> <span class="absolute hidden group-hover:flex text-center top-8 -ml-2 text-xs text-opacity-50" data-svelte-h="svelte-noomo1">Bio, Talks, Photos</span></li> <li class="group flex relative items-center"><a class="hidden rounded-lg p-1 text-gray-800 transition-all hover:bg-yellow-200 dark:text-gray-200 dark:hover:bg-yellow-800 sm:px-3 sm:py-2 md:inline-block" href="/subscribe"><span class="capsize">Subscribe</span></a> <span class="absolute hidden group-hover:flex text-center top-8 -ml-2 text-xs text-opacity-50" data-svelte-h="svelte-wlr7xg">RSS, Newsletter, Mixtape</span></li></ul> <div class="flex items-center space-x-2"><a class="rounded-lg text-gray-700 hover:bg-yellow-200 dark:text-gray-200 dark:hover:bg-yellow-800" href="https://github.com/swyxio/swyxdotio" aria-label="GitHub source" data-svelte-h="svelte-1yubph3"><svg aria-hidden="true" class="h-9 w-9 p-1" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483
-					0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608
-					1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088
-					2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988
-					1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112
-					6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202
-					2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566
-					4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019
-					10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg></a> <a href="https://youtube.com/swyxTV?sub_confirmation=1" title="youtube" target="_blank" rel="me noopener noreferrer" class="rounded-lg text-gray-700 hover:bg-yellow-200 dark:text-gray-200 dark:hover:bg-yellow-800" data-svelte-h="svelte-1mjij4m"><span class="sr-only">YouTube</span> <svg class="h-9 w-9 p-1" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>YouTube icon</title><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg></a> <a href="https://twitter.com/intent/user?screen_name=swyx" title="twitter" target="_blank" rel="me noopener noreferrer" class="rounded-lg text-gray-700 hover:bg-yellow-200 dark:text-gray-200 dark:hover:bg-yellow-800" data-svelte-h="svelte-9mowmg"><span class="sr-only">Twitter</span> <svg class="h-9 w-9 p-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a> <button aria-label="Toggle Dark Mode" class="ml-1 flex h-9 w-9 items-center justify-center rounded-lg bg-yellow-400 ring-yellow-400 transition-all hover:ring-2 dark:bg-yellow-800"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5 text-gray-800 dark:text-yellow-100"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728
-						0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></button></div></nav></div> <main class="flex flex-col justify-center bg-gray-50 px-4 dark:bg-gray-900 sm:px-8">  <article class="items-start justify-center w-full mx-auto mt-16 mb-32 prose swyxcontent dark:prose-invert max-w-none svelte-16q4qwb" data-toc-observe-active-id="date-me" data-toc-observe-for="date-me" data-toc-root="1f969768-c498-421c-9dcd-4dd3468412da"><h1 class="md:text-center mb-8 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl " id="date-me" data-toc="">Date me</h1>  <div class="flex justify-between w-full mt-2 bg border-red sm:items-start md:flex-row md:items-center"><span class="flex items-center text-sm text-gray-700 dark:text-gray-300" data-svelte-h="svelte-1yo3dlx">swyx</span> <span class="flex items-center text-sm text-gray-600 dark:text-gray-400"><a href="https://github.com/swyxio/swyxdotio/issues/519" rel="external noreferrer" class="no-underline" target="_blank">2025-01-02</a></span></div> <div class="-mx-4 my-2 flex h-1 w-[100vw] bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 sm:mx-0 sm:w-full"></div>  
-<p>if you like me, and you’re interested but never thought to ask, just ask!</p>
-<p><a href="https://swyx.notion.site/dateme" rel="nofollow">https://swyx.notion.site/dateme</a></p>
-</article> <div class="max-w-2xl mx-auto"> <div class="max-w-full p-4 mb-12 prose border-t border-b border-blue-800 dark:prose-invert"><a href="https://github.com/swyxio/swyxdotio/issues/519">Leave a reaction</a>
-			if you liked this post! 🧡 </div> <div class="mb-8 text-black dark:text-white "><div class="utterances" style="height: 269px;">
-    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;async=&amp;crossorigin=anonymous&amp;repo=swyxio%2Fswyxdotio&amp;issue-number=519&amp;theme=icy-dark&amp;url=https%3A%2F%2Fwww.swyx.io%2Fdate-me&amp;origin=https%3A%2F%2Fwww.swyx.io&amp;pathname=date-me&amp;title=Date+me&amp;description=if+you+like+me%2C+and+you%27re+interested+but+never+thought+to+ask%2C+just+ask%21+&amp;og%3Atitle=Date+me&amp;session=" loading="lazy"></iframe>
-  </div></div> <div id="WebMentions" class="prose dark:prose-invert svelte-xd5tcw"><div class="myflexresponsive justify-between" data-svelte-h="svelte-12hbxex"><div><span font-family="system" font-size="4" font-weight="bold" class="text-2xl font-bold">Webmentions</span> <a aria-label="Clientside Webmentions" target="_blank" title="What is this?" rel="noopener" href="https://swyx.io/clientside-webmentions" color="blue"><svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-xd5tcw"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12" y2="17"></line></svg></a></div></div> <div class="WebMentionsContainer mytext svelte-xd5tcw"><div class="WebMentionsHeader svelte-xd5tcw"><div>❤️
-						0
-						💬
-						0</div></div> <div>No replies yet.
-				<a href="https://twitter.com/intent/tweet/?text=Great%20post%20by%20@swyx%20https://www.swyx.io/date-me">Tweet about this post</a>
-				and it will show up here!</div></div></div> <section class="mb-16 w-full" id="newsletter"><div class="my-4 w-full border-y border-blue-200 bg-blue-50 p-6 dark:border-gray-600 dark:bg-gray-800 sm:rounded sm:border-x"><div class="flex items-center justify-between space-x-4 text-gray-900 dark:text-gray-100"><p class="text-lg font-bold md:text-xl" data-svelte-h="svelte-1nmoovj">Subscribe to the newsletter</p> <button aria-label="Toggle Newsletter CTA" class="flex h-9 w-9 items-center justify-center rounded-lg ring-gray-300 transition-all hover:ring-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div> <p class="my-1 text-gray-800 dark:text-gray-200" data-svelte-h="svelte-16zn5q8">Join &gt;10,000 subscribers getting occasional updates on new posts and projects!</p> <form class="relative my-4" action="https://buttondown.email/api/emails/embed-subscribe/swyx" method="post" target="popupwindow" data-svelte-h="svelte-1rx9bpd"><input type="email" id="bd-email" name="email" aria-label="Email for newsletter" placeholder="tim@apple.com" autocomplete="email" required="" class="mt-1 block w-full rounded-md border-gray-300 bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-100"><button class="absolute right-1 top-1 flex h-8 w-28 items-center justify-center rounded bg-gray-100 px-4 pt-1 font-medium text-gray-900 dark:bg-gray-700 dark:text-gray-100" type="submit">Subscribe</button></form> <p class="text-sm text-gray-800 dark:text-gray-200" data-svelte-h="svelte-xe1dbw">I also write an <a href="https://lspace.swyx.io/">AI newsletter</a> and a <a href="https://dx.tips/">DevRel/DevTools newsletter</a>.</p></div></section> <section class="mb-8 w-full"><h3 id="latest" class="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl" data-svelte-h="svelte-72zffu">Latest Posts</h3> <ul class="space-y-2 text-white"><li>📓 <a href="date-me">Date me</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2025-01-02</span> </li><li>📓 <a href="2024-eoy">swyx in 2024 End of Year wraps</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-12-17</span> </li><li>📓 <a href="wicked">Holding Space for Wicked (Part One)</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-12-08</span> </li><li>📓 <a href="ai-eng-agents">Engineering AI Agents - OpenAI DevDay Singapore talk</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-11-20</span> </li><li>📓 <a href="new-mac-setup">My 2024 New Mac Setup</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-11-16</span> </li><li>📓 <a href="lugg-vs-clutter">Moving in Big Cities: Lugg vs Clutter</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-11-01</span> </li><li>🎧 <a href="https://podcast.scalingdevtools.com/episodes/swyx-2">Winning, AI Eng, Devtools Angels, and DevRel</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-10-10</span> </li><li>📓 <a href="early-offsites">Early Stage Company Offsites</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-10-06</span> </li><li>🎧 <a href="https://sites.libsyn.com/493303/building-ai-in-2024-is-not-what-you-think-with-swyx">AI Eng with Sandra Kublik</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-09-30</span> </li><li>📺 <a href="https://www.youtube.com/watch?v=PkHjoihjo6U">What Works in AI UX - AGI House Hackathon talk</a> <span class="hidden text-xs text-black dark:text-gray-400 sm:inline">2024-09-14</span> </li></ul> <a class="mt-2 flex h-6 rounded-lg leading-7 text-gray-600 transition-all dark:text-gray-400 dark:hover:text-gray-200" href="/ideas" data-svelte-h="svelte-yeegmq">Search and see all content<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="ml-1 h-6 w-6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"></path></svg></a></section></div></main> <footer class="mx-auto mb-8 flex w-full max-w-2xl flex-col items-start justify-center" data-svelte-h="svelte-8d3xz2"><hr class="border-1 mb-8 w-full border-gray-200 dark:border-gray-800"> <div class="grid w-full max-w-2xl grid-cols-1 gap-4 px-4 pb-16 sm:grid-cols-2 sm:px-8"><div class="flex flex-col space-y-4"><a class="text-gray-500 transition hover:text-gray-300" href="/">Home</a> <a class="text-gray-500 transition hover:text-gray-300" href="/about">About</a> <a class="text-gray-500 transition hover:text-gray-300" href="/subscribe">Newsletter</a> <a class="text-gray-500 transition hover:text-gray-300" href="/rss.xml" rel="external">RSS</a></div> <div class="flex flex-col space-y-4"><a class="text-gray-500 transition hover:text-gray-300" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/follow?screen_name=swyx">Twitter</a> <a class="text-gray-500 transition hover:text-gray-300" target="_blank" rel="noopener noreferrer" href="https://github.com/swyxio/swyxdotio">GitHub</a> <a class="text-gray-500 transition hover:text-gray-300" target="_blank" rel="noopener noreferrer" href="https://youtube.com/swyxTV?sub_confirmation=1">YouTube</a></div></div> <p class="prose px-4 dark:prose-invert sm:px-8">This blog is based on the
-		<a href="https://swyxkit.netlify.app/">swyxkit</a>
-		template.</p></footer> <div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"></div></div>
-	
+<!DOCTYPE html><html lang="KR"><head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <script src="/vendor/markdown-it.min.js"></script>
+        <link rel="stylesheet" href="/vendor/highlight-default.min.css">
+        <script src="/vendor/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
 
-</body></html>
+                <!-- Global site tag (gtag.js) - Google Analytics v4 -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MCD87E7SF0"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MCD87E7SF0');
+        </script>
+                        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>CodingFont - 코딩용 폰트를 토너먼트로 찾아보</title>
+        <meta name="description" content="@onixboox → <p>지금 쓰고 있는 Jetbrains Mono 가 역시 최고였네요 ㅎㅎ</p>">
+
+        <meta property="og:url" content="https://news.hada.io/comment?id=32890">
+        <meta property="og:title" content="CodingFont - 코딩용 폰트를 토너먼트로 찾아보">
+            <meta property="og:locale" content="ko_KR">
+        <meta property="og:site_name" content="GeekNews">
+        <meta property="og:description" content="@onixboox → <p>지금 쓰고 있는 Jetbrains Mono 가 역시 최고였네요 ㅎㅎ</p>">
+        <meta property="fb:app_id" content="2417316805247011">
+
+            <meta name="twitter:title" content="CodingFont - 코딩용 폰트를 토너먼트로 찾아보">
+        <meta name="twitter:creator" content="@GeekNewsBot">
+        <meta name="twitter:site" content="@GeekNewsBot">
+        <meta name="twitter:description" content="@onixboox → <p>지금 쓰고 있는 Jetbrains Mono 가 역시 최고였네요 ㅎㅎ</p>">
+
+            <meta property="og:type" content="article">
+        <meta property="article:published_time" content="2025-01-02T14:39:24+09:00">
+        <meta property="article:author" content="onixboox">
+        <meta property="article:section" content="Comment">
+        <meta name="twitter:card" content="summary_large_image">
+            
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/vendor/hotkeys.min.js"></script>
+
+        <link rel="stylesheet" href="/assets/main.css?20241104" type="text/css">
+        <link rel="manifest" href="/manifest.json?20240404a">
+        <meta name="theme-color" content="#000065">
+        <meta name="google-site-verification" content="xfNJ7NBfDxPJBTNxTxSIQ7UVPA5zwPKBCC6STmWrQYE">
+        <script src="/assets/main.js?20230914" type="text/javascript"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji&amp;display=swap" rel="stylesheet">
+        <link rel="webmention" href="https://webmention.io/news.hada.io/webmention">
+        <link rel="pingback" href="https://webmention.io/news.hada.io/xmlrpc">
+        <script>
+			function getUrlParameter(name) {
+				name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+				var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+				var results = regex.exec(location.search);
+				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+			};	
+
+
+            function submitReply(form) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/comments',
+                    data: $(".write_reply").serialize(),
+                    success: function(data)
+                    {
+                        if (data.status) {
+                            window.location.href = "comment?id="+data.rid+"#cid"+data.cid;
+                            location.reload();
+                        } else {
+                            if (data.code == 213) {
+                                document.getElementById('msg').innerText = "비정상적인 사용으로 계정이 정지되었습니다.";
+                            } else if (data.code == 490) {
+                                document.getElementById('msg').innerText = "의견을 조금 더 길게 작성해주세요.";
+                            } else {
+                                document.getElementById('msg').innerText = "알 수 없는 에러입니다.";
+                            }
+                        }
+                    }
+                });
+            }
+
+            $(function() {
+                $(".cmtreply").on('click', function(e) {                    
+                    e.preventDefault();                    
+
+                    var userid = $("#userid").val();
+                    if (userid == null || userid == '') {
+                        window.location.href = "login?code=101&return=" + encodeURI('/comment?id='+32890);
+                    } else if (!$(this).parent().has('form').length) {
+                        $('.write_reply').remove();                      
+
+                        cmtform = '<form class="write_reply" autocomplete="off" onsubmit="return replace2spaces(\'reply_contents\')"> \
+                        <div class="table_reply comment-table"> \
+                            <div> \
+                                <textarea id="reply_contents" rows=5 style="width:100%" name="contents" class="comment_textarea" required placeholder="댓글에 대한 답변"></textarea> \
+                            </div>\
+                            <div> \
+                                <input type="submit" class="reply_button" value="답변 달기"> \
+                                <input type="hidden" name="dynamic" value="true"> \
+                                <input type="hidden" name="rid" value="' + 32890 +  '"> \
+                                <input type="hidden" name="parent_id" value="' + $(this).data('cid') +  '"> \
+                                <input type="hidden" name="tid" value="' + $(this).data('tid') + '"> \
+                            </div> \
+                        </div> \
+                        </form> \
+                        ';
+
+                        $(this).parent().append(cmtform);
+
+                        $(this).parent().on("submit", ".write_reply", function (event){
+                            event.preventDefault();
+                            submitReply(this);
+                        });
+                    }
+                });
+
+                $('#topic_contents').shorten({
+                    moreText: '[+ 글 내용 펼치기]',
+                    lessText: '[- 글 내용 닫기]',
+                    showChars: 200,
+                });
+
+				$('.write_comment').on('submit',function(){
+					$('.comment_textarea').each(function(){   
+						var id = $(this).attr('id');
+						var value = $(this).val();
+						localStorage.setItem(id, value);
+					});   
+				});
+
+				var c = getUrlParameter("code");
+
+				if (c) {
+					$('.comment_textarea').each(function(){    
+						var id = $(this).attr('id');
+						var value = localStorage.getItem(id);
+
+						$(this).val(value);
+					}); 
+				} else {
+					$('.comment_textarea').each(function(){    
+						var id = $(this).attr('id');						
+						localStorage.removeItem(id);
+					});   
+				}
+            });
+
+            function child_toggle(id,count) {
+                var start_index;
+                $(".comment_row").each(function( index ) {
+                    if ($( this ).attr('id') == "cid" + id ) start_index = index;
+                    if ( start_index + count >= index ) {
+                        if ($( this ).attr('id') == "cid" + id ) {
+                            $(this).find('.comment').toggleClass('hide');
+                            $(this).find('.commentreply').toggleClass('hide');
+                            commentfold = $(this).find('.commentfold').html();
+                            if (commentfold.indexOf('[-]') !== -1 ) 
+                                $(this).find('.commentfold').html('[+'+(count+1)+']');
+                            else 
+                                $(this).find('.commentfold').html('[-]');
+                        } else {
+                            if ($(this).css("display") == "grid") {
+                                $(this).css("display","none");
+                            } else {
+                                $(this).css("display","grid");
+                            }
+                            $( this ).toggleClass('hide');
+                        }
+                    }
+                });
+            }
+
+            async function delete_comment(id, topic_id) {
+                if(window.confirm("삭제하시겠어요?")) {
+					try {
+						let response = await fetch('/comments/' + id, {
+							method: 'DELETE'
+						});
+
+						if(!response.ok) {
+							throw new Error("Network response was not ok");
+						}
+
+						let data = await response.json();
+
+						if (data.status) {
+							alert("삭제했습니다.");
+                            window.location.href = "/topic?id="+topic_id;
+						} else {
+                            if (data.code == 101) {
+                                window.location.href = "/login?code=101&return=/comment?id=" + id;
+                            } else {
+                                alert("삭제 실패했습니다.");
+                            }
+						}
+					} catch(error) {
+						console.error('Error:', error);
+					}
+                }
+                
+            }
+        </script>
+        <script src="/vendor/jquery.shorten.min.js" type="text/javascript"></script>
+        <script src="/assets/watch.js?20210630a"></script>
+	</head>
+	<body>
+        <header>
+            <nav>
+                <div class="ltd"><span class="geeknews"><a href="/">GeekNews</a></span>
+                    <a href="/new">최신글</a> <a href="/comments">댓글</a> <a href="/past">예전글</a> <a href="/ask">Ask</a> <a href="/show">Show</a> <a href="/plus">GN⁺</a> <a href="/weekly">Weekly</a>  | <a href="/write">글등록</a>                     <span class="curnavitem">
+                    </span>
+                </div>
+                <div class="rtd">
+                    <form class="search-cse" action="search" method="GET">
+                        <input id="q" name="q" type="search" maxlength="20" class="input" placeholder="검색">
+                    </form>
+                    <a href="/login">로그인</a>                </div>
+			</nav>
+        </header>		<main>			
+			<article>     
+				<div class="comment-table">
+<div id="msg"></div><div class="comment"><div class="vote"><span id="votec32890"><a class="upvote" href="javascript:votec(32890, &quot;up&quot;);"><span>▲</span></a></span></div><div class="topicinfo"><a href="/user?id=onixboox">onixboox</a> 16분전 | <a href="/topic?id=18544">parent</a><span id="unvotec32890"></span><span id="favc32890"> | <a href="javascript:favc(32890, &quot;favorite&quot;)">favorite</a></span> | on: <a href="topic?id=18544">CodingFont - 코딩용 폰트를 토너먼트로 찾아보기</a><span class="topicurl">(codingfont.com)</span></div><div class="commentTD"><span id="contents32890" class="comment_contents"><p>지금 쓰고 있는 Jetbrains Mono 가 역시 최고였네요 ㅎㅎ</p>
+</span></div></div>            <div class="comment_form">
+                    <form class="write_comment" action="/comments" method="POST" onsubmit="return replace2spaces('contents')">
+                        <div class="group">
+                            <input type="hidden" name="rid" value="32890">
+                            <input type="hidden" name="parent_id" value="32890">
+                            <input type="hidden" name="tid" value="18544">
+                            <textarea id="contents" rows="5" style="width: 100%" name="contents" class="comment_textarea" required="" placeholder="예의 있는 댓글 적기"></textarea>
+                        </div>
+                        <div class="group comment_button_box">
+                            <input type="submit" class="comment_button" value="댓글 달기">
+                        </div>
+                        <div class="hr"></div>
+                    </form>    
+                    <input type="hidden" id="userid" value="">
+            </div>
+</div>
+            <div class="comment_thread descendant">
+<!-- comments -->
+  
+<!-- comments --> 
+            </div>
+            </article>            
+		</main>
+<script>
+document.addEventListener('keydown', function(event) {
+    if(event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
+        var handled = false;
+        var replyForms = document.getElementsByClassName('write_reply');
+        if(replyForms.length > 0) {
+            var replyForm = replyForms[0];
+            var replyContents = document.getElementById('reply_contents');
+            if (replyContents && replyContents.value.trim() !== "") {
+                if(replace2spaces('reply_contents')) {
+                submitReply(replyForm);
+                handled = true;
+            }
+            }
+        }
+
+        if (!handled) {
+            var forms = document.getElementsByClassName('write_comment');
+            if (forms.length > 0) {
+                var form = forms[0];
+                var contents = document.getElementById('contents');
+                if (contents && contents.value.trim() !== "") {
+                    if(replace2spaces('contents')) {
+                        form.submit();
+                    }
+                }
+            }
+        }
+    }
+});
+</script>
+		<footer>
+			<div>
+				<a href="/guidelines" class="u">사이트 이용법</a>
+				<a href="/faq" class="u">FAQ</a>
+				<a href="/about" class="u">About &amp; ToS</a>
+				<!-- <a href='release' class=u>Releases</a> -->
+				&nbsp; | 
+				 <a href="/blog" class="u">Blog</a>
+				 <a href="/lists" class="u">Lists</a>
+				 <a href="/podcast" class="u">Podcast</a>
+				 <a href="https://news.hada.io/rss/news" class="u">RSS</a>
+				&nbsp; | 
+				 <a href="/bookmarklet" class="u">Bookmarklet</a>
+				&nbsp; | 
+				 <a href="https://twitter.com/GeekNewsBot" class="u" rel="me">Twitter</a>
+				 <a href="https://facebook.com/GeekNewsBot" class="u">Facebook</a>
+				 &nbsp; | &nbsp; 긱뉴스봇 : 
+				 <a href="/slackbot" class="u keepall">Slack</a>
+				 <a href="/jandibot" class="u keepall">잔디</a>
+				 <a href="/discordbot" class="u keepall">Discord</a>
+				 <a href="/teamsbot" class="u keepall">Teams</a>
+				 <a href="/googlechatbot" class="u keepall">Google Chat</a>
+				 <a href="/switbot" class="u keepall">Swit</a>
+				
+            </div>
+			<div style="width: fit-content; display: inline-block;">
+				<form class="search-cse" action="search" method="GET">
+					<label for="q" class="label">검색</label>
+					<input id="q" name="q" type="text" maxlength="30" class="input" style="width: 200px">
+				</form>
+			</div>
+					</footer>	
+            </body></html>
