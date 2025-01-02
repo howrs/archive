@@ -1,1 +1,5 @@
+<<<<<<< Updated upstream
 accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=799222349882-ne3i0s9jdm5s0p7ll2d7tlsi1vc1halt.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fauth.openai.com%2Fapi%2Faccounts%2Fcallback%2Fgoogle&scope=openid%20profile%20email&state=7ed24fd2-0d71-4cb5-90fd-36499239ff1c&audience=799222349882-ne3i0s9jdm5s0p7ll2d7tlsi1vc1halt.apps.googleusercontent.com&nonce=5oGSwu11WCkmtX3HMaSL&service=lso&o2v=2&ddm=1&flowName=GeneralOAuthFlow
+=======
+accounts.google.com/_/bscframe
+>>>>>>> Stashed changes
