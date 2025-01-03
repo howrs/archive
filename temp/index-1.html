@@ -1,28 +1,317 @@
-<!DOCTYPE html><html lang="en" class="dark" style="color-scheme:dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="/_next/static/media/b72e31bef4539887-s.p.ttf" as="font" crossorigin="" type="font/ttf"><link rel="preload" href="/_next/static/media/cb887a0ec59ac4a3-s.p.woff2" as="font" crossorigin="" type="font/woff2"><link rel="preload" as="image" href="/images/how-it-works.svg" fetchpriority="high"><link rel="stylesheet" href="/_next/static/css/6ce82b9a6bec0639.css" data-precedence="next"><link rel="stylesheet" href="/_next/static/css/24f306f97f656c3b.css" data-precedence="next"><link rel="preload" as="script" fetchpriority="low" href="/_next/static/chunks/webpack-538a78c0de77dd56.js"><script src="/_next/static/chunks/fd9d1056-51face16839d2cb0.js" async=""></script><script src="/_next/static/chunks/23-4b8b42586fbd6dea.js" async=""></script><script src="/_next/static/chunks/main-app-f73cdb3bce740b12.js" async=""></script><script src="/_next/static/chunks/648-34455681093801a0.js" async=""></script><script src="/_next/static/chunks/app/page-f7083d159fbf7d70.js" async=""></script><script src="/_next/static/chunks/967-0da12d1bf6a609b8.js" async=""></script><script src="/_next/static/chunks/276-5e23e06d1aa72157.js" async=""></script><script src="/_next/static/chunks/502-5833bad37cfa30cb.js" async=""></script><script src="/_next/static/chunks/715-fd2158764965af36.js" async=""></script><script src="/_next/static/chunks/app/layout-94006ca60af1c807.js" async=""></script><script src="/_next/static/chunks/app/error-96bd6d87f809fdc5.js" async=""></script><title>Zero Docs</title><meta name="description" content="The official documentation for Zero by Rocicorp."><meta property="og:title" content="Zero Docs"><meta property="og:description" content="The official documentation for Zero by Rocicorp."><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image" content="https://zero.rocicorp.dev/opengraph-image.jpg?942633a931cbd1df"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Zero Docs"><meta name="twitter:description" content="The official documentation for Zero by Rocicorp."><meta name="twitter:image" content="https://zero.rocicorp.dev/opengraph-image.jpg"><link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"><meta name="next-size-adjust"><script src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js" nomodule=""></script></head><body class="__variable_a06597 __variable_6c3767 font-regular"><main class="sm:container mx-auto w-[88vw] h-auto"><div class="page_main__nw1Wk"><div class="page_mainHeader__Rrn43"><img alt="Zero logo" loading="lazy" width="173" height="32" decoding="async" data-nimg="1" style="color:transparent" src="/images/zero-logo-alpha.svg"><a href="/docs/introduction" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground button-link h-10 px-4 py-2 page_primaryButton__gjjaG">Docs</a></div><p>Developing web applications has gotten insanely complex.</p><p>You need a tall pile of tech to build a "modern" web app: client-side code, server-side code, APIs to tie them together, data fetching, state management, hydration, websockets for reactivity, and a whole lot more. And once you're done, the resulting app still isn't very good.</p><p>It's time for a rethink.</p><p>We're building a general-purpose sync engine for the web. You put Zero in front of your database or web service, and we distribute your backend all the way to main thread of the UI.</p><div style="position:relative;width:100%;margin:3rem auto 4rem;overflow:hidden;aspect-ratio:732 / 73"><img alt="How Zero Works" fetchpriority="high" decoding="async" data-nimg="fill" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;object-fit:cover;color:transparent;cursor:pointer" src="/images/how-it-works.svg"></div><p>You get a client-side API that <em>looks</em> like an embedded db, but to which you can issue arbitrary <em>hybrid queries</em> that span the entire database, including the server.</p><p>Behind the scenes, we synchronize queries results continuously to a client-side persistent cache. This cache is used automatically for future queries whenever possible.</p><pre><code class="hljs language-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Playlist</span>(<span class="hljs-params">{id}: {id: <span class="hljs-built_in">string</span>}</span>) {
-  <span class="hljs-comment">// This usually resolves *instantly*, and updates reactively</span>
-  <span class="hljs-comment">// as server data changes. Just wire it directly to your UI –</span>
-  <span class="hljs-comment">// no HTTP APIs, no state management no realtime goop.</span>
-  <span class="hljs-keyword">const</span> tracks = <span class="hljs-title function_">useQuery</span>(
-    zero.<span class="hljs-property">query</span>.<span class="hljs-property">playlist</span>
-      .<span class="hljs-title function_">related</span>(<span class="hljs-string">'tracks'</span>, <span class="hljs-function"><span class="hljs-params">track</span> =&gt;</span> track
-        .<span class="hljs-title function_">related</span>(<span class="hljs-string">'album'</span>)
-        .<span class="hljs-title function_">related</span>(<span class="hljs-string">'artist'</span>)
-        .<span class="hljs-title function_">orderBy</span>(<span class="hljs-string">'playcount'</span>, <span class="hljs-string">'asc'</span>)
-      .<span class="hljs-title function_">where</span>(<span class="hljs-string">'id'</span>, id)
-  );
+<!DOCTYPE html><html lang="KR"><head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <script src="/vendor/markdown-it.min.js"></script>
+        <link rel="stylesheet" href="/vendor/highlight-default.min.css">
+        <script src="/vendor/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
 
-  <span class="hljs-keyword">const</span> <span class="hljs-title function_">onStar</span> = (<span class="hljs-params"><span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span>, <span class="hljs-attr">starred</span>: <span class="hljs-built_in">boolean</span></span>) =&gt; {
-    zero.<span class="hljs-property">track</span>.<span class="hljs-title function_">update</span>({
-      id,
-      starred,
-    });
-  }
+                <!-- Global site tag (gtag.js) - Google Analytics v4 -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MCD87E7SF0"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  <span class="hljs-keyword">return</span> (
-    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-      {tracks.map(track =&gt; (
-        <span class="hljs-tag">&lt;<span class="hljs-name">TrackRow</span> <span class="hljs-attr">track</span>=<span class="hljs-string">{track}</span> <span class="hljs-attr">onStar</span>=<span class="hljs-string">{onStar}/</span>&gt;</span>
-      ))}
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-  );
-}</code></pre><p>This architecture provides:</p><ul><li><strong>Instant</strong> (zero milliseconds) response for almost all user interactions – the user taps a button and the UI instantly updates, in the next frame.</li><li><strong>Automatic reactivity</strong> – a user changes something and all other users see the change live.</li><li><strong>Dramatically faster</strong> development velocity – almost all features can be built completely client-side, with no need for new server-side APIs to be built and deployed.</li><li><strong>Scalability</strong> – Zero can work with any amount of backend data. It doesn't require syncing all data to the client up-front, or knowing which data you'll need ahead of time. If the app needs data which hasn't already been synced, it is synced on demand.</li></ul><p>Where Zero really shines is complex, highly-interactive “local-first” style applications like Linear and Superhuman. With Zero, these apps can be built in a fraction of the time it would take to build even an old-fashioned server-rendered web app.</p><p>Zero is currently in public alpha. It's got a few rough edges, and you have to deploy it yourself, but it's already remarkably fun. We're using it ourselves for Zero's <a href="https://bugs.rocicorp.dev/">official bug tracker</a> and we find it much more productive than the alternatives.</p><p>Ready to start? You can have your first app in production in about 20 minutes.</p><br><p class="page_ctaContainer__Oo_f_"><a href="/docs/introduction" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground button-link h-10 px-4 py-2 page_primaryButton__gjjaG">Get Started Now</a></p><div class="page_footer__F3MD0"><a href="https://roci.dev"><img alt="Rocicorp logo" loading="lazy" width="86" height="116" decoding="async" data-nimg="1" class="page_rociLogo__pTWy7" style="color:transparent" src="/images/roci-logo.svg"></a></div></div></main><script src="/_next/static/chunks/webpack-538a78c0de77dd56.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/media/b72e31bef4539887-s.p.ttf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/ttf\"}]\n2:HL[\"/_next/static/media/cb887a0ec59ac4a3-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n3:HL[\"/_next/static/css/6ce82b9a6bec0639.css\",\"style\"]\n4:HL[\"/_next/static/css/24f306f97f656c3b.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"5:I[5751,[],\"\"]\n7:I[8173,[\"231\",\"static/chunks/231-d152d85611f23a6e.js\",\"648\",\"static/chunks/648-34455681093801a0.js\",\"968\",\"static/chunks/968-ef8f4cd55fa8d47f.js\",\"931\",\"static/chunks/app/page-f7083d159fbf7d70.js\"],\"Image\"]\n8:I[364,[\"231\",\"static/chunks/231-d152d85611f23a6e.js\",\"648\",\"static/chunks/648-34455681093801a0.js\",\"968\",\"static/chunks/968-ef8f4cd55fa8d47f.js\",\"931\",\"static/chunks/app/page-f7083d159fbf7d70.js\"],\"default\"]\n9:I[2577,[\"231\",\"static/chunks/231-d152d85611f23a6e.js\",\"648\",\"static/chunks/648-34455681093801a0.js\",\"968\",\"static/chunks/968-ef8f4cd55fa8d47f.js\",\"931\",\"static/chunks/app/page-f7083d159fbf7d70.js\"],\"default\"]\na:I[231,[\"231\",\"static/chunks/231-d152d85611f23a6e.js\",\"648\",\"static/chunks/648-34455681093801a0.js\",\"968\",\"static/chunks/968-ef8f4cd55fa8d47f.js\",\"931\",\"static/chunks/app/page-f7083d159fbf7d70.js\"],\"\"]\nb:I[3799,[\"231\",\"static/chunks/231-d152d85611f23a6e.js\",\"967\",\"static/chunks/967-0da12d1bf6a609b8.js\",\"276\",\"static/chunks/276-5e23e06d1aa72157.js\",\"502\",\"static/chunks/502-5833bad37cfa30cb.js\",\"648\",\"static/chunks/648-34455681093801a0.js\",\"715\",\"static/chunks/715-fd2158764965af36.js\",\"185\",\"static/chunks/app/layout-94006ca60af1c807.js\"],\"default\"]\nc:I[9275,[],\"\"]\nd:I[2446,[\"967\",\"static/chunks/967-0da12d1bf6a609b8.js\",\"601\",\"static/chunks/app/error-96bd6d87f809fdc5.js\"],\"default\"]\ne:I[1343,[],\"\"]\nf:I[4080,[\"231\",\"static/chunks/231-d152d85611f23a6e.js\",\"967\",\"static/chunks/967-0da12d1bf6a609b8.js\",\"276\",\"static/chunks/276-5e23e06d1aa72157.js\",\"502\",\"static/chunks/502-5833bad37cfa30cb.js\",\"648\",\"static/chunks/648-34455681093801a0.js\",\"715\",\"static/chunks/715-fd2158764965af36.js\",\"185\",\"static/chunks/app/layout-94006ca60af1c807.js\"],\"\"]\n11:I[6130,[],\"\"]\n12:[]\n"])</script><script>self.__next_f.push([1,"0:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/6ce82b9a6bec0639.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"$L5\",null,{\"buildId\":\"jBSagWOEVQbSXZoFA-oUF\",\"assetPrefix\":\"\",\"initialCanonicalUrl\":\"/\",\"initialTree\":[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"__PAGE__\",{},[[\"$L6\",[\"$\",\"div\",null,{\"className\":\"page_main__nw1Wk\",\"children\":[[\"$\",\"div\",null,{\"className\":\"page_mainHeader__Rrn43\",\"children\":[[\"$\",\"$L7\",null,{\"src\":\"/images/zero-logo-alpha.svg\",\"alt\":\"Zero logo\",\"className\":\"$undefined\",\"width\":173,\"height\":32}],[\"$\",\"a\",null,{\"href\":\"/docs/introduction\",\"children\":\"Docs\",\"className\":\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground button-link h-10 px-4 py-2 page_primaryButton__gjjaG\"}]]}],[\"$\",\"p\",null,{\"children\":\"Developing web applications has gotten insanely complex.\"}],[\"$\",\"p\",null,{\"children\":\"You need a tall pile of tech to build a \\\"modern\\\" web app: client-side code, server-side code, APIs to tie them together, data fetching, state management, hydration, websockets for reactivity, and a whole lot more. And once you're done, the resulting app still isn't very good.\"}],[\"$\",\"p\",null,{\"children\":\"It's time for a rethink.\"}],[\"$\",\"p\",null,{\"children\":\"We're building a general-purpose sync engine for the web. You put Zero in front of your database or web service, and we distribute your backend all the way to main thread of the UI.\"}],[\"$\",\"$L8\",null,{\"src\":\"/images/how-it-works.svg\",\"alt\":\"How Zero Works\",\"width\":732,\"height\":73}],[\"$\",\"p\",null,{\"children\":[\"You get a client-side API that \",[\"$\",\"em\",null,{\"children\":\"looks\"}],\" like an embedded db, but to which you can issue arbitrary \",[\"$\",\"em\",null,{\"children\":\"hybrid queries\"}],\" that span the entire database, including the server.\"]}],[\"$\",\"p\",null,{\"children\":\"Behind the scenes, we synchronize queries results continuously to a client-side persistent cache. This cache is used automatically for future queries whenever possible.\"}],[\"$\",\"$L9\",null,{\"code\":\"function Playlist({id}: {id: string}) {\\n  // This usually resolves *instantly*, and updates reactively\\n  // as server data changes. Just wire it directly to your UI –\\n  // no HTTP APIs, no state management no realtime goop.\\n  const tracks = useQuery(\\n    zero.query.playlist\\n      .related('tracks', track =\u003e track\\n        .related('album')\\n        .related('artist')\\n        .orderBy('playcount', 'asc')\\n      .where('id', id)\\n  );\\n\\n  const onStar = (id: string, starred: boolean) =\u003e {\\n    zero.track.update({\\n      id,\\n      starred,\\n    });\\n  }\\n\\n  return (\\n    \u003cdiv\u003e\\n      {tracks.map(track =\u003e (\\n        \u003cTrackRow track={track} onStar={onStar}/\u003e\\n      ))}\\n    \u003c/div\u003e\\n  );\\n}\",\"language\":\"typescript\"}],[\"$\",\"p\",null,{\"children\":\"This architecture provides:\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Instant\"}],\" (zero milliseconds) response for almost all user interactions – the user taps a button and the UI instantly updates, in the next frame.\"]}],[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Automatic reactivity\"}],\" – a user changes something and all other users see the change live.\"]}],[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Dramatically faster\"}],\" development velocity – almost all features can be built completely client-side, with no need for new server-side APIs to be built and deployed.\"]}],[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Scalability\"}],\" – Zero can work with any amount of backend data. It doesn't require syncing all data to the client up-front, or knowing which data you'll need ahead of time. If the app needs data which hasn't already been synced, it is synced on demand.\"]}]]}],[\"$\",\"p\",null,{\"children\":\"Where Zero really shines is complex, highly-interactive “local-first” style applications like Linear and Superhuman. With Zero, these apps can be built in a fraction of the time it would take to build even an old-fashioned server-rendered web app.\"}],[\"$\",\"p\",null,{\"children\":[\"Zero is currently in public alpha. It's got a few rough edges, and you have to deploy it yourself, but it's already remarkably fun. We're using it ourselves for Zero's \",[\"$\",\"a\",null,{\"href\":\"https://bugs.rocicorp.dev/\",\"children\":\"official bug tracker\"}],\" and we find it much more productive than the alternatives.\"]}],[\"$\",\"p\",null,{\"children\":\"Ready to start? You can have your first app in production in about 20 minutes.\"}],[\"$\",\"br\",null,{}],[\"$\",\"p\",null,{\"className\":\"page_ctaContainer__Oo_f_\",\"children\":[\"$\",\"a\",null,{\"href\":\"/docs/introduction\",\"children\":\"Get Started Now\",\"className\":\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground button-link h-10 px-4 py-2 page_primaryButton__gjjaG\"}]}],[\"$\",\"div\",null,{\"className\":\"page_footer__F3MD0\",\"children\":[\"$\",\"$La\",null,{\"href\":\"https://roci.dev\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/roci-logo.svg\",\"className\":\"page_rociLogo__pTWy7\",\"alt\":\"Rocicorp logo\",\"width\":86,\"height\":116}]}]}]]}]],null],null]},[[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"dark\",\"style\":{\"colorScheme\":\"dark\"},\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"className\":\"__variable_a06597 __variable_6c3767 font-regular\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"$Lb\",null,{}],[\"$\",\"main\",null,{\"className\":\"sm:container mx-auto w-[88vw] h-auto\",\"children\":[\"$\",\"$Lc\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$d\",\"errorStyles\":[],\"errorScripts\":[],\"template\":[\"$\",\"$Le\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[\"$\",\"div\",null,{\"className\":\"min-h-[99vh] px-2 py-8 flex flex-col gap-3 items-start\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"h2\",null,{\"className\":\"text-5xl font-bold\",\"children\":\"404\"}],[\"$\",\"p\",null,{\"className\":\"text-muted-foreground\",\"children\":\"Page not found\"}]]}],[\"$\",\"$La\",null,{\"href\":\"/\",\"className\":\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2\",\"children\":\"Back to homepage\"}]]}],\"notFoundStyles\":[],\"styles\":[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/24f306f97f656c3b.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]]}]}],[\"$\",\"$Lf\",null,{\"src\":\"/um.js\",\"data-website-id\":\"88f5bd98-94e6-4de9-bd7d-1a159e162073\",\"strategy\":\"lazyOnload\"}]]}]}],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$L10\"],\"globalErrorComponent\":\"$11\",\"missingSlots\":\"$W12\"}]]\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Zero Docs\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"The official documentation for Zero by Rocicorp.\"}],[\"$\",\"meta\",\"4\",{\"property\":\"og:title\",\"content\":\"Zero Docs\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:description\",\"content\":\"The official documentation for Zero by Rocicorp.\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:image:type\",\"content\":\"image/jpeg\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:image\",\"content\":\"https://zero.rocicorp.dev/opengraph-image.jpg?942633a931cbd1df\"}],[\"$\",\"meta\",\"10\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"11\",{\"name\":\"twitter:title\",\"content\":\"Zero Docs\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:description\",\"content\":\"The official documentation for Zero by Rocicorp.\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:image\",\"content\":\"https://zero.rocicorp.dev/opengraph-image.jpg\"}],[\"$\",\"link\",\"14\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}],[\"$\",\"meta\",\"15\",{\"name\":\"next-size-adjust\"}]]\n6:null\n"])</script><next-route-announcer style="position: absolute;"></next-route-announcer><script src="/um.js" data-website-id="88f5bd98-94e6-4de9-bd7d-1a159e162073" data-nscript="lazyOnload"></script></body></html>
+        gtag('config', 'G-MCD87E7SF0');
+        </script>
+                        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>MitmProxy2Swagger - REST API 자</title>
+        <meta name="description" content="@xguru → <p><a href=&quot;https://news.hada.io/topic?id=18546&quot;>API Parrot – HTTP API 자동 리버스 엔지니어링 도구</a> 가 클로즈드소스라서 이 도구가 같이 얘기되고 있네요</p><p>해커뉴스의 댓글도 같이 참고하세요 <a re">
+
+        <meta property="og:url" content="https://news.hada.io/comment?id=32920">
+        <meta property="og:title" content="MitmProxy2Swagger - REST API 자">
+            <meta property="og:locale" content="ko_KR">
+        <meta property="og:site_name" content="GeekNews">
+        <meta property="og:description" content="@xguru → <p><a href=&quot;https://news.hada.io/topic?id=18546&quot;>API Parrot – HTTP API 자동 리버스 엔지니어링 도구</a> 가 클로즈드소스라서 이 도구가 같이 얘기되고 있네요</p><p>해커뉴스의 댓글도 같이 참고하세요 <a re">
+        <meta property="fb:app_id" content="2417316805247011">
+
+            <meta name="twitter:title" content="MitmProxy2Swagger - REST API 자">
+        <meta name="twitter:creator" content="@GeekNewsBot">
+        <meta name="twitter:site" content="@GeekNewsBot">
+        <meta name="twitter:description" content="@xguru → <p><a href=&quot;https://news.hada.io/topic?id=18546&quot;>API Parrot – HTTP API 자동 리버스 엔지니어링 도구</a> 가 클로즈드소스라서 이 도구가 같이 얘기되고 있네요</p><p>해커뉴스의 댓글도 같이 참고하세요 <a re">
+
+            <meta property="og:type" content="article">
+        <meta property="article:published_time" content="2025-01-03T10:40:01+09:00">
+        <meta property="article:author" content="xguru">
+        <meta property="article:section" content="Comment">
+        <meta name="twitter:card" content="summary_large_image">
+            
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/vendor/hotkeys.min.js"></script>
+
+        <link rel="stylesheet" href="/assets/main.css?20241104" type="text/css">
+        <link rel="manifest" href="/manifest.json?20240404a">
+        <meta name="theme-color" content="#000065">
+        <meta name="google-site-verification" content="xfNJ7NBfDxPJBTNxTxSIQ7UVPA5zwPKBCC6STmWrQYE">
+        <script src="/assets/main.js?20230914" type="text/javascript"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji&amp;display=swap" rel="stylesheet">
+        <link rel="webmention" href="https://webmention.io/news.hada.io/webmention">
+        <link rel="pingback" href="https://webmention.io/news.hada.io/xmlrpc">
+        <script>
+			function getUrlParameter(name) {
+				name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+				var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+				var results = regex.exec(location.search);
+				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+			};	
+
+
+            function submitReply(form) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/comments',
+                    data: $(".write_reply").serialize(),
+                    success: function(data)
+                    {
+                        if (data.status) {
+                            window.location.href = "comment?id="+data.rid+"#cid"+data.cid;
+                            location.reload();
+                        } else {
+                            if (data.code == 213) {
+                                document.getElementById('msg').innerText = "비정상적인 사용으로 계정이 정지되었습니다.";
+                            } else if (data.code == 490) {
+                                document.getElementById('msg').innerText = "의견을 조금 더 길게 작성해주세요.";
+                            } else {
+                                document.getElementById('msg').innerText = "알 수 없는 에러입니다.";
+                            }
+                        }
+                    }
+                });
+            }
+
+            $(function() {
+                $(".cmtreply").on('click', function(e) {                    
+                    e.preventDefault();                    
+
+                    var userid = $("#userid").val();
+                    if (userid == null || userid == '') {
+                        window.location.href = "login?code=101&return=" + encodeURI('/comment?id='+32920);
+                    } else if (!$(this).parent().has('form').length) {
+                        $('.write_reply').remove();                      
+
+                        cmtform = '<form class="write_reply" autocomplete="off" onsubmit="return replace2spaces(\'reply_contents\')"> \
+                        <div class="table_reply comment-table"> \
+                            <div> \
+                                <textarea id="reply_contents" rows=5 style="width:100%" name="contents" class="comment_textarea" required placeholder="댓글에 대한 답변"></textarea> \
+                            </div>\
+                            <div> \
+                                <input type="submit" class="reply_button" value="답변 달기"> \
+                                <input type="hidden" name="dynamic" value="true"> \
+                                <input type="hidden" name="rid" value="' + 32920 +  '"> \
+                                <input type="hidden" name="parent_id" value="' + $(this).data('cid') +  '"> \
+                                <input type="hidden" name="tid" value="' + $(this).data('tid') + '"> \
+                            </div> \
+                        </div> \
+                        </form> \
+                        ';
+
+                        $(this).parent().append(cmtform);
+
+                        $(this).parent().on("submit", ".write_reply", function (event){
+                            event.preventDefault();
+                            submitReply(this);
+                        });
+                    }
+                });
+
+                $('#topic_contents').shorten({
+                    moreText: '[+ 글 내용 펼치기]',
+                    lessText: '[- 글 내용 닫기]',
+                    showChars: 200,
+                });
+
+				$('.write_comment').on('submit',function(){
+					$('.comment_textarea').each(function(){   
+						var id = $(this).attr('id');
+						var value = $(this).val();
+						localStorage.setItem(id, value);
+					});   
+				});
+
+				var c = getUrlParameter("code");
+
+				if (c) {
+					$('.comment_textarea').each(function(){    
+						var id = $(this).attr('id');
+						var value = localStorage.getItem(id);
+
+						$(this).val(value);
+					}); 
+				} else {
+					$('.comment_textarea').each(function(){    
+						var id = $(this).attr('id');						
+						localStorage.removeItem(id);
+					});   
+				}
+            });
+
+            function child_toggle(id,count) {
+                var start_index;
+                $(".comment_row").each(function( index ) {
+                    if ($( this ).attr('id') == "cid" + id ) start_index = index;
+                    if ( start_index + count >= index ) {
+                        if ($( this ).attr('id') == "cid" + id ) {
+                            $(this).find('.comment').toggleClass('hide');
+                            $(this).find('.commentreply').toggleClass('hide');
+                            commentfold = $(this).find('.commentfold').html();
+                            if (commentfold.indexOf('[-]') !== -1 ) 
+                                $(this).find('.commentfold').html('[+'+(count+1)+']');
+                            else 
+                                $(this).find('.commentfold').html('[-]');
+                        } else {
+                            if ($(this).css("display") == "grid") {
+                                $(this).css("display","none");
+                            } else {
+                                $(this).css("display","grid");
+                            }
+                            $( this ).toggleClass('hide');
+                        }
+                    }
+                });
+            }
+
+            async function delete_comment(id, topic_id) {
+                if(window.confirm("삭제하시겠어요?")) {
+					try {
+						let response = await fetch('/comments/' + id, {
+							method: 'DELETE'
+						});
+
+						if(!response.ok) {
+							throw new Error("Network response was not ok");
+						}
+
+						let data = await response.json();
+
+						if (data.status) {
+							alert("삭제했습니다.");
+                            window.location.href = "/topic?id="+topic_id;
+						} else {
+                            if (data.code == 101) {
+                                window.location.href = "/login?code=101&return=/comment?id=" + id;
+                            } else {
+                                alert("삭제 실패했습니다.");
+                            }
+						}
+					} catch(error) {
+						console.error('Error:', error);
+					}
+                }
+                
+            }
+        </script>
+        <script src="/vendor/jquery.shorten.min.js" type="text/javascript"></script>
+        <script src="/assets/watch.js?20210630a"></script>
+	</head>
+	<body>
+        <header>
+            <nav>
+                <div class="ltd"><span class="geeknews"><a href="/">GeekNews</a></span>
+                    <a href="/new">최신글</a> <a href="/comments">댓글</a> <a href="/past">예전글</a> <a href="/ask">Ask</a> <a href="/show">Show</a> <a href="/plus">GN⁺</a> <a href="/weekly">Weekly</a>  | <a href="/write">글등록</a>                     <span class="curnavitem">
+                    </span>
+                </div>
+                <div class="rtd">
+                    <form class="search-cse" action="search" method="GET">
+                        <input id="q" name="q" type="search" maxlength="20" class="input" placeholder="검색">
+                    </form>
+                    <a href="/login">로그인</a>                </div>
+			</nav>
+        </header>		<main>			
+			<article>     
+				<div class="comment-table">
+<div id="msg"></div><div class="comment"><div class="vote"><span id="votec32920"><a class="upvote" href="javascript:votec(32920, &quot;up&quot;);"><span>▲</span></a></span></div><div class="topicinfo"><a href="/user?id=xguru">xguru</a> 23분전 | <a href="/topic?id=18558">parent</a><span id="unvotec32920"></span><span id="favc32920"> | <a href="javascript:favc(32920, &quot;favorite&quot;)">favorite</a></span> | on: <a href="topic?id=18558">MitmProxy2Swagger - REST API 자동 리버스 엔지니어링 도구</a><span class="topicurl">(github.com/alufers)</span></div><div class="commentTD"><span id="contents32920" class="comment_contents"><p><a href="https://news.hada.io/topic?id=18546">API Parrot – HTTP API 자동 리버스 엔지니어링 도구</a> 가 클로즈드소스라서 이 도구가 같이 얘기되고 있네요</p>
+<p>해커뉴스의 댓글도 같이 참고하세요 <a rel="nofollow" href="https://news.ycombinator.com/item?id=42572662" class="ud link">https://news.ycombinator.com/item?id=42572662</a></p>
+</span></div></div>            <div class="comment_form">
+                    <form class="write_comment" action="/comments" method="POST" onsubmit="return replace2spaces('contents')">
+                        <div class="group">
+                            <input type="hidden" name="rid" value="32920">
+                            <input type="hidden" name="parent_id" value="32920">
+                            <input type="hidden" name="tid" value="18558">
+                            <textarea id="contents" rows="5" style="width: 100%" name="contents" class="comment_textarea" required="" placeholder="예의 있는 댓글 적기"></textarea>
+                        </div>
+                        <div class="group comment_button_box">
+                            <input type="submit" class="comment_button" value="댓글 달기">
+                        </div>
+                        <div class="hr"></div>
+                    </form>    
+                    <input type="hidden" id="userid" value="">
+            </div>
+</div>
+            <div class="comment_thread descendant">
+<!-- comments -->
+  
+<!-- comments --> 
+            </div>
+            </article>            
+		</main>
+<script>
+document.addEventListener('keydown', function(event) {
+    if(event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
+        var handled = false;
+        var replyForms = document.getElementsByClassName('write_reply');
+        if(replyForms.length > 0) {
+            var replyForm = replyForms[0];
+            var replyContents = document.getElementById('reply_contents');
+            if (replyContents && replyContents.value.trim() !== "") {
+                if(replace2spaces('reply_contents')) {
+                submitReply(replyForm);
+                handled = true;
+            }
+            }
+        }
+
+        if (!handled) {
+            var forms = document.getElementsByClassName('write_comment');
+            if (forms.length > 0) {
+                var form = forms[0];
+                var contents = document.getElementById('contents');
+                if (contents && contents.value.trim() !== "") {
+                    if(replace2spaces('contents')) {
+                        form.submit();
+                    }
+                }
+            }
+        }
+    }
+});
+</script>
+		<footer>
+			<div>
+				<a href="/guidelines" class="u">사이트 이용법</a>
+				<a href="/faq" class="u">FAQ</a>
+				<a href="/about" class="u">About &amp; ToS</a>
+				<!-- <a href='release' class=u>Releases</a> -->
+				&nbsp; | 
+				 <a href="/blog" class="u">Blog</a>
+				 <a href="/lists" class="u">Lists</a>
+				 <a href="/podcast" class="u">Podcast</a>
+				 <a href="https://news.hada.io/rss/news" class="u">RSS</a>
+				&nbsp; | 
+				 <a href="/bookmarklet" class="u">Bookmarklet</a>
+				&nbsp; | 
+				 <a href="https://twitter.com/GeekNewsBot" class="u" rel="me">Twitter</a>
+				 <a href="https://facebook.com/GeekNewsBot" class="u">Facebook</a>
+				 &nbsp; | &nbsp; 긱뉴스봇 : 
+				 <a href="/slackbot" class="u keepall">Slack</a>
+				 <a href="/jandibot" class="u keepall">잔디</a>
+				 <a href="/discordbot" class="u keepall">Discord</a>
+				 <a href="/teamsbot" class="u keepall">Teams</a>
+				 <a href="/googlechatbot" class="u keepall">Google Chat</a>
+				 <a href="/switbot" class="u keepall">Swit</a>
+				
+            </div>
+			<div style="width: fit-content; display: inline-block;">
+				<form class="search-cse" action="search" method="GET">
+					<label for="q" class="label">검색</label>
+					<input id="q" name="q" type="text" maxlength="30" class="input" style="width: 200px">
+				</form>
+			</div>
+					</footer>	
+            </body></html>
