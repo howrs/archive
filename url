@@ -3,6 +3,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 github.com/peter-evans/create-pull-request/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen
 =======
 github.com/RustCrypto/AEADs
@@ -18,4 +19,7 @@ github.com/peter-evans/create-pull-request/issues?page=2&q=PR+body
 >>>>>>> Stashed changes
 =======
 github.com/peter-evans/create-pull-request/issues?page=3&q=PR+body
+>>>>>>> Stashed changes
+=======
+github.com/peter-evans/create-pull-request/pull/1232
 >>>>>>> Stashed changes
