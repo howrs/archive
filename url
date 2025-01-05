@@ -1,6 +1,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 github.com/mkkeems/moobimood/tree/feature/search-movie/app/api
 =======
 github.com/mkkeems/moobimood/tree/feature/search-movie/app/api/auth/google
@@ -10,4 +11,7 @@ github.com/mkkeems/moobimood/tree/feature/search-movie/app/api/logout
 >>>>>>> Stashed changes
 =======
 github.com/mkkeems/moobimood/blob/feature/search-movie/lib/tmdb/tmdbFetcher.ts
+>>>>>>> Stashed changes
+=======
+github.com/mkkeems/moobimood/blob/feature/search-movie/queries/tmdb/useTmdbMovieDetailQuery.ts
 >>>>>>> Stashed changes
