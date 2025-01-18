@@ -1,0 +1,454 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-eval' 'unsafe-inline' data:; script-src 'none';"></meta>
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  
+  <title>I've been advocating for RSS support, and you should too | ReedyBear's Blog</title>
+  <link rel="canonical" href="https://reedybear.bearblog.dev/ive-been-advocating-for-rss-support-and-you-should-too/">
+  
+    
+
+    <meta name="reedybear" content="look-for-the-bear-necessities">
+
+    <!-- Primary Meta Tags -->
+<meta name="title" content="I've been advocating for RSS support, and you should too">
+<meta name="description" content="I've been using Feeder to keep up with the news for awhile now. For a long time, I just checked AllSides. 
+
+But then I found out NPR in my state supports R...">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:site_name" content="ReedyBear's Blog">
+<meta property="og:title" content="I've been advocating for RSS support, and you should too">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://reedybear.bearblog.dev/ive-been-advocating-for-rss-support-and-you-should-too/">
+<meta property="og:description" content="I've been using Feeder to keep up with the news for awhile now. For a long time, I just checked AllSides. 
+
+But then I found out NPR in my state supports R...">
+<meta property="og:image" content="https://bear-images.sfo2.cdn.digitaloceanspaces.com/herman-1683556668-0.png">
+
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary">
+<meta property="twitter:url" content="https://reedybear.bearblog.dev/ive-been-advocating-for-rss-support-and-you-should-too/">
+<meta property="twitter:title" content="I've been advocating for RSS support, and you should too">
+<meta property="twitter:description" content="I've been using Feeder to keep up with the news for awhile now. For a long time, I just checked AllSides. 
+
+But then I found out NPR in my state supports R...">
+<meta property="twitter:image" content="https://bear-images.sfo2.cdn.digitaloceanspaces.com/herman-1683556668-0.png">
+
+
+
+<!-- Microdata -->
+<script type="application/ld+json"></script>
+
+  
+    
+
+    
+    
+  
+  
+  
+    
+        <link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48dGV4dCB5PScuOWVtJyBmb250LXNpemU9JzkwJz7wn5C8PC90ZXh0Pjwvc3ZnPg==">
+    
+
+
+
+  <style>
+      
+      
+    
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*/
+
+/** FOR THE LOLS
+*/
+
+:root {
+	/* Custom #847996; */
+	--underline_color: #a000a0;
+    --main-color:#a000a0;
+  
+    /* from a past reedybear.com 
+    --font_brand_1: 'EB Garamond', serif;
+    --font_brand_2:  'Dancing Script', 'Kaushan', "Times New Roman", fantasy, cursive, serif;
+
+    --font_size_base: 112%;
+    --font_size_main: 1.2em;
+    --font_size_header_link: 1.35em;
+    --font_size_header_logo: 1.5em;
+
+    --color_brand_1: #500092;
+    --color_brand_1_rgb: 80,0,146;
+    --color_brand_1_bright: #a000a0;
+    --color_brand_1_alt: #820FFF;
+    --color_brand_2: #FCDA30;
+    --color_brand_2_bright: #FCDA30;
+    --color_brand_2_dark: #EAC020;
+
+    --color_white: #FDFDFD;
+    --color_off_white: #DDD;
+    --color_cream: #FFEDCC;
+    --color_grey: #bfbfbf;
+    --color_dark_grey: #585460;
+    /* --color_dark_grey: #7a7a7a; ////
+    --color_black: #222;
+    */
+	/* Built in */
+    --width: 720px;
+    --font-main: "Roboto Mono", monospace;
+    --font-secondary: "Roboto Mono", monospace;
+    --font-scale: 0.9em;
+    --background-color: #fff;
+    --heading-color: #232333;
+    --text-color: #232333;
+    --link-color: #232333;
+    --visited-color: #232333;
+    /*--main-color: #ff0000;*/
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+}
+
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--link-color);
+    font-family: var(--font-main);
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 3px solid var(--underline_color);
+  	padding: 0 4px;
+  	
+}
+
+a:hover {
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+  	border-radius:8px;
+}
+
+header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px dotted #232333;
+}
+
+nav a, nav a:hover {
+    margin-right: 8px;
+    padding: 4px 5px 2px 4px;
+  
+  	/*
+    border-radius: 25% 8px 12% 10px;
+  	border-radius: 25% 12%;
+    border-radius: 50% 9px / 60% 6px;
+    */
+  	border-radius: 80% 9px / 40% 8px;
+    text-wrap:nowrap;
+}
+
+strong,
+b {
+    color: var(--heading-color);
+}
+
+button {
+    margin: 0;
+    cursor: pointer;
+}
+
+main {
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dashed;
+}
+
+img {
+    max-width: 100%;
+}
+
+code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+}
+
+blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 3px dotted #232333;
+    padding: 25px 0;
+    text-align: center;
+}
+
+a.title {
+    border:none; 
+    padding:0;
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.title h1 {
+    font-size: 1.5em;
+}
+
+.inline {
+    width: auto !important;
+}
+
+.highlight,
+.code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+}
+
+/* blog post list */
+ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.blog-posts li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+i time {
+    font-style: normal;
+    opacity: 0.7;
+}
+
+ul.blog-posts li span {
+    flex: 0 0 130px;
+}
+
+ul.blog-posts li a:hover {
+    color: white !important;
+}
+
+ul.blog-posts li a:visited {
+    color: var(--visited-color);
+}
+
+table {
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+    font-size: 1em;
+}
+
+.upvote-button svg {
+    display:none;
+}
+.upvote-count::before {
+    background: url("data:image/jpeg;base64,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");
+    display:block;
+    width:30px;
+    height:30px;
+    background-size:cover;
+    content: "";
+}
+
+
+/**
+* Adding photos to blog list
+*/
+/* it didn't work well
+* I got the image in, but I couldn't get the dang things to style how I wanted
+* Plus I'm not sure I liked it with photos... even though it's a bear!
+
+ul.blog-posts > li > a::after {
+    content: url("https://i.imgur.com/puT0UkBs.jpg");
+    content: url("https://i.imgur.com/laDt4Yf.png");
+    height:10px;
+    max-height:10px;
+    width:10px;
+    position:relative;
+    display:inline-block;
+    right: 10px;
+}
+
+ul.blog-posts > li > a {
+    position:relative;
+    margin-left: 10px;
+}
+
+ul.blog-posts > li {
+    display:inline-block;
+}
+/**/
+    .upvote-button {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: inherit;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .upvote-button.upvoted {
+        color: salmon;
+    }
+    .upvote-count {
+        margin-top: -3px;
+    }
+
+      
+  </style>
+
+  
+    
+    <style>
+        body:hover {
+            border-image: url("data:text/html;charset=utf-8;base64,TG9nZ2Vk");
+            border-width: 0;
+        }
+    </style>
+    
+
+<base href="https://reedybear.bearblog.dev/ive-been-advocating-for-rss-support-and-you-should-too"></base></head>
+
+<body class="post ">
+  
+  <header>
+    <a class="title" href="https://reedybear.bearblog.dev/">
+      <h1>
+        ReedyBear's Blog
+      </h1>
+    </a>
+    <nav>
+      <p><a href="https://reedybear.bearblog.dev/">Home</a> <a href="https://reedybear.bearblog.dev/blog/">All</a> <a href="https://reedybear.bearblog.dev/words/">Words</a> <a href="https://reedybear.bearblog.dev/blogs/">Writing</a> <a href="https://reedybear.bearblog.dev/blog/?q=idea">Ideas</a> <a href="https://reedybear.bearblog.dev/notes/">Notes</a> <a href="https://reedybear.bearblog.dev/code/">Code</a> <a href="https://reedybear.bearblog.dev/projects/">Projects</a> <a href="https://reedybear.bearblog.dev/public-works/">Public Works</a> <a href="https://reedybear.bearblog.dev/bearblog/">BearBlog Tips</a> <a href="https://reedybear.bearblog.dev/feed/">RSS</a> <a href="https://bearblog.dev/discover/?newest=true">Discover</a></p>
+
+    </nav>
+  </header>
+  <main>
+    
+
+    
+        
+    
+
+    
+        <h1>I've been advocating for RSS support, and you should too</h1>
+
+        <p>
+            <i>
+                <time datetime="2025-01-17T18:46Z">
+                    17 Jan, 2025
+                </time>
+            </i>
+        </p>
+    
+
+    <p>I've been using Feeder to keep up with the news for awhile now. For a long time, I just checked AllSides.</p>
+<p>But then I found out NPR in my state supports RSS, my local news org supports RSS, and YouTube even supports RSS!</p>
+<p>One outlet I really like is GovTrack.us, and they did not support RSS - so I emailed them about it, and they added support.</p>
+<p>Feeder's news website wasn't working with the Feeder app, so I emailed them and they fixed it.</p>
+<p>I learned my State Senator's website supports RSS, but my state's GOP website does not - so I emailed the GOP asking for RSS. We'll see.</p>
+<p>I emailed Ubisoft/Nadeo asking for RSS support on the Trackmania news website. They replied that they'll send the suggestion to dev team. We'll see.</p>
+<p>I spoke at my Library's Board meeting last night asking for RSS support on their website. Seemed well-received. We'll see.</p>
+<p>Substack supports RSS. Jurist.org supports RSS. Justia's supreme court summaries support RSS (<em>I used to read those, but I don't any more</em>). Blogger supports RSS.</p>
+<p>So yeah - If you are interested in an organization's updates, then get a feed reader app, and subscribe to their feed on their website. If they don't have a feed, just ask them to add one!</p>
+<p>You'll be surprised how nice it is to keep up with things you actually care about in a way that you're completely in control of, without bloat, without ads, without algorithms.</p>
+<p>Please advocate for more RSS support - especially with orgs you want to stay up-to-date with. This can be video game news websites, government organizations, political news websites, entertainment platforms, blogs, or whatever.</p>
+
+
+    
+
+    
+        
+            <p class="tags">
+                
+                    <a href="https://reedybear.bearblog.dev/blog/?q=action">#action</a>
+                
+                    <a href="https://reedybear.bearblog.dev/blog/?q=blog">#blog</a>
+                
+            </p>
+        
+
+        
+            <form id="upvote-form" action="https://reedybear.bearblog.dev/upvote/FIRtHPnrGAHRTQpfGRnt/" method="post" style="display: inline">
+    <small>
+        <input hidden="" name="uid" value="FIRtHPnrGAHRTQpfGRnt" style="display:none">
+        <input hidden="" name="title" style="display:none">
+        <input type="hidden" name="csrfmiddlewaretoken" value="uHOeEmgUIQplQWLvrfSqpNNErSWPb0kWXFZK4Le3eaUGvuIszxMtFqGYHzN5wHyL">
+        
+        <button class="upvote-button" title="Toast this post">
+        
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                <polyline points="17 11 12 6 7 11"></polyline>
+                <polyline points="17 18 12 13 7 18"></polyline>
+            </svg>
+            <small class="upvote-count">78</small>
+        </button>
+    </small>        
+</form>
+
+<script></script>
+        
+    
+
+
+  </main>
+  <footer style="padding:25px 0;">
+    
+    
+    <span>
+        Powered by <a href="https://bearblog.dev">Bear ʕ•ᴥ•ʔ</a>
+    </span>
+
+  </footer>
+
+</body></html>
