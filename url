@@ -2,6 +2,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 accounts.youtube.com/RotateCookiesPage?origin=https://www.youtube.com&yt_pid=1
 =======
 www.youtube.com/feed/subscriptions
@@ -14,4 +15,7 @@ accounts.google.com/RotateCookiesPage?og_pid=1&rot=3&origin=https%3A%2F%2Fwww.go
 >>>>>>> Stashed changes
 =======
 sdk.vercel.ai/docs/ai-sdk-core/testing#streamobject
+>>>>>>> Stashed changes
+=======
+sdk.vercel.ai/docs/reference/ai-sdk-core/stream-object#streamobject
 >>>>>>> Stashed changes
