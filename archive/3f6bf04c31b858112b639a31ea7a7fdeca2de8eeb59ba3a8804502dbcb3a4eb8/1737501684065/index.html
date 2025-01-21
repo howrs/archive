@@ -1,0 +1,677 @@
+<html lang="en" op="item"><head><meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-eval' 'unsafe-inline' data:; script-src 'none';"></meta><meta name="referrer" content="origin"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="data:text/css;base64,Ym9keSAgeyBmb250LWZhbWlseTpWZXJkYW5hLCBHZW5ldmEsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZToxMHB0OyBjb2xvcjojODI4MjgyOyB9CnRkICAgIHsgZm9udC1mYW1pbHk6VmVyZGFuYSwgR2VuZXZhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6MTBwdDsgY29sb3I6IzgyODI4MjsgfQoKLmFkbWluIHRkICAgeyBmb250LWZhbWlseTpWZXJkYW5hLCBHZW5ldmEsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTo4LjVwdDsgY29sb3I6IzAwMDAwMDsgfQouc3VidGV4dCB0ZCB7IGZvbnQtZmFtaWx5OlZlcmRhbmEsIEdlbmV2YSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAgN3B0OyBjb2xvcjojODI4MjgyOyB9CgppbnB1dCAgICB7IGZvbnQtZmFtaWx5Om1vbm9zcGFjZTsgZm9udC1zaXplOjEwcHQ7IH0KaW5wdXRbdHlwZT0ic3VibWl0Il0geyBmb250LWZhbWlseTpWZXJkYW5hLCBHZW5ldmEsIHNhbnMtc2VyaWY7IH0KdGV4dGFyZWEgeyBmb250LWZhbWlseTptb25vc3BhY2U7IGZvbnQtc2l6ZToxMHB0OyByZXNpemU6Ym90aDsgfQoKYTpsaW5rICAgIHsgY29sb3I6IzAwMDAwMDsgdGV4dC1kZWNvcmF0aW9uOm5vbmU7IH0KYTp2aXNpdGVkIHsgY29sb3I6IzgyODI4MjsgdGV4dC1kZWNvcmF0aW9uOm5vbmU7IH0KCi5kZWZhdWx0IHsgZm9udC1mYW1pbHk6VmVyZGFuYSwgR2VuZXZhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEwcHQ7IGNvbG9yOiM4MjgyODI7IH0KLmFkbWluICAgeyBmb250LWZhbWlseTpWZXJkYW5hLCBHZW5ldmEsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTo4LjVwdDsgY29sb3I6IzAwMDAwMDsgfQoudGl0bGUgICB7IGZvbnQtZmFtaWx5OlZlcmRhbmEsIEdlbmV2YSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMHB0OyBjb2xvcjojODI4MjgyOyBvdmVyZmxvdzpoaWRkZW47IH0KLnN1YnRleHQgeyBmb250LWZhbWlseTpWZXJkYW5hLCBHZW5ldmEsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogIDdwdDsgY29sb3I6IzgyODI4MjsgfQoueWNsaW5rcyB7IGZvbnQtZmFtaWx5OlZlcmRhbmEsIEdlbmV2YSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAgOHB0OyBjb2xvcjojODI4MjgyOyB9Ci5wYWdldG9wIHsgZm9udC1mYW1pbHk6VmVyZGFuYSwgR2VuZXZhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEwcHQ7IGNvbG9yOiMyMjIyMjI7IGxpbmUtaGVpZ2h0OjEycHg7IH0KLmNvbWhlYWQgeyBmb250LWZhbWlseTpWZXJkYW5hLCBHZW5ldmEsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogIDhwdDsgY29sb3I6IzgyODI4MjsgfQouY29tbWVudCB7IGZvbnQtZmFtaWx5OlZlcmRhbmEsIEdlbmV2YSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAgOXB0OyB9Ci5obm5hbWUgIHsgbWFyZ2luLWxlZnQ6MXB4OyBtYXJnaW4tcmlnaHQ6IDVweDsgfQoKI2hubWFpbiB7IG1pbi13aWR0aDogNzk2cHg7IH0KCi50aXRsZSBhIHsgd29yZC1icmVhazogYnJlYWstd29yZDsgfQoKLmNvbW1lbnQgYTpsaW5rLCAuY29tbWVudCBhOnZpc2l0ZWQgeyB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgfQoubm9zaG93IHsgZGlzcGxheTogbm9uZTsgfQoubm9zZWUgeyB2aXNpYmlsaXR5OiBoaWRkZW47IHBvaW50ZXItZXZlbnRzOiBub25lOyBjdXJzb3I6IGRlZmF1bHQgfQoKLmMwMCwgLmMwMCBhOmxpbmsgeyBjb2xvcjojMDAwMDAwOyB9Ci5jNWEsIC5jNWEgYTpsaW5rLCAuYzVhIGE6dmlzaXRlZCB7IGNvbG9yOiM1YTVhNWE7IH0KLmM3MywgLmM3MyBhOmxpbmssIC5jNzMgYTp2aXNpdGVkIHsgY29sb3I6IzczNzM3MzsgfQouYzgyLCAuYzgyIGE6bGluaywgLmM4MiBhOnZpc2l0ZWQgeyBjb2xvcjojODI4MjgyOyB9Ci5jODgsIC5jODggYTpsaW5rLCAuYzg4IGE6dmlzaXRlZCB7IGNvbG9yOiM4ODg4ODg7IH0KLmM5YywgLmM5YyBhOmxpbmssIC5jOWMgYTp2aXNpdGVkIHsgY29sb3I6IzljOWM5YzsgfQouY2FlLCAuY2FlIGE6bGluaywgLmNhZSBhOnZpc2l0ZWQgeyBjb2xvcjojYWVhZWFlOyB9Ci5jYmUsIC5jYmUgYTpsaW5rLCAuY2JlIGE6dmlzaXRlZCB7IGNvbG9yOiNiZWJlYmU7IH0KLmNjZSwgLmNjZSBhOmxpbmssIC5jY2UgYTp2aXNpdGVkIHsgY29sb3I6I2NlY2VjZTsgfQouY2RkLCAuY2RkIGE6bGluaywgLmNkZCBhOnZpc2l0ZWQgeyBjb2xvcjojZGRkZGRkOyB9Ci5jYTIgeyBjb2xvcjojYTMwMDAwOyB9CgoucGFnZXRvcCBhOnZpc2l0ZWQgeyBjb2xvcjojMDAwMDAwO30KLnRvcHNlbCBhOmxpbmssIC50b3BzZWwgYTp2aXNpdGVkIHsgY29sb3I6I2ZmZmZmZjsgfQoKLnN1YnRleHQgYTpsaW5rLCAuc3VidGV4dCBhOnZpc2l0ZWQgeyBjb2xvcjojODI4MjgyOyB9Ci5zdWJ0ZXh0IGE6aG92ZXIgeyB0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lOyB9CgouY29taGVhZCBhOmxpbmssIC5zdWJ0ZXh0IGE6dmlzaXRlZCB7IGNvbG9yOiM4MjgyODI7IH0KLmNvbWhlYWQgYTpob3ZlciB7IHRleHQtZGVjb3JhdGlvbjp1bmRlcmxpbmU7IH0KCi5obm1vcmUgYTpsaW5rLCBhOnZpc2l0ZWQgeyBjb2xvcjojODI4MjgyOyB9Ci5obm1vcmUgeyB0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lOyB9CgouZGVmYXVsdCBwIHsgbWFyZ2luLXRvcDogOHB4OyBtYXJnaW4tYm90dG9tOiAwcHg7IH0KCi5wYWdlYnJlYWsge3BhZ2UtYnJlYWstYmVmb3JlOmFsd2F5c30KCnByZSB7IG92ZXJmbG93OiBhdXRvOyBwYWRkaW5nOiAycHg7IHdoaXRlLXNwYWNlOiBwcmUtd3JhcDsgb3ZlcmZsb3ctd3JhcDphbnl3aGVyZTsgfQpwcmU6aG92ZXIgeyBvdmVyZmxvdzphdXRvIH0KCi52b3RlYXJyb3cgewogIHdpZHRoOiAgICAgIDEwcHg7CiAgaGVpZ2h0OiAgICAgMTBweDsKICBib3JkZXI6ICAgICAwcHg7CiAgbWFyZ2luOiAgICAgM3B4IDJweCA2cHg7CiAgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUJvWldsbmFIUTlJak15SWlCMmFXVjNRbTk0UFNJd0lEQWdNeklnTVRZaUlIZHBaSFJvUFNJek1pSWdlRzFzYm5NOUltaDBkSEE2THk5M2QzY3Vkek11YjNKbkx6SXdNREF2YzNabklqNDhjR0YwYUNCa1BTSnRNaUF5TnlBeE5DMHlPU0F4TkNBeU9Yb2lJR1pwYkd3OUlpTTVPVGtpTHo0OEwzTjJaejQ9IiksIGxpbmVhci1ncmFkaWVudCh0cmFuc3BhcmVudCwgdHJhbnNwYXJlbnQpIG5vLXJlcGVhdDsKICBiYWNrZ3JvdW5kLXNpemU6IDEwcHg7Cn0KCi52b3RlbGlua3Mubm9zZWUgZGl2LnZvdGVhcnJvdy5yb3RhdGUxODAgewogIGRpc3BsYXk6IG5vbmU7Cn0KCnRhYmxlLnBhZHRhYiB0ZCB7IHBhZGRpbmc6MHB4IDEwcHggfQoKQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAoLXdlYmtpdC1taW4tZGV2aWNlLXBpeGVsLXJhdGlvOiAyKSwgb25seSBzY3JlZW4gYW5kIChtaW4tZGV2aWNlLXBpeGVsLXJhdGlvOiAyKSB7CiAgLnZvdGVhcnJvdyB7CiAgICBiYWNrZ3JvdW5kLXNpemU6IDEwcHg7CiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5Qm9aV2xuYUhROUlqTXlJaUIyYVdWM1FtOTRQU0l3SURBZ016SWdNVFlpSUhkcFpIUm9QU0l6TWlJZ2VHMXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWo0OGNHRjBhQ0JrUFNKdE1pQXlOeUF4TkMweU9TQXhOQ0F5T1hvaUlHWnBiR3c5SWlNNU9Ua2lMejQ4TDNOMlp6ND0iKSwgbGluZWFyLWdyYWRpZW50KHRyYW5zcGFyZW50LCB0cmFuc3BhcmVudCk7CiAgfQp9Cgoucm90YXRlMTgwIHsKICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDE4MGRlZyk7ICAvKiBDaHJvbWUgYW5kIG90aGVyIHdlYmtpdCBicm93c2VycyAqLwogIC1tb3otdHJhbnNmb3JtOiAgICByb3RhdGUoMTgwZGVnKTsgIC8qIEZGICovCiAgLW8tdHJhbnNmb3JtOiAgICAgIHJvdGF0ZSgxODBkZWcpOyAgLyogT3BlcmEgKi8KICAtbXMtdHJhbnNmb3JtOiAgICAgcm90YXRlKDE4MGRlZyk7ICAvKiBJRTkgKi8KICB0cmFuc2Zvcm06ICAgICAgICAgcm90YXRlKDE4MGRlZyk7ICAvKiBXM0MgY29tcGxhaW50IGJyb3dzZXJzICovCgogIC8qIElFOCBhbmQgYmVsb3cgKi8KICAtbXMtZmlsdGVyOiAicHJvZ2lkOkRYSW1hZ2VUcmFuc2Zvcm0uTWljcm9zb2Z0Lk1hdHJpeChNMTE9LTEsIE0xMj0wLCBNMjE9MCwgTTIyPS0xLCBEWD0wLCBEWT0wLCBTaXppbmdNZXRob2Q9J2F1dG8gZXhwYW5kJykiOwp9CgovKiBtb2JpbGUgZGV2aWNlICovCkBtZWRpYSBvbmx5IHNjcmVlbgphbmQgKG1pbi13aWR0aCA6IDMwMHB4KQphbmQgKG1heC13aWR0aCA6IDc1MHB4KSB7CiAgI2hubWFpbiB7IHdpZHRoOiAxMDAlOyBtaW4td2lkdGg6IDA7IH0KICBib2R5IHsgcGFkZGluZzogMDsgbWFyZ2luOiAwOyB3aWR0aDogMTAwJTsgfQogIHRkIHsgaGVpZ2h0OiBpbmhlcml0ICFpbXBvcnRhbnQ7IH0KICAudGl0bGUsIC5jb21tZW50IHsgZm9udC1zaXplOiBpbmhlcml0OyAgfQogIHNwYW4ucGFnZXRvcCB7IGRpc3BsYXk6IGJsb2NrOyBtYXJnaW46IDNweCA1cHg7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IG5vcm1hbCB9CiAgc3Bhbi5wYWdldG9wIGIgeyBkaXNwbGF5OiBibG9jazsgZm9udC1zaXplOiAxNXB4OyB9CiAgdGFibGUuY29tbWVudC10cmVlIC5jb21tZW50IGEgeyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IG1heC13aWR0aDogMjAwcHg7IG92ZXJmbG93OiBoaWRkZW47IHdoaXRlLXNwYWNlOiBub3dyYXA7CiAgICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpczsgdmVydGljYWwtYWxpZ246dG9wOyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iNDAiXSB7IHdpZHRoOiAxMnB4OyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iODAiXSB7IHdpZHRoOiAyNHB4OyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iMTIwIl0geyB3aWR0aDogMzZweDsgfQogIGltZ1tzcmM9InMuZ2lmIl1bd2lkdGg9IjE2MCJdIHsgd2lkdGg6IDQ4cHg7IH0KICBpbWdbc3JjPSJzLmdpZiJdW3dpZHRoPSIyMDAiXSB7IHdpZHRoOiA2MHB4OyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iMjQwIl0geyB3aWR0aDogNzJweDsgfQogIGltZ1tzcmM9InMuZ2lmIl1bd2lkdGg9IjI4MCJdIHsgd2lkdGg6IDg0cHg7IH0KICBpbWdbc3JjPSJzLmdpZiJdW3dpZHRoPSIzMjAiXSB7IHdpZHRoOiA5NnB4OyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iMzYwIl0geyB3aWR0aDogMTA4cHg7IH0KICBpbWdbc3JjPSJzLmdpZiJdW3dpZHRoPSI0MDAiXSB7IHdpZHRoOiAxMjBweDsgfQogIGltZ1tzcmM9InMuZ2lmIl1bd2lkdGg9IjQ0MCJdIHsgd2lkdGg6IDEzMnB4OyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iNDgwIl0geyB3aWR0aDogMTQ0cHg7IH0KICBpbWdbc3JjPSJzLmdpZiJdW3dpZHRoPSI1MjAiXSB7IHdpZHRoOiAxNTZweDsgfQogIGltZ1tzcmM9InMuZ2lmIl1bd2lkdGg9IjU2MCJdIHsgd2lkdGg6IDE2OHB4OyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iNjAwIl0geyB3aWR0aDogMTgwcHg7IH0KICBpbWdbc3JjPSJzLmdpZiJdW3dpZHRoPSI2NDAiXSB7IHdpZHRoOiAxOTJweDsgfQogIGltZ1tzcmM9InMuZ2lmIl1bd2lkdGg9IjY4MCJdIHsgd2lkdGg6IDIwNHB4OyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iNzIwIl0geyB3aWR0aDogMjE2cHg7IH0KICBpbWdbc3JjPSJzLmdpZiJdW3dpZHRoPSI3NjAiXSB7IHdpZHRoOiAyMjhweDsgfQogIGltZ1tzcmM9InMuZ2lmIl1bd2lkdGg9IjgwMCJdIHsgd2lkdGg6IDI0MHB4OyB9CiAgaW1nW3NyYz0icy5naWYiXVt3aWR0aD0iODQwIl0geyB3aWR0aDogMjUycHg7IH0KICAudGl0bGUgeyBmb250LXNpemU6IDExcHQ7IGxpbmUtaGVpZ2h0OiAxNHB0OyAgfQogIC5zdWJ0ZXh0IHsgZm9udC1zaXplOiA5cHQ7IH0KICAudm90ZWFycm93IHsgdHJhbnNmb3JtOiBzY2FsZSgxLjMsMS4zKTsgbWFyZ2luLXJpZ2h0OiA2cHg7IH0KICAudm90ZWFycm93LnJvdGF0ZTE4MCB7CiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDE4MGRlZykgc2NhbGUoMS4zLDEuMyk7ICAvKiBDaHJvbWUgYW5kIG90aGVyIHdlYmtpdCBicm93c2VycyAqLwogICAgLW1vei10cmFuc2Zvcm06ICAgIHJvdGF0ZSgxODBkZWcpIHNjYWxlKDEuMywxLjMpOyAgLyogRkYgKi8KICAgIC1vLXRyYW5zZm9ybTogICAgICByb3RhdGUoMTgwZGVnKSBzY2FsZSgxLjMsMS4zKTsgIC8qIE9wZXJhICovCiAgICAtbXMtdHJhbnNmb3JtOiAgICAgcm90YXRlKDE4MGRlZykgc2NhbGUoMS4zLDEuMyk7ICAvKiBJRTkgKi8KICAgIHRyYW5zZm9ybTogICAgICAgICByb3RhdGUoMTgwZGVnKSBzY2FsZSgxLjMsMS4zKTsgIC8qIFczQyBjb21wbGFpbnQgYnJvd3NlcnMgKi8KICB9CiAgLnZvdGVsaW5rcyB7IG1pbi13aWR0aDogMThweDsgfQogIC52b3RlbGlua3MgYSB7IGRpc3BsYXk6IGJsb2NrOyBtYXJnaW4tYm90dG9tOiA5cHg7IH0KICBpbnB1dFt0eXBlPSJ0ZXh0Il0sIGlucHV0W3R5cGU9Im51bWJlciJdLCB0ZXh0YXJlYSB7IGZvbnQtc2l6ZTogMTZweDsgd2lkdGg6IDkwJTsgfQp9CgouY29tbWVudCB7IG1heC13aWR0aDogMTIxNXB4OyBvdmVyZmxvdy13cmFwOmFueXdoZXJlOyB9CgoKCkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aCA6IDMwMHB4KSBhbmQgKG1heC13aWR0aCA6IDM4OXB4KSB7CiAgLmNvbW1lbnQgeyBtYXgtd2lkdGg6IDI3MHB4OyBvdmVyZmxvdzogaGlkZGVuIH0KfQpAbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGggOiAzOTBweCkgYW5kIChtYXgtd2lkdGggOiA1MDlweCkgewogIC5jb21tZW50IHsgbWF4LXdpZHRoOiAzNTBweDsgb3ZlcmZsb3c6IGhpZGRlbiB9Cn0KQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoIDogNTEwcHgpIGFuZCAobWF4LXdpZHRoIDogNTk5cHgpIHsKICAuY29tbWVudCB7IG1heC13aWR0aDogNDYwcHg7IG92ZXJmbG93OiBoaWRkZW4gfQp9CkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aCA6IDYwMHB4KSBhbmQgKG1heC13aWR0aCA6IDY4OXB4KSB7CiAgLmNvbW1lbnQgeyBtYXgtd2lkdGg6IDU0MHB4OyBvdmVyZmxvdzogaGlkZGVuIH0KfQpAbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGggOiA2OTBweCkgYW5kIChtYXgtd2lkdGggOiA4MDlweCkgewogIC5jb21tZW50IHsgbWF4LXdpZHRoOiA2MjBweDsgb3ZlcmZsb3c6IGhpZGRlbiB9Cn0KQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoIDogODEwcHgpIGFuZCAobWF4LXdpZHRoIDogODk5cHgpIHsKICAuY29tbWVudCB7IG1heC13aWR0aDogNzMwcHg7IG92ZXJmbG93OiBoaWRkZW4gfQp9CkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aCA6IDkwMHB4KSBhbmQgKG1heC13aWR0aCA6IDEwNzlweCkgewogIC5jb21tZW50IHsgbWF4LXdpZHRoOiA4MTBweDsgb3ZlcmZsb3c6IGhpZGRlbiB9Cn0KQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoIDogMTA4MHB4KSBhbmQgKG1heC13aWR0aCA6IDExNjlweCkgewogIC5jb21tZW50IHsgbWF4LXdpZHRoOiA5NzBweDsgb3ZlcmZsb3c6IGhpZGRlbiB9Cn0KQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoIDogMTE3MHB4KSBhbmQgKG1heC13aWR0aCA6IDEyNTlweCkgewogIC5jb21tZW50IHsgbWF4LXdpZHRoOiAxMDUwcHg7IG92ZXJmbG93OiBoaWRkZW4gfQp9CkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aCA6IDEyNjBweCkgYW5kIChtYXgtd2lkdGggOiAxMzQ5cHgpIHsKICAuY29tbWVudCB7IG1heC13aWR0aDogMTEzMHB4OyBvdmVyZmxvdzogaGlkZGVuIH0KfQo=">
+        <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE4IiB2aWV3Qm94PSI0IDQgMTg4IDE4OCIgd2lkdGg9IjE4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00IDRoMTg4djE4OGgtMTg4eiIgZmlsbD0iI2Y2MCIvPjxwYXRoIGQ9Im03My4yNTIxNzU2IDQ1LjAxIDIyLjc0NzgyNDQgNDcuMzkxMzAwODMgMjIuNzQ3ODI0NC00Ny4zOTEzMDA4M2gxOS41NjU2OTYzMWwtMzQuMzIzNTIwNzEgNjQuNDg2NjE0Njh2NDEuNDkzMzg1MzJoLTE1Ljk4di00MS40OTMzODUzMmwtMzQuMzIzNTIwNzEtNjQuNDg2NjE0Njh6IiBmaWxsPSIjZmZmIi8+PC9zdmc+">
+    <link rel="canonical" href="https://news.ycombinator.com/item?id=42784365">            <title>Ask HN: Is anyone doing anything cool with tiny language models? | Hacker News</title><base href="https://news.ycombinator.com/item?id=42784365"></base></head><body><center><table id="hnmain" border="0" cellpadding="0" cellspacing="0" width="85%" bgcolor="#f6f6ef">
+        <tbody><tr><td bgcolor="#ff6600"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px"><tbody><tr><td style="width:18px;padding-right:4px"><a href="https://news.ycombinator.com"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE4IiB2aWV3Qm94PSI0IDQgMTg4IDE4OCIgd2lkdGg9IjE4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00IDRoMTg4djE4OGgtMTg4eiIgZmlsbD0iI2Y2MCIvPjxwYXRoIGQ9Im03My4yNTIxNzU2IDQ1LjAxIDIyLjc0NzgyNDQgNDcuMzkxMzAwODMgMjIuNzQ3ODI0NC00Ny4zOTEzMDA4M2gxOS41NjU2OTYzMWwtMzQuMzIzNTIwNzEgNjQuNDg2NjE0Njh2NDEuNDkzMzg1MzJoLTE1Ljk4di00MS40OTMzODUzMmwtMzQuMzIzNTIwNzEtNjQuNDg2NjE0Njh6IiBmaWxsPSIjZmZmIi8+PC9zdmc+" width="18" height="18" style="border:1px white solid; display:block"></a></td>
+                  <td style="line-height:12pt; height:10px;"><span class="pagetop"><b class="hnname"><a href="https://news.ycombinator.com/news">Hacker News</a></b>
+                            <a href="https://news.ycombinator.com/newest">new</a> | <a href="https://news.ycombinator.com/front">past</a> | <a href="https://news.ycombinator.com/newcomments">comments</a> | <a href="https://news.ycombinator.com/ask">ask</a> | <a href="https://news.ycombinator.com/show">show</a> | <a href="https://news.ycombinator.com/jobs">jobs</a> | <a href="https://news.ycombinator.com/submit" rel="nofollow">submit</a>            </span></td><td style="text-align:right;padding-right:4px;"><span class="pagetop">
+                              <a href="https://news.ycombinator.com/login?goto=item%3Fid%3D42784365">login</a>
+                          </span></td>
+              </tr></tbody></table></td></tr>
+<tr id="pagespace" title="Ask HN: Is anyone doing anything cool with tiny language models?" style="height:10px"></tr><tr><td><table class="fatitem" border="0">
+        <tbody><tr class="athing submission" id="42784365">
+      <td align="right" valign="top" class="title"><span class="rank"></span></td>      <td valign="top" class="votelinks"><center><a id="up_42784365" href="https://news.ycombinator.com/vote?id=42784365&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center></td><td class="title"><span class="titleline"><a href="https://news.ycombinator.com/item?id=42784365">Ask HN: Is anyone doing anything cool with tiny language models?</a></span></td></tr><tr><td colspan="2"></td><td class="subtext"><span class="subline">
+          <span class="score" id="score_42784365">163 points</span> by <a href="https://news.ycombinator.com/user?id=prettyblocks" class="hnuser">prettyblocks</a> <span class="age" title="2025-01-21T19:39:39 1737488379"><a href="https://news.ycombinator.com/item?id=42784365">3 hours ago</a></span> <span id="unv_42784365"></span> | <a href="https://news.ycombinator.com/hide?id=42784365&amp;goto=item%3Fid%3D42784365">hide</a> | <a href="https://hn.algolia.com/?query=Ask%20HN%3A%20Is%20anyone%20doing%20anything%20cool%20with%20tiny%20language%20models%3F&amp;type=story&amp;dateRange=all&amp;sort=byDate&amp;storyText=false&amp;prefix&amp;page=0" class="hnpast">past</a> | <a href="https://news.ycombinator.com/fave?id=42784365&amp;auth=1b205111b7854f6e3a8dfbad7c89022fe8e63e01">favorite</a> | <a href="https://news.ycombinator.com/item?id=42784365">59&nbsp;comments</a>        </span>
+              </td></tr>
+    <tr><td style="height:2px"></td></tr><tr><td colspan="2"></td><td><div class="toptext">I mean anything in the 0.5B-3B range that's available on Ollama (for example). Have you built any cool tooling that uses these models as part of your work flow?</div></td></tr>        <tr><td style="height:10px"></td></tr><tr><td colspan="2"></td><td><form action="https://news.ycombinator.com/comment" method="post"><input type="hidden" name="parent" value="42784365"><input type="hidden" name="goto" value="item?id=42784365"><input type="hidden" name="hmac" value="51f7a321973dc7b0b41bfad1d4b122ae15352d23"><textarea name="text" rows="8" cols="80" wrap="virtual"></textarea><br><br>
+<input type="submit" value="add comment"></form></td></tr>  </tbody></table><br><br><table border="0" class="comment-tree">
+            <tbody><tr class="athing comtr" id="42785105"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785105" href="https://news.ycombinator.com/vote?id=42785105&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=behohippy" class="hnuser">behohippy</a> <span class="age" title="2025-01-21T20:57:37 1737493057"><a href="https://news.ycombinator.com/item?id=42785105">2 hours ago</a></span> <span id="unv_42785105"></span>          <span class="navs">
+             | <a href="#42785739" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785105" n="9" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I have a mini PC with an n100 CPU connected to a small 7" monitor sitting on my desk, under the regular PC.  I have llama 3b (q4) generating endless stories in different genres and styles.  It's fun to glance over at it and read whatever it's in the middle of making.  I gave llama.cpp one CPU core and it generates slow enough to just read at a normal pace, and the CPU fans don't go nuts.  Totally not productive or really useful but I like it.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785105&amp;goto=item%3Fid%3D42784365%2342785105" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42786114"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786114" href="https://news.ycombinator.com/vote?id=42786114&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=ipython" class="hnuser">ipython</a> <span class="age" title="2025-01-21T22:46:32 1737499592"><a href="https://news.ycombinator.com/item?id=42786114">33 minutes ago</a></span> <span id="unv_42786114"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">parent</a> | <a href="#42785325" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786114" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">That's neat. I just tried something similar:<p></p><pre><code>    FORTUNE=$(fortune) &amp;&amp; echo $FORTUNE &amp;&amp; echo "Convert the following output of the Unix `fortune` command into a small screenplay in the style of Shakespeare: \n\n $FORTUNE" | ollama run phi4</code></pre></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786114&amp;goto=item%3Fid%3D42784365%2342786114" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785325"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785325" href="https://news.ycombinator.com/vote?id=42785325&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=Uehreka" class="hnuser">Uehreka</a> <span class="age" title="2025-01-21T21:20:48 1737494448"><a href="https://news.ycombinator.com/item?id=42785325">1 hour ago</a></span> <span id="unv_42785325"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">parent</a> | <a href="#42786114" class="clicky" aria-hidden="true">prev</a> | <a href="#42785192" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785325" n="4" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Do you find that it actually generates varied and diverse stories? Or does it just fall into the same 3 grooves?<p>Last week I tried to get an LLM (one of the recent Llama models running through Groq, it was 70B I believe) to produce randomly generated prompts in a variety of styles and it kept producing cyberpunk scifi stuff. When I told it to stop doing cyberpunk scifi stuff it went completely to wild west.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785325&amp;goto=item%3Fid%3D42784365%2342785325" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785456"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785456" href="https://news.ycombinator.com/vote?id=42785456&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=o11c" class="hnuser">o11c</a> <span class="age" title="2025-01-21T21:35:42 1737495342"><a href="https://news.ycombinator.com/item?id=42785456">1 hour ago</a></span> <span id="unv_42785456"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">root</a> | <a href="#42785325" class="clicky" aria-hidden="true">parent</a> | <a href="#42786232" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785456" n="2" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">You should not ever expect an LLM to actually do what you want without handholding, and randomness in particular is one of the places it fails badly. This is probably fundamental.<p>That said, this is also not helped by the fact that all of the default interfaces lack many essential features, so you have to build the interface yourself. Neither "clear the context on every attempt" nor "reuse the context repeatedly" will give good results, but having one context producing just one-line summaries, then fresh contexts expanding each one will do slightly less badly.</p><p>(If you actually want the LLM to do something useful, there are many more things that need to be added beyond this)</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785456&amp;goto=item%3Fid%3D42784365%2342785456" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42786158"><td><table border="0">  <tbody><tr>    <td class="ind" indent="3"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786158" href="https://news.ycombinator.com/vote?id=42786158&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=dotancohen" class="hnuser">dotancohen</a> <span class="age" title="2025-01-21T22:50:29 1737499829"><a href="https://news.ycombinator.com/item?id=42786158">29 minutes ago</a></span> <span id="unv_42786158"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">root</a> | <a href="#42785456" class="clicky" aria-hidden="true">parent</a> | <a href="#42786232" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786158" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Sounds to me like you might want to reduce the Top P - that will prevent the really unlikely next tokens from ever being selected, while still providing nice randomness in the remaining next tokens so you continue to get diverse stories.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786158&amp;goto=item%3Fid%3D42784365%2342786158" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42786232"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786232" href="https://news.ycombinator.com/vote?id=42786232&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=janalsncm" class="hnuser">janalsncm</a> <span class="age" title="2025-01-21T22:56:07 1737500167"><a href="https://news.ycombinator.com/item?id=42786232">23 minutes ago</a></span> <span id="unv_42786232"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">root</a> | <a href="#42785325" class="clicky" aria-hidden="true">parent</a> | <a href="#42785456" class="clicky" aria-hidden="true">prev</a> | <a href="#42785192" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786232" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Generate a list of 5000 possible topics you’d like it to talk about. Randomly pick one and inject that into your prompt.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786232&amp;goto=item%3Fid%3D42784365%2342786232" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785192"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785192" href="https://news.ycombinator.com/vote?id=42785192&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=Dansvidania" class="hnuser">Dansvidania</a> <span class="age" title="2025-01-21T21:05:19 1737493519"><a href="https://news.ycombinator.com/item?id=42785192">2 hours ago</a></span> <span id="unv_42785192"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">parent</a> | <a href="#42785325" class="clicky" aria-hidden="true">prev</a> | <a href="#42786081" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785192" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">this sounds pretty cool, do you have any video/media of it?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785192&amp;goto=item%3Fid%3D42784365%2342785192" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42786081"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786081" href="https://news.ycombinator.com/vote?id=42786081&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=keeganpoppen" class="hnuser">keeganpoppen</a> <span class="age" title="2025-01-21T22:44:19 1737499459"><a href="https://news.ycombinator.com/item?id=42786081">35 minutes ago</a></span> <span id="unv_42786081"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">parent</a> | <a href="#42785192" class="clicky" aria-hidden="true">prev</a> | <a href="#42785253" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786081" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">oh wow that is actually such a brilliant little use case-- really cuts to the core of the real "magic" of ai: that it can just keep running continuously. it never gets tired, and never gets tired of thinking.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786081&amp;goto=item%3Fid%3D42784365%2342786081" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785253"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785253" href="https://news.ycombinator.com/vote?id=42785253&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=bithavoc" class="hnuser">bithavoc</a> <span class="age" title="2025-01-21T21:11:56 1737493916"><a href="https://news.ycombinator.com/item?id=42785253">2 hours ago</a></span> <span id="unv_42785253"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">parent</a> | <a href="#42786081" class="clicky" aria-hidden="true">prev</a> | <a href="#42785739" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785253" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">this is so cool, any chance you post a video?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785253&amp;goto=item%3Fid%3D42784365%2342785253" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785739"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785739" href="https://news.ycombinator.com/vote?id=42785739&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=flippyhead" class="hnuser">flippyhead</a> <span class="age" title="2025-01-21T22:12:50 1737497570"><a href="https://news.ycombinator.com/item?id=42785739">1 hour ago</a></span> <span id="unv_42785739"></span>          <span class="navs">
+             | <a href="#42785105" class="clicky" aria-hidden="true">prev</a> | <a href="#42784612" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785739" n="7" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I have a tiny device that listens to conversations between two people or more and constantly tries to declare a "winner"</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785739&amp;goto=item%3Fid%3D42784365%2342785739" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42786455"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786455" href="https://news.ycombinator.com/vote?id=42786455&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hn8726" class="hnuser">hn8726</a> <span class="age" title="2025-01-21T23:17:31 1737501451"><a href="https://news.ycombinator.com/item?id=42786455">2 minutes ago</a></span> <span id="unv_42786455"></span>          <span class="navs">
+             | <a href="#42785739" class="clicky" aria-hidden="true">parent</a> | <a href="#42785979" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786455" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">What approach/stack would you recommend for listening to an ongoing conversation, transcribing it and passing through llm? I had some use cases in mind but I'm not very familiar with AI frameworks and tools</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786455&amp;goto=item%3Fid%3D42784365%2342786455" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785979"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785979" href="https://news.ycombinator.com/vote?id=42785979&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=jjcm" class="hnuser">jjcm</a> <span class="age" title="2025-01-21T22:37:56 1737499076"><a href="https://news.ycombinator.com/item?id=42785979">42 minutes ago</a></span> <span id="unv_42785979"></span>          <span class="navs">
+             | <a href="#42785739" class="clicky" aria-hidden="true">parent</a> | <a href="#42786455" class="clicky" aria-hidden="true">prev</a> | <a href="#42785791" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785979" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Are you raising a funding round? I'm bought in. This is hilarious.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785979&amp;goto=item%3Fid%3D42784365%2342785979" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785791"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785791" href="https://news.ycombinator.com/vote?id=42785791&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=oa335" class="hnuser">oa335</a> <span class="age" title="2025-01-21T22:18:10 1737497890"><a href="https://news.ycombinator.com/item?id=42785791">1 hour ago</a></span> <span id="unv_42785791"></span>          <span class="navs">
+             | <a href="#42785739" class="clicky" aria-hidden="true">parent</a> | <a href="#42785979" class="clicky" aria-hidden="true">prev</a> | <a href="#42785949" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785791" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">This made me actually laugh out loud.  Can you share more details on hardware and models used?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785791&amp;goto=item%3Fid%3D42784365%2342785791" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785949"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785949" href="https://news.ycombinator.com/vote?id=42785949&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=econ" class="hnuser">econ</a> <span class="age" title="2025-01-21T22:34:50 1737498890"><a href="https://news.ycombinator.com/item?id=42785949">45 minutes ago</a></span> <span id="unv_42785949"></span>          <span class="navs">
+             | <a href="#42785739" class="clicky" aria-hidden="true">parent</a> | <a href="#42785791" class="clicky" aria-hidden="true">prev</a> | <a href="#42785781" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785949" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">This is a product I want</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785949&amp;goto=item%3Fid%3D42784365%2342785949" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785781"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785781" href="https://news.ycombinator.com/vote?id=42785781&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=pseudosavant" class="hnuser">pseudosavant</a> <span class="age" title="2025-01-21T22:17:26 1737497846"><a href="https://news.ycombinator.com/item?id=42785781">1 hour ago</a></span> <span id="unv_42785781"></span>          <span class="navs">
+             | <a href="#42785739" class="clicky" aria-hidden="true">parent</a> | <a href="#42785949" class="clicky" aria-hidden="true">prev</a> | <a href="#42785970" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785781" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I'd love to hear more about the hardware behind this project. I've had concepts for tech requiring a mic on me at all times for various reasons. Always tricky to have enough power in a reasonable DIY form factor.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785781&amp;goto=item%3Fid%3D42784365%2342785781" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785970"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785970" href="https://news.ycombinator.com/vote?id=42785970&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=amelius" class="hnuser">amelius</a> <span class="age" title="2025-01-21T22:36:52 1737499012"><a href="https://news.ycombinator.com/item?id=42785970">43 minutes ago</a></span> <span id="unv_42785970"></span>          <span class="navs">
+             | <a href="#42785739" class="clicky" aria-hidden="true">parent</a> | <a href="#42785781" class="clicky" aria-hidden="true">prev</a> | <a href="#42784612" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785970" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">You can use the model to generate winning speeches also.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785970&amp;goto=item%3Fid%3D42784365%2342785970" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42784612"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42784612" href="https://news.ycombinator.com/vote?id=42784612&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=psyklic" class="hnuser">psyklic</a> <span class="age" title="2025-01-21T20:05:52 1737489952"><a href="https://news.ycombinator.com/item?id=42784612">3 hours ago</a></span> <span id="unv_42784612"></span>          <span class="navs">
+             | <a href="#42785739" class="clicky" aria-hidden="true">prev</a> | <a href="#42786422" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42784612" n="9" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">JetBrains' local single-line autocomplete model is 0.1B (w/ 1536-token context, ~170 lines of code): <a href="https://blog.jetbrains.com/blog/2024/04/04/full-line-code-completion-in-jetbrains-ides-all-you-need-to-know/#under-the-hood" rel="nofollow">https://blog.jetbrains.com/blog/2024/04/04/full-line-code-co...</a><p>For context, GPT-2-small is 0.124B params (w/ 1024-token context).</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42784612&amp;goto=item%3Fid%3D42784365%2342784612" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785838"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785838" href="https://news.ycombinator.com/vote?id=42785838&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=pseudosavant" class="hnuser">pseudosavant</a> <span class="age" title="2025-01-21T22:22:40 1737498160"><a href="https://news.ycombinator.com/item?id=42785838">57 minutes ago</a></span> <span id="unv_42785838"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">parent</a> | <a href="#42785728" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785838" n="3" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I wonder how big that model is in RAM/disk. I use LLMs for FFMPEG all the time, and I was thinking about training a model on just the FFMPEG CLI arguments. If it was small enough, it could be a package for FFMPEG. e.g. `ffmpeg llm "Convert this MP4 into the latest royalty-free codecs in an MKV."`</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785838&amp;goto=item%3Fid%3D42784365%2342785838" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42786381"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786381" href="https://news.ycombinator.com/vote?id=42786381&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=h0l0cube" class="hnuser">h0l0cube</a> <span class="age" title="2025-01-21T23:10:49 1737501049"><a href="https://news.ycombinator.com/item?id=42786381">9 minutes ago</a></span> <span id="unv_42786381"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">root</a> | <a href="#42785838" class="clicky" aria-hidden="true">parent</a> | <a href="#42785929" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786381" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Please submit a blog post to HN when you're done.  I'd be curious to know the most minimal LLM setup needed get consistently sane output for FFMPEG parameters.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786381&amp;goto=item%3Fid%3D42784365%2342786381" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785929"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785929" href="https://news.ycombinator.com/vote?id=42785929&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=jedbrooke" class="hnuser">jedbrooke</a> <span class="age" title="2025-01-21T22:33:01 1737498781"><a href="https://news.ycombinator.com/item?id=42785929">46 minutes ago</a></span> <span id="unv_42785929"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">root</a> | <a href="#42785838" class="clicky" aria-hidden="true">parent</a> | <a href="#42786381" class="clicky" aria-hidden="true">prev</a> | <a href="#42785728" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785929" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">the jetbrains models are about 70MB zipped on disk (one model per language)</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785929&amp;goto=item%3Fid%3D42784365%2342785929" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785728"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785728" href="https://news.ycombinator.com/vote?id=42785728&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=smaddox" class="hnuser">smaddox</a> <span class="age" title="2025-01-21T22:11:27 1737497487"><a href="https://news.ycombinator.com/item?id=42785728">1 hour ago</a></span> <span id="unv_42785728"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">parent</a> | <a href="#42785838" class="clicky" aria-hidden="true">prev</a> | <a href="#42786326" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785728" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">You can train that size of a model on ~1 billion tokens in ~3 minutes on a rented 8xH100 80GB node (~$9/hr on Lambda Labs, RunPod io, etc.) using the NanoGPT speed run repo: <a href="https://github.com/KellerJordan/modded-nanogpt">https://github.com/KellerJordan/modded-nanogpt</a><p>For that short of a run, you'll spend more time waiting for the node to come up, downloading the dataset, and compiling the model, though.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785728&amp;goto=item%3Fid%3D42784365%2342785728" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42786326"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786326" href="https://news.ycombinator.com/vote?id=42786326&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=staticautomatic" class="hnuser">staticautomatic</a> <span class="age" title="2025-01-21T23:04:42 1737500682"><a href="https://news.ycombinator.com/item?id=42786326">15 minutes ago</a></span> <span id="unv_42786326"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">parent</a> | <a href="#42785728" class="clicky" aria-hidden="true">prev</a> | <a href="#42785009" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786326" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Is that why their tab completion is so bad now?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786326&amp;goto=item%3Fid%3D42784365%2342786326" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785009"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785009" href="https://news.ycombinator.com/vote?id=42785009&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=WithinReason" class="hnuser">WithinReason</a> <span class="age" title="2025-01-21T20:46:58 1737492418"><a href="https://news.ycombinator.com/item?id=42785009">2 hours ago</a></span> <span id="unv_42785009"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">parent</a> | <a href="#42786326" class="clicky" aria-hidden="true">prev</a> | <a href="#42786422" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785009" n="3" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">That size is on the edge of something you can train at home</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785009&amp;goto=item%3Fid%3D42784365%2342785009" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785431"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785431" href="https://news.ycombinator.com/vote?id=42785431&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vineyardmike" class="hnuser">vineyardmike</a> <span class="age" title="2025-01-21T21:31:57 1737495117"><a href="https://news.ycombinator.com/item?id=42785431">1 hour ago</a></span> <span id="unv_42785431"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">root</a> | <a href="#42785009" class="clicky" aria-hidden="true">parent</a> | <a href="#42786422" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785431" n="2" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">If you have modern hardware, you can absolutely train that at home. Or <i>very</i> affordable on a cloud service.<p>I’ve seen a number of “DIY GPT-2” tutorials that target this sweet spot. You won’t get amazing results unless you want to leave a personal computer running for a number of hours/days and you have solid data to train on locally, but fine-tuning should be in the realm of normal hobbyists patience.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785431&amp;goto=item%3Fid%3D42784365%2342785431" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785617"><td><table border="0">  <tbody><tr>    <td class="ind" indent="3"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785617" href="https://news.ycombinator.com/vote?id=42785617&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=nottorp" class="hnuser">nottorp</a> <span class="age" title="2025-01-21T21:59:18 1737496758"><a href="https://news.ycombinator.com/item?id=42785617">1 hour ago</a></span> <span id="unv_42785617"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">root</a> | <a href="#42785431" class="clicky" aria-hidden="true">parent</a> | <a href="#42786422" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785617" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Hmm is there anything reasonably ready made* for this spot? Training and querying a llm locally on an existing codebase?<p>* I don't mind compiling it myself but i'd rather not write it.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785617&amp;goto=item%3Fid%3D42784365%2342785617" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                              <tr class="athing comtr" id="42786422"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786422" href="https://news.ycombinator.com/vote?id=42786422&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=deivid" class="hnuser">deivid</a> <span class="age" title="2025-01-21T23:14:11 1737501251"><a href="https://news.ycombinator.com/item?id=42786422">5 minutes ago</a></span> <span id="unv_42786422"></span>          <span class="navs">
+             | <a href="#42784612" class="clicky" aria-hidden="true">prev</a> | <a href="#42784922" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786422" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Not sure it qualifies, but I've started building an Android app that wraps bergamot[0] (the firefox translation models) to have on-device translation without reliance on google.<p>Bergamot is already used inside firefox, but I wanted translation also outside the browser.</p><p>[0]: bergamot <a href="https://github.com/browsermt/bergamot-translator">https://github.com/browsermt/bergamot-translator</a></p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786422&amp;goto=item%3Fid%3D42784365%2342786422" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42784922"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42784922" href="https://news.ycombinator.com/vote?id=42784922&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=RhysU" class="hnuser">RhysU</a> <span class="age" title="2025-01-21T20:37:07 1737491827"><a href="https://news.ycombinator.com/item?id=42784922">2 hours ago</a></span> <span id="unv_42784922"></span>          <span class="navs">
+             | <a href="#42786422" class="clicky" aria-hidden="true">prev</a> | <a href="#42785938" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42784922" n="2" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">"Comedy Writing With Small Generative Models" by Jamie Brew (Strange Loop 2023)<p><a href="https://m.youtube.com/watch?v=M2o4f_2L0No" rel="nofollow">https://m.youtube.com/watch?v=M2o4f_2L0No</a></p><p>Spend the 45 minutes watching this talk. It is a delight. If you are unsure, wait until the speaker picks up the guitar.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42784922&amp;goto=item%3Fid%3D42784365%2342784922" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42784951"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42784951" href="https://news.ycombinator.com/vote?id=42784951&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=100k" class="hnuser">100k</a> <span class="age" title="2025-01-21T20:40:26 1737492026"><a href="https://news.ycombinator.com/item?id=42784951">2 hours ago</a></span> <span id="unv_42784951"></span>          <span class="navs">
+             | <a href="#42784922" class="clicky" aria-hidden="true">parent</a> | <a href="#42785938" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42784951" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Seconded! This was my favorite talk at Strange Loop (including my own).</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42784951&amp;goto=item%3Fid%3D42784365%2342784951" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785938"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785938" href="https://news.ycombinator.com/vote?id=42785938&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=simonjgreen" class="hnuser">simonjgreen</a> <span class="age" title="2025-01-21T22:33:53 1737498833"><a href="https://news.ycombinator.com/item?id=42785938">46 minutes ago</a></span> <span id="unv_42785938"></span>          <span class="navs">
+             | <a href="#42784922" class="clicky" aria-hidden="true">prev</a> | <a href="#42785041" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785938" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Micro Wake Word is a library and set of on device models for ESPs to wake on a spoken wake word.
+<a href="https://github.com/kahrendt/microWakeWord">https://github.com/kahrendt/microWakeWord</a><p>Recently deployed in Home Assistants fully local capable Alexa replacement. <a href="https://www.home-assistant.io/voice_control/about_wake_word/" rel="nofollow">https://www.home-assistant.io/voice_control/about_wake_word/</a></p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785938&amp;goto=item%3Fid%3D42784365%2342785938" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785041"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785041" href="https://news.ycombinator.com/vote?id=42785041&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=azhenley" class="hnuser">azhenley</a> <span class="age" title="2025-01-21T20:50:42 1737492642"><a href="https://news.ycombinator.com/item?id=42785041">2 hours ago</a></span> <span id="unv_42785041"></span>          <span class="navs">
+             | <a href="#42785938" class="clicky" aria-hidden="true">prev</a> | <a href="#42785400" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785041" n="7" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Microsoft published a paper on their FLAME model (60M parameters) for Excel formula repair/completion which outperformed much larger models (&gt;100B parameters).<p><a href="https://arxiv.org/abs/2301.13779" rel="nofollow">https://arxiv.org/abs/2301.13779</a></p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785041&amp;goto=item%3Fid%3D42784365%2342785041" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785415"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785415" href="https://news.ycombinator.com/vote?id=42785415&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=andai" class="hnuser">andai</a> <span class="age" title="2025-01-21T21:30:28 1737495028"><a href="https://news.ycombinator.com/item?id=42785415">1 hour ago</a></span> <span id="unv_42785415"></span>          <span class="navs">
+             | <a href="#42785041" class="clicky" aria-hidden="true">parent</a> | <a href="#42785673" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785415" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">This is wild. They claim it was trained exclusively on Excel formulas, but then they mention retrieval? Is it understanding the connection between English and formulas? Or am I misunderstanding retrieval in this context?<p>Edit: No, the retrieval is Formula-Formula, the model (nor I believe tokenizer) does not handle English.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785415&amp;goto=item%3Fid%3D42784365%2342785415" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785673"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785673" href="https://news.ycombinator.com/vote?id=42785673&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=3abiton" class="hnuser">3abiton</a> <span class="age" title="2025-01-21T22:05:43 1737497143"><a href="https://news.ycombinator.com/item?id=42785673">1 hour ago</a></span> <span id="unv_42785673"></span>          <span class="navs">
+             | <a href="#42785041" class="clicky" aria-hidden="true">parent</a> | <a href="#42785415" class="clicky" aria-hidden="true">prev</a> | <a href="#42785270" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785673" n="4" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">But I feel we're going back full circle. These small models are not generalist, thus not really LLMs at least in terms of objective. Recently there has been a rise of "specialized" models that provide lots of values, but that's not why we were sold on LLMs.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785673&amp;goto=item%3Fid%3D42784365%2342785673" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42786397"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786397" href="https://news.ycombinator.com/vote?id=42786397&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=janalsncm" class="hnuser">janalsncm</a> <span class="age" title="2025-01-21T23:12:03 1737501123"><a href="https://news.ycombinator.com/item?id=42786397">7 minutes ago</a></span> <span id="unv_42786397"></span>          <span class="navs">
+             | <a href="#42785041" class="clicky" aria-hidden="true">root</a> | <a href="#42785673" class="clicky" aria-hidden="true">parent</a> | <a href="#42786287" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786397" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I think playing word games about what really counts as an LLM is a losing battle. It has become a marketing term, mostly. It’s better to have a functionalist point of view of “what can this thing do”.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786397&amp;goto=item%3Fid%3D42784365%2342786397" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42786287"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786287" href="https://news.ycombinator.com/vote?id=42786287&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=Suppafly" class="hnuser">Suppafly</a> <span class="age" title="2025-01-21T23:01:34 1737500494"><a href="https://news.ycombinator.com/item?id=42786287">18 minutes ago</a></span> <span id="unv_42786287"></span>          <span class="navs">
+             | <a href="#42785041" class="clicky" aria-hidden="true">root</a> | <a href="#42785673" class="clicky" aria-hidden="true">parent</a> | <a href="#42786397" class="clicky" aria-hidden="true">prev</a> | <a href="#42785764" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786287" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Specialized models work much better still for most stuff. Really we need an LLM to understand the input and then hand it off to a specialized model that actually provides good results.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786287&amp;goto=item%3Fid%3D42784365%2342786287" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785764"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785764" href="https://news.ycombinator.com/vote?id=42785764&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=colechristensen" class="hnuser">colechristensen</a> <span class="age" title="2025-01-21T22:16:06 1737497766"><a href="https://news.ycombinator.com/item?id=42785764">1 hour ago</a></span> <span id="unv_42785764"></span>          <span class="navs">
+             | <a href="#42785041" class="clicky" aria-hidden="true">root</a> | <a href="#42785673" class="clicky" aria-hidden="true">parent</a> | <a href="#42786287" class="clicky" aria-hidden="true">prev</a> | <a href="#42785270" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785764" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">But that's the thing, I don't need my ML model to be able to write me a sonnet about the history of beets, especially if I want to run it at home for specific tasks like as a programming assistant.<p>I'm fine with and prefer specialist models in most cases.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785764&amp;goto=item%3Fid%3D42784365%2342785764" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785270"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785270" href="https://news.ycombinator.com/vote?id=42785270&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=barrenko" class="hnuser">barrenko</a> <span class="age" title="2025-01-21T21:14:18 1737494058"><a href="https://news.ycombinator.com/item?id=42785270">2 hours ago</a></span> <span id="unv_42785270"></span>          <span class="navs">
+             | <a href="#42785041" class="clicky" aria-hidden="true">parent</a> | <a href="#42785673" class="clicky" aria-hidden="true">prev</a> | <a href="#42785400" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785270" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">This is really cool. Is this already in Excel?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785270&amp;goto=item%3Fid%3D42784365%2342785270" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785400"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785400" href="https://news.ycombinator.com/vote?id=42785400&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=deet" class="hnuser">deet</a> <span class="age" title="2025-01-21T21:28:44 1737494924"><a href="https://news.ycombinator.com/item?id=42785400">1 hour ago</a></span> <span id="unv_42785400"></span>          <span class="navs">
+             | <a href="#42785041" class="clicky" aria-hidden="true">prev</a> | <a href="#42786354" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785400" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">We (avy.ai) are using models in that range to analyze computer activity on-device, in a privacy sensitive way, to help knowledge workers as they go about their day.<p>The local models do things ranging from cleaning up OCR, to summarizing meetings, to estimating the user's current goals and activity, to predicting search terms, to predicting queries and actions that, if run, would help the user accomplish their current task.</p><p>The capabilities of these tiny models have really surged recently. Even small vision models are becoming useful, especially if fine tuned.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785400&amp;goto=item%3Fid%3D42784365%2342785400" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42786354"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786354" href="https://news.ycombinator.com/vote?id=42786354&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=ata_aman" class="hnuser">ata_aman</a> <span class="age" title="2025-01-21T23:08:27 1737500907"><a href="https://news.ycombinator.com/item?id=42786354">11 minutes ago</a></span> <span id="unv_42786354"></span>          <span class="navs">
+             | <a href="#42785400" class="clicky" aria-hidden="true">prev</a> | <a href="#42784724" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786354" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I have it running on a Raspberry Pi 5 for offline chat and RAG.
+I wrote this open-source code for it: <a href="https://github.com/persys-ai/persys">https://github.com/persys-ai/persys</a><p>It also does RAG on apps there, like the music player, contacts app and to-do app. I can ask it to recommend similar artists to listen to based on my music library for example or ask it to quiz me on my PDF papers.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786354&amp;goto=item%3Fid%3D42784365%2342786354" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42784724"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42784724" href="https://news.ycombinator.com/vote?id=42784724&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=mettamage" class="hnuser">mettamage</a> <span class="age" title="2025-01-21T20:17:43 1737490663"><a href="https://news.ycombinator.com/item?id=42784724">3 hours ago</a></span> <span id="unv_42784724"></span>          <span class="navs">
+             | <a href="#42786354" class="clicky" aria-hidden="true">prev</a> | <a href="#42785570" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42784724" n="8" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I simply use it to de-anonymize code that I typed in via Claude<p>Maybe should write a plugin for it (open source):</p><p>1. Put in all your work related questions in the plugin, an LLM will make it as an abstract question for you to preview and send it</p><p>2. And then get the answer with all the data back</p><p>E.g. df[“cookie_company_name”] becomes df[“a”] and back</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42784724&amp;goto=item%3Fid%3D42784365%2342784724" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785696"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785696" href="https://news.ycombinator.com/vote?id=42785696&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=sitkack" class="hnuser">sitkack</a> <span class="age" title="2025-01-21T22:09:06 1737497346"><a href="https://news.ycombinator.com/item?id=42785696">1 hour ago</a></span> <span id="unv_42785696"></span>          <span class="navs">
+             | <a href="#42784724" class="clicky" aria-hidden="true">parent</a> | <a href="#42785808" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785696" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">So you are using a local small model to remove identifying information and make the question generic, which is then sent to a larger model? Is that understanding correct?<p>I think this would have some additional benefits of not confusing the larger model with facts it doesn't need to know about. My erasing information, you can allow its attention heads to focus on the pieces that matter.</p><p>Requires further study.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785696&amp;goto=item%3Fid%3D42784365%2342785696" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785808"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785808" href="https://news.ycombinator.com/vote?id=42785808&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=sauwan" class="hnuser">sauwan</a> <span class="age" title="2025-01-21T22:19:29 1737497969"><a href="https://news.ycombinator.com/item?id=42785808">1 hour ago</a></span> <span id="unv_42785808"></span>          <span class="navs">
+             | <a href="#42784724" class="clicky" aria-hidden="true">parent</a> | <a href="#42785696" class="clicky" aria-hidden="true">prev</a> | <a href="#42784789" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785808" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Are you using the model to create a key-value pair to find/replace and then reverse to reanonymize, or are you using its outputs directly? If the latter, is it fast enough and reliable enough?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785808&amp;goto=item%3Fid%3D42784365%2342785808" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42784789"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42784789" href="https://news.ycombinator.com/vote?id=42784789&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=politelemon" class="hnuser">politelemon</a> <span class="age" title="2025-01-21T20:24:08 1737491048"><a href="https://news.ycombinator.com/item?id=42784789">2 hours ago</a></span> <span id="unv_42784789"></span>          <span class="navs">
+             | <a href="#42784724" class="clicky" aria-hidden="true">parent</a> | <a href="#42785808" class="clicky" aria-hidden="true">prev</a> | <a href="#42785570" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42784789" n="5" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Could you recommend a tiny language model I could try out locally?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42784789&amp;goto=item%3Fid%3D42784365%2342784789" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42784953"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42784953" href="https://news.ycombinator.com/vote?id=42784953&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=mettamage" class="hnuser">mettamage</a> <span class="age" title="2025-01-21T20:40:29 1737492029"><a href="https://news.ycombinator.com/item?id=42784953">2 hours ago</a></span> <span id="unv_42784953"></span>          <span class="navs">
+             | <a href="#42784724" class="clicky" aria-hidden="true">root</a> | <a href="#42784789" class="clicky" aria-hidden="true">parent</a> | <a href="#42785570" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42784953" n="4" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Llama 3.2 has about 3.2b parameters. I have to admit, I use bigger ones like phi-4 (14.7b) and Llama 3.3 (70.6b) but I think Llama 3.2 could do de-anonimization and anonimization of code</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42784953&amp;goto=item%3Fid%3D42784365%2342784953" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785333"><td><table border="0">  <tbody><tr>    <td class="ind" indent="3"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785333" href="https://news.ycombinator.com/vote?id=42785333&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=RicoElectrico" class="hnuser">RicoElectrico</a> <span class="age" title="2025-01-21T21:21:27 1737494487"><a href="https://news.ycombinator.com/item?id=42785333">1 hour ago</a></span> <span id="unv_42785333"></span>          <span class="navs">
+             | <a href="#42784724" class="clicky" aria-hidden="true">root</a> | <a href="#42784953" class="clicky" aria-hidden="true">parent</a> | <a href="#42785057" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785333" n="2" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Llama 3.2 punches way above its weight. For general "language manipulation" tasks it's good enough - and it can be used on a CPU with acceptable speed.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785333&amp;goto=item%3Fid%3D42784365%2342785333" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785773"><td><table border="0">  <tbody><tr>    <td class="ind" indent="4"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="160"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785773" href="https://news.ycombinator.com/vote?id=42785773&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=seunosewa" class="hnuser">seunosewa</a> <span class="age" title="2025-01-21T22:17:05 1737497825"><a href="https://news.ycombinator.com/item?id=42785773">1 hour ago</a></span> <span id="unv_42785773"></span>          <span class="navs">
+             | <a href="#42784724" class="clicky" aria-hidden="true">root</a> | <a href="#42785333" class="clicky" aria-hidden="true">parent</a> | <a href="#42785057" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785773" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">How many tokens/s?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785773&amp;goto=item%3Fid%3D42784365%2342785773" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785057"><td><table border="0">  <tbody><tr>    <td class="ind" indent="3"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785057" href="https://news.ycombinator.com/vote?id=42785057&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=OxfordOutlander" class="hnuser">OxfordOutlander</a> <span class="age" title="2025-01-21T20:52:48 1737492768"><a href="https://news.ycombinator.com/item?id=42785057">2 hours ago</a></span> <span id="unv_42785057"></span>          <span class="navs">
+             | <a href="#42784724" class="clicky" aria-hidden="true">root</a> | <a href="#42784953" class="clicky" aria-hidden="true">parent</a> | <a href="#42785333" class="clicky" aria-hidden="true">prev</a> | <a href="#42785570" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785057" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">+1 this idea. I do the same. Just do it locally using ollama, also using 3.2 3b</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785057&amp;goto=item%3Fid%3D42784365%2342785057" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                              <tr class="athing comtr" id="42785570"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785570" href="https://news.ycombinator.com/vote?id=42785570&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=mritchie712" class="hnuser">mritchie712</a> <span class="age" title="2025-01-21T21:51:22 1737496282"><a href="https://news.ycombinator.com/item?id=42785570">1 hour ago</a></span> <span id="unv_42785570"></span>          <span class="navs">
+             | <a href="#42784724" class="clicky" aria-hidden="true">prev</a> | <a href="#42785183" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785570" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I used local LLMs via Ollama for generating H1's / marketing copy.<p>1. Create several different personas</p><p>2. Generate a ton of variation using a high temperature</p><p>3. Compare the variagtions head-to-head using the LLM to get a win / loss ratio</p><p>The best ones can be quite good.</p><p>0 - <a href="https://www.definite.app/blog/overkillm" rel="nofollow">https://www.definite.app/blog/overkillm</a></p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785570&amp;goto=item%3Fid%3D42784365%2342785570" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785183"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785183" href="https://news.ycombinator.com/vote?id=42785183&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=eb0la" class="hnuser">eb0la</a> <span class="age" title="2025-01-21T21:04:36 1737493476"><a href="https://news.ycombinator.com/item?id=42785183">2 hours ago</a></span> <span id="unv_42785183"></span>          <span class="navs">
+             | <a href="#42785570" class="clicky" aria-hidden="true">prev</a> | <a href="#42785307" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785183" n="2" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">We're using small language models to detect prompt injection. Not too cool, but at least we can publish some AI-related stuff on the internet without a huge bill.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785183&amp;goto=item%3Fid%3D42784365%2342785183" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785713"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785713" href="https://news.ycombinator.com/vote?id=42785713&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=sitkack" class="hnuser">sitkack</a> <span class="age" title="2025-01-21T22:10:18 1737497418"><a href="https://news.ycombinator.com/item?id=42785713">1 hour ago</a></span> <span id="unv_42785713"></span>          <span class="navs">
+             | <a href="#42785183" class="clicky" aria-hidden="true">parent</a> | <a href="#42785307" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785713" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">What kind of prompt injection attacks do you filter out? Have you tested with a prompt tuning framework?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785713&amp;goto=item%3Fid%3D42784365%2342785713" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785307"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785307" href="https://news.ycombinator.com/vote?id=42785307&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=A4ET8a8uTh0_v2" class="hnuser">A4ET8a8uTh0_v2</a> <span class="age" title="2025-01-21T21:18:32 1737494312"><a href="https://news.ycombinator.com/item?id=42785307">2 hours ago</a></span> <span id="unv_42785307"></span>          <span class="navs">
+             | <a href="#42785183" class="clicky" aria-hidden="true">prev</a> | <a href="#42784970" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785307" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Kinda? All local so very much personal, non-business use. I made Ollama talk in a specific persona styles with the idea of speaking like Spider Jerusalem, when I feel like retaining some level of privacy by avoiding phrases I would normally use. Uncensored llama just rewrites my post with a specific persona's 'voice'. Works amusingly well for that purpose.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785307&amp;goto=item%3Fid%3D42784365%2342785307" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42784970"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42784970" href="https://news.ycombinator.com/vote?id=42784970&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=iamnotagenius" class="hnuser">iamnotagenius</a> <span class="age" title="2025-01-21T20:42:38 1737492158"><a href="https://news.ycombinator.com/item?id=42784970">2 hours ago</a></span> <span id="unv_42784970"></span>          <span class="navs">
+             | <a href="#42785307" class="clicky" aria-hidden="true">prev</a> | <a href="#42785022" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42784970" n="4" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">No, but I use llama 3.2 1b and qwen2.5 1.5 as bash oneliner generator, always runnimg in console.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42784970&amp;goto=item%3Fid%3D42784365%2342784970" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42786003"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786003" href="https://news.ycombinator.com/vote?id=42786003&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=XMasterrrr" class="hnuser">XMasterrrr</a> <span class="age" title="2025-01-21T22:39:43 1737499183"><a href="https://news.ycombinator.com/item?id=42786003">40 minutes ago</a></span> <span id="unv_42786003"></span>          <span class="navs">
+             | <a href="#42784970" class="clicky" aria-hidden="true">parent</a> | <a href="#42785424" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786003" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">What's your workflow like? I use AI Chat. I load Qwen2.5-1.5B-Instruct with llama.cpp server, fully offloaded to the CPU, and then I config AI Chat to connect to the llama.cpp endpoint.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786003&amp;goto=item%3Fid%3D42784365%2342786003" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42785424"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785424" href="https://news.ycombinator.com/vote?id=42785424&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=andai" class="hnuser">andai</a> <span class="age" title="2025-01-21T21:30:59 1737495059"><a href="https://news.ycombinator.com/item?id=42785424">1 hour ago</a></span> <span id="unv_42785424"></span>          <span class="navs">
+             | <a href="#42784970" class="clicky" aria-hidden="true">parent</a> | <a href="#42786003" class="clicky" aria-hidden="true">prev</a> | <a href="#42785022" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785424" n="2" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Could you elaborate?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785424&amp;goto=item%3Fid%3D42784365%2342785424" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785998"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785998" href="https://news.ycombinator.com/vote?id=42785998&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=XMasterrrr" class="hnuser">XMasterrrr</a> <span class="age" title="2025-01-21T22:39:18 1737499158"><a href="https://news.ycombinator.com/item?id=42785998">40 minutes ago</a></span> <span id="unv_42785998"></span>          <span class="navs">
+             | <a href="#42784970" class="clicky" aria-hidden="true">root</a> | <a href="#42785424" class="clicky" aria-hidden="true">parent</a> | <a href="#42785022" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785998" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I think I know what he means. I use AI Chat. I load Qwen2.5-1.5B-Instruct with llama.cpp server, fully offloaded to the CPU, and then I config AI Chat to connect to the llama.cpp endpoint.<p>Checkout the demo they have below</p><p><a href="https://github.com/sigoden/aichat#shell-assistant">https://github.com/sigoden/aichat#shell-assistant</a></p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785998&amp;goto=item%3Fid%3D42784365%2342785998" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                        <tr class="athing comtr" id="42785022"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785022" href="https://news.ycombinator.com/vote?id=42785022&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=arionhardison" class="hnuser">arionhardison</a> <span class="age" title="2025-01-21T20:48:22 1737492502"><a href="https://news.ycombinator.com/item?id=42785022">2 hours ago</a></span> <span id="unv_42785022"></span>          <span class="navs">
+             | <a href="#42784970" class="clicky" aria-hidden="true">prev</a> | <a href="#42786214" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785022" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I am, in a way by using EHR/EMR data for fine tuning so agents can query each other for medical records in a HIPPA compliant manner.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785022&amp;goto=item%3Fid%3D42784365%2342785022" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42786214"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42786214" href="https://news.ycombinator.com/vote?id=42786214&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=kristopolous" class="hnuser">kristopolous</a> <span class="age" title="2025-01-21T22:55:09 1737500109"><a href="https://news.ycombinator.com/item?id=42786214">24 minutes ago</a></span> <span id="unv_42786214"></span>          <span class="navs">
+             | <a href="#42785022" class="clicky" aria-hidden="true">prev</a> | <a href="#42784983" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42786214" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">I'm working on using them for agentic voice commands of a limited scope.<p>My needs are narrow and limited but I want a bit of flexibility.</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42786214&amp;goto=item%3Fid%3D42784365%2342786214" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            <tr class="athing comtr" id="42784983"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42784983" href="https://news.ycombinator.com/vote?id=42784983&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=Havoc" class="hnuser">Havoc</a> <span class="age" title="2025-01-21T20:44:02 1737492242"><a href="https://news.ycombinator.com/item?id=42784983">2 hours ago</a></span> <span id="unv_42784983"></span>          <span class="navs">
+             | <a href="#42786214" class="clicky" aria-hidden="true">prev</a> | <a href="#42785568" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42784983" n="2" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">Pretty sure they are mostly used as fine tuning targets, rather than as-is.</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42784983&amp;goto=item%3Fid%3D42784365%2342784983" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                <tr class="athing comtr" id="42785562"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785562" href="https://news.ycombinator.com/vote?id=42785562&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=dcl" class="hnuser">dcl</a> <span class="age" title="2025-01-21T21:50:35 1737496235"><a href="https://news.ycombinator.com/item?id=42785562">1 hour ago</a></span> <span id="unv_42785562"></span>          <span class="navs">
+             | <a href="#42784983" class="clicky" aria-hidden="true">parent</a> | <a href="#42785568" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="42785562" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">But for what purposes?</div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785562&amp;goto=item%3Fid%3D42784365%2342785562" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+                  <tr class="athing comtr" id="42785568"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id="up_42785568" href="https://news.ycombinator.com/vote?id=42785568&amp;how=up&amp;goto=item%3Fid%3D42784365"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=ignoramous" class="hnuser">ignoramous</a> <span class="age" title="2025-01-21T21:51:10 1737496270"><a href="https://news.ycombinator.com/item?id=42785568">1 hour ago</a></span> <span id="unv_42785568"></span>          <span class="navs">
+             | <a href="#42784983" class="clicky" aria-hidden="true">prev</a> <a class="togg clicky" id="42785568" n="1" href="javascript:;">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <div class="commtext c00">We're prototyping a text firewall (for Android) with Gemma2 2B (which limits us to English), though DeepSeek's R1 variants now look pretty promising [0]: Depending on the content, we rewrite the text or quarantine it from your view. Of course this is easy (for English) in the sense that the core logic is all LLMs [1], but the integration points (on Android) are not so straight forward for anything other than SMS. [2]<p>A more difficult problem we forsee is to turn it into a real-time (online) firewall (for calls, for example).</p><p>[1] <a href="https://chat.deepseek.com/a/chat/s/d5aeeda1-fefe-4fc6-8c90-20effc1dd7a4" rel="nofollow">https://chat.deepseek.com/a/chat/s/d5aeeda1-fefe-4fc6-8c90-2...</a></p><p>[1] MediaPipe in particular makes it simple to prototype around Gemma2 on Android: <a href="https://ai.google.dev/edge/mediapipe/solutions/genai/llm_inference/android" rel="nofollow">https://ai.google.dev/edge/mediapipe/solutions/genai/llm_inf...</a></p><p>[2] Intend to open source it once we get it working for anything other than SMSes</p></div>
+              <div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=42785568&amp;goto=item%3Fid%3D42784365%2342785568" rel="nofollow">reply</a></u>
+                  </font>
+      </p></div></div></td></tr>
+        </tbody></table></td></tr>
+            </tbody></table>
+  <br><br>
+</td></tr>
+<tr><td><img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="10" width="0"><table width="100%" cellspacing="0" cellpadding="1"><tbody><tr><td bgcolor="#ff6600"></td></tr></tbody></table><br>
+<center><a href="https://www.ycombinator.com/apply/">Consider applying for YC's Spring batch! Applications are open till Feb 11.</a></center><br>
+<center><span class="yclinks"><a href="https://news.ycombinator.com/newsguidelines.html">Guidelines</a> | <a href="https://news.ycombinator.com/newsfaq.html">FAQ</a> | <a href="https://news.ycombinator.com/lists">Lists</a> | <a href="https://github.com/HackerNews/API">API</a> | <a href="https://news.ycombinator.com/security.html">Security</a> | <a href="https://www.ycombinator.com/legal/">Legal</a> | <a href="https://www.ycombinator.com/apply/">Apply to YC</a> | <a href="mailto:hn@ycombinator.com">Contact</a></span><br><br>
+<form method="get" action="https://hn.algolia.com/">Search: <input type="text" name="q" size="17" autocorrect="off" spellcheck="false" autocapitalize="off" autocomplete="off"></form></center></td></tr>      </tbody></table></center>
+      <script type="text/javascript"></script>
+  
+</body></html>
